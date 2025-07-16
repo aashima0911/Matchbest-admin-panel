@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <div className="w-full">
       <footer className="bg-[#10131a] text-white py-10 text-center space-y-6">
-        <h2 className="text-2xl font-bold">MatchBest</h2>
-
+ 
+        <img src="/assets/match.jpg" alt="MatchBest Group Logo" className="h-12 w-auto rounded-lg shadow-md border mx-auto"  />
         <div className="flex justify-center space-x-6">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About</Link>
