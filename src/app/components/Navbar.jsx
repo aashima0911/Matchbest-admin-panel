@@ -20,14 +20,14 @@ export default function Navbar() {
   const handleClose = () => setIsOpen(false);
 
   return (
-    <nav className="bg-[#10131a] shadow-lg border-b border-purple-800 fixed w-full z-30 top-0 left-0 py-3 md:py-4 px-0 md:px-0">
+    <nav className="bg-[#10131a] shadow-lg border-b  fixed w-full z-30 top-0 left-0 py-3 md:py-4 px-0 md:px-0">
       <div className="container mx-auto flex items-center justify-between px-4 md:px-8 py-2 md:py-0">
         {/* Logo */}
         <Link href="/" className="flex items-center mr-6 md:mr-10" onClick={handleClose}>
           <Image
             src="/assets/match.jpg"
             alt="MatchBest Group Logo"
-            className="h-12 w-auto rounded-lg shadow-md border border-purple-700"
+            className="h-12 w-auto rounded-lg shadow-md border "
             width={1200}
             height={48}
             priority

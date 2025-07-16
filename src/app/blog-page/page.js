@@ -10,54 +10,42 @@ const blogPosts = [
     date: 'June 1, 2025',
     tags: ['AI', 'Innovation'],
     image: '/assets/ai.jpeg',
-    excerpt:
-      "AI is now a strategic asset. It&apos;s transforming how companies operate, make decisions, and engage with customers. Businesses that embrace AI will lead the next decade.",
-  },
+      },
   {
     id: 2,
     title: 'Cloud Migration Best Practices',
     date: 'May 20, 2025',
     tags: ['Cloud', 'DevOps'],
     image: '/assets/Cloud Migration.webp',
-    excerpt:
-      'Migrating to the cloud demands more than tools. Learn how to plan, test, secure, and scale a cloud environment for long-term resilience and performance.',
-  },
+    },
   {
     id: 3,
     title: 'The Future of Blockchain in Fintech',
     date: 'May 10, 2025',
     tags: ['Blockchain', 'Fintech'],
     image: '/assets/Blockchain.png',
-    excerpt:
-      'Fintech is entering a decentralized phase. Blockchain ensures transparency, lowers costs, and brings new opportunities for financial inclusion.',
-  },
+     },
   {
     id: 4,
     title: 'Modern Web Development Trends in 2025',
     date: 'April 22, 2025',
     tags: ['WebDev', 'Trends'],
     image: '/assets/Web Development.jpg',
-    excerpt:
-      'Micro frontends, AI coding tools, and headless CMS are redefining front-end engineering. Get ahead with the tools that matter in 2025.',
-  },
+    },
   {
     id: 5,
     title: 'Cybersecurity Essentials for Startups',
     date: 'April 2, 2025',
     tags: ['Cybersecurity', 'Startups'],
     image: '/assets/Cybersecurity.jpg',
-    excerpt:
-      'Startups are vulnerable targets. Learn how to secure infrastructure, train teams, and detect threats before they cost you users or trust.',
-  },
+    },
   {
     id: 6,
     title: 'UX Design Principles for Scalable Products',
     date: 'March 18, 2025',
     tags: ['UX', 'Product'],
     image: '/assets/UX Design.webp',
-    excerpt:
-      "Good design isn&apos;t about aesthetics alone. It&apos;s about usability, speed, accessibility, and clear paths to user goals.",
-  },
+    },
 ];
 
 export default function BlogPage() {

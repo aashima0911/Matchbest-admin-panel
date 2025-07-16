@@ -65,7 +65,7 @@ export default function Home() {
                         loop
                         autoPlay
                         muted
-                        className="w-48 h-48 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-2 border-blue-700 bg-black mx-auto"
+                        className="w-48 h-48 md:w-80 md:h-80 rounded-full object-cover   bg-black mx-auto"
                     >
                         Your browser does not support the video tag.
                     </video>
