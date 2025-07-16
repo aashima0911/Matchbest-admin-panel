@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req) {
   const { name, email, message } = await req.json();
-
+ //changes
   // Configure your Gmail SMTP transporter using environment variables
   const transporter = nodemailer.createTransport({
     service: 'gmail',
