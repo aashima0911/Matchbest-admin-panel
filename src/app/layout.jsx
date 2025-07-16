@@ -15,16 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "MATCHBEST GROUP",
-  description: "MatchBest Group offers cutting-edge digital solutions, AI, cloud, and secure platforms for tomorrow's leaders.",
-};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>MATCHBEST GROUP</title>
+        <title>MATCHBEST GROUP - MatchBest Group offers cutting-edge digital solutions, AI, cloud, and secure platforms for tomorrow's leaders.</title>
         <meta name="description" content="MatchBest Group offers cutting-edge digital solutions, AI, cloud, and secure platforms for tomorrow's leaders." />
         <link rel="icon" href="/assets/favicon.png" type="image/jpeg" />
       </head>
