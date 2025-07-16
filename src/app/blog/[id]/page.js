@@ -11,7 +11,7 @@ const blogPosts = [
     
     author: 'Jay Saith',
     tags: ['AI', 'Innovation'],
-    excerpt: 'AI is now a strategic asset. It\'s transforming how companies operate, make decisions, and engage with customers. Businesses that embrace AI will lead the next decade.',
+    excerpt: 'AI is now a strategic asset. It&#39;s transforming how companies operate, make decisions, and engage with customers. Businesses that embrace AI will lead the next decade.',
     content: `
     <h2 class="text-3xl font-bold mb-4">The AI Revolution in Business</h2>
     <p class="mb-6">Artificial Intelligence has transitioned from a futuristic idea to a core driver of modern business success. Organizations that leverage AI are gaining unparalleled improvements in efficiency, customer satisfaction, and market leadership.</p>
@@ -53,7 +53,7 @@ const blogPosts = [
     excerpt: 'Migrating to the cloud demands more than tools. Learn how to plan, test, secure, and scale a cloud environment for long-term resilience and performance.',
     content: `
     <h2 class="text-3xl font-bold mb-4">Mastering Cloud Migration</h2>
-    <p class="mb-6">Cloud migration is more than just transferring apps to the cloud—it's a strategic transformation that demands comprehensive planning, precise execution, and continuous optimization. Organizations that treat migration as an evolving journey are more likely to realize its full benefits.</p>
+    <p class="mb-6">Cloud migration is more than just transferring apps to the cloud—it&#39;s a strategic transformation that demands comprehensive planning, precise execution, and continuous optimization. Organizations that treat migration as an evolving journey are more likely to realize its full benefits.</p>
   
     <h3 class="text-2xl font-semibold mb-3">Pre-Migration Planning</h3>
     <ul class="list-disc pl-6 space-y-2 mb-6">
@@ -92,7 +92,7 @@ const blogPosts = [
     excerpt: 'Fintech is entering a decentralized phase. Blockchain ensures transparency, lowers costs, and brings new opportunities for financial inclusion.',
     content: `
     <h2 class="text-3xl font-bold mb-4">Blockchain Revolutionizing Fintech</h2>
-    <p class="mb-6">The intersection of blockchain technology and financial services is unlocking transformative opportunities for innovation, transparency, and global financial inclusion. Both legacy institutions and emerging fintech startups are exploring blockchain's potential, ushering in a new era of financial ecosystems.</p>
+    <p class="mb-6">The intersection of blockchain technology and financial services is unlocking transformative opportunities for innovation, transparency, and global financial inclusion. Both legacy institutions and emerging fintech startups are exploring blockchain&#39;s potential, ushering in a new era of financial ecosystems.</p>
   
     <h3 class="text-2xl font-semibold mb-3">Key Blockchain Applications in Fintech</h3>
     <ul class="list-disc pl-6 space-y-2 mb-6">
@@ -109,7 +109,7 @@ const blogPosts = [
     <p class="mb-6">Scalability, energy efficiency, and user experience continue to challenge blockchain adoption. However, innovations such as Layer 2 protocols, proof-of-stake consensus, and enhanced UX design are helping bridge the gap between promise and practicality.</p>
   
     <h3 class="text-2xl font-semibold mb-3">The Road Ahead</h3>
-    <p class="mb-6">Blockchain isn't replacing traditional finance—it’s complementing it. By improving efficiency, transparency, and access, blockchain is poised to become an integral part of the modern financial infrastructure, reshaping how the world transacts and manages value.</p>
+    <p class="mb-6">Blockchain isn&#39;t replacing traditional finance—it&#39;s complementing it. By improving efficiency, transparency, and access, blockchain is poised to become an integral part of the modern financial infrastructure, reshaping how the world transacts and manages value.</p>
   `,
     image: '/assets/Blockchain.png',
   },
@@ -121,7 +121,7 @@ const blogPosts = [
     tags: ['WebDev', 'Trends'],
     excerpt: 'Micro frontends, AI coding tools, and headless CMS are redefining front-end engineering. Get ahead with the tools that matter in 2025.',
     content: `
-    <h2 class="text-3xl font-bold mb-4">Web Development in 2025: What's Next?</h2>
+    <h2 class="text-3xl font-bold mb-4">Web Development in 2025: What&#39;s Next?</h2>
     <p class="mb-6">The web development landscape is evolving at an unprecedented pace, driven by emerging technologies, shifting user expectations, and the demand for faster, more efficient development workflows. As we look ahead to 2025, several trends are set to define the next era of web development.</p>
   
     <h3 class="text-2xl font-semibold mb-3">Micro Frontends Architecture</h3>
@@ -154,8 +154,8 @@ const blogPosts = [
     tags: ['Cybersecurity', 'Startups'],
     excerpt: 'Startups are vulnerable targets. Learn how to secure infrastructure, train teams, and detect threats before they cost you users or trust.',
     content: `
-    <h2 class="text-3xl font-bold mb-4">Securing Your Startup's Digital Future</h2>
-    <p class="mb-6">Startups face unique cybersecurity challenges. With limited resources and the need to move fast, security often takes a backseat to growth. However, a single security breach can destroy a startup's reputation and customer trust overnight. Building security into your startup's DNA from day one is essential for long-term success.</p>
+    <h2 class="text-3xl font-bold mb-4">Securing Your Startup&#39;s Digital Future</h2>
+    <p class="mb-6">Startups face unique cybersecurity challenges. With limited resources and the need to move fast, security often takes a backseat to growth. However, a single security breach can destroy a startup&#39;s reputation and customer trust overnight. Building security into your startup&#39;s DNA from day one is essential for long-term success.</p>
   
     <h3 class="text-2xl font-semibold mb-3">Foundational Security Practices</h3>
     <ul class="list-disc pl-6 space-y-2 mb-6">
@@ -166,7 +166,7 @@ const blogPosts = [
     </ul>
   
     <h3 class="text-2xl font-semibold mb-3">Employee Security Training</h3>
-    <p class="mb-6">Your team is your first line of defense against cyber threats. Conduct regular security awareness training on phishing, password hygiene, and safe browsing. Make it engaging and tailored to your team's actual workflows.</p>
+    <p class="mb-6">Your team is your first line of defense against cyber threats. Conduct regular security awareness training on phishing, password hygiene, and safe browsing. Make it engaging and tailored to your team&#39;s actual workflows.</p>
   
     <h3 class="text-2xl font-semibold mb-3">Incident Response Planning</h3>
     <p class="mb-6">No system is immune to breaches. A comprehensive incident response plan ensures your team acts quickly and effectively. Include communication protocols, containment measures, and recovery strategies to minimize damage.</p>
@@ -185,10 +185,10 @@ const blogPosts = [
  
     author: 'Ava Roy',
     tags: ['UX', 'Product'],
-    excerpt: 'Good design isn\'t about aesthetics alone. It\'s about usability, speed, accessibility, and clear paths to user goals.',
+    excerpt: 'Good design isn&#39;t about aesthetics alone. It&#39;s about usability, speed, accessibility, and clear paths to user goals.',
     content: `
     <h2 class="text-3xl font-bold mb-4">Designing for Scale and Success</h2>
-    <p class="mb-6">User Experience (UX) design is the foundation of successful digital products. As products scale and user bases grow, the importance of thoughtful UX design becomes even more critical. Great UX isn't just about appearance—it's about crafting intuitive, efficient, and delightful experiences that fuel business growth.</p>
+    <p class="mb-6">User Experience (UX) design is the foundation of successful digital products. As products scale and user bases grow, the importance of thoughtful UX design becomes even more critical. Great UX isn&#39;t just about appearance—it&#39;s about crafting intuitive, efficient, and delightful experiences that fuel business growth.</p>
   
     <h3 class="text-2xl font-semibold mb-3">Core UX Principles</h3>
     <ul class="list-disc pl-6 space-y-2 mb-6">
@@ -248,7 +248,7 @@ export default function BlogPost({ params }) {
         <div className="min-h-screen my-12 bg-gray-900 text-white flex items-center justify-center ">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-            <p className="text-xl mb-8">The blog post you're looking for doesn't exist.</p>
+            <p className="text-xl mb-8">The blog post you&#39;re looking for doesn&#39;t exist.</p>
             <Link
               href="/blog-page"
               className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors"
@@ -369,4 +369,3 @@ export default function BlogPost({ params }) {
       </main>
     );
   }
-  

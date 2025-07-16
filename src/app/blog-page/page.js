@@ -11,7 +11,7 @@ const blogPosts = [
     tags: ['AI', 'Innovation'],
     image: '/assets/ai.jpeg',
     excerpt:
-      'AI is now a strategic asset. It\'s transforming how companies operate, make decisions, and engage with customers. Businesses that embrace AI will lead the next decade.',
+      "AI is now a strategic asset. It&apos;s transforming how companies operate, make decisions, and engage with customers. Businesses that embrace AI will lead the next decade.",
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ const blogPosts = [
     tags: ['UX', 'Product'],
     image: '/assets/UX Design.webp',
     excerpt:
-      'Good design isn\'t about aesthetics alone. It\'s about usability, speed, accessibility, and clear paths to user goals.',
+      "Good design isn&apos;t about aesthetics alone. It&apos;s about usability, speed, accessibility, and clear paths to user goals.",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function BlogPage() {
           Tech Insights Blog
         </h1>
         <p className={`max-w-2xl mx-auto text-lg text-blue-100 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          Discover the latest in AI, cloud, blockchain, design, security, and web development — written by MatchBest's experts, for innovators.
+          Discover the latest in AI, cloud, blockchain, design, security, and web development — written by MatchBest&apos;s experts, for innovators.
         </p>
       </section>
 
