@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -7,35 +7,6 @@ export default function ContactPage() {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
-
-  const [status, setStatus] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('Sending...');
-    const form = e.target;
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        setStatus('Message sent!');
-        form.reset();
-      } else {
-        setStatus('Failed to send. Please try again.');
-      }
-    } catch (error) {
-      console.error('Nodemailer error:', error);
-      return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
-    }
-  };
 
   return (
     <div className="bg-[#10131a] text-white min-h-screen flex flex-col items-center px-4 md:px-8 lg:px-12">
@@ -53,7 +24,8 @@ export default function ContactPage() {
         <div className="container mx-auto px-0 md:px-4 lg:px-8 flex flex-col md:flex-row gap-8" data-aos="fade-up">
           {/* Contact Form */}
           <div className="w-full md:w-1/2 space-y-6">
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="c8dd467c-7ae2-4240-8ef5-29564a08caab" />  
               <div>
                 <label className="block text-lg font-medium mb-2">Name</label>
                 <input
@@ -90,7 +62,6 @@ export default function ContactPage() {
               >
                 Send Message
               </button>
-              {status && <p className="mt-2 text-sm text-center">{status}</p>}
             </form>
           </div>
           {/* Google Map */}

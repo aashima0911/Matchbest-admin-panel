@@ -25,7 +25,7 @@ export default function AboutPage() {
         </div>
         {/* Image */}
         <div className="lg:w-1/2 flex justify-center" >
-          <Image src="/assets/8.jpg" alt="About MatchBest" width={600} height={400} className="w-80 md:w-[500px] lg:w-[600px] border-2 border-[#10131a] rounded-lg shadow-lg" />
+          <Image src="/assets/8.jpg" alt="About MatchBest" width={600} height={400} className="w-80 md:w-[500px] lg:w-[600px] border-2 border-[#10131a] rounded-3xl shadow-lg" />
         </div>
       </section>
       {/* Mission and Vision Section */}

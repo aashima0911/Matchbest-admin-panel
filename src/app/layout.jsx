@@ -1,9 +1,10 @@
+// app/layout.jsx
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import ChatbotButton from "@/app/components/ChatbotButton";
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,16 +16,50 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// ✅ Proper metadata export for App Router
+export const metadata = {
+  title: "MatchBest Group | Digital Innovation, AI Solutions & Cloud Platforms",
+  description:
+    "MatchBest Group offers cutting-edge digital solutions, AI-powered platforms, and secure cloud technologies tailored for tomorrow’s leaders.",
+  keywords:
+    "MatchBest, AI Solutions, Cloud Platforms, Digital Innovation, Secure Tech, Software Development, Web Solutions",
+  authors: [{ name: "MatchBest Group", url: "https://matchbest.com" }],
+  icons: {
+    icon: "/assets/favicon.png",
+    apple: "/assets/favicon.png",
+  },
+  openGraph: {
+    title: "MatchBest Group | Digital Innovation & AI Solutions",
+    description:
+      "Explore our digital services, AI innovations, and secure cloud platforms that empower the future.",
+    url: "https://matchbest.com",
+    siteName: "MatchBest Group",
+    images: [
+      {
+        url: "https://matchbest.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MatchBest Group - AI and Cloud",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MatchBest Group | Digital Innovation & AI Solutions",
+    description:
+      "Empowering tomorrow’s leaders with AI, cloud, and digital platforms.",
+    images: ["https://matchbest.com/assets/og-image.jpg"],
+  },
+};
 
+// ✅ Functional layout
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <title>MATCHBEST GROUP - MatchBest Group offers cutting-edge digital solutions, AI, cloud, and secure platforms for tomorrow's leaders.</title>
-        <meta name="description" content="MatchBest Group offers cutting-edge digital solutions, AI, cloud, and secure platforms for tomorrow's leaders." />
-        <link rel="icon" href="/assets/favicon.png" type="image/jpeg" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+      >
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
