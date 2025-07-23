@@ -58,7 +58,7 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen bg-gray-900 text-white font-sans px-4 md:px-8 lg:px-12">
       {/* Hero */}
-      <section className="text-center px-4 md:px-8 lg:px-12 max-w-6xl mx-auto py-16 md:py-20 lg:py-24 mb-8 md:mb-12">
+      <section className="text-center px-4 md:px-8 lg:px-12 max-w-6xl mx-auto py-16 md:py-20 lg:py-24 mb-2 md:mb-3">
         <h1 className={`text-5xl font-bold mb-4 text-shadow-lg transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           Tech Insights Blog
         </h1>
