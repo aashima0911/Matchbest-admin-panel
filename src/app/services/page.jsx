@@ -46,7 +46,7 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#0b0b15] text-white min-h-screen">
       {/* Hero Section */}
-      <section className="py-30 px-6 text-center bg-gradient-to-r from-blue-900 via-[#0b0b15] to-purple-900">
+      <section className="py-22 px-6 text-center bg-gradient-to-r from-blue-900 via-[#0b0b15] to-purple-900">
         <h1 className="text-5xl font-bold mb-4" data-aos="fade-down">Our Services</h1>
         <p className="text-lg max-w-2xl mx-auto text-gray-300" data-aos="fade-up" data-aos-delay="200">
           Explore a wide range of technology-driven services crafted to help your business thrive.
@@ -54,7 +54,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 md:px-10 lg:px-20">
+      <section className="py-10 px-4 md:px-10 lg:px-20">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-white mb-2">What We Offer</h2>
           <p className="text-gray-400">Empowering businesses with modern digital solutions</p>

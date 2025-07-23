@@ -29,12 +29,44 @@ const services = [
     },
 ];
 
+// Technologies list for marquee scrolling in the Technologies section
+const technologies = [
+    "React",
+    "Node.js",
+    "Python",
+    "AWS",
+    "Azure",
+    "Docker",
+    "Kubernetes",
+    "TensorFlow",
+    "MongoDB",
+    "TypeScript",
+    "JavaScript",
+    "Express.js",
+    "HTML5",
+    "CSS3",
+    "Bootstrap",
+    "Tailwind CSS",
+    "GraphQL",
+    "MySQL",
+    "PostgreSQL",
+    "Redux",
+    "Jest",
+    "Git",
+    "GitHub",
+    "Figma",
+    "Next.js",
+    "AI",
+    "ML",
+    "Android",
+];
+
 export default function Home() {
     useEffect(() => {
         AOS.init({ once: true });
     }, []);
     return (
-        <div className="bg-[#10131a] min-h-screen flex flex-col py-16 px-4 md:px-8 lg:px-12">
+        <div className="bg-gray-900 min-h-screen flex flex-col py-16 px-4 md:px-8 lg:px-12">
             {/* Hero Section */}
             <section className="relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-24 gap-12 mb-12" data-aos="fade-up">
                 {/* Left: Headline & CTA */}
@@ -52,14 +84,7 @@ export default function Home() {
                 </div>
                 {/* Right: Abstract SVG */}
                 <div className="flex-1 flex justify-center items-center relative" >
-                    {/* <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="w- md:w-[340px] animate-float">
-                        <circle cx="170" cy="170" r="150" fill="#1e293b" />
-                        <ellipse cx="170" cy="170" rx="120" ry="60" fill="#2563eb" fillOpacity="0.15" />
-                        <ellipse cx="170" cy="170" rx="90" ry="120" fill="#2563eb" fillOpacity="0.08" />
-                        <circle cx="120" cy="120" r="18" fill="#2563eb" fillOpacity="0.7" />
-                        <circle cx="230" cy="90" r="10" fill="#2563eb" fillOpacity="0.4" />
-                        <circle cx="250" cy="220" r="14" fill="#2563eb" fillOpacity="0.5" />
-                    </svg> */}
+                 
                     <video
                         src="/assets/video.mp4"
                         loop
@@ -72,7 +97,7 @@ export default function Home() {
                 </div>
             </section>
             {/* Blue Gradient Cards Section (now dark themed, with heading) */}
-            <section className="w-full py-16 bg-[#181c25] border-t border-gray-800 flex justify-center items-center mb-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
+            <section className="w-full py-16 border-t border-gray-800 flex justify-center items-center mb-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-4 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12" data-aos="fade-up">Our Verticals</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -165,7 +190,7 @@ export default function Home() {
                 </div>
             </section>
             {/* Call to Action */}
-            <section className="py-16 bg-[#10131a] text-center px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
+            <section className="py-16 text-center px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to build something amazing?</h2>
                 <p className="text-gray-400 mb-8 max-w-xl mx-auto">Let's collaborate to turn your vision into reality. Reach out for a free consultation and see how we can help you grow.</p>
                 <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg transition-all duration-200 transform hover:scale-105">
@@ -173,7 +198,7 @@ export default function Home() {
                 </Link>
             </section>
             {/* Why Choose Us Section */}
-            <section className="py-20 bg-[#181c25] border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
+            <section className="py-20  border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Why Choose Us?</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -193,7 +218,7 @@ export default function Home() {
                 </div>
             </section>
             {/* Process Section */}
-            <section className="py-20 bg-[#10131a] border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
+            <section className="py-20 border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">How We Work</h2>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -218,7 +243,7 @@ export default function Home() {
                 </div>
             </section>
             {/* Testimonials Section */}
-            <section className="py-20 bg-[#181c25] border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
+            <section className="py-20  border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">What Our Clients Say</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -238,43 +263,26 @@ export default function Home() {
                 </div>
             </section>
             {/* Technologies Section */}
-            <section className="py-20 bg-[#10131a] border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
+            <section className="py-20  border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Technologies We Use</h2>
-                    <div className="flex flex-wrap justify-center gap-8">
-                        <span data-aos="zoom-in" data-aos-delay="0" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">React</span>
-                        <span data-aos="zoom-in" data-aos-delay="100" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Node.js</span>
-                        <span data-aos="zoom-in" data-aos-delay="200" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Python</span>
-                        <span data-aos="zoom-in" data-aos-delay="300" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">AWS</span>
-                        <span data-aos="zoom-in" data-aos-delay="400" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Azure</span>
-                        <span data-aos="zoom-in" data-aos-delay="500" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Docker</span>
-                        <span data-aos="zoom-in" data-aos-delay="600" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Kubernetes</span>
-                        <span data-aos="zoom-in" data-aos-delay="700" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">TensorFlow</span>
-                        <span data-aos="zoom-in" data-aos-delay="800" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">MongoDB</span>
-                        <span data-aos="zoom-in" data-aos-delay="900" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">TypeScript</span>
-                        <span data-aos="zoom-in" data-aos-delay="1000" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">JavaScript</span>
-                        <span data-aos="zoom-in" data-aos-delay="1100" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Express.js</span>
-                        <span data-aos="zoom-in" data-aos-delay="1200" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">HTML5</span>
-                        <span data-aos="zoom-in" data-aos-delay="1300" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">CSS3</span>
-                        <span data-aos="zoom-in" data-aos-delay="1400" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Bootstrap</span>
-                        <span data-aos="zoom-in" data-aos-delay="1500" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Tailwind CSS</span>
-                        <span data-aos="zoom-in" data-aos-delay="1600" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">GraphQL</span>
-                        <span data-aos="zoom-in" data-aos-delay="1700" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">MySQL</span>
-                        <span data-aos="zoom-in" data-aos-delay="1800" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">PostgreSQL</span>
-                        <span data-aos="zoom-in" data-aos-delay="1900" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Redux</span>
-                        <span data-aos="zoom-in" data-aos-delay="2000" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Jest</span>
-                        <span data-aos="zoom-in" data-aos-delay="2100" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Git</span>
-                        <span data-aos="zoom-in" data-aos-delay="2200" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">GitHub</span>
-                        <span data-aos="zoom-in" data-aos-delay="2300" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Figma</span>
-                        <span data-aos="zoom-in" data-aos-delay="2400" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Next.js</span>
-                        <span data-aos="zoom-in" data-aos-delay="2500" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">AI</span>
-                        <span data-aos="zoom-in" data-aos-delay="2600" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">ML</span>
-                        <span data-aos="zoom-in" data-aos-delay="2700" className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow transition-all duration-200 transform hover:scale-105">Android</span>
+                    <div className="relative overflow-hidden">
+                        {/* Animated marquee */}
+                        <div className="flex flex-nowrap gap-8 animate-[scroll_10s_linear_infinite]">
+                            {[...technologies, ...technologies].map((tech, idx) => (
+                                <span
+                                    key={idx}
+                                    className="bg-[#181c25] px-6 py-3 rounded-lg text-blue-400 font-semibold text-lg shadow hover:scale-105 transition-transform duration-200 flex-shrink-0"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
             {/* FAQ Section */}
-            <section className="py-20 bg-[#181c25] border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
+            <section className="py-20  border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
                 <div className="container mx-auto px-6 max-w-3xl">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Frequently Asked Questions</h2>
                     <div className="space-y-6">

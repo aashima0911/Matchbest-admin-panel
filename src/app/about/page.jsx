@@ -9,8 +9,17 @@ export default function AboutPage() {
     AOS.init({ duration: 800, once: true });
   }, []);
 
+  // Core values for marquee scrolling
+  const coreValues = [
+    "✔️ Innovation and Creativity",
+    "✔️ Customer-Centric Approach",
+    "✔️ Integrity and Transparency",
+    "✔️ Quality and Excellence",
+    "✔️ Continuous Improvement",
+  ];
+
   return (
-    <div className="bg-[#10131a] py-10 text-white min-h-screen flex flex-col px-4 md:px-8 lg:px-12">
+    <div className="bg-gray-900 py-10 text-white min-h-screen flex flex-col px-4 md:px-8 lg:px-12">
       {/* Header Section */}
       <section className="container mx-auto px-4 md:px-8 lg:px-12 py-24 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 mb-12">
         {/* Text Content */}
@@ -53,24 +62,18 @@ export default function AboutPage() {
       {/* Core Values Section */}
       <section className="py-12 md:py-16 w-full px-4 md:px-8 lg:px-12 flex flex-col items-center justify-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Our Core Values</h2>
-        {/* Scrollable Flex Container */}
-        <div className="w-full flex gap-6 overflow-x-auto px-2 scroll-smooth pb-4 snap-x snap-mandatory">
-          {[
-            "✔️ Innovation and Creativity",
-            "✔️ Customer-Centric Approach",
-            "✔️ Integrity and Transparency",
-            "✔️ Quality and Excellence",
-            "✔️ Continuous Improvement"
-          ].map((value, index) => (
-            <div
-              key={index}
-              className="min-w-[250px] snap-center p-6 border border-purple-500 rounded-lg bg-gray-800 hover:bg-gray-700 transition flex items-center justify-center text-center"
-              data-aos="fade-right"
-              data-aos-delay={100 * (index + 1)}
-            >
-              <h3 className="text-lg md:text-xl font-semibold text-white">{value}</h3>
-            </div>
-          ))}
+        {/* Auto-scrolling marquee of core values */}
+        <div className="relative overflow-hidden w-full px-2 pb-4">
+          <div className="flex flex-nowrap gap-6 animate-[scroll_15s_linear_infinite]">
+            {[...coreValues, ...coreValues].map((value, index) => (
+              <div
+                key={index}
+                className="min-w-[250px] p-6 border border-purple-500 rounded-lg bg-gray-800 hover:bg-gray-700 transition flex items-center justify-center text-center flex-shrink-0"
+              >
+                <h3 className="text-lg md:text-xl font-semibold text-white whitespace-nowrap">{value}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
