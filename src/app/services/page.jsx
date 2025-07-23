@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Our Services | MatchBest Group",
+  description:
+    "Discover MatchBest Group’s full suite of digital services: web and app development, cloud & AI solutions, OTT platforms, AdTech, and enterprise security. Empower your business with our expert-driven, future-ready technology solutions.",
+};
+
 'use client';
 
 import { useEffect } from 'react';

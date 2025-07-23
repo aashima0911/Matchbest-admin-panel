@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Contact Us | MatchBest Group",
+  description:
+    "Get in touch with MatchBest Group. Reach out for business inquiries, partnership opportunities, or support. Our team is ready to help you accelerate your digital transformation journey.",
+};
+
 'use client';
 import { useEffect } from 'react';
 import AOS from 'aos';

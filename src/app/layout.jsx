@@ -20,11 +20,11 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "MatchBest Group | Digital Innovation, AI Solutions & Cloud Platforms",
   description:
-    "MatchBest Group offers cutting-edge digital solutions, AI-powered platforms, and secure cloud technologies tailored for tomorrow’s leaders.",
+    "MatchBest Group pioneers digital transformation with next-generation AI solutions, secure cloud platforms, and innovative software tailored for ambitious enterprises. Our expert team delivers scalable, future-ready technologies—empowering tomorrow’s leaders to accelerate growth, enhance security, and unlock new opportunities in a rapidly evolving digital landscape.",
   keywords:
     "MatchBest, Match, MatchBestGroup, Group, AI Solutions, Cloud Platforms, Digital Innovation, Secure Tech, Software Development, Web Solutions, Machine Learning, Cybersecurity, Cloud Computing, Web Development, Mobile Apps, UX Design, UI Design, Blockchain, SaaS, PaaS",
   manifest: "/manifest.json",
-  authors: [{ name: "MatchBest Group", url: "https://matchbest.com" }],
+  authors: [{ name: "MatchBest Group", url: "https://matchbest.com" , url: "https://matchbest.ai" }],
   icons: {
     icon: "/assets/favicon.png",
     apple: "/assets/favicon.png",
@@ -34,6 +34,7 @@ export const metadata = {
     description:
       "Explore our digital services, AI innovations, and secure cloud platforms that empower the future.",
     url: "https://matchbest.com",
+    url: "https://matchbest.ai",
     siteName: "MatchBest Group",
     images: [
       {
