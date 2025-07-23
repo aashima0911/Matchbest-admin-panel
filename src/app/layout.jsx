@@ -22,7 +22,8 @@ export const metadata = {
   description:
     "MatchBest Group offers cutting-edge digital solutions, AI-powered platforms, and secure cloud technologies tailored for tomorrow’s leaders.",
   keywords:
-    "MatchBest, AI Solutions, Cloud Platforms, Digital Innovation, Secure Tech, Software Development, Web Solutions",
+    "MatchBest, Match, MatchBestGroup, Group, AI Solutions, Cloud Platforms, Digital Innovation, Secure Tech, Software Development, Web Solutions, Machine Learning, Cybersecurity, Cloud Computing, Web Development, Mobile Apps, UX Design, UI Design, Blockchain, SaaS, PaaS",
+  manifest: "/manifest.json",
   authors: [{ name: "MatchBest Group", url: "https://matchbest.com" }],
   icons: {
     icon: "/assets/favicon.png",
