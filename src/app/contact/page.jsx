@@ -1,13 +1,36 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { submitContact } from '../lib/firebase/contact';
 
 export default function ContactPage() {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
+
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setError('');
+    setSuccess(false);
+    setLoading(true);
+    try {
+      await submitContact(form);
+      setSuccess(true);
+      setForm({ name: '', email: '', message: '' });
+    } catch (err) {
+      setError('Failed to send message.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-[#10131a] text-white min-h-screen flex flex-col items-center px-4 md:px-8 lg:px-12">
@@ -25,8 +48,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-0 md:px-4 lg:px-8 flex flex-col md:flex-row gap-8" data-aos="fade-up">
           {/* Contact Form */}
           <div className="w-full md:w-1/2 space-y-6">
-            <form className="space-y-6" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="c8dd467c-7ae2-4240-8ef5-29564a08caab" />  
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-lg font-medium mb-2">Name</label>
                 <input
@@ -35,6 +57,8 @@ export default function ContactPage() {
                   placeholder="Your Name"
                   className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                   required
+                  value={form.name}
+                  onChange={handleChange}
                 />
               </div>
               <div>
@@ -45,6 +69,8 @@ export default function ContactPage() {
                   placeholder="Your Email"
                   className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                   required
+                  value={form.email}
+                  onChange={handleChange}
                 />
               </div>
               <div>
@@ -55,14 +81,19 @@ export default function ContactPage() {
                   placeholder="Your Message"
                   className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                   required
+                  value={form.message}
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="bg-blue-700 cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-800 transition"
+                disabled={loading}
               >
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
+              {success && <div className="text-green-600 text-center font-semibold">Message sent!</div>}
+              {error && <div className="text-red-600 text-center font-semibold">{error}</div>}
             </form>
           </div>
           {/* Google Map */}
