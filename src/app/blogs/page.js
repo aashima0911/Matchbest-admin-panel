@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getAllBlogs } from '../lib/firebase/blogs';
+import Image from 'next/image';
 
 export default function BlogPage() {
   const [blogs, setBlogs] = useState([]);
@@ -47,10 +48,12 @@ export default function BlogPage() {
             <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-purple-800 overflow-hidden h-full flex flex-col">
               {/* Image */}
               <div className="relative h-48 overflow-hidden flex-shrink-0 group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={post.imageURL?.imageURL || post.imageURL || '/assets/ai.jpeg'}
                   alt={post.title}
+                  width={600}
+                  height={300}
+                  unoptimized
                   className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent transition-opacity duration-300 group-hover:opacity-40"></div>

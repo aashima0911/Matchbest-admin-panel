@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { getAllBlogs } from '../../lib/firebase/blogs';
+import Image from 'next/image';
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -51,10 +52,12 @@ export default function BlogDetailPage() {
           ))}
         </div>
         {blog.imageURL?.imageURL || blog.imageURL ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
+          <Image
             src={blog.imageURL?.imageURL || blog.imageURL}
             alt={blog.title}
+            width={800}
+            height={400}
+            unoptimized
             className="w-full h-72 object-cover rounded-xl mb-6"
           />
         ) : null}
