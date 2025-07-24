@@ -51,6 +51,7 @@ export default function BlogDetailPage() {
           ))}
         </div>
         {blog.imageURL?.imageURL || blog.imageURL ? (
+          /* eslint-disable-next-line @next/next/no-img-element */
           <img
             src={blog.imageURL?.imageURL || blog.imageURL}
             alt={blog.title}

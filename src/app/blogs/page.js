@@ -30,7 +30,7 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="text-center px-4 md:px-8 lg:px-12 max-w-6xl mx-auto py-16 md:py-20 lg:py-24 mb-2 md:mb-3">
         <h1 className={`text-5xl font-bold mb-4 text-shadow-lg transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>Tech Insights Blog</h1>
-        <p className={`max-w-2xl mx-auto text-lg text-blue-100 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>Discover the latest in AI, cloud, blockchain, design, security, and web development — written by MatchBest's experts, for innovators.</p>
+        <p className={`max-w-2xl mx-auto text-lg text-blue-100 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>Discover the latest in AI, cloud, blockchain, design, security, and web development — written by MatchBest&apos;s experts, for innovators.</p>
       </section>
 
       {/* Blog Grid */}
@@ -47,6 +47,7 @@ export default function BlogPage() {
             <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-purple-800 overflow-hidden h-full flex flex-col">
               {/* Image */}
               <div className="relative h-48 overflow-hidden flex-shrink-0 group">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={post.imageURL?.imageURL || post.imageURL || '/assets/ai.jpeg'}
                   alt={post.title}
