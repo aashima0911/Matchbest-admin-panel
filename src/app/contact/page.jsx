@@ -40,7 +40,7 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p className="text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          We'd love to hear from you! Please fill out the form below and our team will get back to you shortly.
+          We&apos;d love to hear from you! Please fill out the form below and our team will get back to you shortly.
         </p>
       </section>
       {/* Contact Form with Map */}

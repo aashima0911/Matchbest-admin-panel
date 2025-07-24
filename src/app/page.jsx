@@ -76,7 +76,7 @@ export default function Home() {
                         <span className="text-gray-400">With Us.</span>
                     </h1>
                     <p className="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
-                        We craft world-class digital products, AI solutions, and secure cloud platforms for tomorrow's leaders.
+                        We craft world-class digital products, AI solutions, and secure cloud platforms for tomorrow&apos;s leaders.
                     </p>
                     <Link href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg transition-all duration-200 transform hover:scale-105">
                         Start Your Project
@@ -192,7 +192,7 @@ export default function Home() {
             {/* Call to Action */}
             <section className="py-16 text-center px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to build something amazing?</h2>
-                <p className="text-gray-400 mb-8 max-w-xl mx-auto">Let's collaborate to turn your vision into reality. Reach out for a free consultation and see how we can help you grow.</p>
+                <p className="text-gray-400 mb-8 max-w-xl mx-auto">Let&apos;s collaborate to turn your vision into reality. Reach out for a free consultation and see how we can help you grow.</p>
                 <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg transition-all duration-200 transform hover:scale-105">
                     Contact Us
                 </Link>
@@ -252,7 +252,7 @@ export default function Home() {
                             <span className="text-blue-500 font-semibold">— Daniel Dines, CEO, UiPath</span>
                         </div>
                         <div className="bg-[#10131a] rounded-xl p-8 shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-                            <p className="text-gray-300 italic mb-4">"The MatchBest Group team's expertise in AI and cloud is unmatched. Highly recommended."</p>
+                            <p className="text-gray-300 italic mb-4">"The MatchBest Group team&apos;s expertise in AI and cloud is unmatched. Highly recommended."</p>
                             <span className="text-blue-500 font-semibold">— Ali Ghodsi, CEO, Databricks</span>
                         </div>
                         <div className="bg-[#10131a] rounded-xl p-8 shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
@@ -288,7 +288,7 @@ export default function Home() {
                     <div className="space-y-6">
                         <details className="bg-[#10131a] rounded-xl p-6 shadow group transition-all duration-300 transform hover:scale-105" open data-aos="fade-up" data-aos-delay="100">
                             <summary className="text-lg font-semibold text-blue-500 cursor-pointer outline-none group-open:text-blue-400">How do I start a project with MatchBest Group?</summary>
-                            <p className="text-gray-300 mt-2">Just contact MatchBest Group using the button above or through our contact page. We'll schedule a free consultation to understand your needs and kickstart your project.</p>
+                            <p className="text-gray-300 mt-2">Just contact MatchBest Group using the button above or through our contact page. We&apos;ll schedule a free consultation to understand your needs and kickstart your project.</p>
                         </details>
                         <details className="bg-[#10131a] rounded-xl p-6 shadow group transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
                             <summary className="text-lg font-semibold text-blue-500 cursor-pointer outline-none group-open:text-blue-400">What industries does MatchBest Group serve?</summary>
