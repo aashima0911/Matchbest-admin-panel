@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { submitContact } from '../lib/firebase/contact';
 
 export default function ContactPage() {
   useEffect(() => {
@@ -22,7 +21,18 @@ export default function ContactPage() {
     setSuccess(false);
     setLoading(true);
     try {
-      await submitContact(form);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to send message.');
+      }
+
       setSuccess(true);
       setForm({ name: '', email: '', message: '' });
     } catch (err) {

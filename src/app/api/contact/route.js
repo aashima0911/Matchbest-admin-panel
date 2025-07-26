@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "../../../lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEYS);
@@ -8,26 +8,21 @@ const resend = new Resend(process.env.RESEND_API_KEYS);
 export async function POST(request) {
   try {
     const data = await request.json();
-    await addDoc(collection(db, "applications"), data);
+    await addDoc(collection(db, "contacts"), {
+      ...data,
+      createdAt: serverTimestamp(),
+    });
 
     // Send email with Resend
-    const attachments = [];
-    if (data.resume && data.resume.filename && data.resume.content) {
-      attachments.push({
-        filename: data.resume.filename,
-        content: data.resume.content,
-      });
-    }
     await resend.emails.send({
       from: "matchbest@matchbestsoftware.ae", // Replace with your "from" email address
       to: "mshpdell@gmail.com", // Replace with your "to" email address
-      subject: "New Career Application",
-      html: `<p>A new career application has been submitted from MatchBest.com:</p><pre>${JSON.stringify(
-        { ...data, resume: data.resume ? '[Resume Attached]' : undefined },
+      subject: "New Contact Form Submission",
+      html: `<p>A new contact form submission has been received from MatchBest.com:</p><pre>${JSON.stringify(
+        data,
         null,
         2
       )}</pre>`,
-      attachments: attachments.length > 0 ? attachments : undefined,
     });
 
     return NextResponse.json({ success: true });

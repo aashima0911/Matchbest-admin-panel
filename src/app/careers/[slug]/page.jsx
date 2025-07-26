@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams } from "next/navigation";
 import { db } from "../../lib/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -10,13 +10,13 @@ function ApplicationForm({ jobTitle }) {
     name: "",
     email: "",
     phone: "",
-    resumeLink: "",
     resume: null,
     message: "",
   });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const fileInputRef = useRef();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -37,13 +37,12 @@ function ApplicationForm({ jobTitle }) {
             name: form.name,
             email: form.email,
             phone: form.phone,
-            resumeLink: form.resumeLink,
             message: form.message,
         };
 
         if (form.resume) {
-            if (form.resume.size > 4.5 * 1024 * 1024) {
-                throw new Error("File size should not exceed 4.5MB.");
+            if (form.resume.size > 5 * 1024 * 1024) {
+                throw new Error("File size should not exceed 5MB.");
             }
             payload.resume = await toBase64(form.resume);
             payload.resumeName = form.resume.name;
@@ -64,7 +63,8 @@ function ApplicationForm({ jobTitle }) {
         }
 
         setSuccess(true);
-        setForm({ name: "", email: "", phone: "", resumeLink: "", resume: null, message: "" });
+        setForm({ name: "", email: "", phone: "", resume: null, message: "" });
+        if (fileInputRef.current) fileInputRef.current.value = "";
         e.target.reset();
     } catch (err) {
         setError(err.message);
@@ -95,26 +95,21 @@ function ApplicationForm({ jobTitle }) {
         </label>
         <input id="phone" required placeholder="Your Phone" value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))} className="px-4 py-2 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#5f12c6] bg-transparent text-white placeholder-gray-400" />
       </div>
-      {/* <div className="flex flex-col gap-2">
+      
+      <div className="flex flex-col gap-2">
         <label className="text-sm font-medium text-gray-700 flex items-center gap-2" htmlFor="resume">
           <span className="material-icons text-[#5f12c6]">attach_file</span> Resume (PDF, DOC, etc.)
         </label>
-        <input id="resume" type="file" accept=".pdf,.doc,.docx" onChange={e => setForm(f => ({ ...f, resume: e.target.files[0] }))} className="px-4 py-2 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#5f12c6] bg-transparent text-white placeholder-gray-400" />
-      </div> */}
-      <div className="flex flex-col gap-2">
-        <label className="text-sm font-medium text-gray-700 flex items-center gap-2" htmlFor="resumeLink">
-          <span className="material-icons text-[#5f12c6]">link</span> Resume Drive Link
-        </label>
         <input
-          id="resumeLink"
-          type="url"
-          required
-          placeholder="Paste your Google Drive/Dropbox resume link"
-          value={form.resumeLink || ""}
-          onChange={e => setForm(f => ({ ...f, resumeLink: e.target.value }))}
+          ref={fileInputRef}
+          id="resume"
+          type="file"
+          accept=".pdf,.doc,.docx"
+          onChange={e => setForm(f => ({ ...f, resume: e.target.files[0] }))}
           className="px-4 py-2 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#5f12c6] bg-transparent text-white placeholder-gray-400"
         />
       </div>
+
       <div className="flex flex-col gap-2">
         <label className="text-sm font-medium text-gray-700 flex items-center gap-2" htmlFor="message">
           <span className="material-icons text-[#5f12c6]">message</span> Message or Cover Letter
