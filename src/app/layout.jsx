@@ -59,6 +59,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/assets/favicon.png" />
+        <link rel="apple-touch-icon" href="/assets/favicon.png" />
+        <meta name="google-site-verification" content="5-YJTo3LaDh35hgsY-cfFPJwqh0vdDqWh6qDYTajjS4" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
@@ -67,6 +71,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <ChatbotButton />
       </body>
+      </head>
     </html>
   );
 }
