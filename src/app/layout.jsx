@@ -29,6 +29,20 @@ export const metadata = {
     icon: "/assets/favicon.png",
     apple: "/assets/favicon.png",
   },
+  alternates: {
+    canonical: "https://matchbestgroup.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: "MatchBest Group | Digital Innovation & AI Solutions",
     description:
@@ -62,10 +76,14 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/assets/favicon.png" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />
-        <meta
-          name="google-site-verification"
-          content="5-YJTo3LaDh35hgsY-cfFPJwqh0vdDqWh6qDYTajjS4"
-        />
+        <meta name="google-site-verification"content="5-YJTo3LaDh35hgsY-cfFPJwqh0vdDqWh6qDYTajjS4"/>
+          <meta name="robots" content="index, follow" />
+          <meta name="googlebot" content="index, follow" />
+          <meta name="bingbot" content="index, follow" />
+          <meta name="yandexbot" content="index, follow" />
+          <meta name="duckduckbot" content="index, follow" />
+          <meta name="slurp" content="index, follow" />
+          <meta name="ia_archiver" content="index, follow" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
