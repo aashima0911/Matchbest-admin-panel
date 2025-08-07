@@ -45,7 +45,7 @@ export default function ChatbotButton() {
           className={`fixed ${
             isExpanded
               ? 'bottom-4 right-4 w-[400px] h-[600px]'
-              : 'bottom-24 right-4 w-[calc(100%-2rem)] max-w-[400px] h-[600px]'
+              : 'bottom-24 right-4 w-[calc(100%-2rem)] max-w-[400px] h-[550px]'
           } z-[10000] shadow-2xl rounded-xl overflow-hidden bg-white flex flex-col transition-all duration-500 ease-in-out`}
         >
           {/* Header */}
