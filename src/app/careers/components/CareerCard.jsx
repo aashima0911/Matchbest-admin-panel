@@ -24,7 +24,7 @@ export default function CareerCard({ career }) {
                 {/* Requirements (optional, short preview) */}
                 {career?.requirements && career.requirements.length > 0 && (
                     <div className="text-xs text-gray-300 mb-2">
-                        <span>Requirements: {career.requirements.substring(0, 60)}...</span>
+                        <span>Requirements: {career.requirements.replace(/[#*`]/g, '').substring(0, 80)}...</span>
                     </div>
                 )}
                 {/* Apply Now Button as Link */}
