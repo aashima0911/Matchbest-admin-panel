@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { getAllBlogs } from '../../lib/firebase/blogs';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -61,7 +62,9 @@ export default function BlogDetailPage() {
             className="w-full h-72 object-cover rounded-xl mb-6"
           />
         ) : null}
-        <div className="prose prose-invert max-w-none text-lg mb-8" dangerouslySetInnerHTML={{ __html: blog.content || blog.description || '' }} />
+        <div className="prose prose-invert max-w-none text-lg mb-8 [&_h1]:text-purple-200 [&_h2]:text-purple-200 [&_h3]:text-purple-200 [&_h4]:text-purple-200 [&_h5]:text-purple-200 [&_h6]:text-purple-200 [&_h1]:font-bold [&_h2]:font-bold [&_h3]:font-bold [&_h4]:font-bold [&_h5]:font-bold [&_h6]:font-bold [&_strong]:text-purple-200 [&_b]:text-purple-200 [&_ul]:ml-4 [&_ol]:ml-4 [&_li]:mb-1">
+          <ReactMarkdown>{blog.content || blog.description || ''}</ReactMarkdown>
+        </div>
       </div>
     </main>
   );

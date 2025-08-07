@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { db } from "../../lib/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { NextResponse } from "next/server";
+import ReactMarkdown from 'react-markdown';
 
 function ApplicationForm({ jobTitle }) {
   const [form, setForm] = useState({
@@ -213,7 +214,9 @@ export default function CareerDetailsPage() {
           {career.requirements && (
             <div>
               <span className="font-semibold text-purple-300">Job Requirements:</span>
-              <div className="ml-2 text-gray-200">{career.requirements}</div>
+              <div className="ml-2 text-gray-200 prose prose-invert max-w-none [&_h1]:text-purple-200 [&_h2]:text-purple-200 [&_h3]:text-purple-200 [&_h4]:text-purple-200 [&_h5]:text-purple-200 [&_h6]:text-purple-200 [&_h1]:font-bold [&_h2]:font-bold [&_h3]:font-bold [&_h4]:font-bold [&_h5]:font-bold [&_h6]:font-bold [&_strong]:text-purple-200 [&_b]:text-purple-200 [&_ul]:ml-4 [&_ol]:ml-4 [&_li]:mb-1">
+                <ReactMarkdown>{career.requirements}</ReactMarkdown>
+              </div>
             </div>
           )}
         </div>
