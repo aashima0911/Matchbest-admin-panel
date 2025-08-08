@@ -130,7 +130,7 @@ export default function Home() {
                                 <Image src="/assets/str.png" alt="Stream AI Logo" className="w-60 h-20 mb-6 object-contain " width={240} height={80} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     
-                                    <li>End-to-End OTT/ SuperApp Development</li>
+                                    {/* <li>End-to-End OTT/ SuperApp Development</li> */}
                                     <li>Enterprise Data & AI Engineering</li>
                                     <li>Generative AI & CX Automation</li>
                                     <li>AdTeach: Learning with Intelligence</li>
