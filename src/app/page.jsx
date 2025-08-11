@@ -106,13 +106,13 @@ export default function Home() {
                             <div className='flex flex-col items-center'>
                                 <Image src="/assets/mat.png" alt="MatchBest Logo" className="w-60 h-20 mb-6 object-contain" width={240} height={80} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
-                                    <li>AI Chatbots & CX Automation</li>
                                     <li>App & Mobile Development</li>
                                     <li>E-commerce & Fintech Solutions</li>
                                     <li>VAPT</li>
                                     <li>ERP Modernization</li>
                                     <li>Cloud Hosting & Infrastructure</li>
-                                    <li>Application Modernization</li>
+                                    <li>AI Chatbots & CX Automation</li>
+                                    {/* <li>Application Modernization</li> */}
                                     <li>Blockchain Development</li>
                                     <li>Staff Augmentation & IT Services</li>
                                 </ul>
@@ -133,15 +133,15 @@ export default function Home() {
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     
                                     <li>Text to Video Generator</li>
-                                    <li>Instagram Content Creator</li>
+                                    {/* <li>Instagram Content Creator</li> */}
                                     <li>LinkedIn Post Generator</li>
-                                    <li>AI Blog Writer</li>
-                                    <li>AI Image Generator</li>
+                                    {/* <li>AI Blog Writer</li>
+                                    <li>AI Image Generator</li> */}
                                     <li>Text-to-Voice Converter</li>
-                                    <li>YouTube SEO Tools</li>
+                                    {/* <li>YouTube SEO Tools</li> */}
                                     <li>Instagram Hashtag Generator</li>
-                                    <li>Text Summarizer</li>
-                                    <li>Keyword Generator</li>
+                                    {/* <li>Text Summarizer</li> */}
+                                    {/* <li>Keyword Generator</li> */}
                                     <li>Image Compressor</li>
                                 </ul>
                             </div>
