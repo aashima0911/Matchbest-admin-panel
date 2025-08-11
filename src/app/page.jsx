@@ -102,19 +102,21 @@ export default function Home() {
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12" data-aos="fade-up">Our Verticals</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Card 1 */}
-                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="100">
-                            <Image src="/assets/mat.png" alt="MatchBest Logo" className="w-60 h-20 mb-6 object-contain" width={240} height={80} />
-                            <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
-                                <li>AI Chatbots & CX Automation</li>
-                                <li>App & Mobile Development</li>
-                                <li>E-commerce & Fintech Solutions</li>
-                                <li>VAPT</li>
-                                <li>ERP Modernization</li>
-                                <li>Cloud Hosting & Infrastructure</li>
-                                <li>Application Modernization</li>
-                                <li>Blockchain Development</li>
-                                <li>Staff Augmentation & IT Services</li>
-                            </ul>
+                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="100">
+                            <div className='flex flex-col items-center'>
+                                <Image src="/assets/mat.png" alt="MatchBest Logo" className="w-60 h-20 mb-6 object-contain" width={240} height={80} />
+                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
+                                    <li>AI Chatbots & CX Automation</li>
+                                    <li>App & Mobile Development</li>
+                                    <li>E-commerce & Fintech Solutions</li>
+                                    <li>VAPT</li>
+                                    <li>ERP Modernization</li>
+                                    <li>Cloud Hosting & Infrastructure</li>
+                                    <li>Application Modernization</li>
+                                    <li>Blockchain Development</li>
+                                    <li>Staff Augmentation & IT Services</li>
+                                </ul>
+                            </div>
                             <a
                                 href="https://matchbestsoftware.com/"
                                 target="_blank"
@@ -127,18 +129,24 @@ export default function Home() {
                         {/* Card 2 */}
                         <div className="bg-black border border-blue-700 rounded-xl flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 p-8 md:p-10 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="200">
                             <div className='flex flex-col items-center'>
-                                <Image src="/assets/str.png" alt="Stream AI Logo" className="w-60 h-20 mb-6 object-contain " width={240} height={80} />
+                                <Image src="/assets/aimavslogo.webp" alt="Stream AI Logo" className="rounded w-60 h-20 mb-6 object-contain " width={240} height={80} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     
-                                    {/* <li>End-to-End OTT/ SuperApp Development</li> */}
-                                    <li>Enterprise Data & AI Engineering</li>
-                                    <li>Generative AI & CX Automation</li>
-                                    <li>AdTeach: Learning with Intelligence</li>
-                                    <li>Cloud Strategy & Consulting Services</li>
+                                    <li>Text to Video Generator</li>
+                                    <li>Instagram Content Creator</li>
+                                    <li>LinkedIn Post Generator</li>
+                                    <li>AI Blog Writer</li>
+                                    <li>AI Image Generator</li>
+                                    <li>Text-to-Voice Converter</li>
+                                    <li>YouTube SEO Tools</li>
+                                    <li>Instagram Hashtag Generator</li>
+                                    <li>Text Summarizer</li>
+                                    <li>Keyword Generator</li>
+                                    <li>Image Compressor</li>
                                 </ul>
                             </div>
                             <a
-                                href="https://streamplay.ai/"
+                                href="https://www.aimavs.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-justify"

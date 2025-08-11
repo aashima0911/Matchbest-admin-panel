@@ -14,7 +14,7 @@ export default function Footer() {
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
           <Link href="/careers" className="hover:underline">Careers</Link>
-          <a href="/sitemap.xml" className="hover:underline" target="_blank" rel="noopener noreferrer">Sitemap</a>
+          {/* <a href="/sitemap.xml" className="hover:underline" target="_blank" rel="noopener noreferrer">Sitemap</a> */}
         </div>
 
         <div className="flex justify-center space-x-6 text-2xl">

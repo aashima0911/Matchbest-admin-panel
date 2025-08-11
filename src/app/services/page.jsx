@@ -13,26 +13,6 @@ export default function ServicesPage() {
 
   const services = [
     {
-      title: 'Web Development',
-      description: 'Modern, responsive websites built to perform across all devices.',
-      delay: 200,
-    },
-    {
-      title: 'App Development',
-      description: 'Cross-platform mobile applications that deliver seamless user experiences.',
-      delay: 300,
-    },
-    {
-      title: 'Cloud & AI Solutions',
-      description: 'Scalable cloud services and AI-powered solutions for next-gen businesses.',
-      delay: 400,
-    },
-    {
-      title: 'OTT & Super Apps',
-      description: 'Launch high-performance OTT platforms and super apps with ease.',
-      delay: 500,
-    },
-    {
       title: 'AdTech Solutions',
       description: 'Advanced advertising technology to drive traffic and grow revenue.',
       delay: 600,
@@ -42,12 +22,32 @@ export default function ServicesPage() {
       description: 'Secure, scalable architecture with a focus on compliance and data protection.',
       delay: 700,
     },
+    {
+      title: 'Cloud & AI Solutions',
+      description: 'Scalable cloud services and AI-powered solutions for next-gen businesses.',
+      delay: 400,
+    },
+    {
+      title: 'App Development',
+      description: 'Cross-platform mobile applications that deliver seamless user experiences.',
+      delay: 300,
+    },
+    {
+      title: 'Web Development',
+      description: 'Modern, responsive websites built to perform across all devices.',
+      delay: 200,
+    },
+    {
+      title: 'Brands & Management Systems',
+      description: 'Empowering growth through strategic branding and streamlined management systems.',
+      delay: 500,
+    },
   ];
 
   return (
     <div className="bg-[#0b0b15] text-white min-h-screen">
       {/* Hero Section */}
-      <section className="py-22 px-6 text-center bg-gradient-to-r from-blue-900 via-[#0b0b15] to-purple-900">
+      <section className="pt-28 md:pt-32 pb-12 px-6 text-center bg-gradient-to-r from-blue-900 via-[#0b0b15] to-purple-900">
         <h1 className="text-5xl font-bold mb-4" data-aos="fade-down">Our Services</h1>
         <p className="text-lg max-w-2xl mx-auto text-gray-300" data-aos="fade-up" data-aos-delay="200">
           Explore a wide range of technology-driven services crafted to help your business thrive.
