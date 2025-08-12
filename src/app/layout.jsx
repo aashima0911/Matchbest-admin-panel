@@ -24,13 +24,13 @@ export const metadata = {
   keywords:
     "MatchBest, Match, MatchBestGroup, Group, AI Solutions, Cloud Platforms, Digital Innovation, Secure Tech, Software Development, Web Solutions, Machine Learning, Cybersecurity, Cloud Computing, Web Development, Mobile Apps, UX Design, UI Design, Blockchain, SaaS, PaaS",
   manifest: "/manifest.json",
-  authors: [{ name: "MatchBest Group", url: "https://matchbest.com" , url: "https://matchbest.ai" }],
+  authors: [{ name: "MatchBest Group", url: "https://matchbest.ai" }],
   icons: {
     icon: "/assets/favicon.png",
     apple: "/assets/favicon.png",
   },
   alternates: {
-    canonical: "https://matchbestgroup.com",
+    canonical: "https://matchbestgroup.ai",
   },
   robots: {
     index: true,
@@ -47,12 +47,11 @@ export const metadata = {
     title: "MatchBest Group | Digital Innovation & AI Solutions",
     description:
       "Explore our digital services, AI innovations, and secure cloud platforms that empower the future.",
-    url: "https://matchbest.com",
     url: "https://matchbest.ai",
     siteName: "MatchBest Group",
     images: [
       {
-        url: "https://matchbest.com/assets/og-image.jpg",
+        url: "https://matchbest.ai/assets/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "MatchBest Group - AI and Cloud",
@@ -65,7 +64,7 @@ export const metadata = {
     title: "MatchBest Group | Digital Innovation & AI Solutions",
     description:
       "Empowering tomorrow’s leaders with AI, cloud, and digital platforms.",
-    images: ["https://matchbest.com/assets/og-image.jpg"],
+    images: ["https://matchbest.ai/assets/og-image.jpg"],
   },
 };
 
