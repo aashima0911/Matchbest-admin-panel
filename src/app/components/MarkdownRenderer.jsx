@@ -7,6 +7,18 @@ import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github.css';
 
 const MarkdownRenderer = ({ content, className = '' }) => {
+  const normalizeMarkdown = (raw) => {
+    if (!raw) return '';
+    return (
+      String(raw)
+        .replace(/\r\n/g, '\n')
+        .replace(/<br\s*\/?>(?=\s*)/gi, '\n')
+        .replace(/<\/p>\s*<p>/gi, '\n\n')
+        .replace(/&nbsp;/gi, ' ')
+    );
+  };
+
+  const normalizedContent = normalizeMarkdown(content);
   return (
     <div className={`markdown-content ${className}`}>
       <ReactMarkdown
@@ -136,7 +148,7 @@ const MarkdownRenderer = ({ content, className = '' }) => {
           ),
         }}
       >
-        {content}
+        {normalizedContent}
       </ReactMarkdown>
     </div>
   );

@@ -7,6 +7,20 @@ import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github-dark.css';
 
 const DarkMarkdownRenderer = ({ content, className = '' }) => {
+  const normalizeMarkdown = (raw) => {
+    if (!raw) return '';
+    return (
+      String(raw)
+        .replace(/\r\n/g, '\n')
+        // Convert HTML <br> tags to new lines so markdown headings/lists start at line start
+        .replace(/<br\s*\/?>(?=\s*)/gi, '\n')
+        // Convert paragraph separations to blank lines
+        .replace(/<\/p>\s*<p>/gi, '\n\n')
+        .replace(/&nbsp;/gi, ' ')
+    );
+  };
+
+  const normalizedContent = normalizeMarkdown(content);
   return (
     <div className={`markdown-content ${className}`}>
       <ReactMarkdown
@@ -136,7 +150,7 @@ const DarkMarkdownRenderer = ({ content, className = '' }) => {
           ),
         }}
       >
-        {content}
+        {normalizedContent}
       </ReactMarkdown>
     </div>
   );
