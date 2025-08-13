@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://matchbestgroup.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://matchbest.ai/';
   
   const pages = [
     {
