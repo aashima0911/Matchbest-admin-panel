@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/assets/favicon.png" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />
-        <meta name="google-site-verification"content="5-YJTo3LaDh35hgsY-cfFPJwqh0vdDqWh6qDYTajjS4"/>
+        <meta name="google-site-verification" content="WTgd1zeK3woJgGNcOhqzp6zMzX9u3QuXo6Pmnfsvh4g" />
           <meta name="robots" content="index, follow" />
           <meta name="googlebot" content="index, follow" />
           <meta name="bingbot" content="index, follow" />
