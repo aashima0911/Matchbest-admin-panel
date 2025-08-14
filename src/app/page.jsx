@@ -129,7 +129,7 @@ export default function Home() {
                         {/* Card 2 */}
                         <div className="bg-black border border-blue-700 rounded-xl flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 p-8 md:p-10 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="200">
                             <div className='flex flex-col items-center'>
-                                <Image src="/assets/aimavslogo.png" alt="Stream AI Logo" className="rounded w-60 h-25 mb-6 object-contain " width={240} height={80} />
+                                <Image src="/assets/aimavslogo.png" alt="Stream AI Logo" className="rounded w-60 h-20 mb-6 object-contain " width={240} height={80} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     
                                     <li>Text to Video Generator</li>
