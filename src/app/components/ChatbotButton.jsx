@@ -1,84 +1,136 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { FiMaximize, FiMinimize, FiMessageSquare, FiX } from 'react-icons/fi';
+"use client";
 
-export default function ChatbotButton() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Maximize2, Minimize2, X } from "lucide-react";
+
+export default function ChatbotWidget() {
+  const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
+  // ===== Prevent background scroll =====
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    const html = document.documentElement;
+    const body = document.body;
+    const prevent = (e) => e.preventDefault();
 
-  const toggleChat = () => {
-    setIsChatOpen((prev) => !prev);
-    if (isChatOpen) {
-      setIsExpanded(false);
+    if (isOpen) {
+      html.classList.add("overflow-hidden");
+      body.classList.add("overflow-hidden");
+      document.addEventListener("touchmove", prevent, { passive: false });
+      document.addEventListener("wheel", prevent, { passive: false });
+    } else {
+      html.classList.remove("overflow-hidden");
+      body.classList.remove("overflow-hidden");
+      document.removeEventListener("touchmove", prevent);
+      document.removeEventListener("wheel", prevent);
     }
-  };
 
-  const toggleSize = () => {
-    setIsExpanded((prev) => !prev);
-  };
+    return () => {
+      html.classList.remove("overflow-hidden");
+      body.classList.remove("overflow-hidden");
+      document.removeEventListener("touchmove", prevent);
+      document.removeEventListener("wheel", prevent);
+    };
+  }, [isOpen]);
 
-  if (!isMounted) {
-    return null;
-  }
+  const closeChat = useCallback(() => {
+    setIsOpen(false);
+    setIsExpanded(false);
+  }, []);
 
   return (
     <>
-      {/* Toggle Button - only show when chat is closed */}
-      {!isChatOpen && (
-        <button
-          onClick={toggleChat}
-          title="Chat with us"
-          className="fixed bottom-4 right-4 z-[9999] w-16 h-16 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 bg-blue-500 hover:bg-blue-600"
-        >
-          <FiMessageSquare className="text-white text-4xl" />
-        </button>
-      )}
+      {/* Backdrop */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.button
+            aria-label="Close chat"
+            onClick={closeChat}
+            className="fixed inset-0 bg-black/30 z-[60]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          />
+        )}
+      </AnimatePresence>
 
-      {/* Chat Iframe */}
-      {isChatOpen && (
-        <div
-          className={`fixed ${
-            isExpanded
-              ? 'bottom-4 right-4 w-[400px] h-[600px]'
-              : 'bottom-24 right-4 w-[calc(100%-2rem)] max-w-[400px] h-[550px]'
-          } z-[10000] shadow-2xl rounded-xl overflow-hidden bg-white flex flex-col transition-all duration-500 ease-in-out`}
-        >
-          {/* Header */}
-          <div className="bg-[#10131a] text-white p-3 flex justify-between items-center text-sm font-bold">
-            <span>MatchBest Group Chatbot</span>
-            <div className="flex gap-3 items-center">
-              <button
-                onClick={toggleSize}
-                className="text-white text-xl hover:text-gray-300 transition-colors duration-300"
-                title={isExpanded ? 'Minimize' : 'Expand'}
-              >
-                {isExpanded ? <FiMinimize /> : <FiMaximize />}
-              </button>
-              <button
-                onClick={toggleChat}
-                className="text-white text-xl hover:text-gray-300 transition-colors duration-300"
-                title="Close"
-              >
-                <FiX />
-              </button>
+      {/* Chat Panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="chat-panel"
+            className="fixed z-[70] bottom-5 right-5"
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 30, scale: 0.95 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+          >
+            <div
+              className={[
+                "flex flex-col overflow-hidden rounded-2xl shadow-2xl border border-black/10 bg-white",
+                isExpanded
+                  ? "w-[min(420px,96vw)] h-[min(80vh,92vh)]"
+                  : "w-[min(320px,85vw)] h-[min(480px,75vh)] sm:w-[min(380px,92vw)] sm:h-[min(560px,85vh)]",
+              ].join(" ")}
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between px-4 py-2 bg-[#663c9a] text-white">
+                <div className="flex items-center gap-2">
+                  <span className="inline-block h-2 w-2 rounded-full bg-white/70" />
+                  <h2 className="text-sm font-semibold tracking-wide">Helpdesk</h2>
+                </div>
+                <div className="flex items-center gap-1">
+                  {/* Expand / Shrink */}
+                  <button
+                    aria-label={isExpanded ? "Shrink chat" : "Expand chat"}
+                    onClick={() => setIsExpanded((v) => !v)}
+                    className="p-1 rounded-md hover:bg-white/10 transition"
+                  >
+                    {isExpanded ? (
+                      <Minimize2 className="h-5 w-5" />
+                    ) : (
+                      <Maximize2 className="h-5 w-5" />
+                    )}
+                  </button>
+                  {/* Close */}
+                  <button
+                    aria-label="Close chat"
+                    onClick={closeChat}
+                    className="p-1 rounded-md hover:bg-white/10 transition"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Iframe */}
+              <div className="flex-grow">
+                <iframe
+                  src="https://chat-bot-match-best.vercel.app/?websiteId=matchbestgroup"
+                  title="Helpdesk Chatbot"
+                  className="w-full h-full border-none"
+                  allow="microphone; camera"
+                />
+              </div>
             </div>
-          </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-          {/* Iframe Container */}
-          <div className="flex-grow">
-            <iframe
-              src="https://chat-bot-match-best.vercel.app/?websiteId=matchbestgroup"
-              title="Helpdesk Chatbot"
-              className="w-full h-full border-none"
-              allow="microphone; camera"
-            ></iframe>
-          </div>
-        </div>
+      {/* Floating Button (Hidden when chat is open) */}
+      {!isOpen && (
+        <motion.button
+          aria-label="Open chat"
+          onClick={() => setIsOpen(true)}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="fixed bottom-5 right-5 z-[75] w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-xl flex items-center justify-center"
+        >
+          {/* Use your uploaded icon */}
+          <img src="/chatbot-icon.png" alt="Chatbot" className="w-15 h-13 cursor-pointer" />
+        </motion.button>
       )}
     </>
   );
