@@ -1,6 +1,7 @@
 // app/layout.jsx
 
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from 'next/script';
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -83,6 +84,16 @@ export default function RootLayout({ children }) {
           <meta name="duckduckbot" content="index, follow" />
           <meta name="slurp" content="index, follow" />
           <meta name="ia_archiver" content="index, follow" />
+       
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ28ZXV4K2" />
+        <Script id="gtag-init">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FJ28ZXV4K2');
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
