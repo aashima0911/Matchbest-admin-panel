@@ -35,7 +35,7 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Grid */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 grid gap-14 md:grid-cols-2 lg:grid-cols-3 mb-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-20">
         {loading && <div className="col-span-full text-center text-lg text-purple-200">Loading blogs...</div>}
         {error && <div className="col-span-full text-center text-red-400">{error}</div>}
         {!loading && !error && blogs.length === 0 && <div className="col-span-full text-center text-purple-200">No blogs found.</div>}
@@ -47,7 +47,7 @@ export default function BlogPage() {
           >
             <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-purple-800 overflow-hidden h-full flex flex-col">
               {/* Image */}
-              <div className="relative h-48 overflow-hidden flex-shrink-0 group">
+              <div className="relative h-32 overflow-hidden flex-shrink-0 group">
                 <Image
                   src={post.imageURL?.imageURL || post.imageURL || '/assets/ai.jpeg'}
                   alt={post.title}
@@ -60,7 +60,7 @@ export default function BlogPage() {
                 <div className="absolute inset-0 bg-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               {/* Content */}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-4 flex flex-col flex-grow">
                 <div className="flex-grow">
                   <h3 className="text-white text-xl font-semibold mb-2 leading-tight">{post.title}</h3>
                   <div className="text-sm text-purple-300 mb-2">{post.date || (post.timestamp && new Date(post.timestamp.seconds * 1000).toLocaleDateString())}</div>
