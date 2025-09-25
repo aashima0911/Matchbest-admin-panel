@@ -43,7 +43,7 @@ export default function BlogDetailPage() {
 
   return (
     <main className="min-h-screen bg-gray-900 text-white font-sans px-4 md:px-8 lg:px-12 pt-20 pb-20">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <Link href="/blogs" className="text-purple-400 hover:underline">&larr; Back to Blogs</Link>
         <h1 className="text-4xl font-bold mt-6 mb-2">{blog.title}</h1>
         <div className="text-purple-300 mb-4">{blog.date || (blog.timestamp && new Date(blog.timestamp.seconds * 1000).toLocaleDateString())}</div>
@@ -68,4 +68,4 @@ export default function BlogDetailPage() {
       </div>
     </main>
   );
-} 
+}

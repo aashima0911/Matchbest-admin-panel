@@ -116,9 +116,28 @@ const DarkMarkdownRenderer = ({ content, className = '' }) => {
           hr: () => (
             <hr className="border-gray-600 my-6" />
           ),
+          del: ({ children }) => (
+            <del className="line-through text-gray-400">
+              {children}
+            </del>
+          ),
+          input: ({ type, checked, disabled }) => {
+            if (type === 'checkbox') {
+              return (
+                <input
+                  type="checkbox"
+                  checked={checked}
+                  disabled={disabled}
+                  className="mr-2 accent-purple-500"
+                  readOnly
+                />
+              );
+            }
+            return null;
+          },
           table: ({ children }) => (
-            <div className="overflow-x-auto mb-4">
-              <table className="min-w-full border border-gray-600">
+            <div className="overflow-x-auto mb-6 rounded-lg border border-gray-600">
+              <table className="min-w-full divide-y divide-gray-600">
                 {children}
               </table>
             </div>
@@ -129,22 +148,22 @@ const DarkMarkdownRenderer = ({ content, className = '' }) => {
             </thead>
           ),
           tbody: ({ children }) => (
-            <tbody className="bg-gray-900">
+            <tbody className="bg-gray-900 divide-y divide-gray-700">
               {children}
             </tbody>
           ),
           tr: ({ children }) => (
-            <tr className="border-b border-gray-600">
+            <tr className="hover:bg-gray-800 transition-colors">
               {children}
             </tr>
           ),
           th: ({ children }) => (
-            <th className="px-4 py-2 text-left font-semibold text-purple-200 border-r border-gray-600">
+            <th className="px-6 py-3 text-left text-xs font-medium text-purple-200 uppercase tracking-wider border-r border-gray-600 last:border-r-0">
               {children}
             </th>
           ),
           td: ({ children }) => (
-            <td className="px-4 py-2 border-r border-gray-600 text-gray-200">
+            <td className="px-6 py-4 whitespace-nowrap text-gray-200 border-r border-gray-600 last:border-r-0">
               {children}
             </td>
           ),
