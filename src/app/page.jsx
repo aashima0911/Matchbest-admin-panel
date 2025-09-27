@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
@@ -62,9 +62,18 @@ const technologies = [
 ];
 
 export default function Home() {
+    const [openServices, setOpenServices] = useState({});
+
     useEffect(() => {
         AOS.init({ once: true });
     }, []);
+
+    const toggleService = (serviceName) => {
+        setOpenServices(prev => ({
+            ...prev,
+            [serviceName]: !prev[serviceName]
+        }));
+    };
     return (
         <div className="bg-gray-900 min-h-screen flex flex-col py-16 px-4 md:px-8 lg:px-12">
             {/* Hero Section */}
@@ -100,21 +109,23 @@ export default function Home() {
             <section className="w-full py-16 border-t border-gray-800 flex justify-center items-center mb-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-4 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12" data-aos="fade-up">Our Verticals</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Card 1 */}
                         <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="100">
                             <div className='flex flex-col items-center'>
-                                <Image src="/assets/mat.png" alt="MatchBest Logo" className="w-60 h-20 mb-6 object-contain" width={240} height={80} />
-                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
-                                    <li>App & Mobile Development</li>
+                                <Image src="/assets/mat.png" alt="MatchBest Logo" className="w-60 h-20 mb-8 object-contain" width={240} height={80} />
+                               
+                                <ul className="text-white text-base space-y-0 mb-8 list-disc list-inside text-justify">                                  
+                                    <li >AvaOne <a href="https://avasuite.ai/" target="_blank" rel="noopener noreferrer" className="underline text-blue-500 hover:underline">view more</a></li>
+                                    <li >AI Automation</li>
+                                    <li >BytePlus/TikTok Partnership</li>
+                                    <li >Managed Services/VAPT</li> <li>App & Mobile Development</li>
                                     <li>E-commerce & Fintech Solutions</li>
                                     <li>VAPT</li>
                                     <li>ERP Modernization</li>
                                     <li>Cloud Hosting & Infrastructure</li>
                                     <li>AI Chatbots & CX Automation</li>
-                                    {/* <li>Application Modernization</li> */}
                                     <li>Blockchain Development</li>
-                                    <li>Staff Augmentation & IT Services</li>
                                 </ul>
                             </div>
                             <a
@@ -129,24 +140,21 @@ export default function Home() {
                         {/* Card 2 */}
                         <div className="bg-black border border-blue-700 rounded-xl flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 p-8 md:p-10 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="200">
                             <div className='flex flex-col items-center'>
-                                <Image src="/assets/aimavslogo.png" alt="Stream AI Logo" className="rounded w-60 h-20 mb-6 object-contain " width={240} height={80} />
+                             <p className="font-bold mb-6 text-3xl uppercase tracking-[0.25em] text-lime-300/80">Xelta</p>
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     
-                                    <li>Text to Video Generator</li>
-                                    {/* <li>Instagram Content Creator</li> */}
-                                    <li>LinkedIn Post Generator</li>
-                                    {/* <li>AI Blog Writer</li>
-                                    <li>AI Image Generator</li> */}
-                                    <li>Text-to-Voice Converter</li>
-                                    {/* <li>YouTube SEO Tools</li> */}
-                                    <li>Instagram Hashtag Generator</li>
-                                    {/* <li>Text Summarizer</li> */}
-                                    {/* <li>Keyword Generator</li> */}
-                                    <li>Image Compressor</li>
+                                    <li>Create Without Limits</li>
+                                    
+                                    <li>Speed Meets Precision</li>
+                                   
+                                    <li>Built for Every Industry</li>
+                                    
+                                    <li>Future-Ready</li>
+                                 
                                 </ul>
                             </div>
                             <a
-                                href="https://www.aimavs.com/"
+                                href="https://xelta.ai/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-justify"
@@ -157,18 +165,43 @@ export default function Home() {
                         {/* Card 3 */}
                         <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="300">
                             <div className='flex flex-col items-center'>
-                                <Image src="/assets/4.png" alt="MAVERICK AI Logo" className="w-60 h-20 mb-6 object-contain" width={240} height={80} />
+                                <Image src="/healnova.png" alt="healnova Logo" className="w-80 h-30 mb-6 object-contain" width={240} height={100} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
-                                    <li>AI Enabled Brand Monitoring</li>
-                                    <li>Brand Management</li>
-                                    <li>SEO (Zero-Click Search)</li>
-                                    <li>SMO(Shoppable Socials)</li>
-                                    <li>Integrated Media Strategy</li>
-                                    <li>Smart IT Resourcing</li>
+                                    <li>24/7 AI Doctor</li>
+                                    <li>Medical Vaults</li>
+                                    <li>AI Health Checkups</li>
+                                    <li>Health Engagement</li>
+                                    
                                 </ul>
                             </div>
                             <a
-                                href="https://maverickservices.in/"
+                                href="https://healnova.ai/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-justify"
+                            >
+                                LEARN MORE
+                            </a>
+                        </div>
+                        {/* Card 4 */}
+                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="400">
+                            <div className='flex flex-col items-center'>
+                                <p className="font-bold mb-6 text-3xl  text-white">Elite <span className="text-yellow-500">Maverick</span></p>
+                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
+                                    <li>Staff Augmentation</li>
+                                    <li>Solutions</li>
+                                    <li>Talent</li>
+                                    <li>Consulting</li>
+                                    <li>Energy & Clean Technology</li>
+                                    <li>Financial Services</li>
+                                    <li>Healthcare & Life Sciences</li>
+                                    <li>Manufacturing & Logistics</li>
+                                    <li>Information & Technology</li>
+                                    <li>Automotive & Transportation</li>
+                                </ul>
+                            </div>
+                            <a
+                                href="https://elitemaverick.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-justify"
