@@ -109,7 +109,7 @@ export default function Home() {
             <section className="w-full py-16 border-t border-gray-800 flex justify-center items-center mb-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-4 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12" data-aos="fade-up">Our Verticals</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Card 1 */}
                         <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="100">
                             <div className='flex flex-col items-center'>
