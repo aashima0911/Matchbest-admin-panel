@@ -144,13 +144,15 @@ export default function Home() {
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     
                                     <li>Create Without Limits</li>
-                                    
+                                     
                                     <li>Speed Meets Precision</li>
                                    
                                     <li>Built for Every Industry</li>
                                     
                                     <li>Future-Ready</li>
-                                 
+                                    <li>Text to Image <br/> Generator</li>
+                                    <li>Text to Video <br/>Generator</li>
+                                    <li>Image to Image<br/> Generator</li>
                                 </ul>
                             </div>
                             <a
@@ -173,6 +175,7 @@ export default function Home() {
                                     <li>Health Engagement</li>
                                     <li>AI-Powered <br/>Diagnostics</li>
                                     <li>Doctor dashboard</li>
+                                   
 
                                 </ul>
                             </div>
