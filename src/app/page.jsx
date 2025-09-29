@@ -109,23 +109,23 @@ export default function Home() {
             <section className="w-full py-16 border-t border-gray-800 flex justify-center items-center mb-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-4 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12" data-aos="fade-up">Our Verticals</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                         {/* Card 1 */}
-                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="100">
-                            <div className='flex flex-col items-center'>
+                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="100">
+                            <div className='flex flex-col'>
                                 <Image src="/assets/mat.png" alt="MatchBest Logo" className="w-60 h-20 mb-8 object-contain" width={240} height={80} />
                                
                                 <ul className="text-white text-base space-y-0 mb-8 list-disc list-inside text-justify">                                  
                                     <li >AvaOne <a href="https://avasuite.ai/" target="_blank" rel="noopener noreferrer" className="underline text-blue-500 hover:underline">view more</a></li>
                                     <li >AI Automation</li>
-                                    <li >BytePlus/TikTok Partnership</li>
-                                    <li >Managed Services/VAPT</li> <li>App & Mobile Development</li>
-                                    <li>E-commerce & Fintech Solutions</li>
-                                    <li>VAPT</li>
+                                    <li >BytePlus/TikTok <br/>Partnership</li>
+                                    <li >Managed <br/>Services/VAPT</li>
+                                    <li>App & Mobile<br/> Development</li>
+                                    <li>E-commerce &<br/> Fintech Solutions</li>                                    
                                     <li>ERP Modernization</li>
-                                    <li>Cloud Hosting & Infrastructure</li>
-                                    <li>AI Chatbots & CX Automation</li>
-                                    <li>Blockchain Development</li>
+                                    <li>Cloud Hosting & <br/>Infrastructure</li>
+                                    
+                                    <li>Blockchain <br/>Development</li>
                                 </ul>
                             </div>
                             <a
@@ -138,8 +138,8 @@ export default function Home() {
                             </a>
                         </div>
                         {/* Card 2 */}
-                        <div className="bg-black border border-blue-700 rounded-xl flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 p-8 md:p-10 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="200">
-                            <div className='flex flex-col items-center'>
+                        <div className="bg-black border border-blue-700 rounded-xl flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 p-8 md:p-10 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="200">
+                            <div className='flex flex-col'>
                              <p className="font-bold mb-6 text-3xl uppercase tracking-[0.25em] text-lime-300/80">Xelta</p>
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     
@@ -163,15 +163,17 @@ export default function Home() {
                             </a>
                         </div>
                         {/* Card 3 */}
-                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="300">
-                            <div className='flex flex-col items-center'>
+                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="300">
+                            <div className='flex flex-col'>
                                 <Image src="/healnova.png" alt="healnova Logo" className="w-80 h-30 mb-6 object-contain" width={240} height={100} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     <li>24/7 AI Doctor</li>
                                     <li>Medical Vaults</li>
                                     <li>AI Health Checkups</li>
                                     <li>Health Engagement</li>
-                                    
+                                    <li>AI-Powered <br/>Diagnostics</li>
+                                    <li>Doctor dashboard</li>
+
                                 </ul>
                             </div>
                             <a
@@ -184,20 +186,20 @@ export default function Home() {
                             </a>
                         </div>
                         {/* Card 4 */}
-                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between items-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="400">
-                            <div className='flex flex-col items-center'>
+                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="400">
+                            <div className='flex flex-col'>
                                 <p className="font-bold mb-6 text-3xl  text-white">Elite <span className="text-yellow-500">Maverick</span></p>
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     <li>Staff Augmentation</li>
                                     <li>Solutions</li>
                                     <li>Talent</li>
                                     <li>Consulting</li>
-                                    <li>Energy & Clean Technology</li>
+                                    <li>Energy </li>
                                     <li>Financial Services</li>
-                                    <li>Healthcare & Life Sciences</li>
-                                    <li>Manufacturing & Logistics</li>
-                                    <li>Information & Technology</li>
-                                    <li>Automotive & Transportation</li>
+                                    <li>Healthcare</li>
+                                    <li>Manufacturing &<br/> Logistics</li>
+                                    <li>Information & <br/> Technology</li>
+                                    <li>Automotive & <br/> Transportation</li>
                                 </ul>
                             </div>
                             <a
