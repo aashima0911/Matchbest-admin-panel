@@ -109,7 +109,7 @@ export default function Home() {
             <section className="w-full py-16 border-t border-gray-800 flex justify-center items-center mb-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-4 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12" data-aos="fade-up">Our Verticals</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* Card 1 */}
                         <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="100">
                             <div className='flex flex-col'>
@@ -118,21 +118,21 @@ export default function Home() {
                                 <ul className="text-white text-base space-y-0 mb-8 list-disc list-inside text-justify">                                  
                                     <li >AvaOne <a href="https://avasuite.ai/" target="_blank" rel="noopener noreferrer" className="underline text-blue-500 hover:underline">view more</a></li>
                                     <li >AI Automation</li>
-                                    <li >BytePlus/TikTok <br/>Partnership</li>
-                                    <li >Managed <br/>Services/VAPT</li>
-                                    <li>App & Mobile<br/> Development</li>
-                                    <li>E-commerce &<br/> Fintech Solutions</li>                                    
+                                    <li >BytePlus/TikTok Partnership</li>
+                                    <li >Managed Services/VAPT</li>
+                                    <li>App & Mobile Development</li>
+                                    <li>E-commerce & Fintech Solutions</li>                                    
                                     <li>ERP Modernization</li>
-                                    <li>Cloud Hosting & <br/>Infrastructure</li>
+                                    <li>Cloud Hosting & Infrastructure</li>
                                     
-                                    <li>Blockchain <br/>Development</li>
+                                    <li>Blockchain Development</li>
                                 </ul>
                             </div>
                             <a
                                 href="https://matchbestsoftware.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-justify"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
                             >
                                 LEARN MORE
                             </a>
@@ -140,26 +140,24 @@ export default function Home() {
                         {/* Card 2 */}
                         <div className="bg-black border border-blue-700 rounded-xl flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 p-8 md:p-10 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="200">
                             <div className='flex flex-col'>
-                             <p className="font-bold mb-6 text-3xl uppercase tracking-[0.25em] text-lime-300/80">Xelta</p>
+                                <Image src="/xelta-logo.png" alt="Xelta Logo" className="text-white w-60 h-20 mb-8 object-contain" width={240} height={80} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     
-                                    <li>Create Without Limits</li>
-                                     
-                                    <li>Speed Meets Precision</li>
-                                   
-                                    <li>Built for Every Industry</li>
-                                    
+                                    <li>Create Without Limits</li>                                   
+                                    <li>Speed Meets Precision</li>                                  
+                                    <li>Built for Every Industry</li>                                  
                                     <li>Future-Ready</li>
-                                    <li>Text to Image <br/> Generator</li>
-                                    <li>Text to Video <br/>Generator</li>
-                                    <li>Image to Image<br/> Generator</li>
+                                    <li>Text to Image  Generator</li>
+                                    <li>Text to Video Generator</li>
+                                    <li>Text to Audio Generator</li>
+                                    <li>Image to Image Generator</li>
                                 </ul>
                             </div>
                             <a
                                 href="https://xelta.ai/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-justify"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
                             >
                                 LEARN MORE
                             </a>
@@ -167,23 +165,23 @@ export default function Home() {
                         {/* Card 3 */}
                         <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="300">
                             <div className='flex flex-col'>
-                                <Image src="/healnova.png" alt="healnova Logo" className="w-80 h-30 mb-6 object-contain" width={240} height={100} />
+                                <Image src="/healnova.png" alt="healnova Logo" className="text-white w-60 h-20 mb-8 object-contain" width={240} height={80} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     <li>24/7 AI Doctor</li>
                                     <li>Medical Vaults</li>
                                     <li>AI Health Checkups</li>
                                     <li>Health Engagement</li>
-                                    <li>AI-Powered <br/>Diagnostics</li>
+                                    <li>AI-Powered Diagnostics</li>
                                     <li>Doctor dashboard</li>
-                                   
-
+                                    <li>Patient Management</li>
+                                    <li>Health Analytics</li>                             
                                 </ul>
                             </div>
                             <a
                                 href="https://healnova.ai/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-justify"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
                             >
                                 LEARN MORE
                             </a>
@@ -191,29 +189,82 @@ export default function Home() {
                         {/* Card 4 */}
                         <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="400">
                             <div className='flex flex-col'>
-                                <p className="font-bold mb-6 text-3xl  text-white">Elite <span className="text-yellow-500">Maverick</span></p>
+                                <div className="w-60 h-20 mb-8 flex items-center justify-center">
+                                    <p className="font-bold text-3xl text-white">Elite <span className="text-yellow-500">Maverick</span></p>
+                                </div>
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     <li>Staff Augmentation</li>
-                                    <li>Solutions</li>
-                                    <li>Talent</li>
-                                    <li>Consulting</li>
+                                    <li>Consulting & Solutions</li>
+                                    <li>Talent Acquisition & consulting</li>
+                                    
                                     <li>Energy </li>
                                     <li>Financial Services</li>
                                     <li>Healthcare</li>
-                                    <li>Manufacturing &<br/> Logistics</li>
-                                    <li>Information & <br/> Technology</li>
-                                    <li>Automotive & <br/> Transportation</li>
+                                    <li>Manufacturing &Logistics</li>
+                                    <li>Information & Technology</li>
+                                    <li>Automotive & Transportation</li>
                                 </ul>
                             </div>
                             <a
-                                href="https://elitemaverick.com/"
+                                href="https://www.elitemaverick.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-justify"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
                             >
                                 LEARN MORE
                             </a>
                         </div>
+                        {/* Card 5 */}
+                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="500">
+                            <div className='flex flex-col'>
+                             <Image src="/vitaay-logo.png" alt="vitaay Logo" className="text-white w-60 h-20 mb-8 object-contain" width={240} height={80} />
+                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
+                                    <li>Empowering Brands & Influencers</li>
+                                    <li>Streamlined Campaign Management</li>
+                                    <li>Maximize Marketing Impact</li>
+                                    <li>Long-Term Partnerships</li>
+                                    <li>Data-Driven Insights</li>
+                                    <li>All-in-One Platform</li>
+                                    <li>Innovative Solutions</li>
+                                    <li>Trusted by Industry Leaders</li>
+                                    <li>Global Reach</li>
+                                </ul>
+                            </div>
+                            <a
+                                href="https://www.vitaay.ai/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
+                            >
+                                LEARN MORE
+                            </a>
+                        </div>
+                        {/* Card 6 */}
+                        {/* <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="600">
+                            <div className='flex flex-col'>
+                               <Image src="/healnova.png" alt="healnova Logo" className="w-60 h-20 mb-8 object-contain" width={240} height={80} />
+                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
+                                    <li>SEO Optimization</li>
+                                    <li>Social Media Marketing</li>
+                                    <li>Content Strategy</li>
+                                    <li>PPC Campaigns</li>
+                                    <li>Email Marketing</li>
+                                    <li>Brand Management</li>
+                                    <li>Conversion Optimization</li>
+                                    <li>Marketing Automation</li>
+                                    <li>Growth Hacking</li>
+                                    <li>Analytics & ROI</li>
+                                </ul>
+                            </div>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
+                            >
+                                LEARN MORE
+                            </a>
+                        </div> */}
                     </div>
                 </div>
             </section>

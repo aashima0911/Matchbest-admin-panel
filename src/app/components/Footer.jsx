@@ -18,9 +18,9 @@ export default function Footer() {
         </div>
 
         <div className="flex justify-center space-x-6 text-2xl">
-          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaFacebook /></a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaInstagram /></a>
+          <a href="https://www.instagram.com/matchbest.software/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaInstagram /></a>
           <a href="https://www.linkedin.com/company/matchbestllc" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaLinkedin /></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaFacebook /></a>
         </div>
 
         <p className="text-sm">&copy; {new Date().getFullYear()} MatchBest. All rights reserved.</p>
