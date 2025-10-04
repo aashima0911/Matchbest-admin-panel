@@ -165,7 +165,7 @@ export default function Home() {
                         {/* Card 3 */}
                         <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="300">
                             <div className='flex flex-col'>
-                                <Image src="/healnova.png" alt="healnova Logo" className="text-white w-60 h-20 mb-8 object-contain" width={240} height={80} />
+                                <Image src="/heal-nova-logo.png" alt="healnova Logo" className="text-white w-60 h-20 mb-8 object-contain" width={240} height={80} />
                                 <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
                                     <li>24/7 AI Doctor</li>
                                     <li>Medical Vaults</li>
