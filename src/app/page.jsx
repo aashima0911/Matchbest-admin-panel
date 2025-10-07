@@ -77,9 +77,9 @@ export default function Home() {
     return (
         <div className="bg-gray-900 min-h-screen flex flex-col py-16 px-4 md:px-8 lg:px-12">
             {/* Hero Section */}
-            <section className="relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-24 gap-12 mb-12" data-aos="fade-up">
+            <section className="mt-12 relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-24 gap-12 mb-12">
                 {/* Left: Headline & CTA */}
-                <div className="flex-1 text-center md:text-left z-10" data-aos="fade-right">
+                <div className="flex-1 text-center md:text-left z-10">
                     <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
                         Build the <span className="text-blue-500">Future</span>.<br />
                         <span className="text-gray-400">With Us.</span>
@@ -106,135 +106,237 @@ export default function Home() {
                 </div>
             </section>
             {/* Blue Gradient Cards Section (now dark themed, with heading) */}
-            <section className="w-full py-16 border-t border-gray-800 flex justify-center items-center mb-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
+            <section className="w-full py-10 border-t border-gray-800 flex justify-center items-center mb-1 px-4 md:px-8 lg:px-12">
                 <div className="container mx-auto px-0 md:px-4 lg:px-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12" data-aos="fade-up">Our Verticals</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Our Verticals</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Card 1 */}
-                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="100">
-                            <div className='flex flex-col'>
-                                <Image src="/assets/mat.png" alt="MatchBest Logo" className="w-60 h-20 mb-8 object-contain" width={240} height={80} />
-                               
-                                <ul className="text-white text-base space-y-0 mb-8 list-disc list-inside text-justify">                                  
-                                    <li >AvaOne <a href="https://avasuite.ai/" target="_blank" rel="noopener noreferrer" className="underline text-blue-500 hover:underline">view more</a></li>
-                                    <li >AI Automation</li>
-                                    <li >BytePlus/TikTok Partnership</li>
-                                    <li >Managed Services/VAPT</li>
-                                    <li>App & Mobile Development</li>
-                                    <li>E-commerce & Fintech Solutions</li>                                    
-                                    <li>ERP Modernization</li>
-                                    <li>Cloud Hosting & Infrastructure</li>
-                                    
-                                    <li>Blockchain Development</li>
-                                </ul>
+                        <div className="bg-black border border-blue-700 rounded-xl p-6 md:p-8 flex flex-col shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full">
+                            <div className='flex flex-col flex-grow'>
+                                <div className="flex justify-center mb-6">
+                                    <Image src="/assets/mat.png" alt="MatchBest Logo" className="w-48 h-16 object-contain" width={192} height={64} />
+                                </div>
+
+                                <div className="space-y-4 mb-6">
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Featured Product</h4>
+                                        <li className="text-white text-sm ml-4">AvaOne <a href="https://avasuite.ai/" target="_blank" rel="noopener noreferrer" className="underline text-blue-500 hover:underline">view more</a></li>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Core Services</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• AI Automation & Agentic Systems</li>
+                                            <li>• BytePlus/TikTok Partnership</li>
+                                            <li>• Digital Transformation 3.0</li>
+                                            <li>• Cybersecurity & VAPT</li>
+                                            <li>• Data Engineering & Trust Fabric</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Advanced Solutions</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• ERP Modernization</li>
+                                            <li>• Blockchain & Smart Contracts</li>
+                                            <li>• Quantum Computing</li>
+                                            <li>• Sustainability & Green IT</li>
+                                            <li>• Immersive Computing</li>
+                                            <li>• AI Governance & Compliance</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <a
                                 href="https://matchbestsoftware.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center mt-auto"
                             >
                                 LEARN MORE
                             </a>
                         </div>
                         {/* Card 2 */}
-                        <div className="bg-black border border-blue-700 rounded-xl flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 p-8 md:p-10 hover:shadow-xl w-full text-justify min-h-[500px] mb-6 md:mb-0" data-aos="fade-up" data-aos-delay="200">
-                            <div className='flex flex-col'>
-                                <Image src="/xelta-logo.png" alt="Xelta Logo" className="text-white w-60 h-20 mb-8 object-contain" width={240} height={80} />
-                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
-                                    
-                                    <li>Create Without Limits</li>                                   
-                                    <li>Speed Meets Precision</li>                                  
-                                    <li>Built for Every Industry</li>                                  
-                                    <li>Future-Ready</li>
-                                    <li>Text to Image  Generator</li>
-                                    <li>Text to Video Generator</li>
-                                    <li>Text to Audio Generator</li>
-                                    <li>Image to Image Generator</li>
-                                </ul>
+                        <div className="bg-black border border-blue-700 rounded-xl p-6 md:p-8 flex flex-col shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full">
+                            <div className='flex flex-col flex-grow'>
+                                <div className="flex justify-center mb-6">
+                                    <Image src="/xelta-logo.png" alt="Xelta Logo" className="w-48 h-16 object-contain" width={192} height={64} />
+                                </div>
+
+                                <div className="space-y-4 mb-6">
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Platform Features</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Unified Generative AI Hub</li>
+                                            <li>• Text-to-Everything Engine</li>
+                                            <li>• Cross-Model Intelligence Layer</li>
+                                            <li>• Cloud-Native Architecture</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Collaboration Tools</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Real-Time Workflow Studio</li>
+                                            <li>• Generative Content Marketplace</li>
+                                            <li>• AI Voice & Video Agents</li>
+                                            <li>• Secure AI Pipeline</li>
+                                            <li>• Future-Ready Ecosystem</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <a
                                 href="https://xelta.ai/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center mt-auto"
                             >
                                 LEARN MORE
                             </a>
                         </div>
                         {/* Card 3 */}
-                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="300">
-                            <div className='flex flex-col'>
-                                <Image src="/heal-nova-logo.png" alt="healnova Logo" className="text-white w-60 h-20 mb-8 object-contain" width={240} height={80} />
-                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
-                                    <li>24/7 AI Doctor</li>
-                                    <li>Medical Vaults</li>
-                                    <li>AI Health Checkups</li>
-                                    <li>Health Engagement</li>
-                                    <li>AI-Powered Diagnostics</li>
-                                    <li>Doctor dashboard</li>
-                                    <li>Patient Management</li>
-                                    <li>Health Analytics</li>                             
-                                </ul>
+                        <div className="bg-black border border-blue-700 rounded-xl p-6 md:p-8 flex flex-col shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full">
+                            <div className='flex flex-col flex-grow'>
+                                <div className="flex justify-center mb-6">
+                                    <Image src="/heal-nova-logo.png" alt="HealNova Logo" className="w-48 h-16 object-contain" width={192} height={64} />
+                                </div>
+
+                                <div className="space-y-4 mb-6">
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">AI Healthcare Services</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• 24/7 AI Doctor & Autonomous Care</li>
+                                            <li>• Personal Medical Vaults</li>
+                                            <li>• AI Health Checkups</li>
+                                            <li>• Predictive Longevity</li>
+                                            <li>• Cognitive & Emotional Health</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Advanced Medical Tech</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• AI-Powered Diagnostics</li>
+                                            <li>• Imaging Intelligence</li>
+                                            <li>• Doctor & Care Team Dashboards</li>
+                                            <li>• Patient & Family Health Management</li>
+                                            <li>• Health Analytics & Research Cloud</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Future Health Solutions</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Regenerative & Genetic AI</li>
+                                            <li>• Wellness & Lifestyle Orchestration</li>
+                                            <li>• Agentic Health Ecosystem</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <a
                                 href="https://healnova.ai/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center mt-auto"
                             >
                                 LEARN MORE
                             </a>
                         </div>
                         {/* Card 4 */}
-                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="400">
-                            <div className='flex flex-col'>
-                                <div className="w-60 h-20 mb-8 flex items-center justify-center">
-                                    <p className="font-bold text-3xl text-white">Elite <span className="text-yellow-500">Maverick</span></p>
+                        <div className="bg-black border border-blue-700 rounded-xl p-6 md:p-8 flex flex-col shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full" data-aos="fade-up" data-aos-delay="400">
+                            <div className='flex flex-col flex-grow'>
+                                <div className="mb-6 flex items-center justify-center">
+                                    <p className="font-bold text-2xl text-white">Elite <span className="text-yellow-500">Maverick</span></p>
                                 </div>
-                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
-                                    <li>Staff Augmentation</li>
-                                    <li>Consulting & Solutions</li>
-                                    <li>Talent Acquisition & consulting</li>
-                                    
-                                    <li>Energy </li>
-                                    <li>Financial Services</li>
-                                    <li>Healthcare</li>
-                                    <li>Manufacturing &Logistics</li>
-                                    <li>Information & Technology</li>
-                                    <li>Automotive & Transportation</li>
-                                </ul>
+
+                                <div className="space-y-4 mb-6">
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Workforce Solutions</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Intelligent Staff Augmentation</li>
+                                            <li>• AI Workforce Solutions</li>
+                                            <li>• Talent Acquisition Excellence</li>
+                                            <li>• Business Consulting</li>
+                                            <li>• Transformation Solutions</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Industry Expertise</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Healthcare & Life Sciences</li>
+                                            <li>• Energy & Sustainability</li>
+                                            <li>• Information Technology</li>
+                                            <li>• Manufacturing & Supply Chain</li>
+                                            <li>• Automotive & Aerospace</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Specialized Services</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Financial & Digital Services</li>
+                                            <li>• Web3 Services</li>
+                                            <li>• Global Enterprise Solutions</li>
+                                            <li>• Remote Work Infrastructure</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <a
                                 href="https://www.elitemaverick.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center mt-auto"
                             >
                                 LEARN MORE
                             </a>
                         </div>
                         {/* Card 5 */}
-                        <div className="bg-black border border-blue-700 rounded-xl p-8 md:p-10 flex flex-col justify-between shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full text-justify min-h-[500px]" data-aos="fade-up" data-aos-delay="500">
-                            <div className='flex flex-col'>
-                             <Image src="/vitaay-logo.png" alt="vitaay Logo" className="text-white w-60 h-20 mb-8 object-contain" width={240} height={80} />
-                                <ul className="text-white text-base space-y-1 mb-8 list-disc list-inside text-justify">
-                                    <li>Empowering Brands & Influencers</li>
-                                    <li>Streamlined Campaign Management</li>
-                                    <li>Maximize Marketing Impact</li>
-                                    <li>Long-Term Partnerships</li>
-                                    <li>Data-Driven Insights</li>
-                                    <li>All-in-One Platform</li>
-                                    <li>Innovative Solutions</li>
-                                    <li>Trusted by Industry Leaders</li>
-                                    <li>Global Reach</li>
-                                </ul>
+                        <div className="bg-black border border-blue-700 rounded-xl p-6 md:p-8 flex flex-col shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full">
+                            <div className='flex flex-col flex-grow'>
+                                <div className="flex justify-center mb-6">
+                                    <Image src="/vitaay-logo.png" alt="Vitaay Logo" className="w-48 h-16 object-contain" width={192} height={64} />
+                                </div>
+
+                                <div className="space-y-4 mb-6">
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Platform Concept</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Universal Bridge: Brands ↔ Creators ↔ Fans</li>
+                                            <li>• AI-Driven Creator-Brand Matching</li>
+                                            <li>• End-to-End Collaboration Platform</li>
+                                            <li>• Fan-Powered Creator Economy</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Core Values</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Data, Transparency & Trust First</li>
+                                            <li>• Next-Gen Monetization</li>
+                                            <li>• Sustainability & Ethics</li>
+                                            <li>• Global-Local Ecosystem</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <h4 className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-2">Future Vision</h4>
+                                        <ul className="text-white text-sm space-y-1 ml-4">
+                                            <li>• Immersive & Multi-Reality Hub</li>
+                                            <li>• Built for the Next Century</li>
+                                            <li>• Emerging Markets Focus</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <a
                                 href="https://www.vitaay.ai/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center"
+                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center mt-auto"
                             >
                                 LEARN MORE
                             </a>
@@ -295,19 +397,19 @@ export default function Home() {
                 </Link>
             </section>
             {/* Why Choose Us Section */}
-            <section className="py-20  border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12" data-aos="fade-up">
+            <section className="py-20  border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-12">
                 <div className="container mx-auto px-0 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Why Choose Us?</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-[#10131a] rounded-xl p-8 shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+                        <div className="bg-[#10131a] rounded-xl p-8 shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                             <h3 className="text-xl font-semibold text-blue-500 mb-2">Expert Team</h3>
                             <p className="text-gray-300">Our experienced professionals deliver innovative, reliable solutions tailored to your needs.</p>
                         </div>
-                        <div className="bg-[#10131a] rounded-xl p-8 shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                        <div className="bg-[#10131a] rounded-xl p-8 shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                             <h3 className="text-xl font-semibold text-blue-500 mb-2">Client-Centric</h3>
                             <p className="text-gray-300">We prioritize your goals and satisfaction, ensuring transparent communication and results.</p>
                         </div>
-                        <div className="bg-[#10131a] rounded-xl p-8 shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+                        <div className="bg-[#10131a] rounded-xl p-8 shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                             <h3 className="text-xl font-semibold text-blue-500 mb-2">Cutting-Edge Tech</h3>
                             <p className="text-gray-300">We use the latest technologies to future-proof your business and maximize ROI.</p>
                         </div>
