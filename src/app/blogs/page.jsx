@@ -69,9 +69,9 @@ export default function BlogPage() {
                       <span key={idx} className="bg-purple-700 bg-opacity-60 px-3 py-1 rounded-full text-xs font-medium text-white">#{tag}</span>
                     ))}
                   </div>
-                  <p className="text-purple-200 text-sm leading-relaxed line-clamp-3 mb-4">
+                  {/* <p className="text-purple-200 text-sm leading-relaxed line-clamp-3 mb-4">
                     {post.excerpt || (post.description ? post.description.slice(0, 120) + (post.description.length > 120 ? '...' : '') : '')}
-                  </p>
+                  </p> */}
                 </div>
                 {/* Read More Button */}
                 <Link
