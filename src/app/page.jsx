@@ -236,7 +236,7 @@ export default function Home() {
                                 </div>
                             </div>
                             <a
-                                href="https://healnova.ai/"
+                                href="https://heal-nova.vercel.app/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center mt-auto"
