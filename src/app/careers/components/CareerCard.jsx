@@ -13,20 +13,20 @@ export default function CareerCard({ career }) {
                 {/* Description */}
                 <p className="text-gray-200 text-xs sm:text-sm mb-2 line-clamp-2 min-h-[2.5em]">{career?.description?.substring(0, 100)}...</p>
                 {/* Location and Department */}
-                <div className="flex flex-wrap gap-2 mb-2">
+                {/* <div className="flex flex-wrap gap-2 mb-2">
                     {career?.location && <span className="bg-purple-900/30 text-purple-200 px-2 sm:px-3 py-1 rounded-full text-xs font-medium">{career.location}</span>}
                     {career?.departmentId && <span className="bg-pink-900/30 text-pink-200 px-2 sm:px-3 py-1 rounded-full text-xs font-medium">{career.departmentId}</span>}
-                </div>
+                </div> */}
                 {/* Dates */}
-                <div className="text-xs text-gray-400 mb-2">
+                {/* <div className="text-xs text-gray-400 mb-2">
                     <span>Posted: {career?.postedDate}</span>{career?.expiryDate && <> | <span>Expires: {career.expiryDate}</span></>}
-                </div>
+                </div> */}
                 {/* Requirements (optional, short preview) */}
-                {career?.requirements && career.requirements.length > 0 && (
+                {/* {career?.requirements && career.requirements.length > 0 && (
                     <div className="text-xs text-gray-300 mb-2">
                         <span>Requirements: {career.requirements.replace(/[#*`]/g, '').substring(0, 80)}...</span>
                     </div>
-                )}
+                )} */}
                 {/* Apply Now Button as Link */}
                 <div className="mt-auto pt-2">
                     <Link href={`/careers/${career.slugs ? career.slugs[0] : career.jobSlug}`}>
