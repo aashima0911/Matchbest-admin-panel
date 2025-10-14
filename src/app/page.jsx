@@ -105,8 +105,25 @@ export default function Home() {
                     </video>
                 </div>
             </section>
+
+            {/* Partnership Banner Section */}
+            <section className="py-8 border-t border-gray-800 w-full mb-2">
+                <div className="w-full">
+                    <div className="relative overflow-hidden">
+                        <div className="flex flex-nowrap gap-8 animate-[scroll_15s_linear_infinite]">
+                            <div className="flex items-center space-x-8 flex-shrink-0 min-w-full">
+                                <p className="text-2xl md:text-3xl font-bold text-blue-400 whitespace-nowrap">
+                                    MatchbestGroup partners with BytePlus, the technology arm of TikTok, integrating Seedream and Seedance to deliver next-generation AI experiences
+                                </p>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Blue Gradient Cards Section (now dark themed, with heading) */}
-            <section className="w-full py-2 border-t border-gray-800 flex justify-center items-center mb-1 px-4 md:px-8 lg:px-12">
+            <section className="w-full py-8 border-t border-gray-800 flex justify-center items-center mb-1 px-4 md:px-8 lg:px-12">
                 <div className="container mx-auto px-0 md:px-4 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Our Verticals</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

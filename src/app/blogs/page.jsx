@@ -27,15 +27,15 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-900 text-white font-sans px-4 md:px-8 lg:px-12">
+    <main className="min-h-screen bg-gray-900 text-white font-sans px-4 md:px-8 lg:px-12 pt-24 md:pt-20 ">
       {/* Hero */}
-      <section className="text-center px-4 md:px-8 lg:px-12 max-w-6xl mx-auto py-16 md:py-20 lg:py-24 mb-2 md:mb-3">
-        <h1 className={`text-5xl font-bold mb-4 text-shadow-lg transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>Tech Insights Blog</h1>
-        <p className={`max-w-2xl mx-auto text-lg text-blue-100 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>Discover the latest in AI, cloud, blockchain, design, security, and web development — written by MatchBest&apos;s experts, for innovators.</p>
+      <section className="text-center px-4 md:px-8 lg:px-12 max-w-6xl mx-auto py-4 md:py-6 lg:py-8 mb-2 md:mb-3">
+        <h1 className={`text-4xl md:text-5xl font-bold mb-2 md:mb-3 text-shadow-lg transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>Tech Insights Blog</h1>
+        {/* <p className={`max-w-2xl mx-auto text-lg text-blue-100 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>Discover the latest in AI, cloud, blockchain, design, security, and web development — written by MatchBest's experts, for innovators.</p> */}
       </section>
 
       {/* Blog Grid */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4">
         {loading && <div className="col-span-full text-center text-lg text-purple-200">Loading blogs...</div>}
         {error && <div className="col-span-full text-center text-red-400">{error}</div>}
         {!loading && !error && blogs.length === 0 && <div className="col-span-full text-center text-purple-200">No blogs found.</div>}
@@ -91,4 +91,4 @@ export default function BlogPage() {
       <div className='h-10'></div>
     </main>
   );
-} 
+}

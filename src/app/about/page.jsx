@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <div className="bg-gray-900 py-10 text-white min-h-screen flex flex-col px-4 md:px-8 lg:px-12">
       {/* Header Section */}
-      <section className="container mx-auto px-4 md:px-8 lg:px-12 py-24 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 mb-12">
+      <section className="container mx-auto px-4 md:px-8 lg:px-12 py-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 mb-[-18]">
         {/* Text Content */}
         <div className="lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-6"> About MatchBest Group</h1>
@@ -38,7 +38,7 @@ export default function AboutPage() {
         </div>
       </section>
       {/* Mission and Vision Section */}
-      <section className="py-16 bg-[#10131a] w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 mb-12">
+      <section className="py-10 md:py-12 bg-[#10131a] w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 mb-[-18]">
         <div className="container mx-auto px-0 md:px-4 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-12" data-aos="fade-up">Our Mission & Vision</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </div>
       </section>
       {/* Core Values Section */}
-      <section className="py-12 md:py-16 w-full px-4 md:px-8 lg:px-12 flex flex-col items-center justify-center">
+      <section className="py-10 md:py-12 w-full px-4 md:px-8 lg:px-12 flex flex-col items-center justify-center mb-[-18]">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Our Core Values</h2>
         {/* Auto-scrolling marquee of core values */}
         <div className="relative overflow-hidden w-full px-2 pb-4">
