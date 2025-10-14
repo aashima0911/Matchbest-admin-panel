@@ -123,14 +123,14 @@ export default function Home() {
                                         
                                         <ul className="text-white text-sm space-y-1 ml-4">
                                             <li>• AvaOne <a href="https://avasuite.ai/" target="_blank" rel="noopener noreferrer" className="underline text-blue-500 hover:underline">view more</a></li>                                   
-                                            <li>• AI Automation & Agentic Systems</li>                                         
+                                            <li>• AI Automation & AI Governance</li>                                         
                                             <li>• Digital Transformation 3.0</li>
                                             <li>• Cybersecurity & VAPT</li>
                                             <li>• Data Engineering & Trust Fabric</li>                                            
                                             <li>• Blockchain & Smart Contracts</li>
                                             <li>• Quantum Computing</li>
                                             <li>• Sustainability & Green IT</li>
-                                            <li>• Immersive Computing</li>
+                                           
                                             <li>• AI Governance & Compliance</li>
                                         </ul>
                                     </div>
@@ -151,7 +151,7 @@ export default function Home() {
                         <div className="bg-black border border-blue-700 rounded-xl p-6 md:p-8 flex flex-col shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full">
                             <div className='flex flex-col flex-grow'>
                                 <div className="flex justify-center mb-6">
-                                    <Image src="/xelta-logo.png" alt="Xelta Logo" className="w-48 h-16 object-contain" width={192} height={64} />
+                                    <Image src="/xelta-logo1.png" alt="Xelta Logo" className="w-48 h-16 object-contain" width={192} height={64} />
                                 </div>
 
                                 <div className="space-y-4 mb-6">
@@ -164,7 +164,7 @@ export default function Home() {
                                             <li>• Cloud-Native Architecture</li>
                                             <li>• Real-Time Workflow Studio</li>
                                             <li>• Generative Content Marketplace</li>
-                                            <li>• AI Voice & Video Agents</li>                                           
+                                                                                     
                                             <li>• Future-Ready Ecosystem</li>
                                         </ul>
                                     </div>
@@ -192,7 +192,7 @@ export default function Home() {
                                            <ul className="text-white text-sm space-y-1 ml-4">
                                             <li>• 24/7 AI Doctor & Autonomous Care</li>
                                             <li>• Personal Medical Vaults</li>
-                                            <li>• AI Health Checkups</li>
+                                            
                                             <li>• Predictive Longevity</li>
                                             <li>• Cognitive & Emotional Health</li>
                                             <li>• AI-Powered Diagnostics</li>                                         
@@ -200,7 +200,7 @@ export default function Home() {
                                             <li>• Patient & Family Health Management</li>
                                             <li>• Health Analytics & Research Cloud</li>
                                             <li>• Wellness & Lifestyle Orchestration</li>
-                                            <li>• Agentic Health Ecosystem</li>
+                                           
                                         </ul>
                                     </div>
 
@@ -222,7 +222,7 @@ export default function Home() {
                                     <p className="font-bold text-2xl text-white">Elite <span className="text-yellow-500">Maverick</span></p>
                                 </div>
 
-                                <div className="space-y-4 mb-6">
+                                <div className="space-y-4 mb-6 py-5">
                                     <div className="mb-4">
                                            <ul className="text-white text-sm space-y-1 ml-4">
                                             
@@ -233,7 +233,7 @@ export default function Home() {
                                             <li>• Financial & Digital Services</li>
                                             <li>• Web3 Services</li>
                                             <li>• Global Enterprise Solutions</li>
-                                            <li>• Remote Work Infrastructure</li>
+                                          
                                         </ul>
                                     </div>
                                 </div>
@@ -277,38 +277,7 @@ export default function Home() {
                                 LEARN MORE
                             </a>
                         </div>
-
-                        {/* Card 6 */}
-                       <div className="bg-black border border-blue-700 rounded-xl p-6 md:p-8 flex flex-col shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl w-full">
-                            <div className='flex flex-col flex-grow'>
-                               <div className="mb-6 flex items-center justify-center">
-                                    <p className="font-bold text-2xl text-blue-500">TikTok/BytePlus partnership</p>
-                                </div>
-
-                                <div className="space-y-4 mb-6">
-                                    <div className="mb-4">
-                                       <ul className="text-white text-sm space-y-1 ml-4">
-                                            <li>• Next-gen Video & Image AI</li>
-                                            <li>• Smart Voice & Media</li>
-                                            <li>• Personalisation & Memory AI</li>
-                                            <li>• AR & Effects</li>
-                                            <li>• Virtual Reality</li>
-                                            <li>• AI-Powered Analytics</li>
-                                            <li>• Scalable Cloud Solutions</li> 
-                                            <li>• Enterprise-Grade Security</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md shadow transition-all duration-200 transform hover:scale-105 text-center mt-auto"
-                            >
-                                LEARN MORE
-                            </a>
-                        </div>
+                    
                     </div>
                 </div>
             </section>
