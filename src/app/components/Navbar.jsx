@@ -10,7 +10,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/blogs', label: 'Blogs' },
   // { href: '/services', label: 'Services' },
-  { href: '#', label: 'Press Release' },
+  { href: '/byteplus-partnership', label: 'MBSL × BytePlus' },
   { href: '/careers', label: 'Careers' },
 ];
 

@@ -1,13 +1,31 @@
 'use client';
 import { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle,
+  AlertCircle,
+  Loader
+} from 'lucide-react';
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
 
 export default function ContactPage() {
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
-
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -43,107 +61,161 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-[#10131a] text-white min-h-screen flex flex-col items-center px-4 md:px-8 lg:px-12">
-      {/* Header Section */}
-      <section className="container mx-auto px-4 md:px-8 lg:px-12 py-24 text-center mb-1">
-        <h1 className="text-5xl font-extrabold mb-6" data-aos="fade-down">
-          Contact Us
-        </h1>
-        <p className="text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          We&apos;d love to hear from you! Please fill out the form below and our team will get back to you shortly.
-        </p>
-      </section>
-      {/* Contact Form with Map */}
-      <section className="py-16 bg-white text-gray-800 w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 mb-12">
-        <div className="container mx-auto px-0 md:px-4 lg:px-8 flex flex-col md:flex-row gap-8" data-aos="fade-up">
-          {/* Contact Form */}
-          <div className="w-full md:w-1/2 space-y-6">
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label className="block text-lg font-medium mb-2">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className="block text-lg font-medium mb-2">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  required
-                  value={form.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className="block text-lg font-medium mb-2">Message</label>
-                <textarea
-                  rows="5"
-                  name="message"
-                  placeholder="Your Message"
-                  className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  required
-                  value={form.message}
-                  onChange={handleChange}
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="bg-blue-700 cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-800 transition"
-                disabled={loading}
-              >
-                {loading ? 'Sending...' : 'Send Message'}
-              </button>
-              {success && <div className="text-green-600 text-center font-semibold">Message sent!</div>}
-              {error && <div className="text-red-600 text-center font-semibold">{error}</div>}
-            </form>
+    <div className='bg-gradient-to-r from-[#0b0515] to-[#3c2461] min-h-screen'>
+      <div className="min-h-screen max-w-7xl mx-auto text-white pt-20 px-6 md:px-16">
+        {/* Hero Section */}
+        <motion.section
+          className="py-10 text-center"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+            Contact <span className="text-gradient">Us</span>
+          </motion.h1>
+          <motion.p variants={fadeInUp} className="text-lg text-gray-300 max-w-2xl mx-auto">
+            We'd love to hear from you! Please fill out the form below and our team will get back to you shortly.
+          </motion.p>
+        </motion.section>
+
+        {/* Contact Form with Map */}
+        <motion.section
+          className="py-5"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+            {/* Contact Form */}
+            <motion.div variants={fadeInUp} className="glass-effect p-8 bg-black/40 rounded-2xl">
+              <h2 className="text-2xl font-bold mb-6 text-gradient">Get In Touch</h2>
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-gray-300">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"
+                    required
+                    value={form.name}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-gray-300">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"
+                    required
+                    value={form.email}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-gray-300">Message</label>
+                  <textarea
+                    rows="5"
+                    name="message"
+                    placeholder="Your Message"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"
+                    required
+                    value={form.message}
+                    onChange={handleChange}
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition flex items-center justify-center"
+                  disabled={loading}
+                >
+                  {loading ? <Loader className="w-5 h-5 animate-spin mr-2" /> : <Send className="w-5 h-5 mr-2" />}
+                  {loading ? 'Sending...' : 'Send Message'}
+                </button>
+                {success && (
+                  <div className="flex items-center text-green-400 text-center font-semibold">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Message sent!
+                  </div>
+                )}
+                {error && (
+                  <div className="flex items-center text-red-400 text-center font-semibold">
+                    <AlertCircle className="w-5 h-5 mr-2" />
+                    {error}
+                  </div>
+                )}
+              </form>
+            </motion.div>
+
+            {/* Google Map */}
+            <motion.div variants={fadeInUp} className="glass-effect p-8 bg-black/40 rounded-2xl">
+              <h2 className="text-2xl font-bold mb-6 text-gradient">Our Location</h2>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.337735604388!2d77.03202311440608!3d28.679079582397536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04c038fe1e91%3A0x7499afcb450a070a!2sGurugram%2C%20Haryana%2C%20India!5e0!3m2!1sen!2sin!4v1699352500000!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-lg"
+              ></iframe>
+            </motion.div>
           </div>
-          {/* Google Map */}
-          <div className="w-full md:w-1/2 flex justify-center items-center">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.337735604388!2d77.03202311440608!3d28.679079582397536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04c038fe1e91%3A0x7499afcb450a070a!2sGurugram%2C%20Haryana%2C%20India!5e0!3m2!1sen!2sin!4v1699352500000!5m2!1sen!2sin"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg shadow-lg"
-            ></iframe>
-          </div>
-        </div>
-      </section>
-      {/* Office Locations */}
-      <section className="py-16 w-full bg-gray-100 text-gray-900 px-4 md:px-8 lg:px-12">
-        <div className="container mx-auto px-0 md:px-4 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-12" data-aos="fade-up">Our Offices</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </motion.section>
+
+        {/* Office Locations */}
+        <motion.section
+          className="py-10"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
+            Our Offices
+          </motion.h2>
+          <motion.div variants={container} className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
             {/* Office 1 */}
-            <div className="p-6 bg-white rounded-lg shadow hover:scale-105 transition" data-aos="fade-up">
-              <h3 className="text-xl font-bold mb-2 text-blue-700">India</h3>
-              <p>Gurugram, Haryana, India</p>
-            </div>
+            <motion.div
+              variants={fadeInUp}
+              className="glass-effect p-6 bg-black/40 rounded-2xl hover:scale-[1.02] transition"
+            >
+              <div className="flex items-center mb-4">
+                <MapPin className="w-6 h-6 mr-3 text-cyan-400" />
+                <h3 className="text-xl font-semibold text-gradient">India</h3>
+              </div>
+              <p className="text-gray-300">Gurugram, Haryana, India</p>
+            </motion.div>
             {/* Office 2 */}
-            <div className="p-6 bg-white rounded-lg shadow hover:scale-105 transition" data-aos="fade-up" data-aos-delay="200">
-              <h3 className="text-xl font-bold mb-2 text-blue-700">UAE</h3>
-              <p>Sharjah, UAE</p>
-            </div>
+            <motion.div
+              variants={fadeInUp}
+              className="glass-effect p-6 bg-black/40 rounded-2xl hover:scale-[1.02] transition"
+            >
+              <div className="flex items-center mb-4">
+                <MapPin className="w-6 h-6 mr-3 text-cyan-400" />
+                <h3 className="text-xl font-semibold text-gradient">UAE</h3>
+              </div>
+              <p className="text-gray-300">Sharjah, UAE</p>
+            </motion.div>
             {/* Office 3 */}
-            <div className="p-6 bg-white rounded-lg shadow hover:scale-105 transition" data-aos="fade-up" data-aos-delay="400">
-              <h3 className="text-xl font-bold mb-2 text-blue-700">USA</h3>
-              <p>New Mexico, USA</p>
-            </div>
-          </div>
-        </div>
-      </section>
+            <motion.div
+              variants={fadeInUp}
+              className="glass-effect p-6 bg-black/40 rounded-2xl hover:scale-[1.02] transition"
+            >
+              <div className="flex items-center mb-4">
+                <MapPin className="w-6 h-6 mr-3 text-cyan-400" />
+                <h3 className="text-xl font-semibold text-gradient">USA</h3>
+              </div>
+              <p className="text-gray-300">New Mexico, USA</p>
+            </motion.div>
+          </motion.div>
+        </motion.section>
+      </div>
     </div>
   );
-} 
+}

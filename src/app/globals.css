@@ -14,3 +14,20 @@ html, body {
     transform: translateX(-100%);
   }
 }
+
+.text-gradient {
+  background: linear-gradient(135deg, #4B6CEB, #9159B7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pulse-glow {
+  box-shadow: 0 0 20px rgba(145, 89, 183, 0.5);
+  animation: pulse 2s infinite;
+}
