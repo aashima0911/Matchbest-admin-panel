@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { useRef, useState, useEffect } from "react"
 
 const verticals = [
   {
@@ -86,34 +85,6 @@ const verticals = [
 ]
 
 export default function VerticalsCarousel() {
-  const scrollContainerRef = useRef(null)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
-
-  const checkScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current
-      setCanScrollLeft(scrollLeft > 0)
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
-    }
-  }
-
-  useEffect(() => {
-    checkScroll()
-    window.addEventListener("resize", checkScroll)
-    return () => window.removeEventListener("resize", checkScroll)
-  }, [])
-
-  const scroll = (direction) => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 400
-      scrollContainerRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      })
-      setTimeout(checkScroll, 300)
-    }
-  }
 
   return (
     <section className="w-full py-2 px-4 md:px-8 lg:px-12 pb-10">
@@ -126,26 +97,14 @@ export default function VerticalsCarousel() {
           </p>
         </div>
 
-        {/* Carousel Container */}
-        <div className="relative">
-          {/* Scroll Container */}
-          <div
-            ref={scrollContainerRef}
-            onScroll={checkScroll}
-            className="flex gap-6 overflow-x-auto scroll-smooth pb-4"
-            style={{ scrollBehavior: "smooth", scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {/* Hide scrollbar */}
-            <style>{`
-              div::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
-
-            {verticals.map((vertical) => (
+        {/* Grid Container */}
+        <div className="flex flex-col items-center">
+          {/* First row - 3 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 max-w-none mx-auto w-full">
+            {verticals.slice(0, 3).map((vertical) => (
               <div
                 key={vertical.id}
-                className="flex-shrink-0 w-full md:w-96 glass-effect bg-black/40 rounded-2xl hover:scale-[1.02] transition-all duration-500 overflow-hidden group border border-purple-500/20"
+                className="w-full max-w-md glass-effect bg-black/40 rounded-2xl hover:scale-[1.02] transition-all duration-500 overflow-hidden group border border-purple-500/20"
               >
                 {/* Card Background with gradient on hover */}
                 <div className="relative h-full p-8 flex flex-col">
@@ -171,7 +130,7 @@ export default function VerticalsCarousel() {
                     </div>
 
                     {/* Features List */}
-                    <div className="mb-8 flex-grow overflow-y-auto max-h-64">
+                    <div className="mb-8 flex-grow">
                       <ul className="space-y-3">
                         {vertical.items.map((item, idx) => (
                           <li
@@ -202,41 +161,69 @@ export default function VerticalsCarousel() {
             ))}
           </div>
 
-          {/* Navigation Buttons */}
-          {canScrollLeft && (
-            <button
-              onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 md:-translate-x-20 bg-[#9159B7] hover:bg-[#7B4BA0] text-white rounded-full p-3 transition-all duration-300 shadow-lg hover:shadow-xl z-10"
-              aria-label="Scroll left"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-          )}
+          {/* Second row - 2 cards, centered */}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full max-w-none">
+              {verticals.slice(3, 5).map((vertical) => (
+                <div
+                  key={vertical.id}
+                  className="w-full max-w-md glass-effect bg-black/40 rounded-2xl hover:scale-[1.02] transition-all duration-500 overflow-hidden group border border-purple-500/20"
+                >
+                  {/* Card Background with gradient on hover */}
+                  <div className="relative h-full p-8 flex flex-col">
+                    {/* Content */}
+                    <div className="flex flex-col h-full">
+                      {/* Logo/Title Section */}
+                      <div className="flex justify-center mb-8 h-20 items-center">
+                        {vertical.logo ? (
+                          <Image
+                            src={vertical.logo || "/placeholder.svg"}
+                            alt={`${vertical.name} Logo`}
+                            className="h-16 object-contain"
+                            width={192}
+                            height={64}
+                          />
+                        ) : (
+                          <div className="flex items-center justify-center">
+                            <h3 className="text-3xl font-bold text-white">
+                              Elite <span className="text-yellow-400">Maverick</span>
+                            </h3>
+                          </div>
+                        )}
+                      </div>
 
-          {canScrollRight && (
-            <button
-              onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 md:translate-x-20 bg-[#9159B7] hover:bg-[#7B4BA0] text-white rounded-full p-3 transition-all duration-300 shadow-lg hover:shadow-xl z-10"
-              aria-label="Scroll right"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          )}
-        </div>
+                      {/* Features List */}
+                      <div className="mb-8 flex-grow">
+                        <ul className="space-y-3">
+                          {vertical.items.map((item, idx) => (
+                            <li
+                              key={idx}
+                              className="text-gray-300 text-sm leading-relaxed flex items-start gap-3 group/item"
+                            >
+                              <span className="text-cyan-400 font-semibold mt-0.5 flex-shrink-0">•</span>
+                              <span className="group-hover/item:text-gray-100 transition-colors duration-300">
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-8 gap-2">
-          {verticals.map((_, idx) => (
-            <div
-              key={idx}
-              className="h-2 bg-gray-600 rounded-full transition-all duration-300"
-              style={{ width: idx === 0 ? "24px" : "8px" }}
-            />
-          ))}
+                      {/* CTA Button */}
+                      <a
+                        href={vertical.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
+                      >
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
