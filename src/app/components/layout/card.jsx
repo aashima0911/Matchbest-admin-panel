@@ -131,7 +131,7 @@ export default function VerticalsCarousel() {
 
                     {/* Features List */}
                     <div className="mb-8 flex-grow">
-                      <ul className="space-y-3">
+                      <ul className="space-y-0">
                         {vertical.items.map((item, idx) => (
                           <li
                             key={idx}
@@ -194,7 +194,7 @@ export default function VerticalsCarousel() {
 
                       {/* Features List */}
                       <div className="mb-8 flex-grow">
-                        <ul className="space-y-3">
+                        <ul className="space-y-0">
                           {vertical.items.map((item, idx) => (
                             <li
                               key={idx}
