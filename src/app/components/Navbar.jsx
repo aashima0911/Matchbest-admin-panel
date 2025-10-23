@@ -6,12 +6,12 @@ import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/blogs', label: 'Blogs' },
+  // { href: '/', label: 'Home' },
+  // { href: '/about', label: 'About' },
+  // { href: '/blogs', label: 'Blogs' },
   // { href: '/services', label: 'Services' },
-  { href: '/byteplus-partnership', label: 'MBSL × BytePlus' },
-  { href: '/careers', label: 'Careers' },
+  { href: '/byteplus-partnership', label: <span> Byteplus partnership <br/>(Seedance x Seedream)</span>},
+  // { href: '/careers', label: 'Careers' },
 ];
 
 export default function Navbar() {
@@ -111,4 +111,4 @@ export default function Navbar() {
       </div>
     </nav>
   );
-} 
+}

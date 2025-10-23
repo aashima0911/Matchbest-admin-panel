@@ -38,7 +38,7 @@ export default function BytePlusTikTokPartnershipPage() {
       <div className="min-h-screen max-w-7xl mx-auto text-white pt-20">
         {/* Hero Section */}
         <motion.section
-          className="py-10 px-6 md:px-16 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden"
+          className="py-8 px-6 md:px-16 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -46,19 +46,20 @@ export default function BytePlusTikTokPartnershipPage() {
         >
           <motion.div variants={fadeInUp} className="lg:w-1/2">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-              BytePlus & MatchbestGroup  <span className="text-gradient">Partnership</span>
+              BytePlus & Matchbest  <span className="text-gradient">Partnership</span>
             </h1>
             <p className="text-lg text-gray-300 mb-8">
-              Leverage our exclusive partnership with BytePlus to access cutting-edge AI technology at discounted rates with premium support and early access to new features.
+              Unleash the power of imagination with AI.
+              Through our exclusive Seedance x Seedream partnership with BytePlus, we’re bringing world-class AI creativity to everyone
             </p>
 
             {/* Feature List */}
             <div className="space-y-4 mb-8">
               {[
-                "Exclusive API access with priority support and dedicated resources",
-                "Discounted rates on tokens, credits, and AI processing",
-                "Early access to beta features and new AI capabilities",
-                "Direct partnership benefits and technical consultation"
+                "Exclusive access to AI creativity tools through the Seedance x Seedream partnership with BytePlus",
+                "Early access to next-generation creative intelligence and experimental AI features",
+                "Partner benefits including premium support, resource sharing, and innovation collaboration",
+                "Empowerment for creators and brands to design, advertise, and engage with limitless imagination"
               ].map((feature, i) => (
                 <motion.div
                   key={i}
@@ -75,7 +76,7 @@ export default function BytePlusTikTokPartnershipPage() {
               ))}
             </div>
 
-            <Link href={'/contact'}>
+            <a href="mailto:biz@matchbest.ai">
               <motion.button
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
@@ -83,7 +84,7 @@ export default function BytePlusTikTokPartnershipPage() {
               >
                 Get Exclusive Access
               </motion.button>
-            </Link>
+            </a>
           </motion.div>
 
           <motion.div variants={fadeInUp} className="lg:w-1/2 w-full">
@@ -113,25 +114,25 @@ export default function BytePlusTikTokPartnershipPage() {
             {[
               {
                 icon: Video,
-                title: "Video AI",
+                title: "Generate Videos with Seedance",
                 desc: "Advanced video generation and editing with multi-scene capabilities.",
                 features: ["Multi-scene generation", "Style transfer", "Video enhancement", "Format conversion"]
               },
               {
                 icon: Camera,
-                title: "Image AI",
+                title: "Generate Images with Seedance",
                 desc: "Photorealistic image generation and manipulation tools.",
                 features: ["High-res generation", "Style consistency", "Image editing", "Batch processing"]
               },
               {
                 icon: Mic,
-                title: "Audio AI",
+                title: "Generate Audio with Seedance",
                 desc: "Voice processing, translation, and audio enhancement.",
                 features: ["Voice synthesis", "Noise removal", "Auto-dubbing", "Language translation"]
               },
               {
                 icon: Sparkles,
-                title: "Creative AI",
+                title: "Generate Creativity with Seedance",
                 desc: "AR effects, filters, and interactive content creation.",
                 features: ["AR filters", "Virtual try-on", "Interactive effects", "Real-time processing"]
               }

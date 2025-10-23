@@ -12,10 +12,15 @@ export default function Footer() {
         <div className="flex justify-center space-x-6">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About</Link>
+          <Link href="/blogs" className="hover:underline">Blog</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
           <Link href="/careers" className="hover:underline">Careers</Link>
           {/* <a href="/sitemap.xml" className="hover:underline" target="_blank" rel="noopener noreferrer">Sitemap</a> */}
         </div>
+
+        <p className="text-sm">
+          Email: <a href="mailto:biz@matchbest.ai" className="hover:underline">biz@matchbest.ai</a>
+        </p>
 
         <div className="flex justify-center space-x-6 text-2xl">
           <a href="https://www.instagram.com/matchbestgroup/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaInstagram /></a>

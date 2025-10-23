@@ -16,7 +16,7 @@ export async function POST(request) {
     // Send email with Resend
     await resend.emails.send({
       from: "matchbest@matchbestsoftware.ae", // Replace with your "from" email address
-      to: "mshpdell@gmail.com", // Replace with your "to" email address
+      to: "biz@matchbest.ai", // Replace with your "to" email address
       subject: "New Contact Form Submission",
       html: `<p>A new contact form submission has been received from MatchBest.com:</p><pre>${JSON.stringify(
         data,

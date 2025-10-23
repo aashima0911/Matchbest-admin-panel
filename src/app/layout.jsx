@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import ChatbotButton from "@/app/components/ChatbotButton";
+import WhatsAppButton from "@/app/components/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -102,6 +103,7 @@ export default function RootLayout({ children }) {
         <main className="flex-1">{children}</main>
         <Footer />
         <ChatbotButton />
+        <WhatsAppButton />
       </body>
     </html>
   );
