@@ -26,7 +26,7 @@ const fadeInUp = {
 };
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', mobile: '', message: '' });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -52,7 +52,7 @@ export default function ContactPage() {
       }
 
       setSuccess(true);
-      setForm({ name: '', email: '', message: '' });
+      setForm({ name: '', email: '', mobile: '', message: '' });
     } catch (err) {
       setError('Failed to send message.');
     } finally {
@@ -113,6 +113,21 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"
                     required
                     value={form.email}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-gray-300">Mobile Number</label>
+                  <input
+                    type="number"
+                    name="mobile"
+                    placeholder="Your Mobile Number"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"
+                    required
+                    min="1000000000"
+                    max="999999999999999"
+                    title="Please enter a valid mobile number"
+                    value={form.mobile}
                     onChange={handleChange}
                   />
                 </div>

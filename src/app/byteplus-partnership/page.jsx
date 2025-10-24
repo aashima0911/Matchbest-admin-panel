@@ -96,13 +96,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 ))}
               </div>
 
-              <a href="mailto:biz@matchbest.ai">
+              <a href="/contact">
                 <motion.button
                   variants={fadeInUp}
                   whileHover={{ scale: 1.05 }}
                   className="pulse-glow px-8 py-4 rounded-full shadow-lg transition cursor-pointer bg-[#9159B7] text-white text-lg"
                 >
-                  {t('byteplusPartnership.hero.cta', 'Get Exclusive Access')}
+                  {t('byteplusPartnership.hero.cta', 'Get Demo')}
                 </motion.button>
               </a>
             </motion.div>
@@ -140,19 +140,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 },
                 {
                   icon: Camera,
-                  title: "Generate Images with Seedance",
+                  title: "Generate Images with Seedream",
                   desc: "Photorealistic image generation and manipulation tools.",
                   features: ["High-res generation", "Style consistency", "Image editing", "Batch processing"]
                 },
                 {
                   icon: Mic,
-                  title: "Generate Audio with Seedance",
+                  title: "Generate Audio / Speech with BytePlus",
                   desc: "Voice processing, translation, and audio enhancement.",
                   features: ["Voice synthesis", "Noise removal", "Auto-dubbing", "Language translation"]
                 },
                 {
                   icon: Sparkles,
-                  title: "Generate Creativity with Seedance",
+                  title: "Generate Creativity with BytePlus",
                   desc: "AR effects, filters, and interactive content creation.",
                   features: ["AR filters", "Virtual try-on", "Interactive effects", "Real-time processing"]
                 }
