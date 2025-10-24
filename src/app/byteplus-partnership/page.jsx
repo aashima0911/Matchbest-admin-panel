@@ -100,9 +100,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <motion.button
                   variants={fadeInUp}
                   whileHover={{ scale: 1.05 }}
-                  className="pulse-glow px-8 py-4 rounded-full shadow-lg transition cursor-pointer bg-[#9159B7] text-white text-lg"
+                  className="px-8 py-4 rounded-full border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition cursor-pointer text-lg"
                 >
-                  {t('byteplusPartnership.hero.cta', 'Get Demo')}
+                  {t('byteplusPartnership.hero.getStartedFreeDemo', 'Get Started Free Demo')}
                 </motion.button>
               </a>
             </motion.div>
