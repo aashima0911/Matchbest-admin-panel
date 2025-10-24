@@ -1,0 +1,89 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "Over ons",
+    "blogs": "Blogs",
+    "services": "Diensten",
+    "byteplusPartnership": "Byteplus partnerschap (Seedance x Seedream)",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "getInTouch": "Neem contact op"
+  },
+  "hero": {
+    "title": "Bouw de toekomst met ons.",
+    "subtitle": "Geavanceerde web- en mobiele apps gebouwd voor schaalbaarheid, snelheid en veiligheid.",
+    "cta": "Krijg exclusieve toegang"
+  },
+  "verticals": {
+    "title": "Onze verticale markten"
+  },
+  "expertise": {
+    "title": "Onze expertise",
+    "nextGen": {
+      "title": "Next-Gen ontwikkeling",
+      "desc": "Geavanceerde web- en mobiele apps gebouwd voor schaalbaarheid, snelheid en veiligheid."
+    },
+    "aiAutomation": {
+      "title": "AI automatisering",
+      "desc": "Integreer slimme automatisering en AI om uw bedrijfsprocessen te versnellen."
+    },
+    "cloudSolutions": {
+      "title": "Cloud oplossingen",
+      "desc": "Naadloze cloudmigratie, hosting en infrastructuur voor moderne teams."
+    },
+    "cybersecurity": {
+      "title": "Cyberbeveiliging",
+      "desc": "Enterprise-grade beveiliging en advies om uw digitale activa te beschermen."
+    }
+  },
+  "cta": {
+    "title": "Klaar om iets geweldigs te bouwen?",
+    "desc": "Laten we samenwerken om uw visie werkelijkheid te maken. Neem contact op voor een gratis consult en zie hoe we u kunnen helpen groeien.",
+    "button": "Neem contact met ons op"
+  },
+  "whyChooseUs": {
+    "title": "Waarom ons kiezen?",
+    "expertTeam": {
+      "title": "Expertteam",
+      "desc": "Onze ervaren professionals leveren innovatieve, betrouwbare oplossingen op maat voor uw behoeften."
+    },
+    "clientCentric": {
+      "title": "Klantgericht",
+      "desc": "We prioriteren uw doelen en tevredenheid, met transparante communicatie en resultaten."
+    },
+    "cuttingEdgeTech": {
+      "title": "Geavanceerde technologie",
+      "desc": "We gebruiken de nieuwste technologieën om uw bedrijf toekomstbestendig te maken en ROI te maximaliseren."
+    }
+  },
+  "howWeWork": {
+    "title": "Hoe we werken",
+    "consult": {
+      "title": "Consult",
+      "desc": "We luisteren naar uw behoeften en definiëren samen duidelijke projectdoelen."
+    },
+    "develop": {
+      "title": "Ontwikkelen",
+      "desc": "Ons team ontwerpt, bouwt en test uw oplossing met regelmatige updates."
+    },
+    "deliver": {
+      "title": "Leveren",
+      "desc": "We lanceren, ondersteunen en optimaliseren uw project voor langetermijnsucces."
+    }
+  },
+  "testimonials": {
+    "title": "Wat onze klanten zeggen"
+  },
+  "technologies": {
+    "title": "Technologieën die we gebruiken"
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "q1": "Hoe start ik een project met MatchBest Group?",
+    "a1": "Neem eenvoudig contact op met MatchBest Group via de knop hierboven of onze contactpagina. We plannen een gratis consult om uw behoeften te begrijpen en uw project te starten.",
+    "q2": "Welke industrieën bedient MatchBest Group?",
+    "a2": "MatchBest Group werkt samen met startups, ondernemingen en MKB's in sectoren zoals fintech, gezondheidszorg, e-commerce, media en meer.",
+    "q3": "Biedt MatchBest Group voortdurende ondersteuning?",
+    "a3": "Ja! MatchBest Group biedt voortdurende onderhoud, ondersteuning en optimalisatie om de langetermijnsucces van al uw projecten te waarborgen."
+  }
+}

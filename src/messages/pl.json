@@ -1,0 +1,89 @@
+{
+  "navbar": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "blogs": "Blogi",
+    "services": "Usługi",
+    "byteplusPartnership": "Partnerstwo Byteplus (Seedance x Seedream)",
+    "careers": "Kariera",
+    "contact": "Kontakt",
+    "getInTouch": "Skontaktuj się z nami"
+  },
+  "hero": {
+    "title": "Buduj przyszłość z nami.",
+    "subtitle": "Zaawansowane aplikacje internetowe i mobilne zbudowane na skalę, prędkość i bezpieczeństwo.",
+    "cta": "Uzyskaj ekskluzywny dostęp"
+  },
+  "verticals": {
+    "title": "Nasze branże"
+  },
+  "expertise": {
+    "title": "Nasza wiedza specjalistyczna",
+    "nextGen": {
+      "title": "Rozwój Next-Gen",
+      "desc": "Zaawansowane aplikacje internetowe i mobilne zbudowane na skalę, prędkość i bezpieczeństwo."
+    },
+    "aiAutomation": {
+      "title": "Automatyzacja AI",
+      "desc": "Zintegruj inteligentną automatyzację i AI, aby przyspieszyć swoje procesy biznesowe."
+    },
+    "cloudSolutions": {
+      "title": "Rozwiązania chmurowe",
+      "desc": "Bezproblemowa migracja do chmury, hosting i infrastruktura dla nowoczesnych zespołów."
+    },
+    "cybersecurity": {
+      "title": "Cyberbezpieczeństwo",
+      "desc": "Bezpieczeństwo klasy korporacyjnej i konsulting w celu ochrony Twoich aktywów cyfrowych."
+    }
+  },
+  "cta": {
+    "title": "Gotowy na zbudowanie czegoś niesamowitego?",
+    "desc": "Współpracujmy, aby przekształcić Twoją wizję w rzeczywistość. Skontaktuj się z nami w sprawie bezpłatnej konsultacji i zobacz, jak możemy pomóc Ci się rozwijać.",
+    "button": "Skontaktuj się z nami"
+  },
+  "whyChooseUs": {
+    "title": "Dlaczego warto nas wybrać?",
+    "expertTeam": {
+      "title": "Zespół ekspertów",
+      "desc": "Nasi doświadczeni profesjonaliści dostarczają innowacyjne, niezawodne rozwiązania dostosowane do Twoich potrzeb."
+    },
+    "clientCentric": {
+      "title": "Skupiony na kliencie",
+      "desc": "Priorytetowo traktujemy Twoje cele i satysfakcję, zapewniając przejrzystą komunikację i wyniki."
+    },
+    "cuttingEdgeTech": {
+      "title": "Najnowocześniejsza technologia",
+      "desc": "Używamy najnowszych technologii, aby zabezpieczyć przyszłość Twojej firmy i zmaksymalizować ROI."
+    }
+  },
+  "howWeWork": {
+    "title": "Jak pracujemy",
+    "consult": {
+      "title": "Konsultacja",
+      "desc": "Słuchamy Twoich potrzeb i wspólnie definiujemy jasne cele projektu."
+    },
+    "develop": {
+      "title": "Rozwijaj",
+      "desc": "Nasz zespół projektuje, buduje i testuje Twoje rozwiązanie z regularnymi aktualizacjami."
+    },
+    "deliver": {
+      "title": "Dostarcz",
+      "desc": "Uruchamiamy, wspieramy i optymalizujemy Twój projekt na długoterminowy sukces."
+    }
+  },
+  "testimonials": {
+    "title": "Co mówią nasi klienci"
+  },
+  "technologies": {
+    "title": "Technologie, których używamy"
+  },
+  "faq": {
+    "title": "Często zadawane pytania",
+    "q1": "Jak rozpocząć projekt z MatchBest Group?",
+    "a1": "Po prostu skontaktuj się z MatchBest Group, używając przycisku powyżej lub przez naszą stronę kontaktową. Umówimy bezpłatną konsultację, aby zrozumieć Twoje potrzeby i rozpocząć Twój projekt.",
+    "q2": "Jakie branże obsługuje MatchBest Group?",
+    "a2": "MatchBest Group współpracuje z startupami, przedsiębiorstwami i MŚP w branżach takich jak fintech, zdrowie, e-commerce, media i inne.",
+    "q3": "Czy MatchBest Group oferuje ciągłe wsparcie?",
+    "a3": "Tak! MatchBest Group zapewnia ciągłą konserwację, wsparcie i optymalizację, aby zapewnić długoterminowy sukces wszystkich Twoich projektów."
+  }
+}

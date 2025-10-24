@@ -1,0 +1,89 @@
+{
+  "navbar": {
+    "home": "Beranda",
+    "about": "Tentang kami",
+    "blogs": "Blog",
+    "services": "Layanan",
+    "byteplusPartnership": "Kemitraan Byteplus (Seedance x Seedream)",
+    "careers": "Karir",
+    "contact": "Kontak",
+    "getInTouch": "Hubungi kami"
+  },
+  "hero": {
+    "title": "Bangun masa depan bersama kami.",
+    "subtitle": "Aplikasi web dan seluler mutakhir yang dibuat untuk skala, kecepatan, dan keamanan.",
+    "cta": "Dapatkan akses eksklusif"
+  },
+  "verticals": {
+    "title": "Vertikal kami"
+  },
+  "expertise": {
+    "title": "Keahlian kami",
+    "nextGen": {
+      "title": "Pengembangan Next-Gen",
+      "desc": "Aplikasi web dan seluler mutakhir yang dibuat untuk skala, kecepatan, dan keamanan."
+    },
+    "aiAutomation": {
+      "title": "Otomasi AI",
+      "desc": "Integrasikan otomasi cerdas dan AI untuk mempercepat alur kerja bisnis Anda."
+    },
+    "cloudSolutions": {
+      "title": "Solusi cloud",
+      "desc": "Migrasi cloud yang mulus, hosting, dan infrastruktur untuk tim modern."
+    },
+    "cybersecurity": {
+      "title": "Keamanan siber",
+      "desc": "Keamanan tingkat enterprise dan konsultasi untuk melindungi aset digital Anda."
+    }
+  },
+  "cta": {
+    "title": "Siap membangun sesuatu yang menakjubkan?",
+    "desc": "Mari berkolaborasi untuk mengubah visi Anda menjadi kenyataan. Hubungi kami untuk konsultasi gratis dan lihat bagaimana kami dapat membantu Anda tumbuh.",
+    "button": "Hubungi kami"
+  },
+  "whyChooseUs": {
+    "title": "Mengapa memilih kami?",
+    "expertTeam": {
+      "title": "Tim ahli",
+      "desc": "Profesional berpengalaman kami memberikan solusi inovatif dan andal yang disesuaikan dengan kebutuhan Anda."
+    },
+    "clientCentric": {
+      "title": "Berfokus pada klien",
+      "desc": "Kami memprioritaskan tujuan dan kepuasan Anda, memastikan komunikasi transparan dan hasil."
+    },
+    "cuttingEdgeTech": {
+      "title": "Teknologi mutakhir",
+      "desc": "Kami menggunakan teknologi terbaru untuk membuat bisnis Anda tahan masa depan dan memaksimalkan ROI."
+    }
+  },
+  "howWeWork": {
+    "title": "Bagaimana kami bekerja",
+    "consult": {
+      "title": "Konsultasi",
+      "desc": "Kami mendengarkan kebutuhan Anda dan mendefinisikan tujuan proyek yang jelas bersama-sama."
+    },
+    "develop": {
+      "title": "Kembangkan",
+      "desc": "Tim kami merancang, membangun, dan menguji solusi Anda dengan pembaruan rutin."
+    },
+    "deliver": {
+      "title": "Kirim",
+      "desc": "Kami meluncurkan, mendukung, dan mengoptimalkan proyek Anda untuk kesuksesan jangka panjang."
+    }
+  },
+  "testimonials": {
+    "title": "Apa yang dikatakan klien kami"
+  },
+  "technologies": {
+    "title": "Teknologi yang kami gunakan"
+  },
+  "faq": {
+    "title": "Pertanyaan yang sering diajukan",
+    "q1": "Bagaimana cara memulai proyek dengan MatchBest Group?",
+    "a1": "Cukup hubungi MatchBest Group menggunakan tombol di atas atau melalui halaman kontak kami. Kami akan mengatur konsultasi gratis untuk memahami kebutuhan Anda dan memulai proyek Anda.",
+    "q2": "Industri apa yang dilayani MatchBest Group?",
+    "a2": "MatchBest Group berkolaborasi dengan startup, perusahaan, dan UKM di berbagai industri seperti fintech, kesehatan, e-commerce, media, dan lainnya.",
+    "q3": "Apakah MatchBest Group menawarkan dukungan berkelanjutan?",
+    "a3": "Ya! MatchBest Group menyediakan pemeliharaan, dukungan, dan optimasi berkelanjutan untuk memastikan kesuksesan jangka panjang semua proyek Anda."
+  }
+}

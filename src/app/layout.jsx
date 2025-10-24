@@ -3,10 +3,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
-import ChatbotButton from "@/app/components/ChatbotButton";
-import WhatsAppButton from "@/app/components/WhatsAppButton";
+import ClientLayout from "@/app/components/ClientLayout";
+import "@/lib/i18n"; // i18n initialization
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -85,7 +83,7 @@ export default function RootLayout({ children }) {
           <meta name="duckduckbot" content="index, follow" />
           <meta name="slurp" content="index, follow" />
           <meta name="ia_archiver" content="index, follow" />
-       
+
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ28ZXV4K2" />
         <Script id="gtag-init">
           {`
@@ -95,15 +93,38 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-FJ28ZXV4K2');
           `}
         </Script>
+        {/* Meta Pixel Code */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1396078278515018');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1396078278515018&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+        {/* End Meta Pixel Code */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <ChatbotButton />
-        <WhatsAppButton />
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

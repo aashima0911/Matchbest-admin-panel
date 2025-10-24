@@ -1,0 +1,89 @@
+{
+  "navbar": {
+    "home": "Koti",
+    "about": "Tietoa meistä",
+    "blogs": "Blogit",
+    "services": "Palvelut",
+    "byteplusPartnership": "Byteplus kumppanuus (Seedance x Seedream)",
+    "careers": "Urat",
+    "contact": "Yhteystiedot",
+    "getInTouch": "Ota yhteyttä"
+  },
+  "hero": {
+    "title": "Rakenna tulevaisuus kanssamme.",
+    "subtitle": "Huippuluokan web- ja mobiilisovellukset rakennettu skaalautuvuutta, nopeutta ja turvallisuutta varten.",
+    "cta": "Saa eksklusiivinen pääsy"
+  },
+  "verticals": {
+    "title": "Vertikaalimme"
+  },
+  "expertise": {
+    "title": "Asiantuntemuksemme",
+    "nextGen": {
+      "title": "Seuraavan sukupolven kehitys",
+      "desc": "Huippuluokan web- ja mobiilisovellukset rakennettu skaalautuvuutta, nopeutta ja turvallisuutta varten."
+    },
+    "aiAutomation": {
+      "title": "AI automatisointi",
+      "desc": "Integroi älykäs automatisointi ja AI tehostamaan liiketoimintaprosessejasi."
+    },
+    "cloudSolutions": {
+      "title": "Pilvi-ratkaisut",
+      "desc": "Saumaton pilvi-migraatio, hosting ja infrastruktuuri moderneille tiimeille."
+    },
+    "cybersecurity": {
+      "title": "Kyberturvallisuus",
+      "desc": "Yritystason turvallisuus ja konsultointi digitaalisten omaisuuksiesi suojaamiseksi."
+    }
+  },
+  "cta": {
+    "title": "Valmis rakentamaan jotain uskomatonta?",
+    "desc": "Tehdään yhteistyötä muuttaaksemme visionsi todellisuudeksi. Ota yhteyttä ilmaiseen konsultaatioon ja katso, miten voimme auttaa sinua kasvamaan.",
+    "button": "Ota yhteyttä"
+  },
+  "whyChooseUs": {
+    "title": "Miksi valita meidät?",
+    "expertTeam": {
+      "title": "Asiantuntijatiimi",
+      "desc": "Kokeneet ammattilaisemme toimittavat innovatiivisia, luotettavia ratkaisuja räätälöityinä tarpeisiisi."
+    },
+    "clientCentric": {
+      "title": "Asiakaslähtöinen",
+      "desc": "Priorisoimme tavoitteesi ja tyytyväisyytesi varmistaen avoimen kommunikoinnin ja tulokset."
+    },
+    "cuttingEdgeTech": {
+      "title": "Huippuluokan teknologia",
+      "desc": "Käytämme uusimpia teknologioita yrityksesi tulevaisuuden varmistamiseksi ja ROI:n maksimoimiseksi."
+    }
+  },
+  "howWeWork": {
+    "title": "Miten työskentelemme",
+    "consult": {
+      "title": "Konsultoi",
+      "desc": "Kuuntelemme tarpeitasi ja määrittelemme yhdessä selkeät projektitavoitteet."
+    },
+    "develop": {
+      "title": "Kehitä",
+      "desc": "Tiimimme suunnittelee, rakentaa ja testaa ratkaisusi säännöllisillä päivityksillä."
+    },
+    "deliver": {
+      "title": "Toimita",
+      "desc": "Käynnistämme, tuemme ja optimoimme projektisi pitkäaikaiselle menestykselle."
+    }
+  },
+  "testimonials": {
+    "title": "Mitä asiakkaamme sanovat"
+  },
+  "technologies": {
+    "title": "Teknologiat joita käytämme"
+  },
+  "faq": {
+    "title": "Usein kysytyt kysymykset",
+    "q1": "Miten aloittaa projekti MatchBest Groupin kanssa?",
+    "a1": "Ota yksinkertaisesti yhteyttä MatchBest Groupiin käyttämällä yllä olevaa painiketta tai yhteystietosivua. Järjestämme ilmaisen konsultoinnin ymmärtääksemme tarpeesi ja aloittaaksemme projektisi.",
+    "q2": "Mitä toimialoja MatchBest Group palvelee?",
+    "a2": "MatchBest Group tekee yhteistyötä startupien, yritysten ja PK-yritysten kanssa toimialoilla kuten fintech, terveydenhuolto, verkkokauppa, media ja enemmän.",
+    "q3": "Tarjoaako MatchBest Group jatkuvaa tukea?",
+    "a3": "Kyllä! MatchBest Group tarjoaa jatkuvaa ylläpitoa, tukea ja optimointia varmistaaksemme kaikkien projektiesi pitkäaikaisen menestyksen."
+  }
+}

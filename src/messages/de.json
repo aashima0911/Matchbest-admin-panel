@@ -1,0 +1,141 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "blogs": "Blogs",
+    "services": "Dienstleistungen",
+    "byteplusPartnership": "Byteplus Partnerschaft (Seedance x Seedream)",
+    "careers": "Karriere",
+    "contact": "Kontakt",
+    "getInTouch": "Kontakt aufnehmen"
+  },
+  "hero": {
+    "title": "Bauen Sie die Zukunft mit uns.",
+    "subtitle": "Hochmoderne Web- und Mobil-Apps, entwickelt für Skalierbarkeit, Geschwindigkeit und Sicherheit.",
+    "cta": "Exklusiven Zugang erhalten"
+  },
+  "verticals": {
+    "title": "Unsere Vertikalen",
+    "subtitle": "Transformation von Branchen durch innovative Technologielösungen",
+    "learnMore": "Mehr erfahren",
+    "matchbest": {
+      "item1": "AvaOne",
+      "viewMore": "mehr anzeigen",
+      "item2": "KI-Automatisierung & Governance",
+      "item3": "Digitale Transformation 3.0",
+      "item4": "Cybersicherheit & VAPT",
+      "item5": "Daten-Engineering & Vertrauens-Fabric",
+      "item6": "Blockchain & Smart Contracts",
+      "item7": "Quantencomputing",
+      "item8": "Nachhaltigkeit & Grüne IT",
+      "item9": "KI-Governance & Compliance"
+    },
+    "xelta": {
+      "item1": "Vereinheitlichter Generativer KI-Hub",
+      "item2": "Text-zu-Alles-Engine",
+      "item3": "Multi-Modell-Intelligenz-Schicht",
+      "item4": "Cloud-Native-Architektur",
+      "item5": "Echtzeit-Workflow-Studio",
+      "item6": "Generativer Content-Marktplatz",
+      "item7": "Zukunftssicheres Ökosystem"
+    },
+    "healNova": {
+      "item1": "24/7 KI-Arzt & Autonome Pflege",
+      "item2": "Persönliche Medizinische Tresore",
+      "item3": "Prädiktive Langlebigkeit",
+      "item4": "Kognitive & Emotionale Gesundheit",
+      "item5": "KI-gestützte Diagnostik",
+      "item6": "Arzt- & Pflegeteam-Dashboards",
+      "item7": "Patienten- & Familien-Gesundheitsmanagement",
+      "item8": "Gesundheitsanalysen & Forschungs-Cloud",
+      "item9": "Wellness & Lifestyle-Orchestrierung"
+    },
+    "eliteMaverick": {
+      "item1": "Talentakquise-Exzellenz",
+      "item2": "KI-Workforce-Lösungen",
+      "item3": "Business Consulting",
+      "item4": "Transformationslösungen",
+      "item5": "Finanz- & Digitale Dienstleistungen",
+      "item6": "Web3-Dienstleistungen",
+      "item7": "Globale Unternehmenslösungen"
+    },
+    "vitaay": {
+      "item1": "Universelle Brücke: Marken ↔ Creator ↔ Fans",
+      "item2": "KI-gestützte Creator-Marken-Matching",
+      "item3": "End-to-End-Kollaborationsplattform",
+      "item4": "Fan-gestützte Creator-Ökonomie",
+      "item5": "Immersives & Multi-Reality-Hub",
+      "item6": "Gebaut für das nächste Jahrhundert",
+      "item7": "Fokus auf Schwellenländer"
+    }
+  },
+  "expertise": {
+    "title": "Unsere Expertise",
+    "nextGen": {
+      "title": "Next-Gen Entwicklung",
+      "desc": "Hochmoderne Web- und Mobil-Apps, entwickelt für Skalierbarkeit, Geschwindigkeit und Sicherheit."
+    },
+    "aiAutomation": {
+      "title": "KI-Automatisierung",
+      "desc": "Integrieren Sie intelligente Automatisierung und KI, um Ihre Geschäftsabläufe zu beschleunigen."
+    },
+    "cloudSolutions": {
+      "title": "Cloud-Lösungen",
+      "desc": "Nahtlose Cloud-Migration, Hosting und Infrastruktur für moderne Teams."
+    },
+    "cybersecurity": {
+      "title": "Cybersicherheit",
+      "desc": "Unternehmenssicherheit und Beratung zum Schutz Ihrer digitalen Assets."
+    }
+  },
+  "cta": {
+    "title": "Bereit, etwas Unglaubliches zu bauen?",
+    "desc": "Lassen Sie uns zusammenarbeiten, um Ihre Vision in die Realität umzusetzen. Vereinbaren Sie eine kostenlose Beratung und sehen Sie, wie wir Ihnen helfen können zu wachsen.",
+    "button": "Kontaktieren Sie uns"
+  },
+  "whyChooseUs": {
+    "title": "Warum uns wählen?",
+    "expertTeam": {
+      "title": "Expertenteam",
+      "desc": "Unsere erfahrenen Fachkräfte liefern innovative, zuverlässige Lösungen, die auf Ihre Bedürfnisse zugeschnitten sind."
+    },
+    "clientCentric": {
+      "title": "Kundenorientiert",
+      "desc": "Wir priorisieren Ihre Ziele und Zufriedenheit und gewährleisten transparente Kommunikation und Ergebnisse."
+    },
+    "cuttingEdgeTech": {
+      "title": "Spitzentechnologie",
+      "desc": "Wir nutzen die neuesten Technologien, um Ihr Unternehmen zukunftssicher zu machen und den ROI zu maximieren."
+    }
+  },
+  "howWeWork": {
+    "title": "Wie wir arbeiten",
+    "consult": {
+      "title": "Beraten",
+      "desc": "Wir hören Ihren Bedürfnissen zu und definieren gemeinsam klare Projektziele."
+    },
+    "develop": {
+      "title": "Entwickeln",
+      "desc": "Unser Team entwirft, baut und testet Ihre Lösung mit regelmäßigen Updates."
+    },
+    "deliver": {
+      "title": "Liefern",
+      "desc": "Wir starten, unterstützen und optimieren Ihr Projekt für langfristigen Erfolg."
+    }
+  },
+  "testimonials": {
+    "title": "Was unsere Kunden sagen"
+  },
+  "technologies": {
+    "title": "Technologien, die wir verwenden"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "q1": "Wie starte ich ein Projekt mit MatchBest Group?",
+    "a1": "Kontaktieren Sie MatchBest Group einfach über die Schaltfläche oben oder unsere Kontaktseite. Wir vereinbaren eine kostenlose Beratung, um Ihre Bedürfnisse zu verstehen und Ihr Projekt zu starten.",
+    "q2": "Welche Branchen bedient MatchBest Group?",
+    "a2": "MatchBest Group arbeitet mit Startups, Unternehmen und KMUs in Branchen wie Fintech, Gesundheitswesen, E-Commerce, Medien und mehr zusammen.",
+    "q3": "Bietet MatchBest Group laufenden Support?",
+    "a3": "Ja! MatchBest Group bietet kontinuierliche Wartung, Support und Optimierung, um den langfristigen Erfolg all Ihrer Projekte zu gewährleisten."
+  }
+}

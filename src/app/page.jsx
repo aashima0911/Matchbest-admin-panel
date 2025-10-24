@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
@@ -14,23 +15,23 @@ import VerticalsCarousel from '@/app/components/layout/card.jsx';
 const services = [
     {
         icon: <Image src="/assets/rt.png" alt="Next-Gen Development" className="w-16 h-16 rounded-full object-cover" width={64} height={64} />,
-        title: "Next-Gen Development",
-        desc: "Cutting-edge web and mobile apps built for scale, speed, and security.",
+        titleKey: "expertise.nextGen.title",
+        descKey: "expertise.nextGen.desc",
     },
     {
         icon: <Image src="/assets/ai.jpg" alt="AI Automation" className="w-16 h-16 rounded-full object-cover" width={64} height={64} />,
-        title: "AI Automation",
-        desc: "Integrate smart automation and AI to supercharge your business workflows.",
+        titleKey: "expertise.aiAutomation.title",
+        descKey: "expertise.aiAutomation.desc",
     },
     {
         icon: <Image src="/assets/cloud.png" alt="Cloud Solutions" className="w-16 h-16 rounded-full object-cover" width={64} height={64} />,
-        title: "Cloud Solutions",
-        desc: "Seamless cloud migration, hosting, and infrastructure for modern teams.",
+        titleKey: "expertise.cloudSolutions.title",
+        descKey: "expertise.cloudSolutions.desc",
     },
     {
         icon: <Image src="/assets/cyber.png" alt="Cybersecurity" className="w-16 h-16 rounded-full object-cover" width={64} height={64} />,
-        title: "Cybersecurity",
-        desc: "Enterprise-grade security and consulting to protect your digital assets.",
+        titleKey: "expertise.cybersecurity.title",
+        descKey: "expertise.cybersecurity.desc",
     },
 ];
 
@@ -73,6 +74,7 @@ const fadeInUp = {
 };
 
 export default function Home() {
+    const { t } = useTranslation();
     const [openServices, setOpenServices] = useState({});
 
     useEffect(() => {
@@ -85,6 +87,9 @@ export default function Home() {
             [serviceName]: !prev[serviceName]
         }));
     };
+
+    console.log("Home: Current i18n language:", t.language);
+    console.log("Home: Translation test - hero.title:", t('hero.title', 'Default Title'));
     return (
         <div className="bg-gradient-to-r from-[#0b0515] to-[#3c2461] min-h-screen flex flex-col py-6 px-14 md:px-18 lg:px-22">
             {/* Hero Section */}
@@ -101,7 +106,7 @@ export default function Home() {
 
                     <div style={{ position: 'relative', height: '300px' }}>
                         <TextPressure
-                            text="Build"
+                            text={t('hero.build')}
                             flex={true}
                             alpha={false}
                             stroke={false}
@@ -158,18 +163,18 @@ export default function Home() {
 
             {/* Services Section */}
             <section className="container mx-auto px-4 md:px-8 lg:px-12 py-6 mb-2" data-aos="fade-up">
-                <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">Our Expertise</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">{t('expertise.title')}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                     {services.map((s, i) => (
                         <div
-                            key={s.title}
+                            key={s.titleKey}
                             className="group glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] transform"
                             data-aos="fade-up"
                             data-aos-delay={100 * (i + 1)}
                         >
                             <div className="mb-4">{s.icon}</div>
-                            <h3 className="text-xl font-semibold text-white mb-2">{s.title}</h3>
-                            <p className="text-gray-300 text-sm">{s.desc}</p>
+                            <h3 className="text-xl font-semibold text-white mb-2">{t(s.titleKey)}</h3>
+                            <p className="text-gray-300 text-sm">{t(s.descKey)}</p>
                         </div>
                     ))}
                 </div>
@@ -177,28 +182,28 @@ export default function Home() {
 
             {/* Call to Action */}
             <section className="py-6 text-center px-4 md:px-8 lg:px-2 mb-5" data-aos="fade-up">
-                <h2 className="text-2xl md:text-3xl font-bold text-gradient mb-4">Ready to build something amazing?</h2>
-                <p className="text-gray-300 mb-8 max-w-xl mx-auto">Let's collaborate to turn your vision into reality. Reach out for a free consultation and see how we can help you grow.</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-gradient mb-4">{t('cta.title')}</h2>
+                <p className="text-gray-300 mb-8 max-w-xl mx-auto">{t('cta.desc')}</p>
                 <Link href="/contact" className="bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] hover:from-[#3B5CEB] hover:to-[#7B4BA0] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    Contact Us
+                    {t('cta.button')}
                 </Link>
             </section>
             {/* Why Choose Us Section */}
             <section className="py-1  border-t border-gray-800 px-4 md:px-8 lg:px-2 mb-2">
                 <div className="container mx-auto px-0 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">Why Choose Us?</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">{t('whyChooseUs.title')}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-                            <h3 className="text-xl font-semibold text-cyan-400 mb-2">Expert Team</h3>
-                            <p className="text-gray-300">Our experienced professionals deliver innovative, reliable solutions tailored to your needs.</p>
+                            <h3 className="text-xl font-semibold text-cyan-400 mb-2">{t('whyChooseUs.expertTeam.title')}</h3>
+                            <p className="text-gray-300">{t('whyChooseUs.expertTeam.desc')}</p>
                         </div>
                         <div className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-                            <h3 className="text-xl font-semibold text-cyan-400 mb-2">Client-Centric</h3>
-                            <p className="text-gray-300">We prioritize your goals and satisfaction, ensuring transparent communication and results.</p>
+                            <h3 className="text-xl font-semibold text-cyan-400 mb-2">{t('whyChooseUs.clientCentric.title')}</h3>
+                            <p className="text-gray-300">{t('whyChooseUs.clientCentric.desc')}</p>
                         </div>
                         <div className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-                            <h3 className="text-xl font-semibold text-cyan-400 mb-2">Cutting-Edge Tech</h3>
-                            <p className="text-gray-300">We use the latest technologies to future-proof your business and maximize ROI.</p>
+                            <h3 className="text-xl font-semibold text-cyan-400 mb-2">{t('whyChooseUs.cuttingEdgeTech.title')}</h3>
+                            <p className="text-gray-300">{t('whyChooseUs.cuttingEdgeTech.desc')}</p>
                         </div>
                     </div>
                 </div>
@@ -206,24 +211,24 @@ export default function Home() {
             {/* Process Section */}
             <section className="py-6 border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-2" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">How We Work</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">{t('howWeWork.title')}</h2>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                         <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
                             <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-white text-2xl font-bold mb-4 shadow-lg">1</div>
-                            <h4 className="text-lg font-semibold text-white mb-2">Consult</h4>
-                            <p className="text-gray-300 text-center max-w-xs">We listen to your needs and define clear project goals together.</p>
+                            <h4 className="text-lg font-semibold text-white mb-2">{t('howWeWork.consult.title')}</h4>
+                            <p className="text-gray-300 text-center max-w-xs">{t('howWeWork.consult.desc')}</p>
                         </div>
                         <div className="hidden md:block w-12 h-1 bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] rounded-full mx-4 shadow-lg" />
                         <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
                             <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-white text-2xl font-bold mb-4 shadow-lg">2</div>
-                            <h4 className="text-lg font-semibold text-white mb-2">Develop</h4>
-                            <p className="text-gray-300 text-center max-w-xs">Our team designs, builds, and tests your solution with regular updates.</p>
+                            <h4 className="text-lg font-semibold text-white mb-2">{t('howWeWork.develop.title')}</h4>
+                            <p className="text-gray-300 text-center max-w-xs">{t('howWeWork.develop.desc')}</p>
                         </div>
                         <div className="hidden md:block w-12 h-1 bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] rounded-full mx-4 shadow-lg" />
                         <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
                             <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-white text-2xl font-bold mb-4 shadow-lg">3</div>
-                            <h4 className="text-lg font-semibold text-white mb-2">Deliver</h4>
-                            <p className="text-gray-300 text-center max-w-xs">We launch, support, and optimize your project for long-term success.</p>
+                            <h4 className="text-lg font-semibold text-white mb-2">{t('howWeWork.deliver.title')}</h4>
+                            <p className="text-gray-300 text-center max-w-xs">{t('howWeWork.deliver.desc')}</p>
                         </div>
                     </div>
                 </div>
@@ -231,7 +236,7 @@ export default function Home() {
             {/* Testimonials Section */}
             <section className="py-6  border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-2" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">What Our Clients Say</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">{t('testimonials.title')}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
                             <p className="text-gray-300 italic mb-4">"MatchBest Group delivered outstanding service and exceptional results. Our business grew 2x after launch!"</p>
@@ -251,7 +256,7 @@ export default function Home() {
             {/* Technologies Section */}
             <section className="py-6  border-t border-gray-800 px-4 md:px-8 lg:px-12 mb-2" data-aos="fade-up">
                 <div className="container mx-auto px-0 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">Technologies We Use</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">{t('technologies.title')}</h2>
                     <div className="relative overflow-hidden">
                         {/* Animated marquee */}
                         <div className="flex flex-nowrap gap-8 animate-[scroll_10s_linear_infinite]">
@@ -270,19 +275,19 @@ export default function Home() {
             {/* FAQ Section */}
             <section className="py-6  border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
                 <div className="container mx-auto px-6 max-w-3xl">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">Frequently Asked Questions</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">{t('faq.title')}</h2>
                     <div className="space-y-6">
                         <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" open data-aos="fade-up" data-aos-delay="100">
-                            <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">How do I start a project with MatchBest Group?</summary>
-                            <p className="text-gray-300 mt-2">Just contact MatchBest Group using the button above or through our contact page. We'll schedule a free consultation to understand your needs and kickstart your project.</p>
+                            <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">{t('faq.q1')}</summary>
+                            <p className="text-gray-300 mt-2">{t('faq.a1')}</p>
                         </details>
                         <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
-                            <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">What industries does MatchBest Group serve?</summary>
-                            <p className="text-gray-300 mt-2">MatchBest Group collaborates with startups, enterprises, and SMBs across industries like fintech, healthcare, e-commerce, media, and more.</p>
+                            <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">{t('faq.q2')}</summary>
+                            <p className="text-gray-300 mt-2">{t('faq.a2')}</p>
                         </details>
                         <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="300">
-                            <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">Does MatchBest Group offer ongoing support?</summary>
-                            <p className="text-gray-300 mt-2">Yes! MatchBest Group provides continuous maintenance, support, and optimization to ensure the long-term success of all your projects.</p>
+                            <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">{t('faq.q3')}</summary>
+                            <p className="text-gray-300 mt-2">{t('faq.a3')}</p>
                         </details>
                     </div>
                 </div>
@@ -291,3 +296,4 @@ export default function Home() {
         </div>
     );
 }
+

@@ -1,0 +1,89 @@
+{
+  "navbar": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "blogs": "Bloglar",
+    "services": "Hizmetler",
+    "byteplusPartnership": "Byteplus Ortaklığı (Seedance x Seedream)",
+    "careers": "Kariyer",
+    "contact": "İletişim",
+    "getInTouch": "Bize Ulaşın"
+  },
+  "hero": {
+    "title": "Geleceği birlikte inşa edin.",
+    "subtitle": "Ölçek, hız ve güvenlik için inşa edilmiş en son teknoloji web ve mobil uygulamalar.",
+    "cta": "Özel Erişim Alın"
+  },
+  "verticals": {
+    "title": "Dikey Pazarlarımız"
+  },
+  "expertise": {
+    "title": "Uzmanlığımız",
+    "nextGen": {
+      "title": "Next-Gen Geliştirme",
+      "desc": "Ölçek, hız ve güvenlik için inşa edilmiş en son teknoloji web ve mobil uygulamalar."
+    },
+    "aiAutomation": {
+      "title": "AI Otomasyonu",
+      "desc": "İş süreçlerinizi hızlandırmak için akıllı otomasyon ve AI'yi entegre edin."
+    },
+    "cloudSolutions": {
+      "title": "Bulut Çözümleri",
+      "desc": "Modern ekipler için sorunsuz bulut geçişi, barındırma ve altyapı."
+    },
+    "cybersecurity": {
+      "title": "Siber Güvenlik",
+      "desc": "Dijital varlıklarınızı korumak için kurumsal düzeyde güvenlik ve danışmanlık."
+    }
+  },
+  "cta": {
+    "title": "Harika bir şey inşa etmeye hazır mısınız?",
+    "desc": "Vizyonunuzu gerçekliğe dönüştürmek için işbirliği yapalım. Büyümemize nasıl yardımcı olabileceğimizi görmek için ücretsiz danışmanlık için bize ulaşın.",
+    "button": "Bize Ulaşın"
+  },
+  "whyChooseUs": {
+    "title": "Neden bizi seçmelisiniz?",
+    "expertTeam": {
+      "title": "Uzman Ekip",
+      "desc": "Deneyimli profesyonellerimiz ihtiyaçlarınıza uyarlanmış yenilikçi, güvenilir çözümler sunar."
+    },
+    "clientCentric": {
+      "title": "Müşteri Odaklı",
+      "desc": "Hedeflerinizi ve memnuniyetinizi önceliklendiririz, şeffaf iletişim ve sonuçlar sağlarız."
+    },
+    "cuttingEdgeTech": {
+      "title": "En Son Teknoloji",
+      "desc": "İşinizi geleceğe hazır hale getirmek ve ROI'yi maksimize etmek için en yeni teknolojileri kullanırız."
+    }
+  },
+  "howWeWork": {
+    "title": "Nasıl çalışırız",
+    "consult": {
+      "title": "Danışmanlık",
+      "desc": "İhtiyaçlarınızı dinleriz ve birlikte net proje hedefleri tanımlarız."
+    },
+    "develop": {
+      "title": "Geliştir",
+      "desc": "Ekibimiz çözümünüzü düzenli güncellemelerle tasarlar, inşa eder ve test eder."
+    },
+    "deliver": {
+      "title": "Teslim Et",
+      "desc": "Uzun vadeli başarı için projenizi başlatır, destekler ve optimize ederiz."
+    }
+  },
+  "testimonials": {
+    "title": "Müşterilerimiz ne diyor"
+  },
+  "technologies": {
+    "title": "Kullandığımız Teknolojiler"
+  },
+  "faq": {
+    "title": "Sık Sorulan Sorular",
+    "q1": "MatchBest Group ile bir proje nasıl başlatılır?",
+    "a1": "Yukarıdaki düğmeyi kullanarak veya iletişim sayfamız aracılığıyla MatchBest Group ile iletişime geçin. İhtiyaçlarınızı anlamak ve projenizi başlatmak için ücretsiz danışmanlık düzenleriz.",
+    "q2": "MatchBest Group hangi sektörleri hizmet eder?",
+    "a2": "MatchBest Group, fintech, sağlık, e-ticaret, medya ve daha fazlası gibi sektörlerde startup'lar, işletmeler ve KOBİ'lerle işbirliği yapar.",
+    "q3": "MatchBest Group sürekli destek sunar mı?",
+    "a3": "Evet! MatchBest Group, tüm projelerinizin uzun vadeli başarısını sağlamak için sürekli bakım, destek ve optimizasyon sunar."
+  }
+}

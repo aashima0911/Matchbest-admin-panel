@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import {
   Video,
   Mic,
@@ -33,6 +34,8 @@ const fadeInUp = {
 };
 
 export default function BytePlusTikTokPartnershipPage() {
+  const { t } = useTranslation();
+
   return (
     <div className='bg-gradient-to-r from-[#0b0515] to-[#3c2461]'>
       <div className="min-h-screen max-w-7xl mx-auto text-white pt-20">
@@ -46,20 +49,19 @@ export default function BytePlusTikTokPartnershipPage() {
         >
           <motion.div variants={fadeInUp} className="lg:w-1/2">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-              BytePlus & Matchbest  <span className="text-gradient">Partnership</span>
+              {t('byteplusPartnership.hero.title', 'BytePlus & Matchbest Partnership')}
             </h1>
             <p className="text-lg text-gray-300 mb-8">
-              Unleash the power of imagination with AI.
-              Through our exclusive Seedance x Seedream partnership with BytePlus, we’re bringing world-class AI creativity to everyone
+              {t('byteplusPartnership.hero.subtitle', 'Unleash the power of imagination with AI. Through our exclusive Seedance x Seedream partnership with BytePlus, we\'re bringing world-class AI creativity to everyone.')}
             </p>
 
             {/* Feature List */}
             <div className="space-y-4 mb-8">
               {[
-                "Exclusive access to AI creativity tools through the Seedance x Seedream partnership with BytePlus",
-                "Early access to next-generation creative intelligence and experimental AI features",
-                "Partner benefits including premium support, resource sharing, and innovation collaboration",
-                "Empowerment for creators and brands to design, advertise, and engage with limitless imagination"
+                t('byteplusPartnership.hero.feature1', 'Exclusive access to AI creativity tools through the Seedance x Seedream partnership with BytePlus'),
+                t('byteplusPartnership.hero.feature2', 'Early access to next-generation creative intelligence and experimental AI features'),
+                t('byteplusPartnership.hero.feature3', 'Partner benefits including premium support, resource sharing, and innovation collaboration'),
+                t('byteplusPartnership.hero.feature4', 'Empowerment for creators and brands to design, advertise, and engage with limitless imagination')
               ].map((feature, i) => (
                 <motion.div
                   key={i}
@@ -82,7 +84,7 @@ export default function BytePlusTikTokPartnershipPage() {
                 whileHover={{ scale: 1.05 }}
                 className="pulse-glow px-8 py-4 rounded-full shadow-lg transition cursor-pointer bg-[#9159B7] text-white text-lg"
               >
-                Get Exclusive Access
+                {t('byteplusPartnership.hero.cta', 'Get Exclusive Access')}
               </motion.button>
             </a>
           </motion.div>
@@ -107,7 +109,7 @@ export default function BytePlusTikTokPartnershipPage() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
-            BytePlus AI Capabilities
+            {t('byteplusPartnership.capabilities.title', 'BytePlus AI Capabilities')}
           </motion.h2>
 
           <motion.div variants={container} className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
@@ -166,7 +168,7 @@ export default function BytePlusTikTokPartnershipPage() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
-            Partnership Benefits
+            {t('byteplusPartnership.benefits.title', 'Partnership Benefits')}
           </motion.h2>
 
           <motion.div variants={container} className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
@@ -219,7 +221,7 @@ export default function BytePlusTikTokPartnershipPage() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
-            Use Cases
+            {t('byteplusPartnership.useCases.title', 'Use Cases')}
           </motion.h2>
 
           <motion.div variants={container} className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">

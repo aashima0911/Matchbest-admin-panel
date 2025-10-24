@@ -1,0 +1,141 @@
+{
+  "navbar": {
+    "home": "首页",
+    "about": "关于我们",
+    "blogs": "博客",
+    "services": "服务",
+    "byteplusPartnership": "Byteplus 合作伙伴关系 (Seedance x Seedream)",
+    "careers": "职业",
+    "contact": "联系我们",
+    "getInTouch": "联系我们"
+  },
+  "hero": {
+    "title": "与我们共同构建未来。",
+    "subtitle": "为规模、速度和安全性构建的尖端网络和移动应用程序。",
+    "cta": "获得独家访问权限"
+  },
+  "verticals": {
+    "title": "我们的垂直领域",
+    "subtitle": "通过创新技术解决方案改变行业",
+    "learnMore": "了解更多",
+    "matchbest": {
+      "item1": "AvaOne",
+      "viewMore": "查看更多",
+      "item2": "AI自动化与治理",
+      "item3": "数字转型3.0",
+      "item4": "网络安全与VAPT",
+      "item5": "数据工程与信任架构",
+      "item6": "区块链与智能合约",
+      "item7": "量子计算",
+      "item8": "可持续性与绿色IT",
+      "item9": "AI治理与合规"
+    },
+    "xelta": {
+      "item1": "统一生成AI中心",
+      "item2": "文本到万物引擎",
+      "item3": "多模型智能层",
+      "item4": "云原生架构",
+      "item5": "实时工作流工作室",
+      "item6": "生成内容市场",
+      "item7": "面向未来的生态系统"
+    },
+    "healNova": {
+      "item1": "24/7 AI医生与自主护理",
+      "item2": "个人医疗保险箱",
+      "item3": "预测性长寿",
+      "item4": "认知与情感健康",
+      "item5": "AI驱动诊断",
+      "item6": "医生与护理团队仪表板",
+      "item7": "患者与家庭健康管理",
+      "item8": "健康分析与研究云",
+      "item9": "健康与生活方式编排"
+    },
+    "eliteMaverick": {
+      "item1": "人才获取卓越性",
+      "item2": "AI劳动力解决方案",
+      "item3": "商业咨询",
+      "item4": "转型解决方案",
+      "item5": "金融与数字服务",
+      "item6": "Web3服务",
+      "item7": "全球企业解决方案"
+    },
+    "vitaay": {
+      "item1": "通用桥梁：品牌 ↔ 创作者 ↔ 粉丝",
+      "item2": "AI驱动创作者-品牌匹配",
+      "item3": "端到端协作平台",
+      "item4": "粉丝驱动创作者经济",
+      "item5": "沉浸式与多现实中心",
+      "item6": "为下一个世纪构建",
+      "item7": "专注于新兴市场"
+    }
+  },
+  "expertise": {
+    "title": "我们的专业知识",
+    "nextGen": {
+      "title": "下一代开发",
+      "desc": "为规模、速度和安全性构建的尖端网络和移动应用程序。"
+    },
+    "aiAutomation": {
+      "title": "AI 自动化",
+      "desc": "集成智能自动化和 AI 以加速您的业务流程。"
+    },
+    "cloudSolutions": {
+      "title": "云解决方案",
+      "desc": "为现代团队提供无缝云迁移、托管和基础设施。"
+    },
+    "cybersecurity": {
+      "title": "网络安全",
+      "desc": "企业级安全和咨询以保护您的数字资产。"
+    }
+  },
+  "cta": {
+    "title": "准备构建令人惊叹的东西吗？",
+    "desc": "让我们合作将您的愿景变为现实。联系我们进行免费咨询，看看我们如何帮助您成长。",
+    "button": "联系我们"
+  },
+  "whyChooseUs": {
+    "title": "为什么选择我们？",
+    "expertTeam": {
+      "title": "专家团队",
+      "desc": "我们的经验丰富的专业人士提供创新、可靠的解决方案，量身定制以满足您的需求。"
+    },
+    "clientCentric": {
+      "title": "以客户为中心",
+      "desc": "我们优先考虑您的目标和满意度，确保透明沟通和结果。"
+    },
+    "cuttingEdgeTech": {
+      "title": "尖端技术",
+      "desc": "我们使用最新技术使您的业务面向未来并最大化投资回报。"
+    }
+  },
+  "howWeWork": {
+    "title": "我们如何工作",
+    "consult": {
+      "title": "咨询",
+      "desc": "我们倾听您的需求并一起定义清晰的项目目标。"
+    },
+    "develop": {
+      "title": "开发",
+      "desc": "我们的团队设计、构建和测试您的解决方案，并提供定期更新。"
+    },
+    "deliver": {
+      "title": "交付",
+      "desc": "我们启动、支持和优化您的项目以实现长期成功。"
+    }
+  },
+  "testimonials": {
+    "title": "我们的客户怎么说"
+  },
+  "technologies": {
+    "title": "我们使用的技术"
+  },
+  "faq": {
+    "title": "常见问题",
+    "q1": "如何开始与 MatchBest Group 的项目？",
+    "a1": "只需使用上面的按钮或通过我们的联系页面联系 MatchBest Group。我们将安排免费咨询以了解您的需求并启动您的项目。",
+    "q2": "MatchBest Group 服务哪些行业？",
+    "a2": "MatchBest Group 与金融科技、医疗保健、电子商务、媒体等行业的初创公司、企业和中小企业合作。",
+    "q3": "MatchBest Group 提供持续支持吗？",
+    "a3": "是的！MatchBest Group 提供持续维护、支持和优化，以确保所有项目的长期成功。"
+  }
+}

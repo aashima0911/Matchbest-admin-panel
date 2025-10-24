@@ -1,22 +1,26 @@
 'use client';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
-const navLinks = [
-  // { href: '/', label: 'Home' },
-  // { href: '/about', label: 'About' },
-  // { href: '/blogs', label: 'Blogs' },
-  // { href: '/services', label: 'Services' },
-  { href: '/byteplus-partnership', label: <span> Byteplus partnership <br/>(Seedance x Seedream)</span>},
-  // { href: '/careers', label: 'Careers' },
-];
+import LanguageSelector from '../../components/LanguageSelector';
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  const navLinks = [
+    // { href: '/', label: t('navbar.home') },
+    // { href: '/about', label: t('navbar.about') },
+    // { href: '/blogs', label: t('navbar.blogs') },
+    // { href: '/services', label: t('navbar.services') },
+    { href: '/byteplus-partnership', label: t('navbar.byteplusPartnership') },
+    // { href: '/careers', label: t('navbar.careers') },
+    
+  ];
 
   const handleToggle = () => setIsOpen((prev) => !prev);
   const handleClose = () => setIsOpen(false);
@@ -53,13 +57,17 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          {/* Language Selector */}
+          <li className="ml-4">
+            <LanguageSelector />
+          </li>
           {/* Optional CTA Button */}
           <li className="ml-4">
             <Link
               href="/contact"
               className="px-5 py-2 bg-purple-700 hover:bg-purple-600 text-white rounded-lg font-semibold shadow transition-all duration-300 border border-purple-800"
             >
-              Get in Touch
+              {t('navbar.getInTouch', 'Get in Touch')}
             </Link>
           </li>
         </ul>
@@ -97,6 +105,10 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          {/* Language Selector */}
+          <li className="w-full mt-2">
+            <LanguageSelector />
+          </li>
           {/* Optional CTA Button */}
           <li className="w-full mt-2">
             <Link
@@ -104,7 +116,7 @@ export default function Navbar() {
               className="block w-full text-center px-5 py-3 bg-purple-700 hover:bg-purple-600 text-white rounded-lg font-semibold shadow transition-all duration-300 border border-purple-800"
               onClick={handleClose}
             >
-              Get in Touch
+              {t('navbar.getInTouch', 'Get in Touch')}
             </Link>
           </li>
         </ul>

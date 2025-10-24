@@ -1,0 +1,171 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "blogs": "Blogs",
+    "services": "Services",
+    "byteplusPartnership": "Byteplus partnership (Seedance x Seedream)",
+    "careers": "Careers",
+    "contact": "Contact",
+    "getInTouch": "Get in Touch"
+  },
+  "hero": {
+    "title": "Build the Future With Us.",
+    "subtitle": "Cutting-edge web and mobile apps built for scale, speed, and security.",
+    "cta": "Get Exclusive Access",
+    "build": "Build"
+  },
+  "verticals": {
+    "title": "Our Verticals",
+    "subtitle": "Transforming industries through innovative technology solutions",
+    "learnMore": "Learn More",
+    "matchbest": {
+      "item1": "AvaOne",
+      "viewMore": "view more",
+      "item2": "AI Automation & Governance",
+      "item3": "Digital Transformation 3.0",
+      "item4": "Cybersecurity & VAPT",
+      "item5": "Data Engineering & Trust Fabric",
+      "item6": "Blockchain & Smart Contracts",
+      "item7": "Quantum Computing",
+      "item8": "Sustainability & Green IT",
+      "item9": "AI Governance & Compliance"
+    },
+    "xelta": {
+      "item1": "Unified Generative AI Hub",
+      "item2": "Text-to-Everything Engine",
+      "item3": "Cross-Model Intelligence Layer",
+      "item4": "Cloud-Native Architecture",
+      "item5": "Real-Time Workflow Studio",
+      "item6": "Generative Content Marketplace",
+      "item7": "Future-Ready Ecosystem"
+    },
+    "healNova": {
+      "item1": "24/7 AI Doctor & Autonomous Care",
+      "item2": "Personal Medical Vaults",
+      "item3": "Predictive Longevity",
+      "item4": "Cognitive & Emotional Health",
+      "item5": "AI-Powered Diagnostics",
+      "item6": "Doctor & Care Team Dashboards",
+      "item7": "Patient & Family Health Management",
+      "item8": "Health Analytics & Research Cloud",
+      "item9": "Wellness & Lifestyle Orchestration"
+    },
+    "eliteMaverick": {
+      "item1": "Talent Acquisition Excellence",
+      "item2": "AI Workforce Solutions",
+      "item3": "Business Consulting",
+      "item4": "Transformation Solutions",
+      "item5": "Financial & Digital Services",
+      "item6": "Web3 Services",
+      "item7": "Global Enterprise Solutions"
+    },
+    "vitaay": {
+      "item1": "Universal Bridge: Brands ↔ Creators ↔ Fans",
+      "item2": "AI-Driven Creator-Brand Matching",
+      "item3": "End-to-End Collaboration Platform",
+      "item4": "Fan-Powered Creator Economy",
+      "item5": "Immersive & Multi-Reality Hub",
+      "item6": "Built for the Next Century",
+      "item7": "Emerging Markets Focus"
+    }
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "nextGen": {
+      "title": "Next-Gen Development",
+      "desc": "Cutting-edge web and mobile apps built for scale, speed, and security."
+    },
+    "aiAutomation": {
+      "title": "AI Automation",
+      "desc": "Integrate smart automation and AI to supercharge your business workflows."
+    },
+    "cloudSolutions": {
+      "title": "Cloud Solutions",
+      "desc": "Seamless cloud migration, hosting, and infrastructure for modern teams."
+    },
+    "cybersecurity": {
+      "title": "Cybersecurity",
+      "desc": "Enterprise-grade security and consulting to protect your digital assets."
+    }
+  },
+  "cta": {
+    "title": "Ready to build something amazing?",
+    "desc": "Let's collaborate to turn your vision into reality. Reach out for a free consultation and see how we can help you grow.",
+    "button": "Contact Us"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us?",
+    "expertTeam": {
+      "title": "Expert Team",
+      "desc": "Our experienced professionals deliver innovative, reliable solutions tailored to your needs."
+    },
+    "clientCentric": {
+      "title": "Client-Centric",
+      "desc": "We prioritize your goals and satisfaction, ensuring transparent communication and results."
+    },
+    "cuttingEdgeTech": {
+      "title": "Cutting-Edge Tech",
+      "desc": "We use the latest technologies to future-proof your business and maximize ROI."
+    }
+  },
+  "howWeWork": {
+    "title": "How We Work",
+    "consult": {
+      "title": "Consult",
+      "desc": "We listen to your needs and define clear project goals together."
+    },
+    "develop": {
+      "title": "Develop",
+      "desc": "Our team designs, builds, and tests your solution with regular updates."
+    },
+    "deliver": {
+      "title": "Deliver",
+      "desc": "We launch, support, and optimize your project for long-term success."
+    }
+  },
+  "testimonials": {
+    "title": "What Our Clients Say"
+  },
+  "technologies": {
+    "title": "Technologies We Use"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "How do I start a project with MatchBest Group?",
+    "a1": "Just contact MatchBest Group using the button above or through our contact page. We'll schedule a free consultation to understand your needs and kickstart your project.",
+    "q2": "What industries does MatchBest Group serve?",
+    "a2": "MatchBest Group collaborates with startups, enterprises, and SMBs across industries like fintech, healthcare, e-commerce, media, and more.",
+    "q3": "Does MatchBest Group offer ongoing support?",
+    "a3": "Yes! MatchBest Group provides continuous maintenance, support, and optimization to ensure the long-term success of all your projects."
+  },
+  "footer": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "careers": "Careers",
+    "email": "Email",
+    "copyright": "MatchBest. All rights reserved."
+  },
+  "byteplusPartnership": {
+    "hero": {
+      "title": "BytePlus & Matchbest Partnership",
+      "subtitle": "Unleash the power of imagination with AI. Through our exclusive Seedance x Seedream partnership with BytePlus, we're bringing world-class AI creativity to everyone.",
+      "feature1": "Exclusive access to AI creativity tools through the Seedance x Seedream partnership with BytePlus",
+      "feature2": "Early access to next-generation creative intelligence and experimental AI features",
+      "feature3": "Partner benefits including premium support, resource sharing, and innovation collaboration",
+      "feature4": "Empowerment for creators and brands to design, advertise, and engage with limitless imagination",
+      "cta": "Get Exclusive Access"
+    },
+    "capabilities": {
+      "title": "BytePlus AI Capabilities"
+    },
+    "benefits": {
+      "title": "Partnership Benefits"
+    },
+    "useCases": {
+      "title": "Use Cases"
+    }
+  }
+}

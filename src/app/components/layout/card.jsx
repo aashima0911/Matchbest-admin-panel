@@ -1,99 +1,101 @@
 "use client"
 
 import Image from "next/image"
-
-const verticals = [
-  {
-    id: 1,
-    name: "MatchBest",
-    logo: "/assets/mat.png",
-    link: "https://matchbestsoftware.com/",
-    items: [
-      <span>AvaOne <a href="https://avasuite.ai/" target="_blank" className="text-blue-400 hover:underline">view more</a></span>,
-      "AI Automation & Governance",
-      "Digital Transformation 3.0",
-      "Cybersecurity & VAPT",
-      "Data Engineering & Trust Fabric",
-      "Blockchain & Smart Contracts",
-      "Quantum Computing",
-      "Sustainability & Green IT",
-      "AI Governance & Compliance",
-    ],
-  },
-  {
-    id: 2,
-    name: "Xelta",
-    logo: "/xelta-logo1.png",
-    link: "https://xelta.ai/",
-    items: [
-      "Unified Generative AI Hub",
-      "Text-to-Everything Engine",
-      "Cross-Model Intelligence Layer",
-      "Cloud-Native Architecture",
-      "Real-Time Workflow Studio",
-      "Generative Content Marketplace",
-      "Future-Ready Ecosystem",
-    ],
-  },
-  {
-    id: 3,
-    name: "HealNova",
-    logo: "/heal-nova-logo.png",
-    link: "https://heal-nova.vercel.app/",
-    items: [
-      "24/7 AI Doctor & Autonomous Care",
-      "Personal Medical Vaults",
-      "Predictive Longevity",
-      "Cognitive & Emotional Health",
-      "AI-Powered Diagnostics",
-      "Doctor & Care Team Dashboards",
-      "Patient & Family Health Management",
-      "Health Analytics & Research Cloud",
-      "Wellness & Lifestyle Orchestration",
-    ],
-  },
-  {
-    id: 4,
-    name: "Elite Maverick",
-    logo: null,
-    link: "https://www.elitemaverick.com/",
-    items: [
-      "Talent Acquisition Excellence",
-      "AI Workforce Solutions",
-      "Business Consulting",
-      "Transformation Solutions",
-      "Financial & Digital Services",
-      "Web3 Services",
-      "Global Enterprise Solutions",
-    ],
-  },
-  {
-    id: 5,
-    name: "Vitaay",
-    logo: "/vitaay-logo.png",
-    link: "https://www.vitaay.ai/",
-    items: [
-      "Universal Bridge: Brands ↔ Creators ↔ Fans",
-      "AI-Driven Creator-Brand Matching",
-      "End-to-End Collaboration Platform",
-      "Fan-Powered Creator Economy",
-      "Immersive & Multi-Reality Hub",
-      "Built for the Next Century",
-      "Emerging Markets Focus",
-    ],
-  },
-]
+import { useTranslation } from "react-i18next";
 
 export default function VerticalsCarousel() {
+  const { t } = useTranslation();
+
+  const verticals = [
+    {
+      id: 1,
+      name: "MatchBest",
+      logo: "/assets/mat.png",
+      link: "https://matchbestsoftware.com/",
+      items: [
+        <span>{t('verticals.matchbest.item1')} <a href="https://avasuite.ai/" target="_blank" className="text-blue-400 hover:underline">{t('verticals.matchbest.viewMore')}</a></span>,
+        t('verticals.matchbest.item2'),
+        t('verticals.matchbest.item3'),
+        t('verticals.matchbest.item4'),
+        t('verticals.matchbest.item5'),
+        t('verticals.matchbest.item6'),
+        t('verticals.matchbest.item7'),
+        t('verticals.matchbest.item8'),
+        t('verticals.matchbest.item9'),
+      ],
+    },
+    {
+      id: 2,
+      name: "Xelta",
+      logo: "/xelta-logo1.png",
+      link: "https://xelta.ai/",
+      items: [
+        t('verticals.xelta.item1'),
+        t('verticals.xelta.item2'),
+        t('verticals.xelta.item3'),
+        t('verticals.xelta.item4'),
+        t('verticals.xelta.item5'),
+        t('verticals.xelta.item6'),
+        t('verticals.xelta.item7'),
+      ],
+    },
+    {
+      id: 3,
+      name: "HealNova",
+      logo: "/heal-nova-logo.png",
+      link: "https://heal-nova.vercel.app/",
+      items: [
+        t('verticals.healNova.item1'),
+        t('verticals.healNova.item2'),
+        t('verticals.healNova.item3'),
+        t('verticals.healNova.item4'),
+        t('verticals.healNova.item5'),
+        t('verticals.healNova.item6'),
+        t('verticals.healNova.item7'),
+        t('verticals.healNova.item8'),
+        t('verticals.healNova.item9'),
+      ],
+    },
+    {
+      id: 4,
+      name: "Elite Maverick",
+      logo: null,
+      link: "https://www.elitemaverick.com/",
+      items: [
+        t('verticals.eliteMaverick.item1'),
+        t('verticals.eliteMaverick.item2'),
+        t('verticals.eliteMaverick.item3'),
+        t('verticals.eliteMaverick.item4'),
+        t('verticals.eliteMaverick.item5'),
+        t('verticals.eliteMaverick.item6'),
+        t('verticals.eliteMaverick.item7'),
+      ],
+    },
+    {
+      id: 5,
+      name: "Vitaay",
+      logo: "/vitaay-logo.png",
+      link: "https://www.vitaay.ai/",
+      items: [
+        t('verticals.vitaay.item1'),
+        t('verticals.vitaay.item2'),
+        t('verticals.vitaay.item3'),
+        t('verticals.vitaay.item4'),
+        t('verticals.vitaay.item5'),
+        t('verticals.vitaay.item6'),
+        t('verticals.vitaay.item7'),
+      ],
+    },
+  ]
 
   return (
     <section className="w-full py-2 px-4 md:px-8 lg:px-12 pb-10">
       <div className="container mx-auto max-w-7xl">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6 tracking-tight">Our Verticals</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6 tracking-tight">{t('verticals.title')}</h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Transforming industries through innovative technology solutions
+            {t('verticals.subtitle')}
           </p>
         </div>
 
@@ -153,7 +155,7 @@ export default function VerticalsCarousel() {
                       rel="noopener noreferrer"
                       className="mt-auto bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
                     >
-                      Learn More
+                      {t('verticals.learnMore')}
                     </a>
                   </div>
                 </div>
@@ -216,7 +218,7 @@ export default function VerticalsCarousel() {
                         rel="noopener noreferrer"
                         className="mt-auto bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
                       >
-                        Learn More
+                        {t('verticals.learnMore')}
                       </a>
                     </div>
                   </div>

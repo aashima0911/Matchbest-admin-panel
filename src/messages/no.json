@@ -1,0 +1,89 @@
+{
+  "navbar": {
+    "home": "Hjem",
+    "about": "Om oss",
+    "blogs": "Blogger",
+    "services": "Tjenester",
+    "byteplusPartnership": "Byteplus partnerskap (Seedance x Seedream)",
+    "careers": "Karrierer",
+    "contact": "Kontakt",
+    "getInTouch": "Ta kontakt"
+  },
+  "hero": {
+    "title": "Bygg fremtiden med oss.",
+    "subtitle": "Kantete nett- og mobilapper bygget for skala, hastighet og sikkerhet.",
+    "cta": "Få eksklusiv tilgang"
+  },
+  "verticals": {
+    "title": "Våre vertikaler"
+  },
+  "expertise": {
+    "title": "Vår ekspertise",
+    "nextGen": {
+      "title": "Next-Gen utvikling",
+      "desc": "Kantete nett- og mobilapper bygget for skala, hastighet og sikkerhet."
+    },
+    "aiAutomation": {
+      "title": "AI automatisering",
+      "desc": "Integrer smart automatisering og AI for å booste dine forretningsprosesser."
+    },
+    "cloudSolutions": {
+      "title": "Sky-løsninger",
+      "desc": "Sømløs sky-migrasjon, hosting og infrastruktur for moderne team."
+    },
+    "cybersecurity": {
+      "title": "Sibersikkerhet",
+      "desc": "Enterprise-grade sikkerhet og rådgivning for å beskytte dine digitale eiendeler."
+    }
+  },
+  "cta": {
+    "title": "Klar til å bygge noe fantastisk?",
+    "desc": "La oss samarbeide for å gjøre visjonen din til virkelighet. Kontakt oss for en gratis konsultasjon og se hvordan vi kan hjelpe deg å vokse.",
+    "button": "Kontakt oss"
+  },
+  "whyChooseUs": {
+    "title": "Hvorfor velge oss?",
+    "expertTeam": {
+      "title": "Ekspertteam",
+      "desc": "Våre erfarne profesjonelle leverer innovative, pålitelige løsninger skreddersydd for dine behov."
+    },
+    "clientCentric": {
+      "title": "Kundesentrert",
+      "desc": "Vi prioriterer dine mål og tilfredshet og sikrer transparent kommunikasjon og resultater."
+    },
+    "cuttingEdgeTech": {
+      "title": "Kantet teknologi",
+      "desc": "Vi bruker de nyeste teknologiene for å gjøre bedriften din fremtidsrettet og maksimere ROI."
+    }
+  },
+  "howWeWork": {
+    "title": "Hvordan vi jobber",
+    "consult": {
+      "title": "Konsulter",
+      "desc": "Vi lytter til dine behov og definerer klare prosjektmål sammen."
+    },
+    "develop": {
+      "title": "Utvikle",
+      "desc": "Vårt team designer, bygger og tester løsningen din med regelmessige oppdateringer."
+    },
+    "deliver": {
+      "title": "Lever",
+      "desc": "Vi lanserer, støtter og optimaliserer prosjektet ditt for langsiktig suksess."
+    }
+  },
+  "testimonials": {
+    "title": "Hva kundene våre sier"
+  },
+  "technologies": {
+    "title": "Teknologier vi bruker"
+  },
+  "faq": {
+    "title": "Ofte stilte spørsmål",
+    "q1": "Hvordan starte et prosjekt med MatchBest Group?",
+    "a1": "Kontakt MatchBest Group enkelt ved å bruke knappen ovenfor eller gjennom kontaktsiden vår. Vi arrangerer en gratis konsultasjon for å forstå dine behov og kickstarte prosjektet ditt.",
+    "q2": "Hvilke bransjer betjener MatchBest Group?",
+    "a2": "MatchBest Group samarbeider med startups, bedrifter og SMB-er på tvers av bransjer som fintech, helse, e-handel, media og mer.",
+    "q3": "Tilbyr MatchBest Group løpende støtte?",
+    "a3": "Ja! MatchBest Group leverer løpende vedlikehold, støtte og optimalisering for å sikre langsiktig suksess for alle dine prosjekter."
+  }
+}

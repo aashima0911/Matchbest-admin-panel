@@ -1,0 +1,141 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "blogs": "Blogs",
+    "services": "Services",
+    "byteplusPartnership": "Partenariat Byteplus (Seedance x Seedream)",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "getInTouch": "Entrer en contact"
+  },
+  "hero": {
+    "title": "Construisez l'avenir avec nous.",
+    "subtitle": "Applications web et mobiles de pointe conçues pour l'évolutivité, la vitesse et la sécurité.",
+    "cta": "Obtenir un accès exclusif"
+  },
+  "verticals": {
+    "title": "Nos secteurs verticaux",
+    "subtitle": "Transformer les industries grâce à des solutions technologiques innovantes",
+    "learnMore": "En savoir plus",
+    "matchbest": {
+      "item1": "AvaOne",
+      "viewMore": "voir plus",
+      "item2": "Automatisation IA et Gouvernance",
+      "item3": "Transformation Numérique 3.0",
+      "item4": "Cybersécurité et VAPT",
+      "item5": "Ingénierie des Données et Fabric de Confiance",
+      "item6": "Blockchain et Contrats Intelligents",
+      "item7": "Informatique Quantique",
+      "item8": "Durabilité et IT Verte",
+      "item9": "Gouvernance et Conformité IA"
+    },
+    "xelta": {
+      "item1": "Hub IA Générative Unifié",
+      "item2": "Moteur Texte-à-Tout",
+      "item3": "Couche d'Intelligence Multi-Modèles",
+      "item4": "Architecture Cloud-Native",
+      "item5": "Studio de Flux de Travail en Temps Réel",
+      "item6": "Place de Marché de Contenu Génératif",
+      "item7": "Écosystème Prêt pour l'Avenir"
+    },
+    "healNova": {
+      "item1": "Médecin IA 24/7 et Soins Autonomes",
+      "item2": "Coffres-Forts Médicaux Personnels",
+      "item3": "Longévité Prédictive",
+      "item4": "Santé Cognitive et Émotionnelle",
+      "item5": "Diagnostics Alimentés par IA",
+      "item6": "Tableaux de Bord Médecins et Équipes de Soins",
+      "item7": "Gestion de la Santé Patients et Familles",
+      "item8": "Nuage d'Analyses et Recherche Santé",
+      "item9": "Orchestration Bien-être et Style de Vie"
+    },
+    "eliteMaverick": {
+      "item1": "Excellence en Acquisition de Talents",
+      "item2": "Solutions de Main-d'Œuvre IA",
+      "item3": "Conseil d'Affaires",
+      "item4": "Solutions de Transformation",
+      "item5": "Services Financiers et Numériques",
+      "item6": "Services Web3",
+      "item7": "Solutions d'Entreprise Globales"
+    },
+    "vitaay": {
+      "item1": "Pont Universel : Marques ↔ Créateurs ↔ Fans",
+      "item2": "Appariement Créateur-Marque Alimenté par IA",
+      "item3": "Plateforme de Collaboration de Bout en Bout",
+      "item4": "Économie des Créateurs Alimentée par les Fans",
+      "item5": "Hub Immersif et Multi-Réalité",
+      "item6": "Construit pour le Siècle Prochain",
+      "item7": "Focus sur les Marchés Émergents"
+    }
+  },
+  "expertise": {
+    "title": "Notre expertise",
+    "nextGen": {
+      "title": "Développement de nouvelle génération",
+      "desc": "Applications web et mobiles de pointe conçues pour l'évolutivité, la vitesse et la sécurité."
+    },
+    "aiAutomation": {
+      "title": "Automatisation IA",
+      "desc": "Intégrez l'automatisation intelligente et l'IA pour booster vos flux de travail métier."
+    },
+    "cloudSolutions": {
+      "title": "Solutions cloud",
+      "desc": "Migration cloud transparente, hébergement et infrastructure pour les équipes modernes."
+    },
+    "cybersecurity": {
+      "title": "Cybersécurité",
+      "desc": "Sécurité d'entreprise et conseil pour protéger vos actifs numériques."
+    }
+  },
+  "cta": {
+    "title": "Prêt à construire quelque chose d'incroyable ?",
+    "desc": "Collaborons pour transformer votre vision en réalité. Contactez-nous pour une consultation gratuite et découvrez comment nous pouvons vous aider à grandir.",
+    "button": "Contactez-nous"
+  },
+  "whyChooseUs": {
+    "title": "Pourquoi nous choisir ?",
+    "expertTeam": {
+      "title": "Équipe d'experts",
+      "desc": "Nos professionnels expérimentés livrent des solutions innovantes et fiables adaptées à vos besoins."
+    },
+    "clientCentric": {
+      "title": "Centré sur le client",
+      "desc": "Nous priorisons vos objectifs et votre satisfaction, assurant une communication transparente et des résultats."
+    },
+    "cuttingEdgeTech": {
+      "title": "Technologie de pointe",
+      "desc": "Nous utilisons les dernières technologies pour sécuriser l'avenir de votre entreprise et maximiser le ROI."
+    }
+  },
+  "howWeWork": {
+    "title": "Comment nous travaillons",
+    "consult": {
+      "title": "Consulter",
+      "desc": "Nous écoutons vos besoins et définissons ensemble des objectifs clairs pour le projet."
+    },
+    "develop": {
+      "title": "Développer",
+      "desc": "Notre équipe conçoit, construit et teste votre solution avec des mises à jour régulières."
+    },
+    "deliver": {
+      "title": "Livrer",
+      "desc": "Nous lançons, soutenons et optimisons votre projet pour un succès à long terme."
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients"
+  },
+  "technologies": {
+    "title": "Technologies que nous utilisons"
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "q1": "Comment démarrer un projet avec MatchBest Group ?",
+    "a1": "Contactez simplement MatchBest Group en utilisant le bouton ci-dessus ou via notre page de contact. Nous organiserons une consultation gratuite pour comprendre vos besoins et lancer votre projet.",
+    "q2": "Quelles industries MatchBest Group dessert-elle ?",
+    "a2": "MatchBest Group collabore avec des startups, des entreprises et des PME dans des secteurs comme la fintech, la santé, l'e-commerce, les médias et plus encore.",
+    "q3": "MatchBest Group offre-t-il un support continu ?",
+    "a3": "Oui ! MatchBest Group fournit une maintenance, un support et une optimisation continus pour assurer le succès à long terme de tous vos projets."
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "Chi siamo",
+    "blogs": "Blog",
+    "services": "Servizi",
+    "byteplusPartnership": "Partnership Byteplus (Seedance x Seedream)",
+    "careers": "Carriere",
+    "contact": "Contatto",
+    "getInTouch": "Contattaci"
+  },
+  "hero": {
+    "title": "Costruisci il futuro con noi.",
+    "subtitle": "App web e mobili all'avanguardia costruite per scalabilità, velocità e sicurezza.",
+    "cta": "Ottieni accesso esclusivo"
+  },
+  "verticals": {
+    "title": "I nostri verticali",
+    "subtitle": "Trasformando le industrie attraverso soluzioni tecnologiche innovative",
+    "learnMore": "Scopri di più",
+    "matchbest": {
+      "item1": "AvaOne",
+      "viewMore": "vedi altro",
+      "item2": "Automazione IA e Governance",
+      "item3": "Trasformazione Digitale 3.0",
+      "item4": "Sicurezza Informatica e VAPT",
+      "item5": "Ingegneria dei Dati e Fabric di Fiducia",
+      "item6": "Blockchain e Contratti Intelligenti",
+      "item7": "Calcolo Quantistico",
+      "item8": "Sostenibilità e IT Verde",
+      "item9": "Governance e Conformità IA"
+    },
+    "xelta": {
+      "item1": "Hub Unificato IA Generativa",
+      "item2": "Motore Testo-a-Tutto",
+      "item3": "Strato di Intelligenza Multi-Modello",
+      "item4": "Architettura Cloud-Native",
+      "item5": "Studio Flusso di Lavoro in Tempo Reale",
+      "item6": "Mercato dei Contenuti Generativi",
+      "item7": "Ecosistema Pronto per il Futuro"
+    },
+    "healNova": {
+      "item1": "Medico IA 24/7 e Cura Autonoma",
+      "item2": "Cassetteforti Mediche Personali",
+      "item3": "Longevità Predittiva",
+      "item4": "Salute Cognitiva ed Emozionale",
+      "item5": "Diagnostica Alimentata da IA",
+      "item6": "Dashboard Medici e Team di Cura",
+      "item7": "Gestione Salute Pazienti e Famiglie",
+      "item8": "Cloud di Analisi e Ricerca Sanitaria",
+      "item9": "Orchestrazione Benessere e Stile di Vita"
+    },
+    "eliteMaverick": {
+      "item1": "Eccellenza nell'Acquisizione di Talenti",
+      "item2": "Soluzioni Forza Lavoro IA",
+      "item3": "Consulenza Aziendale",
+      "item4": "Soluzioni di Trasformazione",
+      "item5": "Servizi Finanziari e Digitali",
+      "item6": "Servizi Web3",
+      "item7": "Soluzioni Aziendali Globali"
+    },
+    "vitaay": {
+      "item1": "Ponte Universale: Marche ↔ Creator ↔ Fan",
+      "item2": "Abbinamento Creator-Marche Alimentato da IA",
+      "item3": "Piattaforma di Collaborazione End-to-End",
+      "item4": "Economia dei Creator Alimentata dai Fan",
+      "item5": "Hub Immersivo e Multi-Realtà",
+      "item6": "Costruito per il Prossimo Secolo",
+      "item7": "Focus sui Mercati Emergenti"
+    }
+  },
+  "expertise": {
+    "title": "La nostra competenza",
+    "nextGen": {
+      "title": "Sviluppo Next-Gen",
+      "desc": "App web e mobili all'avanguardia costruite per scalabilità, velocità e sicurezza."
+    },
+    "aiAutomation": {
+      "title": "Automazione AI",
+      "desc": "Integra automazione intelligente e AI per accelerare i tuoi flussi di lavoro aziendali."
+    },
+    "cloudSolutions": {
+      "title": "Soluzioni cloud",
+      "desc": "Migrazione cloud senza interruzioni, hosting e infrastruttura per team moderni."
+    },
+    "cybersecurity": {
+      "title": "Sicurezza informatica",
+      "desc": "Sicurezza di livello enterprise e consulenza per proteggere i tuoi beni digitali."
+    }
+  },
+  "cta": {
+    "title": "Pronto a costruire qualcosa di incredibile?",
+    "desc": "Collaboriamo per trasformare la tua visione in realtà. Contattaci per una consulenza gratuita e vedi come possiamo aiutarti a crescere.",
+    "button": "Contattaci"
+  },
+  "whyChooseUs": {
+    "title": "Perché scegliere noi?",
+    "expertTeam": {
+      "title": "Team di esperti",
+      "desc": "I nostri professionisti esperti forniscono soluzioni innovative e affidabili su misura per le tue esigenze."
+    },
+    "clientCentric": {
+      "title": "Orientato al cliente",
+      "desc": "Prioritizziamo i tuoi obiettivi e soddisfazione, garantendo comunicazione trasparente e risultati."
+    },
+    "cuttingEdgeTech": {
+      "title": "Tecnologia all'avanguardia",
+      "desc": "Utilizziamo le tecnologie più recenti per rendere la tua attività a prova di futuro e massimizzare il ROI."
+    }
+  },
+  "howWeWork": {
+    "title": "Come lavoriamo",
+    "consult": {
+      "title": "Consulenza",
+      "desc": "Ascoltiamo le tue esigenze e definiamo insieme obiettivi chiari del progetto."
+    },
+    "develop": {
+      "title": "Sviluppa",
+      "desc": "Il nostro team progetta, costruisce e testa la tua soluzione con aggiornamenti regolari."
+    },
+    "deliver": {
+      "title": "Consegna",
+      "desc": "Lanciamo, supportiamo e ottimizziamo il tuo progetto per il successo a lungo termine."
+    }
+  },
+  "testimonials": {
+    "title": "Cosa dicono i nostri clienti"
+  },
+  "technologies": {
+    "title": "Tecnologie che utilizziamo"
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "q1": "Come iniziare un progetto con MatchBest Group?",
+    "a1": "Contatta semplicemente MatchBest Group utilizzando il pulsante sopra o attraverso la nostra pagina contatti. Organizzeremo una consulenza gratuita per comprendere le tue esigenze e avviare il tuo progetto.",
+    "q2": "Quali settori serve MatchBest Group?",
+    "a2": "MatchBest Group collabora con startup, imprese e PMI in settori come fintech, sanità, e-commerce, media e altro.",
+    "q3": "MatchBest Group offre supporto continuo?",
+    "a3": "Sì! MatchBest Group fornisce manutenzione, supporto e ottimizzazione continua per garantire il successo a lungo termine di tutti i tuoi progetti."
+  }
+}

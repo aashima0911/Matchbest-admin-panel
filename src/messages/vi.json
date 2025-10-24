@@ -1,0 +1,141 @@
+{
+  "navbar": {
+    "home": "Trang chủ",
+    "about": "Về chúng tôi",
+    "blogs": "Blog",
+    "services": "Dịch vụ",
+    "byteplusPartnership": "Quan hệ đối tác Byteplus (Seedance x Seedream)",
+    "careers": "Nghề nghiệp",
+    "contact": "Liên hệ",
+    "getInTouch": "Liên hệ với chúng tôi"
+  },
+  "hero": {
+    "title": "Xây dựng tương lai cùng chúng tôi.",
+    "subtitle": "Ứng dụng web và di động tiên tiến được xây dựng cho quy mô, tốc độ và bảo mật.",
+    "cta": "Nhận quyền truy cập độc quyền"
+  },
+  "verticals": {
+    "title": "Các ngành dọc của chúng tôi",
+    "subtitle": "Biến đổi các ngành công nghiệp thông qua các giải pháp công nghệ sáng tạo",
+    "learnMore": "Tìm hiểu thêm",
+    "matchbest": {
+      "item1": "AvaOne",
+      "viewMore": "xem thêm",
+      "item2": "Tự động hóa AI và Quản trị",
+      "item3": "Chuyển đổi số 3.0",
+      "item4": "An ninh mạng và VAPT",
+      "item5": "Kỹ thuật dữ liệu và Kiến trúc tin cậy",
+      "item6": "Blockchain và Hợp đồng thông minh",
+      "item7": "Tính toán lượng tử",
+      "item8": "Bền vững và CNTT xanh",
+      "item9": "Quản trị và Tuân thủ AI"
+    },
+    "xelta": {
+      "item1": "Trung tâm AI tạo sinh thống nhất",
+      "item2": "Động cơ Văn bản thành mọi thứ",
+      "item3": "Lớp trí tuệ đa mô hình",
+      "item4": "Kiến trúc đám mây gốc",
+      "item5": "Studio quy trình làm việc thời gian thực",
+      "item6": "Thị trường nội dung tạo sinh",
+      "item7": "Hệ sinh thái sẵn sàng cho tương lai"
+    },
+    "healNova": {
+      "item1": "Bác sĩ AI 24/7 và Chăm sóc tự trị",
+      "item2": "Kho tiền y tế cá nhân",
+      "item3": "Tuổi thọ dự đoán",
+      "item4": "Sức khỏe nhận thức và cảm xúc",
+      "item5": "Chẩn đoán được thúc đẩy bởi AI",
+      "item6": "Bảng điều khiển bác sĩ và nhóm chăm sóc",
+      "item7": "Quản lý sức khỏe bệnh nhân và gia đình",
+      "item8": "Đám mây phân tích và nghiên cứu sức khỏe",
+      "item9": "Điều phối sức khỏe và lối sống"
+    },
+    "eliteMaverick": {
+      "item1": "Xuất sắc trong thu hút nhân tài",
+      "item2": "Giải pháp lực lượng lao động AI",
+      "item3": "Tư vấn kinh doanh",
+      "item4": "Giải pháp chuyển đổi",
+      "item5": "Dịch vụ tài chính và kỹ thuật số",
+      "item6": "Dịch vụ Web3",
+      "item7": "Giải pháp kinh doanh toàn cầu"
+    },
+    "vitaay": {
+      "item1": "Cầu nối phổ quát: Thương hiệu ↔ Người sáng tạo ↔ Người hâm mộ",
+      "item2": "Ghép đôi người sáng tạo-thương hiệu được thúc đẩy bởi AI",
+      "item3": "Nền tảng hợp tác từ đầu đến cuối",
+      "item4": "Nền kinh tế người sáng tạo được thúc đẩy bởi người hâm mộ",
+      "item5": "Trung tâm đắm chìm và đa thực tế",
+      "item6": "Được xây dựng cho thế kỷ tiếp theo",
+      "item7": "Tập trung vào thị trường mới nổi"
+    }
+  },
+  "expertise": {
+    "title": "Chuyên môn của chúng tôi",
+    "nextGen": {
+      "title": "Phát triển Next-Gen",
+      "desc": "Ứng dụng web và di động tiên tiến được xây dựng cho quy mô, tốc độ và bảo mật."
+    },
+    "aiAutomation": {
+      "title": "Tự động hóa AI",
+      "desc": "Tích hợp tự động hóa thông minh và AI để tăng tốc quy trình kinh doanh của bạn."
+    },
+    "cloudSolutions": {
+      "title": "Giải pháp đám mây",
+      "desc": "Di chuyển đám mây liền mạch, lưu trữ và cơ sở hạ tầng cho các đội ngũ hiện đại."
+    },
+    "cybersecurity": {
+      "title": "An ninh mạng",
+      "desc": "Bảo mật cấp doanh nghiệp và tư vấn để bảo vệ tài sản kỹ thuật số của bạn."
+    }
+  },
+  "cta": {
+    "title": "Sẵn sàng xây dựng điều gì đó tuyệt vời?",
+    "desc": "Hãy hợp tác để biến tầm nhìn của bạn thành hiện thực. Liên hệ với chúng tôi để được tư vấn miễn phí và xem chúng tôi có thể giúp bạn phát triển như thế nào.",
+    "button": "Liên hệ với chúng tôi"
+  },
+  "whyChooseUs": {
+    "title": "Tại sao chọn chúng tôi?",
+    "expertTeam": {
+      "title": "Đội ngũ chuyên gia",
+      "desc": "Các chuyên gia giàu kinh nghiệm của chúng tôi cung cấp các giải pháp sáng tạo, đáng tin cậy được điều chỉnh theo nhu cầu của bạn."
+    },
+    "clientCentric": {
+      "title": "Hướng tới khách hàng",
+      "desc": "Chúng tôi ưu tiên mục tiêu và sự hài lòng của bạn, đảm bảo giao tiếp minh bạch và kết quả."
+    },
+    "cuttingEdgeTech": {
+      "title": "Công nghệ tiên tiến",
+      "desc": "Chúng tôi sử dụng các công nghệ mới nhất để làm cho doanh nghiệp của bạn sẵn sàng cho tương lai và tối đa hóa ROI."
+    }
+  },
+  "howWeWork": {
+    "title": "Chúng tôi làm việc như thế nào",
+    "consult": {
+      "title": "Tư vấn",
+      "desc": "Chúng tôi lắng nghe nhu cầu của bạn và cùng nhau xác định các mục tiêu dự án rõ ràng."
+    },
+    "develop": {
+      "title": "Phát triển",
+      "desc": "Đội ngũ của chúng tôi thiết kế, xây dựng và kiểm tra giải pháp của bạn với các cập nhật thường xuyên."
+    },
+    "deliver": {
+      "title": "Giao hàng",
+      "desc": "Chúng tôi khởi chạy, hỗ trợ và tối ưu hóa dự án của bạn cho thành công lâu dài."
+    }
+  },
+  "testimonials": {
+    "title": "Khách hàng của chúng tôi nói gì"
+  },
+  "technologies": {
+    "title": "Công nghệ chúng tôi sử dụng"
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "q1": "Làm thế nào để bắt đầu một dự án với MatchBest Group?",
+    "a1": "Đơn giản liên hệ với MatchBest Group bằng cách sử dụng nút ở trên hoặc qua trang liên hệ của chúng tôi. Chúng tôi sẽ sắp xếp tư vấn miễn phí để hiểu nhu cầu của bạn và khởi động dự án của bạn.",
+    "q2": "MatchBest Group phục vụ ngành nào?",
+    "a2": "MatchBest Group hợp tác với các công ty khởi nghiệp, doanh nghiệp và SME trong các ngành như fintech, chăm sóc sức khỏe, thương mại điện tử, truyền thông và hơn thế nữa.",
+    "q3": "MatchBest Group có cung cấp hỗ trợ liên tục không?",
+    "a3": "Có! MatchBest Group cung cấp bảo trì, hỗ trợ và tối ưu hóa liên tục để đảm bảo thành công lâu dài cho tất cả các dự án của bạn."
+  }
+}

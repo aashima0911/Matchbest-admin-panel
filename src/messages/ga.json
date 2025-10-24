@@ -1,0 +1,89 @@
+{
+  "navbar": {
+    "home": "Baile",
+    "about": "Fúinn",
+    "blogs": "Blaganna",
+    "services": "Seirbhísí",
+    "byteplusPartnership": "Comhpháirtíocht Byteplus (Seedance x Seedream)",
+    "careers": "Gairmeacha",
+    "contact": "Teagmháil",
+    "getInTouch": "Déan teagmháil linn"
+  },
+  "hero": {
+    "title": "Tóg an todhchaí linn.",
+    "subtitle": "Aipeanna gréasáin agus soghluaiste ceannródaíocha tógtha le haghaidh scála, luas agus slándáil.",
+    "cta": "Faigh rochtain eisiach"
+  },
+  "verticals": {
+    "title": "Ár n-ingearacha"
+  },
+  "expertise": {
+    "title": "Ár saineolas",
+    "nextGen": {
+      "title": "Forbairt Next-Gen",
+      "desc": "Aipeanna gréasáin agus soghluaiste ceannródaíocha tógtha le haghaidh scála, luas agus slándáil."
+    },
+    "aiAutomation": {
+      "title": "Uathoibriú AI",
+      "desc": "Comhtháthaigh uathoibriú cliste agus AI chun do phróisis ghnó a threisiú."
+    },
+    "cloudSolutions": {
+      "title": "Réitigh scamall",
+      "desc": "Imirce scamall gan uaim, óstáil agus bonneagar d'fhoirne nua-aimseartha."
+    },
+    "cybersecurity": {
+      "title": "Cibearshlándáil",
+      "desc": "Slándáil ghrád fiontair agus comhairle chun do shócmhainní digiteacha a chosaint."
+    }
+  },
+  "cta": {
+    "title": "Réidh rud éigin iontach a thógáil?",
+    "desc": "Déanaimis comhoibriú chun do fhís a iompú ina réaltacht. Déan teagmháil linn le haghaidh comhairliúcháin saor in aisce agus féach conas is féidir linn cabhrú leat fás.",
+    "button": "Déan teagmháil linn"
+  },
+  "whyChooseUs": {
+    "title": "Cén fáth sinn a roghnú?",
+    "expertTeam": {
+      "title": "Foireann shaineolaithe",
+      "desc": "Soláthraíonn ár ngairmithe le taithí réitigh nuálacha, iontaofa atá saincheaptha do do riachtanais."
+    },
+    "clientCentric": {
+      "title": "Dírithe ar an gcliant",
+      "desc": "Tugaimid tosaíocht do do spriocanna agus do shástacht, ag cinntiú cumarsáide trédhearcach agus torthaí."
+    },
+    "cuttingEdgeTech": {
+      "title": "Teicneolaíocht cheannródaíoch",
+      "desc": "Úsáidimid na teicneolaíochtaí is déanaí chun do ghnó a dhéanamh todhchaí-dhaingean agus ROI a uasmhéadú."
+    }
+  },
+  "howWeWork": {
+    "title": "Conas a oibrímid",
+    "consult": {
+      "title": "Comhairliúchán",
+      "desc": "Éistimid le do riachtanais agus sainímid spriocanna tionscadail soiléire le chéile."
+    },
+    "develop": {
+      "title": "Forbair",
+      "desc": "Dearann, tógann agus tástálann ár bhfoireann do réiteach le nuashonruithe rialta."
+    },
+    "deliver": {
+      "title": "Seachadadh",
+      "desc": "Seolaimid, tacaímid agus barrfheabhsaímid do thionscadal le haghaidh rath fadtéarmach."
+    }
+  },
+  "testimonials": {
+    "title": "Cad a deir ár gcliaint"
+  },
+  "technologies": {
+    "title": "Teicneolaíochtaí a úsáidimid"
+  },
+  "faq": {
+    "title": "Ceisteanna Coitianta",
+    "q1": "Conas tionscadal a thosú le MatchBest Group?",
+    "a1": "Déan teagmháil le MatchBest Group go simplí ag baint úsáide as an gcnaipe thuas nó trí ár leathanach teagmhála. Socróimid comhairliúchán saor in aisce chun do riachtanais a thuiscint agus do thionscadal a thosú.",
+    "q2": "Cén tionscail a fhreastalaíonn MatchBest Group orthu?",
+    "a2": "Comhoibríonn MatchBest Group le gnólachtaí tosaithe, fiontair agus SMBanna thar thionscail mar fintech, sláinte, ríomhthráchtáil, meáin agus níos mó.",
+    "q3": "An dtugann MatchBest Group tacaíocht leanúnach?",
+    "a3": "Sea! Soláthraíonn MatchBest Group cothabháil, tacaíocht agus barrfheabhsú leanúnach chun rath fadtéarmach do thionscadail go léir a chinntiú."
+  }
+}
