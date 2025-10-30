@@ -121,13 +121,13 @@ export default function Home() {
                     <h1 className="-mt-10 text-5xl md:text-6xl font-bold text-white leading-tight mb-15 ">
                         The Future With Us.
                     </h1>
-                    <Link href={'/contact'}>
+                    <Link href={'/event'}>
                         <motion.button
                             variants={fadeInUp}
                             whileHover={{ scale: 1.05 }}
                             className="pulse-glow px-8 py-4 rounded-full shadow-lg transition cursor-pointer bg-[#6823f0] text-white text-lg"
                         >
-                            Get Exclusive Access
+                            Exclusive Event
                         </motion.button>
                     </Link>
                 </div>
