@@ -12,15 +12,22 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const navLinks = [
-    // { href: '/', label: t('navbar.home') },
-    // { href: '/about', label: t('navbar.about') },
-    // { href: '/blogs', label: t('navbar.blogs') },
-    // { href: '/services', label: t('navbar.services') },
-    { href: '/byteplus-partnership', label: t('navbar.byteplusPartnership') },
-    // { href: '/careers', label: t('navbar.careers') },
-    
-  ];
+  const navLinks = pathname === '/byteplus-partnership'
+    ? [
+        { href: '/byteplus-partnership', label: t('navbar.byteplusPartnership') },
+      ]
+    : pathname === '/event'
+    ? [
+        { href: '/event', label: 'Webinar Seedance x Seedream' },
+      ]
+    : [
+        // { href: '/', label: t('navbar.home') },
+        { href: '/about', label: t('navbar.about') },
+        { href: '/blogs', label: t('navbar.blogs') },
+        { href: '/services', label: t('navbar.services') },
+        { href: '/careers', label: t('navbar.careers') },
+        // { href: '/event', label: 'Webinar Seedance x Seedream' },
+      ];
 
   const handleToggle = () => setIsOpen((prev) => !prev);
   const handleClose = () => setIsOpen(false);
