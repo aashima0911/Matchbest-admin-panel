@@ -39,8 +39,8 @@ export default function EventPage() {
         <motion.div variants={fadeInUp} initial="hidden" animate="visible" className="max-w-7xl mx-auto mt-5 -mb-8">
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-6 py-10">LIVE WEBINAR</h1>
           <p className=" text-1xl md:text-2xl text-semibold text-gray-200 mb-4 md:mb-5 -mt-8">
-             Join thought leaders in this exclusive webinar hosted by <span className="text-indigo-400 font-semibold text-2xl">Seedance & Seedream</span>.        
-            <br className="hidden md:block"/> Unlock next-generation strategies and insights for smarter, faster, AI-driven content creation.
+             Join thought leaders in this exclusive webinar hosted by <span className="text-indigo-400 font-semibold text-2xl">Seedance & Seedream</span>      
+            <br className="hidden md:block"/> Unlock next-generation strategies and insights for smarter, faster, AI-driven content creation
           </p>
           <p className="text-base md:text-lg text-gray-200 mb-4 md:mb-5">Your 1-hour shortcut to smarter strategies</p>
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLScX2eGiZrmZCjbN1SSPGNYd9_voqLTmlpQOP2yMrMeX5W6ZHg/viewform" target="_blank" rel="noopener noreferrer">
