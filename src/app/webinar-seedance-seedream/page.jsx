@@ -54,7 +54,7 @@ export default function EventPage() {
       {/* EVENT DETAILS SECTION */}
       <section className="bg-gradient-to-r from-[#F3E5F5] via-[#E1BEE7] to-[#D1C4E9] py-12 md:py-5 px-4 md:px-16">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-4xl font-bold mb-5 text-gray-800">Event Details</h2>
+          <h2 className="text-2xl md:text-4xl font-bold mb-5 text-gray-800">Webinar Details</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-800">
           <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
             <IconCalendar />
