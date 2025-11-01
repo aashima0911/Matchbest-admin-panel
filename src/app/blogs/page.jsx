@@ -63,7 +63,6 @@ export default function BlogPage() {
               <div className="p-4 flex flex-col flex-grow">
                 <div className="flex-grow">
                   <h3 className="text-white text-xl font-semibold mb-2 leading-tight">{post.title}</h3>
-                  <div className="text-sm text-purple-300 mb-2">{post.date || (post.timestamp && new Date(post.timestamp.seconds * 1000).toLocaleDateString())}</div>
                   <div className="flex gap-2 flex-wrap mb-4">
                     {post.tags && post.tags.map((tag, idx) => (
                       <span key={idx} className="bg-purple-700 bg-opacity-60 px-3 py-1 rounded-full text-xs font-medium text-white">#{tag}</span>
@@ -73,6 +72,8 @@ export default function BlogPage() {
                     {post.excerpt || (post.description ? post.description.slice(0, 120) + (post.description.length > 120 ? '...' : '') : '')}
                   </p> */}
                 </div>
+                {/* Date at bottom */}
+                <div className="text-sm text-purple-300 mb-2">{post.date || (post.timestamp && new Date(post.timestamp.seconds * 1000).toLocaleDateString())}</div>
                 {/* Read More Button */}
                 <Link
                   href={`/blogs/${post.slug || post.id}`}

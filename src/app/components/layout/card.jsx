@@ -19,9 +19,9 @@ export default function VerticalsCarousel() {
         t('verticals.matchbest.item4'),
         t('verticals.matchbest.item5'),
         t('verticals.matchbest.item6'),
-        t('verticals.matchbest.item7'),
+        // t('verticals.matchbest.item7'),
         t('verticals.matchbest.item8'),
-        t('verticals.matchbest.item9'),
+        // t('verticals.matchbest.item9'),
       ],
     },
     {
@@ -47,7 +47,7 @@ export default function VerticalsCarousel() {
       items: [
         t('verticals.healNova.item1'),
         t('verticals.healNova.item2'),
-        t('verticals.healNova.item3'),
+        // t('verticals.healNova.item3'),
         t('verticals.healNova.item4'),
         t('verticals.healNova.item5'),
         t('verticals.healNova.item6'),
