@@ -24,7 +24,7 @@ export default function Navbar() {
         // { href: '/', label: t('navbar.home') },
         { href: '/about', label: t('navbar.about') },
         { href: '/blogs', label: t('navbar.blogs') },
-        { href: '/services', label: t('navbar.services') },
+        { href: '/press-release', label: 'Press Release' },
         { href: '/careers', label: t('navbar.careers') },
         // { href: '/event', label: 'Webinar Seedance x Seedream' },
       ];
