@@ -113,7 +113,7 @@ export default function EventPage() {
           </p>
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLScX2eGiZrmZCjbN1SSPGNYd9_voqLTmlpQOP2yMrMeX5W6ZHg/viewform" target="_blank" rel="noopener noreferrer">
             <button className="bg-white text-2xl text-[#2E0249] px-6 py-3 md:px-10 md:py-4 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 flex items-center mx-auto">
-              <IconUsers /> RSVP Now
+               RSVP Now
             </button>
           </Link>
         </motion.div>
