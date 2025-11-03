@@ -60,7 +60,7 @@ export default function AboutPage() {
 
       {/* Mission & Vision */}
       <section
-        className="py-1 w-full bg-gray-850 flex flex-col items-center justify-center px-6 lg:px-20 text-center -mt-15"
+        className="py-16 w-full bg-gray-850 flex flex-col items-center justify-center px-6 lg:px-20 text-center -mt-8 lg:-mt-15"
         data-aos="fade-up"
       >
         <div className="max-w-6xl">
@@ -94,7 +94,7 @@ export default function AboutPage() {
         <div className="max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-10">Our Core Values</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               { icon: <Rocket className="w-8 h-8 mb-3 text-purple-400" />, text: "Innovation & AI-led Design" },
               { icon: <LineChart className="w-8 h-8 mb-3 text-purple-400" />, text: "Customer-Centric Growth" },
@@ -118,7 +118,7 @@ export default function AboutPage() {
       <section className="py-5 w-full px-6 lg:px-20 text-center" data-aos="fade-up">
         <h2 className="text-3xl md:text-4xl font-bold mb-10">Our Domains of Excellence</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-6xl items-center justify-center mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
             { icon: <BrainCircuit className="w-8 h-8 mb-3 text-purple-400" />, label: "AI & Automation" },
             { icon: <Cloud className="w-8 h-8 mb-3 text-purple-400" />, label: "Cloud & Managed Services" },
@@ -145,7 +145,7 @@ export default function AboutPage() {
           <div className="p-6 border border-purple-500 bg-gray-800 rounded-2xl shadow-md hover:bg-gray-700 transition text-center">
             <div className="flex justify-center items-center mb-4">
               <MapPin className="w-8 h-8 text-purple-400 mr-2" />
-              <span className="text-2xl">🇮🇳</span>
+              <span className="text-xl md:text-2xl">🇮🇳</span>
             </div>
             <h3 className="text-xl font-semibold mb-2">India</h3>
             <p className="text-gray-300">Headquartered</p>
@@ -153,7 +153,7 @@ export default function AboutPage() {
           <div className="p-6 border border-purple-500 bg-gray-800 rounded-2xl shadow-md hover:bg-gray-700 transition text-center">
             <div className="flex justify-center items-center mb-4">
               <MapPin className="w-8 h-8 text-purple-400 mr-2" />
-              <span className="text-2xl">🇦🇪</span>
+              <span className="text-xl md:text-2xl">🇦🇪</span>
             </div>
             <h3 className="text-xl font-semibold mb-2">UAE</h3>
             <p className="text-gray-300">Regional Office</p>
@@ -161,7 +161,7 @@ export default function AboutPage() {
           <div className="p-6 border border-purple-500 bg-gray-800 rounded-2xl shadow-md hover:bg-gray-700 transition text-center">
             <div className="flex justify-center items-center mb-4">
               <MapPin className="w-8 h-8 text-purple-400 mr-2" />
-              <span className="text-2xl">🇺🇸</span>
+              <span className="text-xl md:text-2xl">🇺🇸</span>
             </div>
             <h3 className="text-xl font-semibold mb-2">USA</h3>
             <p className="text-gray-300">Regional Office</p>
@@ -169,7 +169,7 @@ export default function AboutPage() {
           <div className="p-6 border border-purple-500 bg-gray-800 rounded-2xl shadow-md hover:bg-gray-700 transition text-center">
             <div className="flex justify-center items-center mb-4">
               <MapPin className="w-8 h-8 text-purple-400 mr-2" />
-              <span className="text-2xl">🇸🇦</span>
+              <span className="text-xl md:text-2xl">🇸🇦</span>
             </div>
             <h3 className="text-xl font-semibold mb-2">Saudi Arabia</h3>
             <p className="text-gray-300">Coming Soon</p>
