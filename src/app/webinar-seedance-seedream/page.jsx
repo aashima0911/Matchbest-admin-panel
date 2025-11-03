@@ -59,7 +59,7 @@ export default function EventPage() {
           <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
             <IconCalendar />
             <h3 className="font-bold text-2xl mb-2">Date</h3>
-            <p className="font-bold">5 November 2025 (Tuesday)</p>
+            <p className="font-bold">5 November 2025 (Wednesday)</p>
           </div>
 
           <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">

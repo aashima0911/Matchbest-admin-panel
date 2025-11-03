@@ -21,7 +21,7 @@ export default function Navbar() {
         { href: '/event', label: 'Webinar Seedance x Seedream' },
       ]
     : [
-        // { href: '/', label: t('navbar.home') },
+        { href: '/', label: t('navbar.home') },
         { href: '/about', label: t('navbar.about') },
         { href: '/blogs', label: t('navbar.blogs') },
         { href: '/press-release', label: 'Press Release' },
