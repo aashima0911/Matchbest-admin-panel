@@ -39,10 +39,10 @@ export default function EventPage() {
         <motion.div variants={fadeInUp} initial="hidden" animate="visible" className="max-w-7xl mx-auto mt-5 -mb-8">
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-6 py-10">LIVE WEBINAR</h1>
           <p className=" text-1xl md:text-2xl text-semibold text-gray-200 mb-4 md:mb-5 -mt-8">
-             Join thought leaders in this exclusive webinar hosted by <span className="text-indigo-400 font-semibold text-2xl">Seedance & Seedream</span>      
-            <br className="hidden md:block"/> Unlock next-generation strategies and insights for smarter, faster, AI-driven content creation
+             Join <span className="text-indigo-400 font-semibold text-2xl">BytePlus x Matchbest </span>  Webinar    
+            <br className="hidden md:block"/>  to see how Agentic AI is revolutionizing content generation — from images to videos, all in seconds.
           </p>
-          <p className="text-base md:text-lg text-gray-200 mb-4 md:mb-5">Your 1-hour shortcut to smarter strategies</p>
+          {/* <p className="text-base md:text-lg text-gray-200 mb-4 md:mb-5">Your 1-hour shortcut to smarter strategies</p> */}
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLScX2eGiZrmZCjbN1SSPGNYd9_voqLTmlpQOP2yMrMeX5W6ZHg/viewform" target="_blank" rel="noopener noreferrer">
             <button className="text-2xl cursor-pointer bg-indigo-600 hover:bg-indigo-500  px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-white shadow-lg transition transform hover:scale-105">
               RSVP Now
@@ -59,13 +59,13 @@ export default function EventPage() {
           <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
             <IconCalendar />
             <h3 className="font-bold text-2xl mb-2">Date</h3>
-            <p className="font-bold">5 November 2025 (Wednesday)</p>
+            <p className="font-bold">18 November 2025 (Tuesday)</p>
           </div>
 
           <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
             <IconClock />
             <h3 className="font-bold text-2xl mb-2">Time</h3>
-            <p className="font-bold">11:00 AM CST (UTC –5)</p>
+            <p className="font-bold">10:00 AM CST </p>
           </div>
 
           <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
@@ -97,7 +97,7 @@ export default function EventPage() {
             <div className="bg-white/10 p-6 rounded-2xl shadow-lg backdrop-blur-md hover:bg-white/20 transition">
               <h3 className="font-semibold text-xl mb-2 text-pink-300">3️⃣ Live Demo & Q&A</h3>
               <p className="text-gray-200">
-                Experience real AI solutions, backed by expert insights.
+                Experience real AI solutions, backed by <span className="font-bold"> Vivek Ganesh </span> , CTA at BytePlus.
               </p>
             </div>
           </div>

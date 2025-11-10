@@ -16,9 +16,9 @@ export default function Navbar() {
     ? [
         { href: '/byteplus-partnership', label: t('navbar.byteplusPartnership') },
       ]
-    : pathname === '/event'
+    : pathname === '/matchbest-byteplus-webinar'
     ? [
-        { href: '/event', label: 'Webinar Seedance x Seedream' },
+        { href: '/matchbest-byteplus-webinar', label: 'Matchbest x Byteplus Webinar' },
       ]
     : [
         { href: '/', label: t('navbar.home') },
