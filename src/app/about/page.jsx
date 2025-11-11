@@ -6,8 +6,10 @@ import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import TextPressure from '@/app/components/layout/text.jsx';
-import Orb from '@/app/components/layout/hero.jsx';
+import dynamic from 'next/dynamic';
+
+const TextPressure = dynamic(() => import('@/app/components/layout/text.jsx'), { ssr: false });
+const Orb = dynamic(() => import('@/app/components/layout/hero.jsx'), { ssr: false });
 import {
   Lightbulb,
   ShieldCheck,
