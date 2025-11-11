@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const navLinks = pathname === '/byteplus-partnership'
+  const navLinks = useMemo(() => pathname === '/byteplus-partnership'
     ? [
         { href: '/byteplus-partnership', label: t('navbar.byteplusPartnership') },
       ]
@@ -27,10 +27,10 @@ export default function Navbar() {
         { href: '/press-release', label: 'Press Release' },
         { href: '/careers', label: t('navbar.careers') },
         // { href: '/event', label: 'Webinar Seedance x Seedream' },
-      ];
+      ], [pathname, t]);
 
-  const handleToggle = () => setIsOpen((prev) => !prev);
-  const handleClose = () => setIsOpen(false);
+  const handleToggle = useCallback(() => setIsOpen((prev) => !prev), []);
+  const handleClose = useCallback(() => setIsOpen(false), []);
 
   return (
     <nav className="bg-[#10131a] shadow-lg border-b  fixed w-full z-30 top-0 left-0 py-3 md:py-4 px-0 md:px-0">

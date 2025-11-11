@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { languages } from "../constants/languages";
 import { setLanguage } from "../store/languageSlice";
@@ -12,16 +12,16 @@ export default function LanguageSelector() {
   const [searchTerm, setSearchTerm] = useState("");
   const dropdownRef = useRef(null);
 
-  const handleLanguageSelect = (lang) => {
+  const handleLanguageSelect = useCallback((lang) => {
     dispatch(setLanguage(lang));
     setIsOpen(false);
     setSearchTerm("");
-  };
+  }, [dispatch]);
 
-  const filteredLanguages = languages.filter((lang) =>
+  const filteredLanguages = useMemo(() => languages.filter((lang) =>
     lang.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
     lang.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  ), [searchTerm]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {

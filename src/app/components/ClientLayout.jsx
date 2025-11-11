@@ -1,13 +1,27 @@
 "use client";
-import React from "react";
+import React, { memo, Suspense } from "react";
+import dynamic from "next/dynamic";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "@/store/store";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import ChatbotButton from "@/app/components/ChatbotButton";
-import WhatsAppButton from "@/app/components/WhatsAppButton";
 import LanguageWatcher from "@/app/components/LanguageWatcher";
+
+// Dynamic imports for non-critical components
+const ChatbotButton = dynamic(() => import("@/app/components/ChatbotButton"), {
+  ssr: false,
+  loading: () => null,
+});
+const WhatsAppButton = dynamic(() => import("@/app/components/WhatsAppButton"), {
+  ssr: false,
+  loading: () => null,
+});
+
+const MemoizedNavbar = memo(Navbar);
+const MemoizedFooter = memo(Footer);
+const MemoizedLanguageWatcher = memo(LanguageWatcher);
+const MemoizedChatbotButton = memo(ChatbotButton);
 
 export default function ClientLayout({ children }) {
   console.log("ClientLayout: Rendering with Redux Provider and PersistGate");
@@ -35,11 +49,11 @@ export default function ClientLayout({ children }) {
   return (
     <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <LanguageWatcher />
-      <Navbar />
+      <MemoizedLanguageWatcher />
+      <MemoizedNavbar />
       <main className="flex-1">{children}</main>
-      <Footer />
-      <ChatbotButton />
+      <MemoizedFooter />
+      <MemoizedChatbotButton />
       <WhatsAppButton />
       </PersistGate>
     </Provider>

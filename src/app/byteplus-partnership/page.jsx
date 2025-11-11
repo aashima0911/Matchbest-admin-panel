@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Script from 'next/script';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import {
   Video,
@@ -109,10 +110,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             <motion.div variants={fadeInUp} className="lg:w-1/2 w-full">
               <div className="relative rounded-2xl border-4 border-cyan-400 shadow-2xl overflow-hidden">
-                <img
+                <Image
                   src="/assets/byteplus.png"
                   alt="BytePlus MatchbestGroup Partnership"
+                  width={800}
+                  height={600}
                   className="w-full h-auto object-cover"
+                  priority
                 />
               </div>
             </motion.div>
@@ -274,10 +278,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   variants={fadeInUp}
                   className="glass-effect p-6 hover:scale-[1.02] transition bg-black/40 rounded-2xl text-center"
                 >
-                  <img
+                  <Image
                     src={useCase.image}
                     alt={useCase.title}
+                    width={400}
+                    height={128}
                     className="w-full h-32 object-cover rounded-xl mb-4"
+                    loading="lazy"
                   />
                   <div className="flex items-center justify-center mb-3">
                     <useCase.icon className="w-6 h-6 mr-2 text-purple-400" />
