@@ -129,7 +129,7 @@ export default function ChatbotWidget() {
           className="fixed bottom-5 right-5 z-[75] w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-xl flex items-center justify-center"
         >
           {/* Use your uploaded icon */}
-          <img src="/chatbot-icon.png" alt="Chatbot" className="w-15 h-13 cursor-pointer" />
+          <img src="/chatbot-icon.webp" alt="Chatbot" className="w-15 h-13 cursor-pointer" />
         </motion.button>
       )}
     </>

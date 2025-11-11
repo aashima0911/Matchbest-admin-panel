@@ -6,10 +6,12 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import CurvedLoop from "@/app/components/layout/crousel.jsx";
-import Orb from "@/app/components/layout/hero.jsx";
-import TextPressure from '@/app/components/layout/text.jsx';
-import VerticalsCarousel from '@/app/components/layout/card.jsx';
+import dynamic from 'next/dynamic';
+
+const CurvedLoop = dynamic(() => import("@/app/components/layout/crousel.jsx"), { ssr: false });
+const Orb = dynamic(() => import("@/app/components/layout/hero.jsx"), { ssr: false });
+const TextPressure = dynamic(() => import('@/app/components/layout/text.jsx'), { ssr: false });
+const VerticalsCarousel = dynamic(() => import('@/app/components/layout/card.jsx'), { ssr: false });
 
 
 const services = [
