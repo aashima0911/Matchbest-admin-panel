@@ -135,7 +135,7 @@ export default function WebinarLanding() {
 
             {/* Title */}
             <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-gray-900 leading-tight">
-              <span className="text-cyan-600">BytePlus</span> is redefining creative ops with smart automation .
+              <span className="text-indigo-600">BytePlus</span> is redefining creative ops with smart automation 
             </h1>
 
             <p className="text-lg text-gray-600 ">
@@ -144,7 +144,7 @@ export default function WebinarLanding() {
 
             {/* Tags */}
             <div className="flex flex-wrap gap-3 ">
-              {['1 Hour', 'Online', 'Free Access'].map((tag) => (
+              {['30 Minutes', 'Online', 'Free Access'].map((tag) => (
                 <span
                   key={tag}
                   className="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
