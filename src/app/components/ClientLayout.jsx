@@ -1,6 +1,7 @@
 "use client";
 import React, { memo, Suspense } from "react";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "@/store/store";
@@ -21,9 +22,10 @@ const WhatsAppButton = dynamic(() => import("@/app/components/WhatsAppButton"), 
 const MemoizedNavbar = memo(Navbar);
 const MemoizedFooter = memo(Footer);
 const MemoizedLanguageWatcher = memo(LanguageWatcher);
-const MemoizedChatbotButton = memo(ChatbotButton);
 
-export default function ClientLayout({ children }) {
+function ClientLayoutInner({ children }) {
+  const pathname = usePathname();
+
   console.log("ClientLayout: Rendering with Redux Provider and PersistGate");
 
   // Clear corrupted Redux state on component mount
@@ -46,16 +48,26 @@ export default function ClientLayout({ children }) {
     }
   }, []);
 
+  const hideNavbar = pathname === '/matchbest-byteplus-webinar';
+
+  return (
+    <>
+      <MemoizedLanguageWatcher />
+      {!hideNavbar && <MemoizedNavbar />}
+      <main className="flex-1">{children}</main>
+      <MemoizedFooter />
+      <ChatbotButton />
+      <WhatsAppButton />
+    </>
+  );
+}
+
+export default function ClientLayout({ children }) {
   return (
     <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <MemoizedLanguageWatcher />
-      <MemoizedNavbar />
-      <main className="flex-1">{children}</main>
-      <MemoizedFooter />
-      <MemoizedChatbotButton />
-      <WhatsAppButton />
-      </PersistGate>
+      <ClientLayoutInner>{children}</ClientLayoutInner>
+    </PersistGate>
     </Provider>
   );
 }

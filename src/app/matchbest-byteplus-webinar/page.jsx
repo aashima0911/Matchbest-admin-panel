@@ -1,124 +1,411 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
+'use client';
 
-// Animation
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Zap,
+  Award,
+  ChevronRight,
+  Mail,
+  Phone,
+  Globe,
+  Star,
+  CheckCircle,
+} from 'lucide-react';
+
+// Animation Variants
 const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
 
-// Inline SVG icons
-const IconCalendar = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" stroke="currentColor" className="w-8 h-8 mr-3 text-indigo-500">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3M5 11h14M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" />
-  </svg>
-);
-const IconClock = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" stroke="currentColor" className="w-8 h-8 mr-3 text-pink-500">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
-  </svg>
-);
-const IconMapPin = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" stroke="currentColor" className="w-8 h-8 mr-3 text-emerald-400">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 11a4 4 0 110-8 4 4 0 010 8zm0 0c5.333 0 8 4 8 8v1H4v-1c0-4 2.667-8 8-8z" />
-  </svg>
-);
-const IconUsers = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" stroke="currentColor" className="w-5 h-5 mr-2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2m16-10a4 4 0 100-8 4 4 0 000 8zm6 10v-2a4 4 0 00-3-3.87" />
-  </svg>
-);
+// Icons
+const IconCalendar = () => <Calendar className="w-8 h-8 text-cyan-600" />;
+const IconClock = () => <Clock className="w-8 h-8 text-cyan-600" />;
+const IconMapPin = () => <MapPin className="w-8 h-8 text-cyan-600" />;
 
-export default function EventPage() {
+// Countdown Timer
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const target = new Date('2025-11-18T10:00:00').getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = target - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col">
-      {/* HERO SECTION */}
-      <section className="bg-gradient-to-r from-[#130F40] via-[#2C2C54] to-[#1B1464] text-white py-12 md:py-12 px-4 md:px-16 text-center ">
-        <motion.div variants={fadeInUp} initial="hidden" animate="visible" className="max-w-7xl mx-auto mt-5 -mb-8">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-6 py-10">LIVE WEBINAR</h1>
-          <p className=" text-1xl md:text-2xl text-semibold text-gray-200 mb-4 md:mb-5 -mt-8">
-             Join <span className="text-indigo-400 font-semibold text-2xl">BytePlus x Matchbest </span>  Webinar    
-            <br className="hidden md:block"/>  to see how Agentic AI is revolutionizing content generation — from images to videos, all in seconds.
-          </p>
-          {/* <p className="text-base md:text-lg text-gray-200 mb-4 md:mb-5">Your 1-hour shortcut to smarter strategies</p> */}
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLScX2eGiZrmZCjbN1SSPGNYd9_voqLTmlpQOP2yMrMeX5W6ZHg/viewform" target="_blank" rel="noopener noreferrer">
-            <button className="text-2xl cursor-pointer bg-indigo-600 hover:bg-indigo-500  px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-white shadow-lg transition transform hover:scale-105">
-              RSVP Now
-            </button>
-          </Link>
-        </motion.div>
+    <div className="grid grid-cols-4 gap-2 md:gap-4 text-center">
+      {Object.entries(timeLeft).map(([unit, value]) => (
+        <div key={unit} className="bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 disabled:opacity-50 rounded-xl p-2 md:p-3">
+          <div className="text-lg md:text-xl lg:text-2xl font-bold text-white">{value}</div>
+          <div className="text-xs text-white uppercase">{unit}</div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default function WebinarLanding() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    experience: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    let filteredValue = value;
+
+    if (name === 'name') {
+      // Allow only letters and spaces
+      filteredValue = value.replace(/[^A-Za-z\s]/g, '');
+    } else if (name === 'phone') {
+      // Allow only numbers, spaces, hyphens, plus, parentheses
+      filteredValue = value.replace(/[^0-9\s\-\+\(\)]/g, '');
+    } else if (name === 'email') {
+      // Allow only valid email characters: letters, numbers, @, ., _, -
+      filteredValue = value.replace(/[^a-zA-Z0-9@._-]/g, '');
+    }
+
+    setFormData(prev => ({ ...prev, [name]: filteredValue }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('/api/webinar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitMessage('Registration successful! Check your email for confirmation.');
+        setFormData({ name: '', email: '', phone: '', experience: '' });
+      } else {
+        setSubmitMessage('Registration failed. Please try again.');
+      }
+    } catch (error) {
+      setSubmitMessage('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-0 px-4 md:px-14 lg:px-18 xl:px-22">
+
+      {/* ==== HERO + FORM SECTION ==== */}
+      <section className="py-8 md:py-2 lg:py-6 px-4 md:px-8 lg:px-12">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+          {/* ---------- LEFT: INFO ---------- */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            className="space-y-4"
+          >
+
+            {/* Title */}
+            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-gray-900 leading-tight">
+              <span className="text-cyan-600">BytePlus</span> is redefining creative ops with smart automation .
+            </h1>
+
+            <p className="text-lg text-gray-600 ">
+              Join <strong className="text-indigo-600">BytePlus x Matchbest</strong> to see how autonomous AI agents are revolutionizing content creation for marketers, creators, and brands.
+            </p>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-3 ">
+              {['1 Hour', 'Online', 'Free Access'].map((tag) => (
+                <span
+                  key={tag}
+                  className="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Countdown */}
+            <div className="py-6 ">
+              <p className="text-sm font-medium text-gray-700 mb-3">Webinar Starts In</p>
+              <CountdownTimer />
+            </div>
+
+            {/* Event Details */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[
+                { Icon: IconCalendar, title: 'Date', desc: '18 Nov 2025 (Tue)' },
+                { Icon: IconClock, title: 'Time', desc: '10:00 AM CST' },
+                { Icon: IconMapPin, title: 'Location', desc: 'Online (Teams)' },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-2xl p-5 shadow-sm border">
+                  <item.Icon />
+                  <h3 className="mt-2 font-semibold text-gray-800">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Speaker */}
+            <div className="flex items-center gap-4 bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-5">
+              <img
+                src="https://media.licdn.com/dms/image/v2/C4D03AQFHeA7elEmjHg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1653906703330?e=2147483647&v=beta&t=370EfUPxypWRGVO5VgNjWxRslugsabZBWiS35Toddrw"
+                alt="Vivek Ganesh"
+                className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-4 border-white shadow-md flex-shrink-0"
+              />
+              <div className="min-w-0">
+                <p className="font-bold text-gray-900 text-sm md:text-base">Vivek Ganesh</p>
+                <p className="text-xs md:text-sm text-indigo-700">CTO, BytePlus</p>
+              </div>
+            </div>
+
+            {/* CTA */}
+            {/* <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLScX2eGiZrmZCjbN1SSPGNYd9_voqLTmlpQOP2yMrMeX5W6ZHg/viewform"
+              target="_blank"
+            >
+              <button className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transition transform hover:scale-105 flex items-center justify-center gap-2">
+                RSVP Now – Free Seat
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </Link> */}
+          </motion.div>
+
+          {/* ---------- RIGHT: FORM (Perfect Design) ---------- */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            className="flex items-center justify-center"
+          >
+            <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 w-full max-w-lg border">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-6">
+                Book Your Free Seat
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Name */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Enter name"
+                    pattern="[A-Za-z\s]+"
+                    title="Please enter only letters and spaces"
+                    className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                    required
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="you@company.com"
+                    className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                    required
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Phone number"
+                    pattern="[0-9\s\-\+\(\)]+"
+                    title="Please enter a valid phone number"
+                    className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                    required
+                  />
+                </div>
+
+                {/* Experience */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Experience <span className="text-red-500">*</span>
+                  </label>
+                  <div className="mt-2 space-y-2">
+                    {[
+                      'Industry Professional – Technical Role',
+                      'Industry Professional – Non-Technical Role',
+                      'Aspiring Professional - Career Switcher',
+                      'Educator - Academic',
+                      'Other - Curious Learner',
+                    ].map((opt) => (
+                      <label
+                        key={opt}
+                        className="flex items-center space-x-3 cursor-pointer"
+                      >
+                        <input
+                          type="radio"
+                          name="experience"
+                          value={opt}
+                          checked={formData.experience === opt}
+                          onChange={handleInputChange}
+                          className="w-4 h-4 text-cyan-600 focus:ring-cyan-500"
+                        />
+                        <span className="text-sm text-gray-700">{opt}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="cursor-pointer w-full bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 disabled:opacity-50 text-white font-bold text-lg py-4 rounded-full shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105"
+                >
+                  {isSubmitting ? 'Submitting...' : 'Continue Webinar'}
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+
+                {/* Submit Message */}
+                {submitMessage && (
+                  <p className={`text-sm text-center mt-4 ${submitMessage.includes('successful') ? 'text-green-600' : 'text-red-600'}`}>
+                    {submitMessage}
+                  </p>
+                )}
+
+                {/* Consent */}
+                <p className="text-xs text-gray-500 text-center mt-4">
+                  I authorise BytePlus & Matchbest to contact me via{' '}
+                  <Mail className="inline w-3 h-3" /> Email,{' '}
+                  <Phone className="inline w-3 h-3" /> SMS,{' '}
+                  <Globe className="inline w-3 h-3" /> WhatsApp.
+
+                </p>
+              </form>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* EVENT DETAILS SECTION */}
-      <section className="bg-gradient-to-r from-[#F3E5F5] via-[#E1BEE7] to-[#D1C4E9] py-12 md:py-5 px-4 md:px-16">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-4xl font-bold mb-5 text-gray-800">Webinar Details</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-800">
-          <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <IconCalendar />
-            <h3 className="font-bold text-2xl mb-2">Date</h3>
-            <p className="font-bold">18 November 2025 (Tuesday)</p>
-          </div>
+      {/* ==== AGENDA SECTION ==== */}
+      <section className="py-8 px-4 md:px-8 lg:px-12 bg-gray-50">
+        <div className="container mx-auto">
+          <motion.h2
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            className="text-3xl lg:text-4xl font-extrabold text-center mb-12 text-gray-900"
+          >
+            What You'll Learn
+          </motion.h2>
 
-          <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <IconClock />
-            <h3 className="font-bold text-2xl mb-2">Time</h3>
-            <p className="font-bold">10:00 AM CST </p>
-          </div>
-
-          <div className="flex flex-col items-center text-center bg-white/60 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <IconMapPin />
-            <h3 className="font-bold text-2xl mb-2">Location</h3>
-            <p className="font-bold">Online (Microsoft Teams)</p>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Zap className="w-10 h-10 text-cyan-600" />,
+                title: 'AI-Powered Marketing',
+                desc: 'Reinvent automation & personalization with generative AI.',
+              },
+              {
+                icon: <Users className="w-10 h-10 text-indigo-600" />,
+                title: 'Next-Gen Workflows',
+                desc: 'From idea to publish in seconds with autonomous agents.',
+              },
+              {
+                icon: <Award className="w-10 h-10 text-violet-600" />,
+                title: 'Live Demo & Q&A',
+                desc: 'See the platform in action, ask anything to Vivek Ganesh.',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition"
+              >
+                <div className="mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* AGENDA SECTION */}
-      <section className="bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364] text-white py-10 md:py-5 px-4 md:px-16">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-4xl font-bold mb-10">Agenda Highlights</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div className="bg-white/10 p-6 rounded-2xl shadow-lg backdrop-blur-md hover:bg-white/20 transition">
-              <h3 className="font-semibold text-xl mb-2 text-cyan-300">1️⃣ AI in Modern Marketing</h3>
-              <p className="text-gray-200">
-                Marketing and automation, reinvented by generative AI.
-              </p>
-            </div>
-            <div className="bg-white/10 p-6 rounded-2xl shadow-lg backdrop-blur-md hover:bg-white/20 transition">
-              <h3 className="font-semibold text-xl mb-2 text-indigo-300">2️⃣ Next-Gen Workflows</h3>
-              <p className="text-gray-200">
-                AI that streamlines content from idea to publish.
-              </p>
-            </div>
-            <div className="bg-white/10 p-6 rounded-2xl shadow-lg backdrop-blur-md hover:bg-white/20 transition">
-              <h3 className="font-semibold text-xl mb-2 text-pink-300">3️⃣ Live Demo & Q&A</h3>
-              <p className="text-gray-200">
-                Experience real AI solutions, backed by <span className="font-bold"> Vivek Ganesh </span> , CTA at BytePlus.
-              </p>
-            </div>
+      {/* ==== BENEFITS SECTION ==== */}
+      <section className="py-8 px-4 md:px-8 lg:px-12">
+        <div className="container mx-auto">
+          <motion.h2
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            className="text-3xl lg:text-4xl font-extrabold text-center mb-12 text-gray-900"
+          >
+            Why Attend?
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              'Cut Production Time 90%',
+              'Unlimited Creative Variants',
+              'Enterprise-Grade Security',
+              'Free Lifetime Updates',
+            ].map((benefit, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                className="flex items-center gap-3 bg-indigo-50 rounded-xl p-4"
+              >
+                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0" />
+                <p className="font-medium text-gray-800">{benefit}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="bg-gradient-to-r from-[#2E0249] via-[#570A57] to-[#A91079] text-white py-10 md:py-5 text-center">
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-bold mb-6">Ready to Shape the Future of Content?</h2>
-          <p className="text-lg text-gray-200 mb-5">
-            Reserve your spot and join hundreds of innovators exploring how AI is redefining creativity and efficiency.
-          </p>
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLScX2eGiZrmZCjbN1SSPGNYd9_voqLTmlpQOP2yMrMeX5W6ZHg/viewform" target="_blank" rel="noopener noreferrer">
-            <button className="bg-white text-2xl text-[#2E0249] px-6 py-3 md:px-10 md:py-4 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 flex items-center mx-auto">
-             RSVP Now
-            </button>
-          </Link>
-        </motion.div>
       </section>
     </div>
   );
 }
-
