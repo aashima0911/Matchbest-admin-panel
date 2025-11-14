@@ -70,10 +70,12 @@ export default function WebinarLanding() {
     name: '',
     email: '',
     phone: '',
+    company: '',
     experience: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -87,7 +89,7 @@ export default function WebinarLanding() {
       filteredValue = value.replace(/[^0-9\s\-\+\(\)]/g, '');
     } else if (name === 'email') {
       // Allow only valid email characters: letters, numbers, @, ., _, -
-      filteredValue = value.replace(/[^a-zA-Z0-9@._-]/g, '');
+      filteredValue = value.replace(/[^a-zA-Z0-9@._-]/g, '').toLowerCase();
     }
 
     setFormData(prev => ({ ...prev, [name]: filteredValue }));
@@ -106,8 +108,8 @@ export default function WebinarLanding() {
       });
 
       if (response.ok) {
-        setSubmitMessage('Registration successful! Check your email for confirmation.');
-        setFormData({ name: '', email: '', phone: '', experience: '' });
+        setShowSuccessPopup(true);
+        setFormData({ name: '', email: '', phone: '', company: '', experience: '' });
       } else {
         setSubmitMessage('Registration failed. Please try again.');
       }
@@ -119,7 +121,29 @@ export default function WebinarLanding() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-0 px-4 md:px-14 lg:px-18 xl:px-22">
+    <>
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-4 text-center">
+            <div className="mb-4">
+              <CheckCircle className="w-16 h-16 text-green-500 mx-auto" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Registration Successful!</h3>
+            <p className="text-gray-600 mb-6">
+              Thank you for registering. Please check your email for confirmation.
+            </p>
+            <button
+              onClick={() => setShowSuccessPopup(false)}
+              className="bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-0 px-4 md:px-14 lg:px-18 xl:px-22">
 
       {/* ==== HERO + FORM SECTION ==== */}
       <section className="py-8 md:py-2 lg:py-6 px-4 md:px-8 lg:px-12">
@@ -134,11 +158,11 @@ export default function WebinarLanding() {
           >
 
             {/* Title */}
-            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-gray-900 leading-tight">
+            <h1 className="text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight">
               <span className="text-indigo-600">BytePlus</span> is redefining creative ops with smart automation 
             </h1>
 
-            <p className="text-lg text-gray-600 ">
+            <p className="text-lg md:text-xl text-gray-600 ">
               Join <strong className="text-indigo-600">BytePlus x Matchbest</strong> to see how autonomous AI agents are revolutionizing content creation for marketers, creators, and brands.
             </p>
 
@@ -260,6 +284,22 @@ export default function WebinarLanding() {
                     placeholder="Phone number"
                     pattern="[0-9\s\-\+\(\)]+"
                     title="Please enter a valid phone number"
+                    className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                    required
+                  />
+                </div>
+
+                {/* Company/Organization */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Company/Organization <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    placeholder="Company or organization name"
                     className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
                     required
                   />
@@ -406,6 +446,7 @@ export default function WebinarLanding() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

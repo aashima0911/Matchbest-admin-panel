@@ -18,11 +18,14 @@ export async function POST(request) {
       from: "matchbest@matchbestsoftware.ae", // From email address (verified)
       to: "csm@matchbest.ai", // Admin email
       subject: "New Webinar Registration",
-      html: `<p>A new webinar registration has been received:</p><pre>${JSON.stringify(
-        data,
-        null,
-        2
-      )}</pre>`,
+      html: `<p>A new webinar registration has been received:</p>
+<ul>
+  <li><strong>Name:</strong> ${data.name}</li>
+  <li><strong>Email:</strong> ${data.email}</li>
+  <li><strong>Phone:</strong> ${data.phone}</li>
+  <li><strong>Company:</strong> ${data.company || 'Not provided'}</li>
+  <li><strong>Experience:</strong> ${data.experience}</li>
+</ul>`,
     });
 
     // Send confirmation email to registrant
