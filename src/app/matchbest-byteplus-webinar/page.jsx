@@ -158,8 +158,8 @@ export default function WebinarLanding() {
           >
 
             {/* Title */}
-            <h1 className="text-xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight">
-              <span className="text-indigo-600">BytePlus</span> is redefining creative ops with smart automation 
+            <h1 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-tight">
+              <span className="text-indigo-600">Agentic AI</span> transforming enterprise content creation with automation.
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 ">
