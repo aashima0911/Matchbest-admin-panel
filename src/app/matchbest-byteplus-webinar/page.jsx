@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Script from 'next/script';
 import {
   Calendar,
   Clock,
@@ -122,6 +123,27 @@ export default function WebinarLanding() {
 
   return (
     <>
+      {/* Meta Pixel Code */}
+      <Script id="meta-pixel-webinar" strategy="beforeInteractive">
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '630747470027499');
+          fbq('track', 'PageView');
+        `}
+      </Script>
+      <noscript>
+        <img height="1" width="1" style={{ display: 'none' }}
+        src="https://www.facebook.com/tr?id=630747470027499&ev=PageView&noscript=1"
+        />
+      </noscript>
+      {/* End Meta Pixel Code */}
       {/* Success Popup */}
       {showSuccessPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
@@ -143,7 +165,7 @@ export default function WebinarLanding() {
         </div>
       )}
 
-      <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-0 px-4 md:px-14 lg:px-18 xl:px-22">
+      <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-6 px-14 md:px-18 lg:px-22">
 
       {/* ==== HERO + FORM SECTION ==== */}
       <section className="py-8 md:py-2 lg:py-6 px-4 md:px-8 lg:px-12">
