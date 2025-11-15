@@ -52,7 +52,7 @@ export default function LanguageSelector() {
         {/* Desktop Dropdown */}
         {!isMobile && isOpen && (
           <div className="absolute right-0 mt-2 w-64 bg-black rounded-md shadow-lg border z-50">
-            <div className="p-3 border-b border-gray-700">
+            {/* <div className="p-3 border-b border-gray-700">
               <div className="relative">
                 <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                 <input
@@ -64,8 +64,8 @@ export default function LanguageSelector() {
                   autoFocus
                 />
               </div>
-            </div>
-            <div className="max-h-64 overflow-y-auto">
+            </div> */}
+            <div className="max-h-64 overflow-y-auto scrollbar-hide">
               {filteredLanguages.length > 0 ? (
                 filteredLanguages.map((lang, index) => (
                   <button
@@ -94,7 +94,7 @@ export default function LanguageSelector() {
 
       {/* Mobile Modal */}
       {isMobile && isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-md z-50 flex items-center justify-center p-4">
           <div className="bg-black rounded-lg shadow-lg w-full max-w-md max-h-[80vh] overflow-hidden">
             <div className="flex items-center justify-between p-4 border-b border-gray-700">
               <h3 className="text-lg font-semibold text-white">Select Language</h3>
@@ -105,7 +105,7 @@ export default function LanguageSelector() {
                 <FaTimes className="h-5 w-5" />
               </button>
             </div>
-            <div className="p-4 border-b border-gray-700">
+            {/* <div className="p-4 border-b border-gray-700">
               <div className="relative">
                 <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                 <input
@@ -117,7 +117,7 @@ export default function LanguageSelector() {
                   autoFocus
                 />
               </div>
-            </div>
+            </div> */}
             <div className="max-h-64 overflow-y-auto">
               {filteredLanguages.length > 0 ? (
                 filteredLanguages.map((lang, index) => (

@@ -29,7 +29,7 @@ export default function PressReleasePage() {
               AVA One has been designed to help small and medium-sized businesses simplify operations, reduce tool fragmentation, and scale efficiently with the power of AI. The platform integrates multiple core modules including AVA CX (AI customer support), AVA Flow (CRM and sales automation), AVA SmartBill (billing and subscription management), and AVA Pingora (team collaboration and workflow management).
             </p>
             <p className="text-gray-300 mb-4">
-              "Businesses today don't need another tool — they need a unified system that works smarter for them. With AVA One, we're giving organisations a single intelligent workspace that's built for speed, collaboration, and scale," said Manavi Singh, CEO, MatchBest Group. "Our vision is to empower teams to do more with less — making business automation accessible, efficient, and future-ready."
+              "Businesses today don't need another tool — they need a unified system that works smarter for them. With AVA One, we're giving organisations a single intelligent workspace that's built for speed, collaboration, and scale," said Manavi Singh, COO, MatchBest Group. "Our vision is to empower teams to do more with less — making business automation accessible, efficient, and future-ready."
             </p>
             <p className="text-gray-300 mb-4">
               With AI at its core, AVA One eliminates the friction of managing multiple systems by offering end-to-end automation across sales, service, and billing. The platform's modular structure allows companies to adopt features as needed and scale seamlessly as they grow.

@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
-html, body {
-    /* max-width: auto; */
+html, body {    /* max-width: auto; */
     overflow-x: hidden;
     /* font-family: 'Inter'; */
   }
@@ -30,4 +29,13 @@ html, body {
 .pulse-glow {
   box-shadow: 0 0 20px rgba(145, 89, 183, 0.5);
   animation: pulse 2s infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
