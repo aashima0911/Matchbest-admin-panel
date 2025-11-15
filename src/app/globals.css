@@ -31,11 +31,11 @@ html, body {    /* max-width: auto; */
   animation: pulse 2s infinite;
 }
 
-.scrollbar-hide {
+/* .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
-}
+} */

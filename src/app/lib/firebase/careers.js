@@ -1,4 +1,4 @@
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 
 export const getAllCareers = async () => {
@@ -22,4 +22,4 @@ export const getCareerBySlug = async (slug) => {
         console.error("Error fetching career", error);
         throw new Error("Failed to fetch career.");
     }
-}; 
+};

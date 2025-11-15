@@ -236,11 +236,12 @@ export default function AboutPage() {
                 data-aos="fade-up"
                 data-aos-delay={100 * (i + 1)}
               >
-                <div className="flex justify-center items-center mb-4">
-                  <span className="text-4xl mr-2">{location.flag}</span>
+                <div className="flex space-x-3 justify-center items-center mb-4">
+                  {/* <span className="text-4xl mr-2">{location.flag}</span> */}
                   <MapPin className="w-8 h-8 text-cyan-400" />
+                  <h3 className="text-xl font-semibold text-white mb-2">{location.country}</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{location.country}</h3>
+                
                 <p className="text-cyan-400 font-medium mb-1">{location.status}</p>
                 
               </motion.div>

@@ -1,11 +1,21 @@
-"use client";
 import Link from "next/link";
+import Image from "next/image";
+
 export default function CareerCard({ career }) {
     return (
         <div className="flex flex-col h-full bg-gradient-to-br from-[#232526] to-[#414345] rounded-2xl shadow-lg border border-white/10 hover:border-purple-500/60 transition-all duration-300 overflow-hidden group">
             {/* Image */}
             {career?.imageURL?.imageURL && (
-                <img src={career.imageURL.imageURL} alt={career.jobTitle} className="w-full h-32 sm:h-40 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <Image
+                    src={career.imageURL.imageURL}
+                    alt={career.jobTitle}
+                    width={400}
+                    height={300}
+                    className="w-full h-32 sm:h-40 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmkny5VzSLvSY4bYRbJcb5xLXG9jhRxMEgMQsLGCBVFfyOMKhEANwaPjOSUJMgTaWgAA=="
+                />
             )}
             <div className="flex flex-col flex-1 p-4 sm:p-6 gap-2">
                 {/* Job Title */}
@@ -38,4 +48,4 @@ export default function CareerCard({ career }) {
             </div>
         </div>
     );
-} 
+}

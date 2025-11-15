@@ -1,71 +1,92 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { getAllBlogs } from '../../lib/firebase/blogs';
+import { getAllBlogs, getBlogBySlug } from '../../lib/firebase/blogs';
 import Image from 'next/image';
 import DarkMarkdownRenderer from '../../components/DarkMarkdownRenderer';
+import { notFound } from 'next/navigation';
 
-export default function BlogDetailPage() {
-  const { slug } = useParams();
-  const [blog, setBlog] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+// Generate static params for all blogs
+export async function generateStaticParams() {
+  try {
+    const blogs = await getAllBlogs();
+    return blogs.map((blog) => ({
+      slug: blog.slug || blog.id,
+    }));
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return [];
+  }
+}
 
-  useEffect(() => {
-    async function fetchBlog() {
-      try {
-        const blogs = await getAllBlogs();
-        const found = blogs.find(b => b.slug === slug || b.id === slug);
-        if (!found) throw new Error('Blog not found');
-        setBlog(found);
-      } catch (err) {
-        setError('Blog not found.');
-      } finally {
-        setLoading(false);
-      }
+// Generate metadata for each blog post
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  try {
+    const blog = await getBlogBySlug(slug);
+    return {
+      title: blog?.title || 'Blog Post',
+      description: blog?.description || blog?.content?.slice(0, 160) || 'Tech insights blog post',
+      openGraph: {
+        images: [blog?.imageURL?.imageURL || blog?.imageURL],
+      },
+    };
+  } catch (error) {
+    return {
+      title: 'Blog Post',
+      description: 'Tech insights blog post',
+    };
+  }
+}
+
+export default async function BlogDetailPage({ params }) {
+  const { slug } = await params;
+
+  try {
+    const blog = await getBlogBySlug(slug);
+
+    if (!blog) {
+      notFound();
     }
-    if (slug) fetchBlog();
-  }, [slug]);
 
-  if (loading) {
-    return <div className="text-center py-10 min-h-screen">Loading...</div>;
-  }
+    return (
+      <main className="min-h-screen bg-gray-900 text-white font-sans px-4 md:px-8 lg:px-12 pt-20 pb-20">
+        <div className="max-w-5xl mx-auto">
+          <Link href="/blogs" className="text-purple-400 hover:underline">&larr; Back to Blogs</Link>
+          <h1 className="text-4xl font-bold mt-6 mb-2">{blog.title}</h1>
+          <div className="text-purple-300 mb-4">
+            {blog.date || (blog.timestamp && new Date(blog.timestamp.seconds * 1000).toLocaleDateString())}
+          </div>
+          <div className="flex gap-2 flex-wrap mb-4">
+            {blog.tags && blog.tags.map((tag, idx) => (
+              <span key={idx} className="bg-purple-700 bg-opacity-60 px-3 py-1 rounded-full text-xs font-medium text-white">#{tag}</span>
+            ))}
+          </div>
 
-  if (error) {
-    return <div className="text-center py-10 text-red-500 min-h-screen">{error}</div>;
-  }
+          {/* Hero Image with Optimization */}
+          {(blog.imageURL?.imageURL || blog.imageURL) && (
+            <div className="mb-8">
+              <Image
+                src={blog.imageURL?.imageURL || blog.imageURL}
+                alt={blog.title}
+                width={1200}
+                height={600}
+                className="w-full h-96 md:h-[28rem] object-cover rounded-xl shadow-2xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 1200px, 1200px"
+                priority
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmkny5VzSLvSY4bYRbJcb5xLXG9jhRxMEgMQsLGCBVFfyOMKhEANwaPjOSUJMgTaWgAA=="
+              />
+            </div>
+          )}
 
-  if (!blog) {
-    return <div className="text-center py-10 text-red-500 min-h-screen">Blog not found.</div>;
-  }
-
-  return (
-    <main className="min-h-screen bg-gray-900 text-white font-sans px-4 md:px-8 lg:px-12 pt-20 pb-20">
-      <div className="max-w-5xl mx-auto">
-        <Link href="/blogs" className="text-purple-400 hover:underline">&larr; Back to Blogs</Link>
-        <h1 className="text-4xl font-bold mt-6 mb-2">{blog.title}</h1>
-        <div className="text-purple-300 mb-4">{blog.date || (blog.timestamp && new Date(blog.timestamp.seconds * 1000).toLocaleDateString())}</div>
-        <div className="flex gap-2 flex-wrap mb-4">
-          {blog.tags && blog.tags.map((tag, idx) => (
-            <span key={idx} className="bg-purple-700 bg-opacity-60 px-3 py-1 rounded-full text-xs font-medium text-white">#{tag}</span>
-          ))}
+          {/* Blog Content */}
+          <article className="mb-8 prose prose-lg prose-invert max-w-none">
+            <DarkMarkdownRenderer content={blog.content || blog.description || ''} />
+          </article>
         </div>
-        {blog.imageURL?.imageURL || blog.imageURL ? (
-          <Image
-            src={blog.imageURL?.imageURL || blog.imageURL}
-            alt={blog.title}
-            width={800}
-            height={400}
-            unoptimized
-            className="w-full h-72 object-cover rounded-xl mb-6"
-          />
-        ) : null}
-        <div className="mb-8">
-          <DarkMarkdownRenderer content={blog.content || blog.description || ''} />
-        </div>
-      </div>
-    </main>
-  );
+      </main>
+    );
+  } catch (error) {
+    console.error('Error loading blog post:', error);
+    notFound();
+  }
 }

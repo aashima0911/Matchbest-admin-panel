@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import dynamic from 'next/dynamic';
 
 const CurvedLoop = dynamic(() => import("@/app/components/layout/crousel.jsx"), { ssr: false });
@@ -161,7 +162,7 @@ export default function Home() {
 
             {/* Verticals Carousel Section */}
             <VerticalsCarousel />
-            
+
 
             {/* Services Section */}
             <section className="container mx-auto px-4 md:px-8 lg:px-12 py-6 mb-2" data-aos="fade-up">
@@ -295,7 +296,39 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Global Presence */}
+            <section className="py-5 border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
+                <div className="container mx-auto px-0 md:px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Global Presence</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                        {[
+                            { flag: "🇮🇳", country: "India", status: "Headquartered" },
+                            { flag: "🇦🇪", country: "UAE", status: "Regional Office" },
+                            { flag: "🇺🇸", country: "USA", status: "Regional Office" },
+                            { flag: "🇸🇦", country: "Saudi Arabia", status: "Coming Soon" }
+                        ].map((location, i) => (
+                            <motion.div
+                                key={i}
+                                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center"
+                                whileHover={{ y: -5 }}
+                                data-aos="fade-up"
+                                data-aos-delay={100 * (i + 1)}
+                            >
+                                <div className="flex space-x-3 justify-center items-center mb-4">
+                                    {/* <span className="text-4xl mr-2">{location.flag}</span> */}
+                                    <MapPin className="w-8 h-8 text-cyan-400" />
+                                    <h3 className="text-xl font-semibold text-white mb-2">{location.country}</h3>
+                                </div>
+
+                                <p className="text-cyan-400 font-medium mb-1">{location.status}</p>
+
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
         </div>
     );
 }
-

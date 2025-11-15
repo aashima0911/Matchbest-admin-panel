@@ -11,3 +11,13 @@ export const getAllBlogs = async () => {
         throw new Error("Failed to fetch blogs.");
     }
 };
+
+export const getBlogBySlug = async (slug) => {
+    try {
+        const blogs = await getAllBlogs();
+        return blogs.find(blog => blog.slug === slug || blog.id === slug);
+    } catch (error) {
+        console.error("Error fetching blog by slug:", error);
+        return null;
+    }
+};
