@@ -33,7 +33,7 @@ export const metadata = {
     apple: "/assets/favicon.png",
   },
   alternates: {
-    canonical: "https://matchbestgroup.ai",
+    canonical: "https://matchbest.ai",
   },
   robots: {
     index: true,
