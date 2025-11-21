@@ -43,7 +43,7 @@ export default function VerticalsCarousel() {
       id: 3,
       name: "HealNova",
       logo: "/heal-nova-logo.png",
-      link: "https://heal-nova.vercel.app/",
+      link: "https://healnova.ai/",
       items: [
         t('verticals.healNova.item1'),
         t('verticals.healNova.item2'),
