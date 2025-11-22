@@ -48,7 +48,7 @@ function ClientLayoutInner({ children }) {
     }
   }, []);
 
-  const hideNavbar = pathname === '/matchbest-byteplus-webinar';
+  const hideNavbar = pathname === '/matchbest-byteplus-webinar' || pathname === '/intro';
 
   return (
     <>
