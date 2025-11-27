@@ -149,33 +149,26 @@ export default function WebinarLanding() {
         <div className="max-w-7xl mx-auto">
 
           {/* Promotional Content and Form */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-8">
             <motion.div
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
               className="lg:col-span-2"
             >
-              <div className="bg-gradient-to-br from-indigo-50 to-cyan-50 p-8 rounded-2xl border border-indigo-100 shadow-lg w-full min-h-96 flex flex-col justify-center">
+              <div className="bg-gradient-to-br from-indigo-50 to-cyan-50 p-8 rounded-2xl border border-indigo-100 shadow-lg w-full min-h-66 flex flex-col justify-center">
                 <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
                   Are You Struggling to Personalize User Experience at Scale?
                 </h1>
                 <div className="mb-6">
                   <h2 className="text-xl lg:text-2xl font-semibold text-indigo-700 mb-2">
-                    Meet BytePlus — Your AI Engine for Real-Time Customer Excellence
+                    Meet BytePlus — Your AI Engine for Real Time Customer Excellence
                   </h2>
                   <p className="text-gray-700 text-lg">
                     Just enter your prompt — get stunning videos & images in seconds with BytePlus
                   </p>
                 </div>
-                <div className="bg-white p-4 rounded-xl border border-indigo-200">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                    Want More Information About BytePlus?
-                  </h3>
-                  <p className="text-gray-600">
-                    Share your details and our team will connect with you with the right solutions, demos & documents
-                  </p>
-                </div>
+                
               </div>
             </motion.div>
 
@@ -184,14 +177,10 @@ export default function WebinarLanding() {
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
-              className="lg:col-span-1 flex items-center justify-center"
+              className="lg:col-span-1"
             >
-              <div className="bg-white rounded-3xl shadow-2xl p-4 lg:p-6 w-full max-w-sm border min-h-96">
-                <h2 className="text-xl lg:text-2xl font-bold text-gray-800 text-center mb-4">
-                  Want More Information About BytePlus?
-                </h2>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="bg-white rounded-3xl shadow-2xl p-2 lg:p-4 w-full max-w-sm border">
+                <form onSubmit={handleSubmit} className="space-y-2">
                   {/* Name */}
                   <div>
                     <label className="block text-xs font-medium text-gray-700">
@@ -205,7 +194,7 @@ export default function WebinarLanding() {
                       placeholder="Enter name"
                       pattern="[A-Za-z\s]+"
                       title="Please enter only letters and spaces"
-                      className="mt-1 w-full px-3 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                      className="w-full px-2 py-1 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
                       required
                     />
                   </div>
@@ -221,7 +210,7 @@ export default function WebinarLanding() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="you@company.com"
-                      className="mt-1 w-full px-3 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                      className="w-full px-2 py-1 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
                       required
                     />
                   </div>
@@ -239,7 +228,7 @@ export default function WebinarLanding() {
                       placeholder="Phone number"
                       pattern="[0-9\s\-\+\(\)]+"
                       title="Please enter a valid phone number"
-                      className="mt-1 w-full px-3 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                      className="w-full px-2 py-1 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
                       required
                     />
                   </div>
@@ -255,7 +244,7 @@ export default function WebinarLanding() {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Company or organization name"
-                      className="mt-1 w-full px-3 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                      className="w-full px-2 py-1 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
                       required
                     />
                   </div>
@@ -264,10 +253,10 @@ export default function WebinarLanding() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="cursor-pointer w-full bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 disabled:opacity-50 text-white font-bold text-sm py-3 rounded-full shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105"
+                    className="cursor-pointer w-full bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 disabled:opacity-50 text-white font-bold text-xs py-2 rounded-full shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Continue Webinar'}
-                    <ChevronRight className="w-4 h-4" />
+                    {isSubmitting ? 'Submitting...' : 'Continue Registration'}
+                    <ChevronRight className="w-2 h-2" />
                   </button>
 
                   {/* Submit Message */}
