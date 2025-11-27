@@ -3,9 +3,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
-import ClientLayout from "@/app/components/ClientLayout";
+import ClientLayout from "./components/ClientLayout";
 
-import "@/lib/i18n"; // i18n initialization
+import "../lib/i18n"; // i18n initialization
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -20,7 +20,7 @@ export default function Footer() {
           {/* <a href="/sitemap.xml" className="hover:underline" target="_blank" rel="noopener noreferrer">Sitemap</a> */}
         </div>
 
-        <p className="text-sm">
+        <p className="text-lg">
           {t('footer.email', 'Email')}: <a href="mailto:biz@matchbest.ai" className="hover:underline">biz@matchbest.ai</a>
         </p>
 

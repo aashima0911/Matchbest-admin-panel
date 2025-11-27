@@ -146,23 +146,155 @@ export default function WebinarLanding() {
       )}
 
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-6 px-4 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="max-w-7xl mx-auto">
 
-          {/* Left Side - 2x2 Grid with Videos */}
+          {/* Promotional Content and Form */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-12">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              className="lg:col-span-2"
+            >
+              <div className="bg-gradient-to-br from-indigo-50 to-cyan-50 p-8 rounded-2xl border border-indigo-100 shadow-lg w-full min-h-96 flex flex-col justify-center">
+                <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  Are You Struggling to Personalize User Experience at Scale?
+                </h1>
+                <div className="mb-6">
+                  <h2 className="text-xl lg:text-2xl font-semibold text-indigo-700 mb-2">
+                    Meet BytePlus — Your AI Engine for Real-Time Customer Excellence
+                  </h2>
+                  <p className="text-gray-700 text-lg">
+                    Just enter your prompt — get stunning videos & images in seconds with BytePlus
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-xl border border-indigo-200">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    Want More Information About BytePlus?
+                  </h3>
+                  <p className="text-gray-600">
+                    Share your details and our team will connect with you with the right solutions, demos & documents
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ---------- RIGHT: FORM ---------- */}
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              className="lg:col-span-1 flex items-center justify-center"
+            >
+              <div className="bg-white rounded-3xl shadow-2xl p-4 lg:p-6 w-full max-w-sm border min-h-96">
+                <h2 className="text-xl lg:text-2xl font-bold text-gray-800 text-center mb-4">
+                  Want More Information About BytePlus?
+                </h2>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Name */}
+                  <div>
+                    <label className="block text-xs font-medium text-gray-700">
+                      Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Enter name"
+                      pattern="[A-Za-z\s]+"
+                      title="Please enter only letters and spaces"
+                      className="mt-1 w-full px-3 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                      required
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="block text-xs font-medium text-gray-700">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="you@company.com"
+                      className="mt-1 w-full px-3 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                      required
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label className="block text-xs font-medium text-gray-700">
+                      Phone Number <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="Phone number"
+                      pattern="[0-9\s\-\+\(\)]+"
+                      title="Please enter a valid phone number"
+                      className="mt-1 w-full px-3 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                      required
+                    />
+                  </div>
+
+                  {/* Company/Organization */}
+                  <div>
+                    <label className="block text-xs font-medium text-gray-700">
+                      Company/Organization <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      placeholder="Company or organization name"
+                      className="mt-1 w-full px-3 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                      required
+                    />
+                  </div>
+
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="cursor-pointer w-full bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 disabled:opacity-50 text-white font-bold text-sm py-3 rounded-full shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Continue Webinar'}
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+
+                  {/* Submit Message */}
+                  {submitMessage && (
+                    <p className={`text-sm text-center mt-4 ${submitMessage.includes('successful') ? 'text-green-600' : 'text-red-600'}`}>
+                      {submitMessage}
+                    </p>
+                  )}
+
+                </form>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Featured Videos Section */}
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="space-y-4"
+            className="space-y-6 text-center"
           >
-            <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Featured Videos</h2>
-            <div className="grid grid-cols-2 gap-4">
-
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Videos</h2>
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {/* Video 1 */}
-              <div className="bg-gray-900 rounded-xl shadow-lg border aspect-square overflow-hidden">
+              <div className="bg-gray-900 rounded-xl shadow-lg border h-68 overflow-hidden lg:col-span-2">
                 <video
                   src="https://assets.byteplus.com/obj/byteplus-assets/seedance/1.mp4"
-                  
                   playsInline
                   muted
                   autoPlay
@@ -172,10 +304,9 @@ export default function WebinarLanding() {
                 />
               </div>
               {/* Video 2 */}
-              <div className="bg-gray-900 rounded-xl shadow-lg border aspect-square overflow-hidden">
+              <div className="bg-gray-900 rounded-xl shadow-lg border h-68 overflow-hidden lg:col-span-1">
                 <video
-                  src="https://assets.byteplus.com/obj/byteplus-assets/seedance/6.mp4"
-
+                  src="https://assets.byteplus.com/obj/byteplus-assets/seedance/9.mp4"
                   playsInline
                   muted
                   autoPlay
@@ -185,164 +316,29 @@ export default function WebinarLanding() {
                 />
               </div>
               {/* Video 3 */}
-              {/* <div className="bg-gray-900 rounded-xl shadow-lg border aspect-square overflow-hidden">
+              <div className="bg-gray-900 rounded-xl shadow-lg border h-68 overflow-hidden lg:col-span-1">
                 <video
-                  src="https://assets.byteplus.com/obj/byteplus-assets/seedance/1.mp4"
-                  controls
+                  src="https://assets.byteplus.com/obj/byteplus-assets/seedance/16.mp4"
+                  playsInline
+                  muted
+                  autoPlay
+                  loop
                   className="w-full h-full object-cover rounded-xl"
                   preload="metadata"
                 />
-              </div> */}
+              </div>
               {/* Video 4 */}
-              {/* <div className="bg-gray-900 rounded-xl shadow-lg border aspect-square overflow-hidden">
+              <div className="bg-gray-900 rounded-xl shadow-lg border h-68 overflow-hidden lg:col-span-2">
                 <video
-                  src="https://assets.byteplus.com/obj/byteplus-assets/seedance/1.mp4"
-                  controls
+                  src="https://assets.byteplus.com/obj/byteplus-assets/seedance/6.mp4"
+                  playsInline
+                  muted
+                  autoPlay
+                  loop
                   className="w-full h-full object-cover rounded-xl"
                   preload="metadata"
                 />
-              </div> */}
-            </div>
-          </motion.div>
-
-          {/* ---------- RIGHT: FORM ---------- */}
-          <motion.div
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            className="flex items-center justify-center"
-          >
-            <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 w-full max-w-lg border">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-6">
-                Book Your Free Seat
-              </h2>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Name */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Enter name"
-                    pattern="[A-Za-z\s]+"
-                    title="Please enter only letters and spaces"
-                    className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                    required
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="you@company.com"
-                    className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                    required
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="Phone number"
-                    pattern="[0-9\s\-\+\(\)]+"
-                    title="Please enter a valid phone number"
-                    className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                    required
-                  />
-                </div>
-
-                {/* Company/Organization */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Company/Organization <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    placeholder="Company or organization name"
-                    className="mt-1 w-full px-4 py-3 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                    required
-                  />
-                </div>
-
-                {/* Experience */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Experience <span className="text-red-500">*</span>
-                  </label>
-                  <div className="mt-2 space-y-2">
-                    {[
-                      'Industry Professional – Technical Role',
-                      'Industry Professional – Non-Technical Role',
-                      'Aspiring Professional - Career Switcher',
-                      'Educator - Academic',
-                      'Other - Curious Learner',
-                    ].map((opt) => (
-                      <label
-                        key={opt}
-                        className="flex items-center space-x-3 cursor-pointer"
-                      >
-                        <input
-                          type="radio"
-                          name="experience"
-                          value={opt}
-                          checked={formData.experience === opt}
-                          onChange={handleInputChange}
-                          className="w-4 h-4 text-cyan-600 focus:ring-cyan-500"
-                        />
-                        <span className="text-sm text-gray-700">{opt}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="cursor-pointer w-full bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 disabled:opacity-50 text-white font-bold text-lg py-4 rounded-full shadow-lg flex items-center justify-center gap-2 transition transform hover:scale-105"
-                >
-                  {isSubmitting ? 'Submitting...' : 'Continue Webinar'}
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-
-                {/* Submit Message */}
-                {submitMessage && (
-                  <p className={`text-sm text-center mt-4 ${submitMessage.includes('successful') ? 'text-green-600' : 'text-red-600'}`}>
-                    {submitMessage}
-                  </p>
-                )}
-
-                {/* Consent */}
-                <p className="text-xs text-gray-500 text-center mt-4">
-                  I authorise BytePlus & Matchbest to contact me via{' '}
-                  <Mail className="inline w-3 h-3" /> Email,{' '}
-                  <Phone className="inline w-3 h-3" /> SMS,{' '}
-                  <Globe className="inline w-3 h-3" /> WhatsApp.
-
-                </p>
-              </form>
+              </div>
             </div>
           </motion.div>
 

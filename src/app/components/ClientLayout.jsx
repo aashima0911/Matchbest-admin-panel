@@ -4,17 +4,17 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "@/store/store";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
-import LanguageWatcher from "@/app/components/LanguageWatcher";
+import { store, persistor } from "../../store/store";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import LanguageWatcher from "./LanguageWatcher";
 
 // Dynamic imports for non-critical components
-const ChatbotButton = dynamic(() => import("@/app/components/ChatbotButton"), {
+const ChatbotButton = dynamic(() => import("./ChatbotButton"), {
   ssr: false,
   loading: () => null,
 });
-const WhatsAppButton = dynamic(() => import("@/app/components/WhatsAppButton"), {
+const WhatsAppButton = dynamic(() => import("./WhatsAppButton"), {
   ssr: false,
   loading: () => null,
 });

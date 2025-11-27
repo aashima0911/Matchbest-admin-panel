@@ -8,8 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const TextPressure = dynamic(() => import('@/app/components/layout/text.jsx'), { ssr: false });
-const Orb = dynamic(() => import('@/app/components/layout/hero.jsx'), { ssr: false });
+const TextPressure = dynamic(() => import('../components/layout/text.jsx'), { ssr: false });
+const Orb = dynamic(() => import('../components/layout/hero.jsx'), { ssr: false });
 import {
   Lightbulb,
   ShieldCheck,
