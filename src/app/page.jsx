@@ -334,7 +334,7 @@ export default function Home() {
             <section className="w-full text-white py-1 flex flex-col items-center">
 
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl lg:text-[56px] font-bold text-[#8516b4] mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">
                     Our Certification
                 </h2>
 

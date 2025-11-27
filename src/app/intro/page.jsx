@@ -162,10 +162,10 @@ export default function WebinarLanding() {
                 </h1>
                 <div className="mb-6">
                   <h2 className="text-xl lg:text-2xl font-semibold text-indigo-700 mb-2">
-                    Meet BytePlus — Your AI Engine for Real Time Customer Excellence
+                    Meet BytePlus Your AI Engine for Real Time Customer Excellence
                   </h2>
                   <p className="text-gray-700 text-lg">
-                    Just enter your prompt — get stunning videos & images in seconds with BytePlus
+                    Just enter your prompt get stunning videos & images in seconds with BytePlus
                   </p>
                 </div>
                 

@@ -53,12 +53,7 @@ export default function PressReleasePage() {
             <p className="text-gray-300 mb-4">
               MatchBest Software is an innovative technology company focused on building AI-driven business solutions that empower teams to operate smarter and faster. Through its flagship product AVA One, the company aims to bridge the gap between automation, collaboration, and customer experience — helping businesses unlock their full potential.
             </p>
-            <p className="text-gray-300">
-              Media Contact: Communications Team – MatchBest Software
-            </p>
-            <a href="https://www.matchbestsoftware.com" target="_blank" rel="noopener noreferrer" className="text-blue-300">
-              www.matchbestsoftware.com
-            </a>
+            
           </div>
         </div>
       </section>

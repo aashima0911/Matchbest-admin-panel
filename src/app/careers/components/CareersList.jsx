@@ -49,7 +49,7 @@ export default async function CareersList() {
     <section className="pb-28 pt-10 sm:pt-0 px-4">
       <div className="relative rounded-2xl w-full h-28 md:h-32 flex text-[#6d419f] mb-1 shadow-md items-center justify-center text-center">
         <div className="relative px-1">
-          <h1 className="text-4xl md:text-5xl font-bold pb-2">Explore Careers</h1>
+          <h1 className="text-4xl md:text-5xl font-bold pb-2">Careers</h1>
         </div>
       </div>
 

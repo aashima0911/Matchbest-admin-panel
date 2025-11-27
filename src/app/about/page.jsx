@@ -88,11 +88,11 @@ export default function AboutPage() {
             />
           </div>
           <h2 className="-mt-10 text-2xl md:text-3xl font-semibold text-purple-400 mb-6">
-            Innovating the Future — AI, Cloud, Automation & Global Scale
+            Innovating the Future AI, Cloud, Automation & Global Scale
           </h2>
 
           <div className="space-y-6 text-gray-300 text-base lg:text-lg leading-relaxed max-w-2xl">
-            <p>At MatchBest Group, we don't just adapt to change — we engineer it.</p>
+            <p>At MatchBest Group, we don't just adapt to change we engineer it.</p>
             <p>
               Headquartered across India, UAE, and the USA, with upcoming expansion into Saudi Arabia,
               MatchBest Group is a next-generation technology powerhouse enabling businesses to scale,

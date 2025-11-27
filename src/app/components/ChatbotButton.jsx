@@ -78,7 +78,7 @@ export default function ChatbotWidget() {
               <div className="flex items-center justify-between px-4 py-2 bg-[#663c9a] text-white">
                 <div className="flex items-center gap-2">
                   <span className="inline-block h-2 w-2 rounded-full bg-white/70" />
-                  <h2 className="text-sm font-semibold tracking-wide">Helpdesk</h2>
+                  <h2 className="text-sm font-semibold tracking-wide"></h2>
                 </div>
                 <div className="flex items-center gap-1">
                   {/* Expand / Shrink */}

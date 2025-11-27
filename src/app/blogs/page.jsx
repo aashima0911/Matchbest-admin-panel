@@ -106,7 +106,7 @@ export default async function BlogPage() {
     <main className="min-h-screen bg-gray-900 text-white font-sans px-4 md:px-8 lg:px-12 pt-24 md:pt-20">
       {/* Hero */}
       <section className="text-center px-4 md:px-8 lg:px-12 max-w-6xl mx-auto py-4 md:py-6 lg:py-8 mb-2 md:mb-3">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 md:mb-3 text-shadow-lg">Tech Insights Blog</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-2 md:mb-3 text-shadow-lg">Blogs</h1>
       </section>
 
       {/* Blog Grid with Suspense */}
