@@ -344,7 +344,7 @@ export default function Home() {
                 </p>
 
                 {/* Certified Box */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 bg-black rounded-xl px-4 py-4 md:px-6 md:py-5 shadow-[0_0_12px_rgba(251,146,60,0.3)]">
+                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 bg-black rounded-xl px-4 py-4 md:px-6 md:py-5 shadow-[0_0_12px_rgba(251,146,60,0.3)]">
 
                     {/* ITEM 1 */}
                     <div className="flex flex-col items-center justify-center">
