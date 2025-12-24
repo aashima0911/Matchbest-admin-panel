@@ -321,7 +321,6 @@ export default function Home() {
                                     <MapPin className="w-8 h-8 text-cyan-400" />
                                     <h3 className="text-xl font-semibold text-white mb-2">{location.country}</h3>
                                 </div>
-
                                 <p className="text-cyan-400 font-medium mb-1">{location.status}</p>
 
                             </motion.div>
@@ -344,7 +343,7 @@ export default function Home() {
                 </p>
 
                 {/* Certified Box */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 bg-black rounded-xl px-4 py-4 md:px-6 md:py-5 shadow-[0_0_12px_rgba(251,146,60,0.3)]">
+                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 bg-black rounded-xl px-4 py-4 md:px-6 md:py-5 shadow-[0_0_12px_rgba(251,146,60,0.3)]">
 
                     {/* ITEM 1 */}
                     <div className="flex flex-col items-center justify-center">
