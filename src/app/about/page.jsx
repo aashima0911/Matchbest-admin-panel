@@ -122,7 +122,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-0 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Mission & Vision</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-8xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             <motion.div
               className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.03]"
               whileHover={{ y: -5 }}
