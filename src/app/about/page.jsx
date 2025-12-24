@@ -56,7 +56,6 @@ export default function AboutPage() {
         current.clients = Math.floor(targets.clients * progress);
         current.countries = Math.floor(targets.countries * progress);
         current.years = Math.floor(targets.years * progress);
-
         setStats({ ...current });
 
         if (step >= steps) clearInterval(timer);
@@ -123,9 +122,9 @@ export default function AboutPage() {
         <div className="container mx-auto px-0 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Mission & Vision</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-8xl mx-auto">
             <motion.div
-              className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+              className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.03]"
               whileHover={{ y: -5 }}
               data-aos="fade-up"
             >
@@ -163,7 +162,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-0 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Core Values</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {[
               { icon: <Rocket className="w-10 h-10 text-cyan-400 mb-4" />, title: "Innovation & AI-led Design", desc: "Pushing boundaries with cutting-edge AI solutions" },
               { icon: <Users className="w-10 h-10 text-cyan-400 mb-4" />, title: "Customer-Centric Growth", desc: "Your success is our mission" },

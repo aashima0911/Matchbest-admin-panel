@@ -321,7 +321,6 @@ export default function Home() {
                                     <MapPin className="w-8 h-8 text-cyan-400" />
                                     <h3 className="text-xl font-semibold text-white mb-2">{location.country}</h3>
                                 </div>
-
                                 <p className="text-cyan-400 font-medium mb-1">{location.status}</p>
 
                             </motion.div>
