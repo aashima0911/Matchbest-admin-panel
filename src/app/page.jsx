@@ -97,7 +97,7 @@ export default function Home() {
     return (
         <div className="bg-gradient-to-r from-[#0b0515] to-[#3c2461] min-h-screen flex flex-col py-6 px-14 md:px-18 lg:px-22">
             {/* Hero Section */}
-            <section className="mt-12 relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-4 gap-12 mb-12">
+            <section className="mt-12 relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-4 gap-2 mb-0">
                 {/* Left: Headline & CTA */}
                 <div className="flex-1 text-center md:text-left z-10">
                     {/* <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
@@ -138,7 +138,7 @@ export default function Home() {
                 {/* Right: Abstract SVG */}
                 <div className="flex-1 flex justify-center items-center relative" >
 
-                    <div style={{ width: '100%', height: '500px', position: 'relative' }}>
+                    <div className="w-full h-[400px] md:h-[500px] relative -my-10 md:my-0">
                         <Orb
                             hoverIntensity={1.5}
                             rotateOnHover={true}
@@ -278,18 +278,18 @@ export default function Home() {
             </section>
             {/* FAQ Section */}
             <section className="py-6  border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
-                <div className="container mx-auto px-6 max-w-3xl">
+                <div className="container mx-auto px-6 max-w-7xl">
                     <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">{t('faq.title')}</h2>
                     <div className="space-y-6">
-                        <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" open data-aos="fade-up" data-aos-delay="100">
+                        <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-12 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" open data-aos="fade-up" data-aos-delay="100">
                             <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">{t('faq.q1')}</summary>
                             <p className="text-gray-300 mt-2">{t('faq.a1')}</p>
                         </details>
-                        <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
+                        <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-12 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
                             <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">{t('faq.q2')}</summary>
                             <p className="text-gray-300 mt-2">{t('faq.a2')}</p>
                         </details>
-                        <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="300">
+                        <details className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-12 shadow-lg hover:shadow-xl group transition-all duration-300 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="300">
                             <summary className="text-lg font-semibold text-cyan-400 cursor-pointer outline-none group-open:text-cyan-300">{t('faq.q3')}</summary>
                             <p className="text-gray-300 mt-2">{t('faq.a3')}</p>
                         </details>
