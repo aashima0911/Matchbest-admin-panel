@@ -89,7 +89,7 @@ export default function VerticalsCarousel() {
     {
       id: 6,
       name: "StreamPlay",
-      logo: "/assets/str.png",
+      logo: "/assets/streamplay.png",
       link: "https://streamplay.ai/",
       items: [
         "All-in-One OTT Streaming Platform",
