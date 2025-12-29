@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
           <meta name="duckduckbot" content="index, follow" />
           <meta name="slurp" content="index, follow" />
           <meta name="ia_archiver" content="index, follow" />
-
+          <meta name="google-site-verification" content="1ffFm0S_nRz_V9GnWBe4czDuwBlzR_pszqxyUGbh-Vo" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FJ28ZXV4K2"
           strategy="afterInteractive"
