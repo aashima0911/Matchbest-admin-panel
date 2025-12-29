@@ -86,6 +86,21 @@ export default function VerticalsCarousel() {
         t('verticals.vitaay.item7'),
       ],
     },
+    {
+      id: 6,
+      name: "StreamPlay",
+      logo: "/assets/str.png",
+      link: "https://streamplay.ai/",
+      items: [
+        "All-in-One OTT Streaming Platform",
+        "AI-Powered Personalized Recommendations",
+        "Seamless Multi-Device & Cross-Platform Playback",
+        "Adaptive Bitrate Streaming (HD/4K)",
+        "Extensive Movies & Binge-Worthy Series Library",
+        "Personalized User Profiles & Watchlists",
+        "Secure DRM & Subscription Monetization Engine",
+      ],
+    },
   ]
 
   return (
@@ -163,10 +178,10 @@ export default function VerticalsCarousel() {
             ))}
           </div>
 
-          {/* Second row - 2 cards, centered */}
+          {/* Second row - 3 cards, centered */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full max-w-none">
-              {verticals.slice(3, 5).map((vertical) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full max-w-none">
+              {verticals.slice(3, 6).map((vertical) => (
                 <div
                   key={vertical.id}
                   className="w-full max-w-md glass-effect bg-black/40 rounded-2xl hover:scale-[1.02] transition-all duration-500 overflow-hidden group border border-purple-500/20"
