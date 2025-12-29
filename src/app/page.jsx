@@ -347,9 +347,9 @@ export default function Home() {
 
                     {/* ITEM 1 */}
                     <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-orange-400/20 border border-orange-400/40 flex items-center justify-center">
+                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
                             <img
-                                src="/certified/banner 1.jpeg"
+                                src="/certified/banner 1.png"
                                 alt="Cert Logo 1"
                                 className="w-full h-full rounded-xl"
                             />
@@ -358,9 +358,9 @@ export default function Home() {
 
                     {/* ITEM 2 */}
                     <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-orange-400/20 border border-orange-400/40 flex items-center justify-center">
+                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white  flex items-center justify-center">
                             <img
-                                src="/certified/banner 2.jpeg"
+                                src="/certified/banner 2.png"
                                 alt="Cert Logo 2"
                                 className="w-full h-full rounded-xl"
                             />
@@ -369,9 +369,9 @@ export default function Home() {
 
                     {/* ITEM 3 */}
                     <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-orange-400/20 border border-orange-400/40 flex items-center justify-center">
+                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
                             <img
-                                src="/certified/banner 3.jpeg"
+                                src="/certified/banner 3.png"
                                 alt="Cert Logo 3"
                                 className="w-full h-full rounded-xl"
                             />
@@ -379,9 +379,9 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-orange-400/20 border border-orange-400/40 flex items-center justify-center">
+                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
                             <img
-                                src="/certified/banner 4.jpeg"
+                                src="/certified/banner 4.png"
                                 alt="Cert Logo 4"
                                 className="w-full h-full rounded-xl"
                             />
@@ -389,9 +389,9 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-orange-400/20 border border-orange-400/40 flex items-center justify-center">
+                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
                             <img
-                                src="/certified/banner 5.jpeg"
+                                src="/certified/banner 5.png"
                                 alt="Cert Logo 5"
                                 className="w-full h-full rounded-xl"
                             />
@@ -399,9 +399,9 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-orange-400/20 border border-orange-400/40 flex items-center justify-center">
+                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
                             <img
-                                src="/certified/banner 6.jpeg"
+                                src="/certified/banner 6.png"
                                 alt="Cert Logo 6"
                                 className="w-full h-full rounded-xl"
                             />
