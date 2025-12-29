@@ -80,6 +80,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/assets/favicon.png" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />
         <meta name="google-site-verification" content="WTgd1zeK3woJgGNcOhqzp6zMzX9u3QuXo6Pmnfsvh4g" />
+        <meta name="google-site-verification" content="1ffFm0S_nRz_V9GnWBe4czDuwBlzR_pszqxyUGbh-Vo" />
           <meta name="robots" content="index, follow" />
           <meta name="googlebot" content="index, follow" />
           <meta name="bingbot" content="index, follow" />
@@ -87,7 +88,7 @@ export default function RootLayout({ children }) {
           <meta name="duckduckbot" content="index, follow" />
           <meta name="slurp" content="index, follow" />
           <meta name="ia_archiver" content="index, follow" />
-          <meta name="google-site-verification" content="1ffFm0S_nRz_V9GnWBe4czDuwBlzR_pszqxyUGbh-Vo" />
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FJ28ZXV4K2"
           strategy="afterInteractive"
