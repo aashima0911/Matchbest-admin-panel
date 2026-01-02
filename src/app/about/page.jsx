@@ -69,7 +69,7 @@ export default function AboutPage() {
   <div className="bg-gradient-to-r from-[#0b0515] to-[#3c2461] text-white min-h-screen flex flex-col py-6 px-6 md:px-10 lg:px-14">
 
       {/* Hero Section */}
-      <section className="mt-12 relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-24 gap-12 mb-1">
+      <section className="mt-12 relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-12 md:py-24 gap-8 md:gap-12 mb-1">
         {/* Left: Headline & CTA */}
         <div className="flex-1 text-center md:text-left z-10">
           <div style={{ position: 'relative', height: '200px' }}>
@@ -106,7 +106,7 @@ export default function AboutPage() {
 
         {/* Right: Abstract SVG */}
         <div className="flex-1 flex justify-center items-center relative">
-          <div style={{ width: '100%', height: '500px', position: 'relative' }}>
+          <div className="w-full h-[300px] md:h-[500px] relative">
             <Orb
               hoverIntensity={1.5}
               rotateOnHover={true}
