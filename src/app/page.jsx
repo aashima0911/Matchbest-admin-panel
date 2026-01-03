@@ -14,6 +14,7 @@ const CurvedLoop = dynamic(() => import("./components/layout/crousel.jsx"), { ss
 const Orb = dynamic(() => import("./components/layout/hero.jsx"), { ssr: false });
 const TextPressure = dynamic(() => import('./components/layout/text.jsx'), { ssr: false });
 const VerticalsCarousel = dynamic(() => import('./components/layout/card.jsx'), { ssr: false });
+const CertifiedSection = dynamic(() => import('./components/CertifiedSection.jsx'), { ssr: false });
 
 
 const services = [
@@ -329,88 +330,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Certification Section */}
-            <section className="w-full text-white py-1 flex flex-col items-center">
-
-                {/* Heading */}
-                <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">
-                    Our Certification
-                </h2>
-
-                <p className="text-center max-w-xl text-gray-300 mb-6 md:mb-10">
-                    We maintain strict quality and security standards to ensure the highest level
-                    of trust and performance.
-                </p>
-
-                {/* Certified Box */}
-                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 bg-black rounded-xl px-4 py-4 md:px-6 md:py-5 shadow-[0_0_12px_rgba(251,146,60,0.3)]">
-
-                    {/* ITEM 1 */}
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
-                            <img
-                                src="/certified/banner 1.png"
-                                alt="Cert Logo 1"
-                                className="w-full h-full rounded-xl"
-                            />
-                        </div>
-                    </div>
-
-                    {/* ITEM 2 */}
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white  flex items-center justify-center">
-                            <img
-                                src="/certified/banner 2.png"
-                                alt="Cert Logo 2"
-                                className="w-full h-full rounded-xl"
-                            />
-                        </div>
-                    </div>
-
-                    {/* ITEM 3 */}
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
-                            <img
-                                src="/certified/banner 3.png"
-                                alt="Cert Logo 3"
-                                className="w-full h-full rounded-xl"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
-                            <img
-                                src="/certified/banner 4.png"
-                                alt="Cert Logo 4"
-                                className="w-full h-full rounded-xl"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
-                            <img
-                                src="/certified/banner 5.png"
-                                alt="Cert Logo 5"
-                                className="w-full h-full rounded-xl"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-42 xl:h-42 rounded-xl bg-white flex items-center justify-center">
-                            <img
-                                src="/certified/banner 6.png"
-                                alt="Cert Logo 6"
-                                className="w-full h-full rounded-xl"
-                            />
-                        </div>
-                    </div>
-
-                </div>
-
-            </section>
+            <CertifiedSection />
 
         </div>
     );
