@@ -1,5 +1,5 @@
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase.js";
 
 export const getAllBlogs = async () => {
     try {
