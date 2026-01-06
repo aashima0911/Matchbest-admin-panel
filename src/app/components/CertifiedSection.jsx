@@ -5,7 +5,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
 export default function CertifiedSection() {
-  const animation = { duration: 30000, easing: (t) => t };
+  const animation = { duration: 30000 };
 
   const [sliderRef] = useKeenSlider({
     loop: true,
@@ -27,15 +27,15 @@ export default function CertifiedSection() {
   });
 
   return (
-    <section className="w-full text-white py-5 px-4 flex flex-col items-center overflow-hidden">
-      <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center">Certification</h2>
+    <section className="w-full bg-[#090F0A] text-white py-10 px-4 flex flex-col items-center overflow-hidden">
+      <h2 className="text-3xl md:text-4xl font-bold mt-6">Certification</h2>
 
-      <p className="text-center max-w-xl text-gradient mt-3 mb-10 text-lg ">
+      <p className="text-center max-w-xl text-gray-300 mt-3 mb-10 text-sm md:text-base">
         We maintain strict quality and security standards to ensure the highest
-        level of trust and performance. 
+        level of trust and performance.
       </p>
 
-      <div className="relative w-full max-w-9xl overflow-hidden  rounded-xl bg-black">
+      <div className="relative w-full max-w-7xl overflow-hidden  rounded-xl bg-black">
         {/* Fade edges */}
         <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-black to-transparent z-10" />
         <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-black to-transparent z-10" />

@@ -132,12 +132,22 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "q1": "How do I start a project with MatchBest Group?",
-    "a1": "Just contact MatchBest Group using the button above or through our contact page. We'll schedule a free consultation to understand your needs and kickstart your project.",
-    "q2": "What industries does MatchBest Group serve?",
-    "a2": "MatchBest Group collaborates with startups, enterprises, and SMBs across industries like fintech, healthcare, e-commerce, media, and more.",
-    "q3": "Does MatchBest Group offer ongoing support?",
-    "a3": "Yes! MatchBest Group provides continuous maintenance, support, and optimization to ensure the long-term success of all your projects."
+    "q1": "What core services does MatchBest Group provide?",
+    "a1": "We specialize in AI Automation, Custom Software Development, Cloud Solutions, and Digital Transformation for startups and enterprises worldwide.",
+    "q2": "Where is MatchBest Group located?",
+    "a2": "Our headquarters is located in tower-B3, Spaze I-Tech Park, Sohna Road, Sector-49, Gurugram (India), serving clients globally with top-tier tech solutions.",
+    "q3": "How do I start a project with MatchBest?",
+    "a3": "Simply click the 'Contact' button or email us. We start with a free consultation to understand your needs and provide a tailored roadmap.",
+    "q4": "Does MatchBest Group work with startups?",
+    "a4": "Yes! We love startups. We offer scalable MVP development and flexible engagement models specifically designed for early-stage growth.",
+    "q5": "What technologies do you use for development?",
+    "a5": "We use modern tech stacks including React, Next.js, Node.js, Python (AI/ML), Java Spring Boot, and cloud platforms like AWS and Azure.",
+    "q6": "Do you offer post-development support?",
+    "a6": "Absolutely. We provide ongoing maintenance, server monitoring, and updates to ensure your software runs smoothly after launch.",
+    "q7": "How do you ensure data security?",
+    "a7": "We follow strict security protocols including NDA signing, data encryption, and secure cloud compliance to protect your intellectual property.",
+    "q8": "Can I hire developers for a specific duration?",
+    "a8": "Yes, we offer 'Staff Augmentation' services where you can hire our expert developers on a monthly or project basis."
   },
   "footer": {
     "home": "Home",

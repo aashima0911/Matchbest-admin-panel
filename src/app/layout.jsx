@@ -25,7 +25,28 @@ export const metadata = {
   description:
     "MatchBest Group pioneers digital transformation with next-generation AI solutions, secure cloud platforms, and innovative software tailored for ambitious enterprises. Our expert team delivers scalable, future-ready technologies—empowering tomorrow’s leaders to accelerate growth, enhance security, and unlock new opportunities in a rapidly evolving digital landscape.",
   keywords:
-    "MatchBest, Match, MatchBestGroup, Group, AI Solutions, Cloud Platforms, Digital Innovation, Secure Tech, Software Development, Web Solutions, Machine Learning, Cybersecurity, Cloud Computing, Web Development, Mobile Apps, UX Design, UI Design, Blockchain, SaaS, PaaS",
+    ["MatchBest, Match, MatchBestGroup, Group, AI Solutions, Cloud Platforms, Digital Innovation, Secure Tech, Software Development, Web Solutions, Machine Learning, Cybersecurity, Cloud Computing, Web Development, Mobile Apps, UX Design, UI Design, Blockchain, SaaS, PaaS",
+
+    // Core Services
+    "Custom Software Development Company",
+    "Enterprise AI Solutions",
+    "Cloud Migration Services",
+    "Mobile App Development Agency",
+    "SaaS Product Development",
+
+    // Technologies
+    "React.js Developers",
+    "Spring Boot Experts",
+    "Python AI Development",
+    "AWS Cloud Consultants",
+
+    // Location & Trust
+    "Software Company in India",
+    "IT Company Gurgaon",
+    "MatchBest Software Pvt Ltd",
+    "ISO Certified IT Agency"
+    ],
+
   manifest: "/manifest.json",
   authors: [{ name: "MatchBest Group", url: "https://matchbest.ai" }],
   icons: {
@@ -66,13 +87,33 @@ export const metadata = {
     card: "summary_large_image",
     title: "MatchBest Group | Digital Innovation & AI Solutions",
     description:
-      "Empowering tomorrow’s leaders with AI, cloud, and digital platforms.",
+      "Empowering leaders with AI, cloud, and digital platforms.",
     images: ["https://matchbest.ai/assets/og-image.jpg"],
   },
 };
 
 // ✅ Functional layout
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MatchBest Group",
+    "url": "https://matchbest.ai",
+    "logo": "https://matchbest.ai/assets/mat.png",
+    "foundingDate": "2014",
+    "sameAs": [
+      "https://www.linkedin.com/company/matchbest",
+      "https://twitter.com/matchbest",
+      "https://www.facebook.com/matchbest"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-1234567890", // Replace with real number
+      "contactType": "customer service",
+      "areaServed": ["IN", "US", "AE"],
+      "availableLanguage": ["English", "Hindi"]
+    }
+  };
   return (
     <html lang="en">
       <head>
@@ -80,16 +121,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/assets/favicon.png" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />
         <meta name="google-site-verification" content="WTgd1zeK3woJgGNcOhqzp6zMzX9u3QuXo6Pmnfsvh4g" />
-        <meta name="google-site-verification" content="1ffFm0S_nRz_V9GnWBe4czDuwBlzR_pszqxyUGbh-Vo" />
+        <meta name="google-site-verification" content="1ffFm0S_nRz_V9GnWBe4czDuwBlzR_pszqxyUGbh-Vo" /> 
         <meta name="google-site-verification" content="OJ-3ppmh2LGiAItsAaW17ORS8RuiUpDpr6Ool6_4XkM" />
-          <meta name="robots" content="index, follow" />
-          <meta name="googlebot" content="index, follow" />
-          <meta name="bingbot" content="index, follow" />
-          <meta name="yandexbot" content="index, follow" />
-          <meta name="duckduckbot" content="index, follow" />
-          <meta name="slurp" content="index, follow" />
-          <meta name="ia_archiver" content="index, follow" />
-
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FJ28ZXV4K2"
           strategy="afterInteractive"
@@ -131,6 +164,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
