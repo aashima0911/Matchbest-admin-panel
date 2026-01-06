@@ -38,9 +38,9 @@ export default function AboutPage() {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
 
-    // Animate stats counter
+   
     const animateStats = () => {
-      const targets = { projects: 500, clients: 200, countries: 15, years: 8 };
+      const targets = { projects: 500, clients: 300, countries: 15, years: 2 };
       const duration = 2000;
       const steps = 60;
       const increment = duration / steps;
@@ -70,7 +70,6 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="mt-12 relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-12 md:py-24 gap-8 md:gap-12 mb-1">
-        {/* Left: Headline & CTA */}
         <div className="flex-1 text-center md:text-left z-10">
           <div style={{ position: 'relative', height: '200px' }}>
             <TextPressure
@@ -87,15 +86,13 @@ export default function AboutPage() {
             />
           </div>
           <h2 className="-mt-10 text-2xl md:text-3xl font-semibold text-purple-400 mb-6">
-            Innovating the Future AI, Cloud, Automation & Global Scale
+            Innovating the Future with AI, Cloud & Global Scale.
           </h2>
 
           <div className="space-y-6 text-gray-300 text-base lg:text-lg leading-relaxed max-w-2xl">
-            <p>At MatchBest Group, we don't just adapt to change we engineer it.</p>
+            <p>At MatchBest Group, we don't just adapt to change- we engineer it.</p>
             <p>
-              Headquartered across India, UAE, and the USA, with upcoming expansion into Saudi Arabia,
-              MatchBest Group is a next-generation technology powerhouse enabling businesses to scale,
-              transform, and compete globally.
+              <strong>Established in 2024</strong>, MatchBest Group (formerly Match Best Software) has evolved into a next-generation technology powerhouse. Headquartered in India with offices in the UAE and USA, we enable Fortune 500s and startups to scale, transform, and compete globally.
             </p>
             <p className="text-purple-400 font-semibold">
               We are building today, what the world will run on tomorrow.
@@ -104,7 +101,6 @@ export default function AboutPage() {
 
         </div>
 
-        {/* Right: Abstract SVG */}
         <div className="flex-1 flex justify-center items-center relative">
           <div className="w-full h-[300px] md:h-[500px] relative">
             <Orb
@@ -122,9 +118,9 @@ export default function AboutPage() {
         <div className="container mx-auto px-0 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Mission & Vision</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto ">
             <motion.div
-              className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.03]"
+              className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.03] glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
               whileHover={{ y: -5 }}
               data-aos="fade-up"
             >
@@ -139,7 +135,7 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div
-              className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+              className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
               whileHover={{ y: -5 }}
               data-aos="fade-up"
               data-aos-delay="200"
@@ -172,7 +168,7 @@ export default function AboutPage() {
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center"
+                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
                 whileHover={{ y: -5 }}
                 data-aos="fade-up"
                 data-aos-delay={100 * (i + 1)}
@@ -193,16 +189,16 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
-              { icon: <BrainCircuit className="w-10 h-10 text-cyan-400 mb-4" />, title: "AI & Automation", desc: "Intelligent systems that learn and adapt" },
-              { icon: <Cloud className="w-10 h-10 text-cyan-400 mb-4" />, title: "Cloud & Managed Services", desc: "Scalable infrastructure solutions" },
-              { icon: <Layers className="w-10 h-10 text-cyan-400 mb-4" />, title: "App / Web Development", desc: "Modern, responsive applications" },
-              { icon: <ShieldCheck className="w-10 h-10 text-cyan-400 mb-4" />, title: "Healthcare & Digital Platforms", desc: "Transforming healthcare technology" },
-              { icon: <Lightbulb className="w-10 h-10 text-cyan-400 mb-4" />, title: "OTT & Media Tech", desc: "Next-generation media solutions" },
-              { icon: <Rocket className="w-10 h-10 text-cyan-400 mb-4" />, title: "Generative AI & Intelligence", desc: "Creating the future of AI" }
+              { icon: <BrainCircuit className="w-10 h-10 text-cyan-400 mb-4" />, title: "Enterprise AI & Automation", desc: "Generative AI, LLMs, and Predictive Analytics." },
+              { icon: <Cloud className="w-10 h-10 text-cyan-400 mb-4" />, title: "Cloud & DevOps", desc: "AWS/Azure Migration, Kubernetes & Serverless." },
+              { icon: <Layers className="w-10 h-10 text-cyan-400 mb-4" />, title: "Custom Software Development", desc: "Scalable SaaS Architectures & Microservices." },
+              { icon: <ShieldCheck className="w-10 h-10 text-cyan-400 mb-4" />, title: "Healthcare & Fintech", desc: "HIPAA Compliant Apps & Secure Financial Systems." },
+              { icon: <Lightbulb className="w-10 h-10 text-cyan-400 mb-4" />, title: "OTT & Media Tech", desc: "High-concurrency streaming platforms." },
+              { icon: <Rocket className="w-10 h-10 text-cyan-400 mb-4" />, title: "Digital Transformation", desc: "Legacy modernization for global enterprises." }
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center"
+                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
                 whileHover={{ y: -5 }}
                 data-aos="fade-up"
                 data-aos-delay={100 * (i + 1)}
@@ -230,13 +226,12 @@ export default function AboutPage() {
             ].map((location, i) => (
               <motion.div
                 key={i}
-                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center"
+                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
                 whileHover={{ y: -5 }}
                 data-aos="fade-up"
                 data-aos-delay={100 * (i + 1)}
               >
                 <div className="flex space-x-3 justify-center items-center mb-4">
-                  {/* <span className="text-4xl mr-2">{location.flag}</span> */}
                   <MapPin className="w-8 h-8 text-cyan-400" />
                   <h3 className="text-xl font-semibold text-white mb-2">{location.country}</h3>
                 </div>
@@ -250,7 +245,8 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-5 border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
+      <section className="py-5 border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="zoom-in">
+        <div className="max-w-4xl mx-auto glass-effect bg-gradient-to-r from-purple-900/40 to-blue-900/40 rounded-3xl p-10 border border-white/10 glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2">
         <div className="container mx-auto px-0 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Ready to Transform Your Business?</h2>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -260,21 +256,22 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <motion.button
-                className="cursor-pointer bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] hover:from-[#3B5CEB] hover:to-[#7B4BA0] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="cursor-pointer bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] hover:from-[#3B5CEB] hover:to-[#7B4BA0] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
                 whileHover={{ scale: 1.05 }}
               >
                 Start Your Project
               </motion.button>
             </Link>
-            {/* <Link href="/careers">
+            <Link href="/careers">
               <motion.button
-                className="glass-effect bg-black/40 border border-purple-500/20 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="cursor-pointer bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] hover:from-[#3B5CEB] hover:to-[#7B4BA0] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
                 whileHover={{ scale: 1.05 }}
               >
                 Join Our Team
               </motion.button>
-            </Link> */}
+            </Link>
           </div>
+        </div>
         </div>
       </section>
 

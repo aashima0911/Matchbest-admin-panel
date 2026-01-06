@@ -12,7 +12,7 @@ import {
   RateLimiter
 } from "../../../lib/security";
 
-const resend = new Resend(process.env.RESEND_API_KEYS);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Handle OPTIONS for CORS preflight
 export async function OPTIONS(request) {
