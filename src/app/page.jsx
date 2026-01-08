@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { MapPin, ShieldCheck, Clock, Users } from "lucide-react"; 
+import { MapPin, ShieldCheck, Sparkles, Users } from "lucide-react"; 
 import dynamic from 'next/dynamic';
 
 const CertifiedSection = dynamic(
@@ -119,9 +119,9 @@ export default function Home() {
             <section className="w-full mb-16 border-y border-white/10 bg-black/20 backdrop-blur-sm py-8">
                 <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                     <div className="flex flex-col items-center">
-                        <Clock className="w-8 h-8 text-cyan-400 mb-2" />
-                        <h3 className="text-2xl font-bold text-white">Years</h3>
-                        <p className="text-gray-400 text-sm">Of Innovation</p>
+                        <Sparkles className="w-8 h-8 text-yellow-400 mb-2" />
+                        <h3 className="text-2xl font-bold text-white">Tailored</h3>
+                        <p className="text-gray-400 text-sm">Solutions</p>
                     </div>
                     <div className="flex flex-col items-center">
                         <Users className="w-8 h-8 text-purple-400 mb-2" />
@@ -134,7 +134,7 @@ export default function Home() {
                         <p className="text-gray-400 text-sm">Secure Delivery</p>
                     </div>
                     <div className="flex flex-col items-center">
-                        <MapPin className="w-8 h-8 text-red-400 mb-2" />
+                        <MapPin className="w-8 h-8 text-cyan-400 mb-2" />
                         <h3 className="text-2xl font-bold text-white">Global</h3>
                         <p className="text-gray-400 text-sm">Presence</p>
                     </div>
@@ -153,7 +153,7 @@ export default function Home() {
                             <span className="text-gradient">Vision & Reality</span>
                         </h2>
                         <p className="text-gray-300 mb-6 leading-relaxed">
-                            Established in 2024, <strong>MatchBest Group</strong> (formerly Match Best Software Pvt Ltd) has evolved from a custom development shop into a global leader in AI and Cloud solutions. Headquartered in India with a growing global footprint, we empower enterprises to navigate the digital age with confidence.
+                            <strong>MatchBest Group</strong> has evolved from a custom development shop into a global leader in AI and Cloud solutions. Headquartered in India with a growing global footprint, we empower enterprises to navigate the digital age with confidence.
                         </p>
                         <p className="text-gray-300 mb-8 leading-relaxed">
                             Whether you need to migrate legacy systems to the cloud, build a generative AI model, or launch a mobile app for millions of users, our engineering DNA ensures scalability and security at every step.
@@ -302,6 +302,33 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* GLOBAL PRESENCE */}
+            <section className="py-16 border-t border-gray-800/50" data-aos="fade-up">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">Our Global Presence</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                        {[
+                            { country: "India", status: "Headquarters", color: "text-orange-400" },
+                            { country: "UAE", status: "Regional Office", color: "text-green-400" },
+                            { country: "USA", status: "Regional Office", color: "text-blue-400" },
+                            { country: "Saudi Arabia", status: "Expansion 2025", color: "text-yellow-400" }
+                        ].map((location, i) => (
+                            <motion.div
+                                key={i}
+                                className="glass-effect bg-black/40 border border-white/10 rounded-xl p-6 text-center hover:bg-white/5 transition-all"
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="flex justify-center mb-3">
+                                    <MapPin className={`w-8 h-8 ${location.color}`} />
+                                </div>
+                                <h3 className="text-xl font-bold text-white">{location.country}</h3>
+                                <p className="text-gray-400 text-sm mt-1">{location.status}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ Section */}
             <section className="py-12 border-t border-gray-800 w-full" data-aos="fade-up">
             <div className="container mx-auto px-6 max-w-6xl">
@@ -335,32 +362,7 @@ export default function Home() {
             </div>
         </section>
 
-            {/* GLOBAL PRESENCE */}
-            <section className="py-16 border-t border-gray-800/50" data-aos="fade-up">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-12">Our Global Presence</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                        {[
-                            { country: "India", status: "Headquarters", color: "text-orange-400" },
-                            { country: "UAE", status: "Regional Office", color: "text-green-400" },
-                            { country: "USA", status: "Regional Office", color: "text-blue-400" },
-                            { country: "Saudi Arabia", status: "Expansion 2025", color: "text-yellow-400" }
-                        ].map((location, i) => (
-                            <motion.div
-                                key={i}
-                                className="glass-effect bg-black/40 border border-white/10 rounded-xl p-6 text-center hover:bg-white/5 transition-all"
-                                whileHover={{ y: -5 }}
-                            >
-                                <div className="flex justify-center mb-3">
-                                    <MapPin className={`w-8 h-8 ${location.color}`} />
-                                </div>
-                                <h3 className="text-xl font-bold text-white">{location.country}</h3>
-                                <p className="text-gray-400 text-sm mt-1">{location.status}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            
 
             {/* --- CERTIFICATIONS --- */}
             <CertifiedSection/>
@@ -370,7 +372,7 @@ export default function Home() {
                 <div className="max-w-4xl mx-auto glass-effect bg-gradient-to-r from-purple-900/40 to-blue-900/40 rounded-3xl p-10 border border-white/10">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{t('cta.title')}</h2>
                     <p className="text-gray-200 mb-8 text-lg">{t('cta.desc')}</p>
-                    <Link href="/contact" className="inline-block bg-white text-[#6823f0] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:bg-gray-800 transition-all transform hover:-translate-y-1">
+                    <Link href="/contact" className="inline-block bg-white text-[#6823f0] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:bg-gray-800 hover:text-white transition-all transform hover:-translate-y-1">
                         {t('cta.button')}
                     </Link>
                 </div>
