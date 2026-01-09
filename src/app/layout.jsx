@@ -132,9 +132,8 @@ export default function RootLayout({ children }) {
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-FJ28ZXV4K2');
-            gtag('config', 'G-WLPZMTFCDH');
+            gtag('js', new Date());          
+            gtag('config', 'G-8CV191GWE1');
           `}
         </Script>
         {/* Meta Pixel Code */}
