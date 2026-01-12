@@ -1,3 +1,45 @@
+export const metadata = {
+  title: 'Tech Blogs | AI, Cloud & Digital Innovation Insights | MatchBest Group',
+  description: 'Explore our comprehensive collection of tech blogs covering AI, machine learning, cloud computing, cybersecurity, and digital transformation. Stay updated with industry insights from MatchBest Group.',
+  keywords: ['tech blogs', 'AI insights', 'cloud computing', 'digital transformation', 'cybersecurity', 'software development', 'MatchBest Group', 'technology trends'],
+  alternates: {
+    canonical: 'https://matchbest.ai/blogs',
+  },
+  openGraph: {
+    title: 'Tech Blogs | AI, Cloud & Digital Innovation Insights',
+    description: 'Explore our comprehensive collection of tech blogs covering AI, machine learning, cloud computing, cybersecurity, and digital transformation.',
+    url: 'https://matchbest.ai/blogs',
+    siteName: 'MatchBest Group',
+    images: [
+      {
+        url: 'https://matchbest.ai/assets/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MatchBest Group Tech Blogs',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tech Blogs | AI, Cloud & Digital Innovation Insights',
+    description: 'Explore our comprehensive collection of tech blogs covering AI, machine learning, cloud computing, cybersecurity, and digital transformation.',
+    images: ['https://matchbest.ai/assets/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 import Link from 'next/link';
 import { getAllBlogs } from '../lib/firebase/blogs';
 import Image from 'next/image';

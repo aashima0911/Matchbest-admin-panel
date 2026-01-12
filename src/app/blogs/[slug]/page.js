@@ -22,17 +22,87 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   try {
     const blog = await getBlogBySlug(slug);
+    const title = blog?.title || 'Blog Post';
+    const description = blog?.description || blog?.content?.slice(0, 160) || 'Tech insights blog post';
+    const keywords = blog?.tags ? blog.tags.join(', ') : 'tech blog, AI, cloud computing, software development';
+    const imageUrl = blog?.imageURL?.imageURL || blog?.imageURL || 'https://matchbest.ai/assets/og-image.jpg';
+
     return {
-      title: blog?.title || 'Blog Post',
-      description: blog?.description || blog?.content?.slice(0, 160) || 'Tech insights blog post',
+      title: `${title} | MatchBest Group Blog`,
+      description: description,
+      keywords: keywords,
+      alternates: {
+        canonical: `https://matchbest.ai/blogs/${slug}`,
+      },
       openGraph: {
-        images: [blog?.imageURL?.imageURL || blog?.imageURL],
+        title: `${title} | MatchBest Group Blog`,
+        description: description,
+        url: `https://matchbest.ai/blogs/${slug}`,
+        siteName: 'MatchBest Group',
+        images: [
+          {
+            url: imageUrl,
+            width: 1200,
+            height: 630,
+            alt: title,
+          },
+        ],
+        locale: 'en_US',
+        type: 'article',
+        publishedTime: blog?.timestamp ? new Date(blog.timestamp.seconds * 1000).toISOString() : undefined,
+        modifiedTime: blog?.timestamp ? new Date(blog.timestamp.seconds * 1000).toISOString() : undefined,
+        authors: ['MatchBest Group'],
+        tags: blog?.tags || [],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${title} | MatchBest Group Blog`,
+        description: description,
+        images: [imageUrl],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      },
+      other: {
+        'article:author': 'MatchBest Group',
+        'article:published_time': blog?.timestamp ? new Date(blog.timestamp.seconds * 1000).toISOString() : undefined,
       },
     };
   } catch (error) {
     return {
-      title: 'Blog Post',
-      description: 'Tech insights blog post',
+      title: 'Blog Post | MatchBest Group',
+      description: 'Tech insights and industry updates from MatchBest Group',
+      keywords: 'tech blog, AI, cloud computing, software development',
+      openGraph: {
+        title: 'Blog Post | MatchBest Group',
+        description: 'Tech insights and industry updates from MatchBest Group',
+        url: `https://matchbest.ai/blogs/${slug}`,
+        siteName: 'MatchBest Group',
+        images: [
+          {
+            url: 'https://matchbest.ai/assets/og-image.jpg',
+            width: 1200,
+            height: 630,
+            alt: 'MatchBest Group Blog',
+          },
+        ],
+        locale: 'en_US',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Blog Post | MatchBest Group',
+        description: 'Tech insights and industry updates from MatchBest Group',
+        images: ['https://matchbest.ai/assets/og-image.jpg'],
+      },
     };
   }
 }

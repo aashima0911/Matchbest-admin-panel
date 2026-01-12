@@ -23,14 +23,85 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   try {
     const career = await getCareerBySlug(slug);
+    const title = career?.jobTitle || 'Job Opening';
+    const description = career?.description || 'Join our team and help build the future of technology';
+    const keywords = `${title}, ${career?.departmentId || 'tech'}, ${career?.location || 'remote'}, software development, MatchBest Group, career opportunity`;
+    const imageUrl = 'https://matchbest.ai/assets/og-image.jpg'; // Could be customized per career if images are available
+
     return {
-      title: career?.jobTitle || 'Job Opening',
-      description: career?.description || 'Join our team and help build the future',
+      title: `${title} | Careers at MatchBest Group`,
+      description: description,
+      keywords: keywords,
+      alternates: {
+        canonical: `https://matchbest.ai/careers/${slug}`,
+      },
+      openGraph: {
+        title: `${title} | Careers at MatchBest Group`,
+        description: description,
+        url: `https://matchbest.ai/careers/${slug}`,
+        siteName: 'MatchBest Group',
+        images: [
+          {
+            url: imageUrl,
+            width: 1200,
+            height: 630,
+            alt: `${title} - MatchBest Group Careers`,
+          },
+        ],
+        locale: 'en_US',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${title} | Careers at MatchBest Group`,
+        description: description,
+        images: [imageUrl],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      },
+      other: {
+        'job:location': career?.location || 'Multiple Locations',
+        'job:department': career?.departmentId || 'Technology',
+        'job:posted_date': career?.postedDate || undefined,
+        'job:expiry_date': career?.expiryDate || undefined,
+      },
     };
   } catch (error) {
     return {
-      title: 'Job Opening',
-      description: 'Join our team',
+      title: 'Job Opening | MatchBest Group Careers',
+      description: 'Explore exciting career opportunities at MatchBest Group. Join our team of innovators working on cutting-edge technology.',
+      keywords: 'jobs, careers, software development, MatchBest Group, tech jobs',
+      openGraph: {
+        title: 'Job Opening | MatchBest Group Careers',
+        description: 'Explore exciting career opportunities at MatchBest Group. Join our team of innovators working on cutting-edge technology.',
+        url: `https://matchbest.ai/careers/${slug}`,
+        siteName: 'MatchBest Group',
+        images: [
+          {
+            url: 'https://matchbest.ai/assets/og-image.jpg',
+            width: 1200,
+            height: 630,
+            alt: 'MatchBest Group Careers',
+          },
+        ],
+        locale: 'en_US',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Job Opening | MatchBest Group Careers',
+        description: 'Explore exciting career opportunities at MatchBest Group. Join our team of innovators working on cutting-edge technology.',
+        images: ['https://matchbest.ai/assets/og-image.jpg'],
+      },
     };
   }
 }
