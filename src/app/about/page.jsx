@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { Send, Binoculars } from 'lucide-react';
+
 
 const TextPressure = dynamic(() => import('../components/layout/text.jsx'), { ssr: false });
 const Orb = dynamic(() => import('../components/layout/hero.jsx'), { ssr: false });
@@ -15,21 +17,172 @@ import {
   ShieldCheck,
   BrainCircuit,
   Layers,
-  Cloud,
-  Globe,
+  ArrowUpRight,
   Rocket,
-  LineChart,
   MapPin,
   Users,
-  Award,
-  TrendingUp,
-  Target
+  RefreshCw
 } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
+
+
+// Animation Counter
+const AnimatedCounter = ({ target, suffix = "", decimals = 0 }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const hasAnimated = useRef(false); 
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          
+          let start = 0;
+          const end = parseFloat(target);
+          const duration = 2000; 
+          const increment = end / (duration / 16); 
+
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+              setCount(end);
+              clearInterval(timer);
+            } else {
+              setCount(start);
+            }
+          }, 16);
+        }
+      },
+      { threshold: 0.5 } 
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [target]);
+
+  return (
+    <span ref={ref}>
+      {count.toFixed(decimals)}{suffix}
+    </span>
+  );
+};
+
+
+const valuesData = [
+  {
+    icon: <Rocket className="w-6 h-6" />,
+    title: "Innovation & AI-led Design",
+    desc: "Pushing boundaries with cutting-edge AI solutions"
+  },
+  {
+    icon: <Users className="w-6 h-6" />,
+    title: "Customer-Centric Growth",
+    desc: "Your success is our mission"
+  },
+  {
+    icon: <ShieldCheck className="w-6 h-6" />,
+    title: "Trust, Security & Integrity",
+    desc: "Building with reliability and ethics"
+  },
+  {
+    icon: <RefreshCw className="w-6 h-6" />,
+    title: "Engineering Excellence",
+    desc: "World-class development standards"
+  },
+  {
+    icon: <Layers className="w-6 h-6" />,
+    title: "Future-Ready Thinking",
+    desc: "Planning for tomorrow's challenges"
+  }
+];
+
+
+const domainsData = [
+  {
+    id: "1",
+    title: "Enterprise AI & Automation",
+    desc: "Intelligent AI systems that optimise operations along with gen AI, LLMs, AI agents & intelligent automation. Also, enterprise-grade AI solutions for automation and insights."
+  },
+  {
+    id: "2",
+    title: "Cloud & DevOps",
+    desc: "AWS & Azure migration, secure cloud migration, CI/CD pipelines & DevOps engineering. Kubernetes, serverless computing & scalable cloud infrastructure, along with high-availability of DevOps."
+  },
+  {
+    id: "3",
+    title: "Custom Software Development",
+    desc: "Custom platform to deliver end-to-end software development tailored to business needs. Scalable enterprise software with modular, secure design."
+  },
+  {
+    id: "4",
+    title: "Healthcare & Fintech",
+    desc: "Secure, compliant systems regulated by digital solutions for healthcare and financial services. HIPAA-compliant healthcare apps & secure fintech software development platform."
+  },
+  {
+    id: "5",
+    title: "OTT & Media Tech",
+    desc: "Scalable OTT platforms with high-concurrency streaming, built for better performance. Cloud-powered OTT & media delivery platforms with high-traffic media systems to ensure real-time content delivery."
+  },
+  {
+    id: "6",
+    title: "Digital Transformation",
+    desc: "End-to-end digital transformation for scalable growth of businesses. Modernising legacy systems with AI, cloud & automation for future-ready enterprises."
+  }
+];
+
+const locations = [
+  {
+    country: "USA",
+    role: "Client Relations",
+    image: "/assets/cloud.png", 
+    addressTitle: "Client Relations",
+    address: "1200 Smith Street, Suite 1600, Houston, TX 77002",
+    top: "35%", 
+    left: "25%", 
+    align: "top" 
+  },
+  {
+    country: "SAUDI ARABIA",
+    role: "Expansion 2025",
+    image: "/assets/cloud.png", 
+    addressTitle: "London Office",
+    address: "Expansion 2025",
+    top: "46%", 
+    left: "58%", 
+    align: "top-left"
+  },
+  {
+    country: "UAE",
+    role: "Sales & Operations",
+    image: "/assets/cloud.png", 
+    addressTitle: "London Office",
+    address: "Lettsom House, 11 Chandos Pl, London W1G 9DP, UK",
+    top: "50%", 
+    left: "62%", 
+    align: "top-right"
+  },
+  {
+    country: "INDIA",
+    role: "Research & Development",
+    // image: "/assets/cloud.png",
+    addressTitle: "R&D Center",
+    address: "Tech Park, Sector 126, Noida, Uttar Pradesh 201304",
+    top: "50%", 
+    left: "67%", 
+    align: "bottom"
+  },
+];
+
 
 export default function AboutPage() {
   const { t } = useTranslation();
@@ -66,214 +219,407 @@ export default function AboutPage() {
   }, []);
 
   return (
-  <div className="bg-gradient-to-r from-[#0b0515] to-[#3c2461] text-white min-h-screen flex flex-col py-6 px-6 md:px-10 lg:px-14">
+  <div className="bg-black text-white min-h-screen flex flex-col py-6 ">
 
-      {/* Hero Section */}
-      <section className="mt-12 relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 md:px-8 lg:px-12 py-12 md:py-24 gap-8 md:gap-12 mb-1">
-        <div className="flex-1 text-center md:text-left z-10">
-          <div style={{ position: 'relative', height: '200px' }}>
-            <TextPressure
-              text="About MatchBest Group"
-              flex={true}
-              alpha={false}
-              stroke={false}
-              width={true}
-              weight={true}
-              italic={true}
-              textColor="#ffffff"
-              strokeColor="#ff0000"
-              minFontSize={36}
-            />
+{/* Hero Section */}
+<section className="w-full pt-22 py-2 px-4 md:px-8 mb-2 pb-4 flex justify-center">
+      
+  {/* === CARD CONTAINER === */}
+  <div 
+    className="relative w-full max-w-[1300px] h-[150px] md:h-[200px] rounded-[3rem] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5">
+
+    <div className="absolute inset-0 z-0" 
+      style={{
+      background: 'linear-gradient(60deg, #020010 0%, #0a0a4a 10%, #0055ff 25%, #7e22ce 40%, #000000 50%, #7e22ce 60%, #0055ff 75%, #0a0a4a 90%, #020010 100%)',
+      filter: 'blur(100px)', 
+      transform: 'scale(1.2)'
+      // style={{
+      // background: 'linear-gradient(60deg, #0b033f 0%, #030315 10%, #29354b 25%, #543e67 30%, #2a282d 50%, #5d4374 70%, #29354b 75%, #030315 90%, #030112 100%)',
+      // filter: 'blur(0px)', 
+      // transform: 'scale(1.2)'
+    }}>
+
+    </div>
+    
+    {/* === CONTENT LAYER === */}
+    <div className="relative z-10 text-center px-6">
+      
+      {/* Main Heading */}
+      <h1 className="text-white text-4xl md:text-5xl font-['Inter'] font-normal mb-6 tracking-tight drop-shadow-lg">
+        About Us
+      </h1>
+      
+      {/* Subheading */}
+      <p className="text-gray-200 text-md md:text-md font-['Inter'] font-light tracking-wide max-w-2xl mx-auto opacity-90">
+        Innovating the Future with AI, Cloud & Global Scale.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+{/* ABOUT CONTENT SECTION */}
+<section className="w-full bg-black py-15 px-2 md:px-10 lg:px-14 overflow-x-hidden">
+      <div className="container mx-auto max-w-[1300px]">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          {/* === LEFT COLUMN: TEXT CONTENT === */}
+          <div className="flex flex-col">
+            
+            {/* Heading */}
+            <h2 className="text-white text-2xl md:text-3xl font-['Manrope'] font-medium tracking-tight">
+              Technology That Scales the Future
+            </h2>
+
+            {/* Divider Line */}
+            <div className="w-full h-px bg-white/10 my-8"></div>
+
+            {/* Paragraph Content */}
+            <p className="text-white font-['Space_Grotesk'] text-sm leading-relaxed font-light mb-2">
+              At MatchBest Group, we not only adapt changes - we engineer them. 
+              MatchBest Group has evolved into a next-gen technology powerhouse. 
+              We are an intelligent and scalable consulting partner helping enterprises turn bold ideas into real-world impact.
+              As a digital innovation and consulting company, we deliver AI-driven solutions, cloud transformation, and custom software that power modern enterprises worldwide. With deep expertise in AI, cloud, fintech, blockchain, ERP modernisation and cybersecurity, we help businesses modernize faster, scale smarter, and innovate with confidence.
+            </p>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-3 gap-8 pt-2">
+              
+              {/* Stat 1 */}
+              <div>
+                <h3 className="text-white text-3xl md:text-4xl font-['Bebas_Neue'] mb-2 tabular-nums">
+                  <AnimatedCounter target={300} suffix="+" />
+                </h3>
+                <p className="text-gray-400 text-sm font-medium tracking-wide">
+                  Active Clients
+                </p>
+              </div>
+
+              {/* Stat 2 */}
+              <div>
+                <h3 className="text-white text-3xl md:text-4xl font-['Bebas_Neue'] mb-2 tabular-nums">
+                  <AnimatedCounter target={100} suffix="%" />
+                </h3>
+                <p className="text-gray-400 text-sm font-medium tracking-wide">
+                  Secure Delivery
+                </p>
+              </div>
+
+              {/* Stat 3 */}
+              <div>
+                <h3 className="text-white text-3xl md:text-4xl font-['Bebas_Neue'] mb-2 tabular-nums">
+                  <AnimatedCounter target={4.5} decimals={1} suffix=" / 5" />
+                </h3>
+                <p className="text-gray-400 text-sm font-medium tracking-wide">
+                  (CSAT)
+                </p>
+              </div>
+
+            </div>
+
           </div>
-          <h2 className="-mt-10 text-2xl md:text-3xl font-semibold text-purple-400 mb-6">
-            Innovating the Future with AI, Cloud & Global Scale.
+
+          {/* === RIGHT COLUMN: IMAGE === */}
+          <div className="relative w-full  rounded-2xl overflow-hidden group z-10 lg:-mt-16 lg:-mr-16 lg:-ml-0">
+             <Image 
+               src="/assets/about-team.avif" 
+               alt="MatchBest Team"
+               width={1500} 
+               height={1000}
+               className="w-full h-auto object-cover"
+             />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{/* Mission & Vision */}
+<section className="w-full bg-white py-18 pt-10 px-4 md:px-12 lg:px-18">
+      <div className="container mx-auto max-w-[1300px]">
+        
+        {/* === SECTION HEADING === */}
+        <h2 className="text-center text-black text-4xl md:text-5xl font-['Inter'] font-medium mb-10">
+          Our Mission & Vision
+        </h2>
+
+        {/* === CARDS GRID === */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          
+          {/* CARD 1: OUR MISSION */}
+          <div className="group relative w-full h-[400px] flex flex-col">
+            
+            {/* Content Area */}
+            <div className="p-8 md:p-10 relative z-10">
+              
+              {/* Icon & Title Row */}
+              <div className="flex items-center gap-6 mb-2">
+                {/* Purple Filled Icon Box */}
+                <div className="w-16 h-16 bg-[#9747FF] rounded-2xl flex items-center justify-center group-hover:bg-transparent group-hover:border-white border-2 delay-300">
+                  <Send className="text-white w-8 h-8 -ml-1 mt-1" fill="none"/>
+                </div>
+                <h3 className="text-3xl font-['Inter'] font-medium text-black group-hover:text-white transition-colors duration-300">
+                  Our Mission
+                </h3>
+              </div>
+
+              {/* Text */}
+              <p className="font-['Space_Grotesk'] text-black text-md leading-snug font-normal group-hover:text-gray-100 transition-colors duration-300">
+                To empower industries with intelligent, automated, and scalable digital ecosystems that accelerate growth and redefine performance.
+              </p>
+            </div>
+
+            {/* === EXPANDING IMAGE SECTION === */}
+            {/* Default: h-[180px], Hover: h-full (Opens up) */}
+            <div className="absolute bottom-0 w-full h-[200px] group-hover:h-[400px] transition-all duration-500 ease-in-out">
+              <div className="relative w-full h-full px-4 pb-4">
+                 {/* Image Container with Rounded Corners */}
+                 <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
+                    <Image 
+                      src="/assets/mission.avif" 
+                      alt="Our Mission"
+                      fill
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                    {/* Overlay to make text readable if image expands behind it (Optional) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                 </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* CARD 2: OUR VISION */}
+          <div className="group relative w-full h-[400px] flex flex-col">
+            
+            {/* Content Area */}
+            <div className="p-8 md:p-10 relative z-10">
+              
+              {/* Icon & Title Row */}
+              <div className="flex items-center gap-6 mb-2">
+                {/* Outlined Icon Box */}
+                <div className="w-16 h-16 bg-[#9747FF] rounded-2xl flex items-center justify-center group-hover:bg-transparent group-hover:border-white border-2 delay-300">
+                  <Binoculars className="text-white w-8 h-8" />
+                </div>
+                <h3 className="text-3xl font-['Inter'] font-medium text-black group-hover:text-white transition-colors duration-300">
+                  Our Vision
+                </h3>
+              </div>
+
+              {/* Text */}
+              <p className="font-['Space_Grotesk'] text-black text-md leading-snug font-normal group-hover:text-white transition-colors duration-300">
+                To be the world's most trusted AI-first technology partner, delivering platforms and solutions that inspire innovation and shape the future.
+              </p>
+            </div>
+
+            {/* === EXPANDING IMAGE SECTION === */}
+            <div className="absolute bottom-0 w-full h-[200px] group-hover:h-[400px] transition-all duration-500 ease-in-out">
+              <div className="relative w-full h-full px-4 pb-4">
+                 <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
+                    <Image 
+                      src="/assets/Vision.png" 
+                      alt="Our Vision"
+                      fill
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                 </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+      
+
+
+{/* Core Values */}
+<section className="w-full relative bg-black py-20 px-4 md:px-8 flex justify-center overflow-hidden">
+
+  <div 
+        className="absolute -top-[100px] -right-[100px] w-[500px] h-[700px] rounded-full opacity-60 pointer-events-none"
+        style={{
+          // Wahi same tilted gradient pattern jo Image 2 m tha
+          background: 'linear-gradient(120deg, #020010 0%, #0a0a4a 10%, #396acc 25%, #8946c4 40%, #000000 50%, #8946c4 60%, #396acc 75%, #0a0a4a 90%, #020010 100%)',
+          // Heavy Blur to create the aurora look
+          filter: 'blur(100px)',
+          zIndex: 0 // Sabse peeche
+        }}
+      ></div>
+      
+      {/* === MAIN CONTAINER === */}
+      <div className="w-full max-w-[1000px] bg-[rgb(20,20,20)] rounded-[2rem] p-8 md:p-16 relative overflow-hidden">
+
+        {/* === HEADER === */}
+        <div className="text-center mb-16 relative z-10">
+          <h2 className="text-white text-4xl md:text-5xl font-['Manrope'] font-medium mb-4">
+            Our Core Values
+          </h2>
+          <p className="text-gray-400 text-lg font-light">
+            Our core values define who we are, what we stand for, and how we create meaningful impact every day.
+          </p>
+        </div>
+
+        {/* === GRID LAYOUT === */}
+        <div className="flex flex-wrap justify-center gap-6 relative z-10">
+          
+          {valuesData.map((item, index) => (
+            <div 
+              key={index}
+              className="group relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] min-h-[250px] bg-black rounded-[2rem] p-8 flex flex-col items-start justify-center transition-all duration-500 hover:bg-white hover:border-transparent"
+            >
+              
+              {/* === ICON CONTAINER === */}
+              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:mb-12 group-hover:bg-black">
+                <div className="text-black transition-colors duration-500 group-hover:text-white">
+                  {item.icon}
+                </div>
+              </div>
+
+              {/* === TEXT CONTENT === */}
+              <h3 className="text-white text-lg md:textxl font-['Manrope'] font-medium mb-3 transition-colors duration-500 group-hover:text-black">
+                {item.title}
+              </h3>
+              
+              <p className="text-gray-400 text-sm md:text-md font-light transition-colors duration-500 group-hover:text-gray-800">
+                {item.desc}
+              </p>
+
+            </div>
+          ))}
+
+        </div>
+
+      </div>
+    </section>
+      
+
+{/* Domains of Excellence */}
+<section className="w-full bg-black text-white py-20 px-4 md:px-12 lg:px-20 overflow-hidden">
+      
+      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row">
+        
+        {/* === LEFT COLUMN: CONTENT & BUTTON === */}
+        <div className="w-full lg:w-[35%] pr-0 lg:pr-16 mb-16 lg:mb-0 relative flex flex-col justify-center">
+          
+          {/* Background Purple Glow (Left side only) */}
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[300px] h-[300px] bg-purple-900/40 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-['Manrope'] font-normal leading-tight mb-8">
+            Our Domains of <br /> Excellence
           </h2>
 
-          <div className="space-y-6 text-gray-300 text-base lg:text-lg leading-relaxed max-w-2xl">
-            <p>At MatchBest Group, we don't just adapt to change- we engineer it.</p>
-            <p>
-              <strong>Established in 2024</strong>, MatchBest Group (formerly Match Best Software) has evolved into a next-generation technology powerhouse. Headquartered in India with offices in the UAE and USA, we enable Fortune 500s and startups to scale, transform, and compete globally.
-            </p>
-            <p className="text-purple-400 font-semibold">
-              We are building today, what the world will run on tomorrow.
-            </p>
-          </div>
-
-        </div>
-
-        <div className="flex-1 flex justify-center items-center relative">
-          <div className="w-full h-[300px] md:h-[500px] relative">
-            <Orb
-              hoverIntensity={1.5}
-              rotateOnHover={true}
-              hue={240}
-              forceHoverState={false}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="py-5 border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
-        <div className="container mx-auto px-0 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Mission & Vision</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto ">
-            <motion.div
-              className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.03] glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
-              whileHover={{ y: -5 }}
-              data-aos="fade-up"
-            >
-              <div className="flex items-center mb-4">
-                <Target className="w-8 h-8 text-cyan-400 mr-3" />
-                <h3 className="text-2xl font-semibold text-cyan-400">Our Mission</h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                To empower industries with intelligent, automated, and scalable digital ecosystems
-                that accelerate growth and redefine performance.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
-              whileHover={{ y: -5 }}
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="flex items-center mb-4">
-                <Award className="w-8 h-8 text-cyan-400 mr-3" />
-                <h3 className="text-2xl font-semibold text-cyan-400">Our Vision</h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                To be the world's most trusted AI-first technology partner, delivering platforms and
-                solutions that inspire innovation and shape the future.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="py-5 border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
-        <div className="container mx-auto px-0 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Core Values</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {[
-              { icon: <Rocket className="w-10 h-10 text-cyan-400 mb-4" />, title: "Innovation & AI-led Design", desc: "Pushing boundaries with cutting-edge AI solutions" },
-              { icon: <Users className="w-10 h-10 text-cyan-400 mb-4" />, title: "Customer-Centric Growth", desc: "Your success is our mission" },
-              { icon: <ShieldCheck className="w-10 h-10 text-cyan-400 mb-4" />, title: "Trust, Security & Integrity", desc: "Building with reliability and ethics" },
-              { icon: <BrainCircuit className="w-10 h-10 text-cyan-400 mb-4" />, title: "Engineering Excellence", desc: "World-class development standards" },
-              { icon: <TrendingUp className="w-10 h-10 text-cyan-400 mb-4" />, title: "Scalable & Future-Ready Thinking", desc: "Planning for tomorrow's challenges" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
-                whileHover={{ y: -5 }}
-                data-aos="fade-up"
-                data-aos-delay={100 * (i + 1)}
-              >
-                <div className="flex justify-center">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-300 text-sm">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Domains of Excellence */}
-      <section className="py-5 border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
-        <div className="container mx-auto px-0 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Domains of Excellence</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              { icon: <BrainCircuit className="w-10 h-10 text-cyan-400 mb-4" />, title: "Enterprise AI & Automation", desc: "Generative AI, LLMs, and Predictive Analytics." },
-              { icon: <Cloud className="w-10 h-10 text-cyan-400 mb-4" />, title: "Cloud & DevOps", desc: "AWS/Azure Migration, Kubernetes & Serverless." },
-              { icon: <Layers className="w-10 h-10 text-cyan-400 mb-4" />, title: "Custom Software Development", desc: "Scalable SaaS Architectures & Microservices." },
-              { icon: <ShieldCheck className="w-10 h-10 text-cyan-400 mb-4" />, title: "Healthcare & Fintech", desc: "HIPAA Compliant Apps & Secure Financial Systems." },
-              { icon: <Lightbulb className="w-10 h-10 text-cyan-400 mb-4" />, title: "OTT & Media Tech", desc: "High-concurrency streaming platforms." },
-              { icon: <Rocket className="w-10 h-10 text-cyan-400 mb-4" />, title: "Digital Transformation", desc: "Legacy modernization for global enterprises." }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
-                whileHover={{ y: -5 }}
-                data-aos="fade-up"
-                data-aos-delay={100 * (i + 1)}
-              >
-                <div className="flex justify-center">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-300 text-sm">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Global Presence */}
-      <section className="py-5 border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="fade-up">
-        <div className="container mx-auto px-0 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-8">Our Global Presence</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
-              { flag: "🇮🇳", country: "India", status: "Headquartered" },
-              { flag: "🇦🇪", country: "UAE", status: "Regional Office" },
-              { flag: "🇺🇸", country: "USA", status: "Regional Office"},
-              { flag: "🇸🇦", country: "Saudi Arabia", status: "Coming Soon" }
-            ].map((location, i) => (
-              <motion.div
-                key={i}
-                className="glass-effect bg-black/40 border border-purple-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-center glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
-                whileHover={{ y: -5 }}
-                data-aos="fade-up"
-                data-aos-delay={100 * (i + 1)}
-              >
-                <div className="flex space-x-3 justify-center items-center mb-4">
-                  <MapPin className="w-8 h-8 text-cyan-400" />
-                  <h3 className="text-xl font-semibold text-white mb-2">{location.country}</h3>
-                </div>
-                
-                <p className="text-cyan-400 font-medium mb-1">{location.status}</p>
-                
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-5 border-t border-gray-800 px-4 md:px-8 lg:px-12" data-aos="zoom-in">
-        <div className="max-w-4xl mx-auto glass-effect bg-gradient-to-r from-purple-900/40 to-blue-900/40 rounded-3xl p-10 border border-white/10 glass-effect bg-gradient-to-br from-black/60 to-purple-900/10 border border-white/5 rounded-2xl p-8 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2">
-        <div className="container mx-auto px-0 md:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join hundreds of companies that have already revolutionized their operations with MatchBest Group.
-            Let's build the future together.
+          {/* Subtext */}
+          <p className="text-gray-400 text-lg font-light leading-relaxed mb-12 max-w-md">
+            These are the areas where our strengths, innovation, and commitment create meaningful results.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <motion.button
-                className="cursor-pointer bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] hover:from-[#3B5CEB] hover:to-[#7B4BA0] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
-                whileHover={{ scale: 1.05 }}
+
+          {/* Button */}
+          <div>
+            <button className="group relative px-8 rounded-full border border-gray-600 bg-transparent overflow-hidden transition-colors duration-300 hover:border-white">
+              <div className="absolute inset-0 bg-white translate-y-full transition-transform duration-100 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0"></div>
+
+              {/* === 2. ROLLING TEXT CONTENT === */}
+              <div className="relative z-10 overflow-hidden">
+                <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
+                  
+                  {/* ORIGINAL TEXT (White) - Jo abhi dikh rha h */}
+                  <span className="flex items-center gap-2 text-lg text-white py-1">
+                    Start Your Project
+                    <ArrowUpRight className="w-5 h-5" />
+                  </span>
+                  <span className="flex items-center gap-2 text-lg text-black py-1 absolute top-full left-0 w-full">
+                    Start Your Project
+                    <ArrowUpRight className="w-5 h-5" />
+                  </span>
+
+                </div>
+              </div>
+          </button>
+        </div>
+      </div>
+
+        {/* === RIGHT COLUMN: GRID === */}
+        <div className="w-full lg:w-[65%]">
+          
+          {/* Grid Container */}
+          {/* Negative margins (-ml, -mt) use kiye hain taaki borders overlap karein aur double lines na dikhein */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            
+            {domainsData.map((item, index) => (
+              <div 
+                key={index}
+                // Border logic: White/20 border. Negative margin se lines chipak gayi hain.
+                // hover:z-10 zaruri hai taaki white box baaki lines k upar aa jaye.
+                className="group relative border border-white/20 p-8 md:p-10 flex flex-col justify-between min-h-[320px] -ml-[1px] -mt-[1px] transition-colors duration-300 hover:bg-white hover:z-10 hover:border-transparent"
               >
-                Start Your Project
-              </motion.button>
-            </Link>
-            <Link href="/careers">
-              <motion.button
-                className="cursor-pointer bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] hover:from-[#3B5CEB] hover:to-[#7B4BA0] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
-                whileHover={{ scale: 1.05 }}
-              >
-                Join Our Team
-              </motion.button>
-            </Link>
+                
+                {/* Number (01, 02...) */}
+                <span className="text-4xl md:text-5xl font-['Manrope'] font-light text-white/90 mb-6 transition-colors duration-300 group-hover:text-black">
+                  {item.id}
+                </span>
+
+                {/* Content Wrapper */}
+                <div>
+                  {/* Title */}
+                  <h3 className="text-xl font-['Manrope'] font-medium mb-4 text-white transition-colors duration-300 group-hover:text-black">
+                    {item.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-gray-400 leading-relaxed font-light transition-colors duration-300 group-hover:text-gray-600">
+                    {item.desc}
+                  </p>
+                </div>
+
+              </div>
+            ))}
+
           </div>
+
         </div>
+
+      </div>
+    </section>
+
+    
+{/* GLOBAL PRESENCE */}
+    
+      
+
+{/* --- CONTACT SECTION --- */}
+{/* <section className="relative z-10 py-20 bg-black text-center px-4">
+    <div className="max-w-3xl mx-auto glass-effect rounded-2xl p-10 relative overflow-hidden">
+        
+        <div className="absolute inset-0 z-0 opacity-50" 
+            style={{ 
+                backgroundImage: "url('/assets/contact_bg.svg')", 
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            }}
+        ></div>
+
+        <div className="relative z-10">
+            <h2 className="font-[Manrope] text-3xl md:text-4xl text-white mb-6">
+                Want to build the future today?
+            </h2>
+            <p className="font-[Manrope] text-gray-200 mb-8 text-lg">
+                Build Smarter. Scale Faster with expert-led AI, cloud and enterprise software development
+            </p>
+            <Link href="/contact" className="inline-block text-white border border-white bg-none text-[#6823f0] px-8 py-2 rounded-2xl text-lg shadow-xl hover:bg-white hover:text-black transition-all transform">
+                Talk to Our Experts
+            </Link>
         </div>
-      </section>
+    </div>
+</section> */}
+      
 
     </div>
   );

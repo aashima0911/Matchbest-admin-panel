@@ -4,8 +4,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 import ClientLayout from "./components/ClientLayout";
+import { Space_Grotesk } from 'next/font/google'
 
-import "../lib/i18n"; // i18n initialization
+
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
+
+import "../lib/i18n"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +22,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: 'swap',
 });
+
+<><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></link><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link></>
+
 
 // ✅ Proper metadata export for App Router
 export const metadata = {

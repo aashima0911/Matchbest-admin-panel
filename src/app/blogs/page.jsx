@@ -1,120 +1,225 @@
-import Link from 'next/link';
-import { getAllBlogs } from '../lib/firebase/blogs';
-import Image from 'next/image';
-import { Suspense } from 'react';
+"use client";
+import React, { useState } from 'react';
+import Image from "next/image";
 
-async function fetchBlogs() {
-  try {
-    const blogs = await getAllBlogs();
-    return blogs;
-  } catch (error) {
-    console.error('Failed to fetch blogs:', error);
-    return [];
+// === MOCK DATA (Image se match kiya hai) ===
+const blogPosts = [
+  {
+    id: 1,
+    title: "Best Billing Software for Business Owners: Save Time and Boost Cash Flow",
+    categories: ["News"],
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 2,
+    title: "The Best AI Chatbots for Customer Service",
+    categories: ["Tech", "Learn"],
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2000&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 3,
+    title: "Leading Healthcare Software Development Company in India",
+    categories: ["Learn"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 4,
+    title: "Best Billing Software for Business Owners: Save Time and Boost Cash Flow",
+    categories: ["News"],
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 5,
+    title: "The Best AI Chatbots for Customer Service",
+    categories: ["Tech"],
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2000&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 6,
+    title: "Leading Healthcare Software Development Company in India",
+    categories: ["News", "Learn"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 7,
+    title: "The Best AI Chatbots for Customer Service",
+    categories: ["Inspiration"],
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2000&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 8,
+    title: "Leading Healthcare Software Development Company in India",
+    categories: ["Learn"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 9,
+    title: "Best Billing Software for Business Owners: Save Time and Boost Cash Flow",
+    categories: ["News"],
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 10,
+    title: "The Best AI Chatbots for Customer Service",
+    categories: ["Tech", "Inspiration"],
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2000&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    id: 11,
+    title: "Leading Healthcare Software Development Company in India",
+    categories: ["News"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    author: "Varsha Mishra",
+    date: "12 Jan 2026",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
   }
-}
+];
 
-function BlogGrid({ blogs }) {
-  return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4">
-      {!blogs || blogs.length === 0 && (
-        <div className="col-span-full text-center text-purple-200">No blogs found.</div>
-      )}
-      {blogs?.map((post, i) => (
-        <BlogCard key={post.slug || post.id || i} post={post} index={i} />
-      ))}
-    </section>
-  );
-}
+const filters = ["All","Learn", "Tech", "Inspiration", "News"];
 
-function BlogCard({ post, index }) {
+export default function BlogsPage() {
+
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // 2. FILTER LOGIC: Blogs ko filter karo
+  const filteredPosts = selectedCategory === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.categories.includes(selectedCategory));
+
   return (
-    <div
-      className={`flex flex-col h-full transition-all duration-700 opacity-100 translate-y-0`}
-      style={{ transitionDelay: `${index * 150}ms` }}
-    >
-      <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-purple-800 overflow-hidden h-full flex flex-col">
-        {/* Image */}
-        <div className="relative h-32 overflow-hidden flex-shrink-0 group">
-          <Image
-            src={post.imageURL?.imageURL || post.imageURL || '/assets/ai.jpeg'}
-            alt={post.title}
-            width={600}
-            height={300}
-            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            priority={index < 2}
-            loading={index < 4 ? 'eager' : 'lazy'}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmkny5VzSLvSY4bYRbJcb5xLXG9jhRxMEgMQsLGCBVFfyOMKhEANwaPjOSUJMgTaWgAA=="
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent transition-opacity duration-300 group-hover:opacity-40"></div>
-          <div className="absolute inset-0 bg-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
-        {/* Content */}
-        <div className="p-4 flex flex-col flex-grow">
-          <div className="flex-grow">
-            <h3 className="text-white text-xl font-semibold mb-2 leading-tight">{post.title}</h3>
-            <div className="flex gap-2 flex-wrap mb-4">
-              {post.tags && post.tags.map((tag, idx) => (
-                <span key={idx} className="bg-purple-700 bg-opacity-60 px-3 py-1 rounded-full text-xs font-medium text-white">#{tag}</span>
-              ))}
-            </div>
+    // Main Background: Black with Purple selection color
+    <div className="min-h-screen bg-[#050505] text-white selection:bg-purple-500 selection:text-white pt-20">
+      <div 
+        className="absolute -top-[100px] -right-[100px] w-[1000px] h-[800px] rounded-full opacity-60 pointer-events-none"
+        style={{
+          background: 'linear-gradient(120deg, #020010 0%, #0a0a4a 10%,  #431f63 15%, #28233d 40%, #272f8b 50%, #072769 60%, #15274a 75%, #0a0a4a 90%, #020010 100%)',
+          filter: 'blur(100px)',
+          zIndex: 0 
+        }}
+      ></div>
+
+      {/* 1. PURPLE GLOW EFFECT  */}
+      <div className="fixed top-0 left-0 w-full h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/40 via-[#050505] to-[#050505] pointer-events-none" />
+
+      <div className="relative max-w-[1400px] mx-auto px-10 py-6">
+        
+        {/* === HEADER SECTION === */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4 pb-4">
+          <h1 className="text-4xl md:text-5xl tracking-tight">
+            Recent Articles
+          </h1>
+          
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap gap-3">
+            {filters.map((filter) => (
+              <button 
+                key={filter} 
+                onClick={() => setSelectedCategory(filter)}
+                className={`px-4 py-2 rounded-full bg-white/5 hover:bg-white/40 hover:text-white transition-all text-sm font-medium backdrop-blur-sm
+                ${selectedCategory === filter 
+                    ? 'bg-purple-600 border-purple-600 text-white border border-white/40' // Active Style
+                    : 'bg-white/5 border-white/10 hover:bg-white/10 hover:text-purple-400 text-white' 
+                  }
+                `}
+              >
+                {filter}
+              </button>
+            ))}
           </div>
-          {/* Date at bottom */}
-          <div className="text-sm text-purple-300 mb-2">{post.date || (post.timestamp && new Date(post.timestamp.seconds * 1000).toLocaleDateString())}</div>
-          {/* Read More Button */}
-          <Link
-            href={`/blogs/${post.slug || post.id}`}
-            className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105 text-sm group"
-          >
-            Learn More
-            <svg className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
         </div>
+
+        {/* === BLOG GRID === */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPosts.length > 0 ? (
+            filteredPosts.map((post) => (
+              <article key={post.id} className="group cursor-pointer flex flex-col gap-4">
+                
+                {/* Image Container */}
+                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-gray-900">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col gap-3 px-1">
+                  
+                  {/* Categories Tags */}
+                  <div className="flex gap-2">
+                      {post.categories.map(tag => (
+                          <span key={tag} className={`
+                              text-[10px] uppercase font-bold px-3 py-1 rounded-md tracking-wider
+                              ${tag === 'News' 
+                                  ? 'bg-pink-500/10 text-pink-300 border border-pink-500/20' 
+                                  : 'bg-teal-500/10 text-teal-300 border border-teal-500/20'}
+                          `}>
+                              {tag}
+                          </span>
+                      ))}
+                  </div>
+
+                  <h3 className="text-md font-normal">
+                    {post.title}
+                  </h3>
+
+                  <div className="flex items-center gap-3 mt-2">
+                    <div className="relative w-6 h-6 rounded-full overflow-hidden">
+                      <Image src={post.avatar} alt={post.author} fill className="object-cover" />
+                    </div>
+                    <div className="text-xs text-gray-400 font-medium flex items-center gap-2">
+                      <span className="text-gray-200">{post.author}</span>
+                      <span className="w-1 h-1 bg-gray-600 rounded-full"></span>
+                      <span>{post.date}</span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </article>
+            ))
+          ) : (
+            <div className="col-span-full text-center py-20 text-gray-500">
+              No articles found in "{selectedCategory}" category.
+            </div>
+          )}
+          
+        </div>
+
       </div>
     </div>
-  );
-}
-
-function BlogGridSkeleton() {
-  return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4">
-      {Array.from({ length: 8 }).map((_, i) => (
-        <div key={i} className="bg-gray-800 rounded-xl overflow-hidden h-[400px] animate-pulse">
-          <div className="h-32 bg-gray-700"></div>
-          <div className="p-4">
-            <div className="h-6 bg-gray-700 rounded mb-4"></div>
-            <div className="flex gap-2 mb-4">
-              <div className="h-6 w-16 bg-gray-700 rounded-full"></div>
-              <div className="h-6 w-20 bg-gray-700 rounded-full"></div>
-            </div>
-            <div className="h-4 bg-gray-700 rounded mb-2"></div>
-            <div className="h-10 bg-gray-700 rounded-lg"></div>
-          </div>
-        </div>
-      ))}
-    </section>
-  );
-}
-
-export default async function BlogPage() {
-  const blogs = await fetchBlogs();
-
-  return (
-    <main className="min-h-screen bg-gray-900 text-white font-sans px-4 md:px-8 lg:px-12 pt-24 md:pt-20">
-      {/* Hero */}
-      <section className="text-center px-4 md:px-8 lg:px-12 max-w-6xl mx-auto py-4 md:py-6 lg:py-8 mb-2 md:mb-3">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 md:mb-3 text-shadow-lg">Blogs</h1>
-      </section>
-
-      {/* Blog Grid with Suspense */}
-      <Suspense fallback={<BlogGridSkeleton />}>
-        <BlogGrid blogs={blogs} />
-      </Suspense>
-
-      <div className="h-10"></div>
-    </main>
   );
 }

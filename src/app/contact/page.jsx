@@ -238,7 +238,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Spaze i-Tech Park, Sohna Road,<br/> Gurugram, Haryana 122018
+                Gurugram, Haryana 122018
               </p>
             </motion.div>
 
