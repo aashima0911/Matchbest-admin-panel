@@ -4,8 +4,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 import ClientLayout from "./components/ClientLayout";
+import { Space_Grotesk } from 'next/font/google'
 
-import "../lib/i18n"; // i18n initialization
+
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
+
+import "../lib/i18n"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,11 +23,14 @@ const geistMono = Geist_Mono({
   display: 'swap',
 });
 
+<><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></link><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link></>
+
+
 // ✅ Proper metadata export for App Router
 export const metadata = {
   title: "MatchBest Group | Digital Innovation, AI Solutions & Cloud Platforms",
   description:
-    "MatchBest Group pioneers digital transformation with next-generation AI solutions, secure cloud platforms, and innovative software tailored for ambitious enterprises. Our expert team delivers scalable, future-ready technologies—empowering tomorrow’s leaders to accelerate growth, enhance security, and unlock new opportunities in a rapidly evolving digital landscape.",
+    "Transform your business with Matchbest Software. We deliver custom app development, AI automation, secure cloud infrastructure, and managed IT services globally.",
   keywords:
     ["MatchBest, Match, MatchBestGroup, Group, AI Solutions, Cloud Platforms, Digital Innovation, Secure Tech, Software Development, Web Solutions, Machine Learning, Cybersecurity, Cloud Computing, Web Development, Mobile Apps, UX Design, UI Design, Blockchain, SaaS, PaaS",
 
@@ -88,6 +95,12 @@ export const metadata = {
     title: "MatchBest Group | Digital Innovation & AI Solutions",
     description:
       "Empowering leaders with AI, cloud, and digital platforms.",
+    keywords: [
+       "AI & Automation: Chatbots, Gen AI, Ava One",
+       "Development: App,web,blockchain",
+       "Business solutions: E-commerce, fintech, ERP modernization",
+       "Intra & hosting: Cloud security, VAPT, NOC management",
+       "Staffing: staff augmentation "],
     images: ["https://matchbest.ai/assets/og-image.jpg"],
   },
 };

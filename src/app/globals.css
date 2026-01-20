@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
+
+
 
 html, body {    /* max-width: auto; */
     overflow-x: hidden;
@@ -6,12 +10,20 @@ html, body {    /* max-width: auto; */
   }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+}
+
+.animate-scroll {
+  animation: scroll 15s linear infinite; 
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
 
 .text-gradient {
@@ -30,6 +42,8 @@ html, body {    /* max-width: auto; */
   box-shadow: 0 0 20px rgba(145, 89, 183, 0.5);
   animation: pulse 2s infinite;
 }
+
+
 
 /* .scrollbar-hide {
   -ms-overflow-style: none;

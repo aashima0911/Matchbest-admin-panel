@@ -11,11 +11,24 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
         pathname: '/dumecc9my/image/**',
+        
       },
       {
         protocol: 'https',
         hostname: 'firebasestorage.googleapis.com',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com', 
+      },
+      {
+        protocol: 'https',
+        hostname: 'loremflickr.com',    
+      },
+      {
+        protocol: 'https',
+        hostname: 'randomuser.me',      
       },
     ],
   },

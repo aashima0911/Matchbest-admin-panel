@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import LanguageSelector from '../../components/LanguageSelector';
+import SolutionsMenu from './SolutionsMenu';
+import ResourcesMenu from './ResourcesMenu';
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -21,26 +23,26 @@ export default function Navbar() {
         { href: '/matchbest-byteplus-webinar', label: 'Matchbest x Byteplus Webinar' },
       ]
     : [
-        { href: '/', label: t('navbar.home') },
-        { href: '/about', label: t('navbar.about') },
-        { href: '/blogs', label: t('navbar.blogs') },
-        { href: '/press-release', label: 'Press Release' },
-        { href: '/careers', label: t('navbar.careers') },
-        // { href: '/event', label: 'Webinar Seedance x Seedream' },
+        { href: '/', label: t('navbar.home', 'Home') },
+        { href: '/about', label: t('navbar.about', 'About Us') },
+        { href: '', label: 'Solutions' }, 
+        // { href: '', label: 'Resources' },
+        { href: '/contact', label: 'Contact' },
       ], [pathname, t]);
 
   const handleToggle = useCallback(() => setIsOpen((prev) => !prev), []);
   const handleClose = useCallback(() => setIsOpen(false), []);
 
   return (
-    <nav className="bg-[#10131a] shadow-lg border-b  fixed w-full z-30 top-0 left-0 py-3 md:py-4 px-0 md:px-0">
-      <div className="container mx-auto flex items-center justify-between px-4 md:px-8 py-2 md:py-0">
+    <nav className="bg-black fixed w-full z-30 top-0 left-0 py-4 px-0 md:px-0">
+      <div className="container mx-auto flex items-center justify-between px-4 md:px-8">
+        
         {/* Logo */}
         <Link href="/" className="flex items-center mr-6 md:mr-10" onClick={handleClose}>
           <Image
-            src="/assets/match.jpg"
+            src="/assets/match.png"
             alt="MatchBest Group Logo"
-            className="h-12 w-auto rounded-lg shadow-md border "
+            className="h-12 w-auto object-contain"
             width={1200}
             height={48}
             priority
@@ -48,40 +50,67 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-4 lg:space-x-6 font-medium text-white items-center">
-          {navLinks.map((link) => (
-            <li key={link.href} className="my-1">
-              <Link
-                href={link.href}
-                className={`hover:text-purple-400 transition-colors duration-300 px-3 py-2 rounded-lg ${
-                  pathname === link.href
-                    ? 'text-purple-400 font-semibold'
-                    : ''
-                }`}
-                aria-current={pathname === link.href ? 'page' : undefined}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-          {/* Language Selector */}
-          <li className="ml-4">
+        <ul className="hidden md:flex space-x-6 lg:space-x-10 items-center ml-auto">
+          {navLinks.map((link) => {
+            // === CASE 1: SOLUTIONS ===
+            if (link.label === 'Solutions' || link.label === 'solutions') {
+              return (
+                <li key={link.label} className="h-full flex items-center">
+                  <SolutionsMenu />
+                </li>
+              );
+            }
+            
+            // === CASE 2: RESOURCES (NEW) ===
+            if (link.label === 'Resources' || link.label === 'resources') {
+              return (
+                <li key={link.label} className="h-full flex items-center">
+                  <ResourcesMenu />
+                </li>
+              );
+            }
+
+            // === CASE 3: NORMAL LINKS (Home, About, Contact) ===
+            return (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  className={`
+                    relative font-['Space_Grotesk'] font-normal text-[16px] leading-[32px] tracking-normal text-white transition-colors duration-300
+                    
+                    /* Dot Animation Styles (Jo aapka pehle tha) */
+                    after:content-[''] 
+                    after:absolute 
+                    after:left-1/2 
+                    after:-translate-x-1/2 
+                    after:-bottom-3
+                    after:w-1.5 
+                    after:h-1.5 
+                    after:bg-purple-500 
+                    after:rounded-full 
+                    after:opacity-0 
+                    hover:after:opacity-100 
+                    after:transition-all 
+                    after:duration-300
+
+                    ${pathname === link.href ? 'text-purple-900 ' : 'hover:text-white'}
+                  `}
+                  aria-current={pathname === link.href ? 'page' : undefined}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
+          
+          <li className="ml-0"> 
             <LanguageSelector />
-          </li>
-          {/* Optional CTA Button */}
-          <li className="ml-4">
-            <Link
-              href="/contact"
-              className="px-5 py-2 bg-purple-700 hover:bg-purple-600 text-white rounded-lg font-semibold shadow transition-all duration-300 border border-purple-800"
-            >
-              {t('navbar.getInTouch', 'Get in Touch')}
-            </Link>
           </li>
         </ul>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-3xl cursor-pointer text-white ml-2"
+          className="md:hidden text-2xl cursor-pointer text-white ml-2"
           onClick={handleToggle}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
@@ -91,18 +120,18 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-[#10131a] transition-[max-height] duration-500 ease-in-out overflow-hidden ${
+        className={`md:hidden bg-black transition-[max-height] duration-500 ease-in-out overflow-hidden ${
           isOpen ? 'max-h-96 py-4 px-6' : 'max-h-0 py-0 px-6'
         }`}
       >
-        <ul className="flex flex-col items-center space-y-4 font-medium text-white">
+        <ul className="flex flex-col items-center space-y-4 text-white">
           {navLinks.map((link) => (
-            <li key={link.href} className="w-full">
+            <li key={link.label} className="w-full">
               <Link
                 href={link.href}
-                className={`block w-full text-center hover:text-purple-400 transition-colors duration-300 px-3 py-3 rounded-lg ${
+                className={`font-['Space_Grotesk'] font-normal text-[16px] leading-[32px] block w-full text-center hover:text-purple-400 transition-colors duration-300 py-2 ${
                   pathname === link.href
-                    ? 'text-purple-400 font-semibold'
+                    ? 'text-purple-400'
                     : ''
                 }`}
                 aria-current={pathname === link.href ? 'page' : undefined}
@@ -112,19 +141,8 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          {/* Language Selector */}
-          <li className="w-full mt-2">
+          <li className="w-full mt-4 flex justify-center">
             <LanguageSelector />
-          </li>
-          {/* Optional CTA Button */}
-          <li className="w-full mt-2">
-            <Link
-              href="/contact"
-              className="block w-full text-center px-5 py-3 bg-purple-700 hover:bg-purple-600 text-white rounded-lg font-semibold shadow transition-all duration-300 border border-purple-800"
-              onClick={handleClose}
-            >
-              {t('navbar.getInTouch', 'Get in Touch')}
-            </Link>
           </li>
         </ul>
       </div>
