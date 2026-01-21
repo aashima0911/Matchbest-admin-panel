@@ -18,6 +18,13 @@ const resourcesData = [
     description: "Stay updated with our latest company announcements, product launches, and media coverage. See how we are making headlines.",
     image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop",
     link: "/press-releases"
+  },
+  {
+    id: 2,
+    name: "Career",
+    description: "Accelerate your career journey with us",
+    image: "/assets/career1.jpg",
+    link: "/Career"
   }
 ];
 

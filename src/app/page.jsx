@@ -113,19 +113,19 @@ const features = [
     id: 1,
     title: "Elite Professionals",
     desc: "Certified AI, cloud, and software engineers delivering secure, scalable, and high-impact digital solutions.",
-    img: "/assets/img1.avif", // Updation required
+    img: "/assets/img1.avif",
   },
   {
     id: 2,
     title: "Built Around You",
     desc: "A client-centric delivery model focused on transparency, measurable outcomes, and long-term business value.",
-    img: "/assets/img2.png", // Updation required
+    img: "/assets/img2.png",
   },
   {
     id: 3,
     title: "Future-Ready Tech",
     desc: "Leveraging AI, cloud platforms, automation, and modern frameworks to future-proof growth and maximise ROI.",
-    img: "/assets/img3.avif", // Updation required
+    img: "/assets/img3.avif",
   },
 ];
 
@@ -239,27 +239,30 @@ export default function Home() {
         <div className="bg-[#050505] min-h-screen flex flex-col overflow-x-hidden relative">
             
             {/* --- HERO SECTION --- */}
-            <section className="relative min-h-[130vh] flex flex-col justify-start pt-20 md:pt-40 items-center px-4 overflow-hidden">
-                <div 
+            <section className="relative min-h-screen md:min-h-[130vh] flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
+            <div 
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-purple-600/10 blur-[120px] rounded-half pointer-events-none"
             ></div>
                 <div 
-                    className="absolute top-[0%]  left-1/2 -translate-x-1/2 w-[300vw] md:w-[120vw] lg:w-[100vw] max-w-[1600px] h-auto pointer-events-none z-0 flex justify-center">
+                    className="absolute top-0 left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none
+                    w-[100vw]       h-[10vh]           /* Mobile */
+                    sm:w-[100vw]    sm:h-[20vh]        /* Tab */
+                    md:w-[100vw]    md:h-[20vh]        /* Desktop */">
                         
-                    <img src="/assets/hero.png" alt="Hero circle" className="w-full h-[110vh] opacity-100 drop-shadow-[0_0_60px_rgba(255,255,255,0.3)]"/>
+                    <img src="/assets/hero.png" alt="Hero circle" className="w-full h-[100vh] md:h-[115vh] opacity-100 "/>
                     
                 </div>
 
                 {/* 2. HERO CONTENT*/}
-                <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center pt-0 pb-20 mt-0">
+                <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center pt-0 pb-20 mt-0 mb-2 md:md-4 mb:lg-8">
                     {/* 1. Main Heading */}
-                    <h1 className="font-['Manrope'] font-normal text-[26px] md:text-[40px] lg:text-[60px] leading-[1.1] lg:leading-[80px] tracking-[-0.02em] text-white mb-0 max-w-6xl">
+                    <h1 className="font-['Manrope'] font-medium text-[26px] md:text-[40px] lg:text-[60px] leading-[1.1] lg:leading-[80px] tracking-tight text-white mb-0 max-w-6xl">
                     AI-Driven Digital Transformation for Secure, <br />
                     Scalable Business Growth
                     </h1>
 
                     {/* 2. Subheading */}
-                    <h2 className="text-white text-sm  max-w-3xl mb-6 leading-relaxed mt-2">
+                    <h2 className="text-white text-sm  max-w-3xl mb-6 leading-relaxed mt-2 pt-0 md:pt-4">
                         Delivering AI-Powered Automation, Secure Cloud Infrastructure & Enterprise-Grade <br />
                         Software - Scalable Solutions for Digital Transformation
                     </h2>
@@ -271,13 +274,13 @@ export default function Home() {
                         </button>
                     </div> */}
 
-                    <div>
-                        <button className="group relative px-8 rounded-full border border-white bg-transpare overflow-hidden transition-colors duration-300 hover:border-white">
+                    <div className="pt-0 md:pt-4">
+                        <button className="group relative px-8 rounded-full border border-white bg-transpare overflow-hidden transition-colors duration-300 hover:border-white mb-2 md:mb-4 lg:mb-4">
                             <div className="absolute inset-0 bg-white translate-y-full transition-transfo duration-100 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0"></div>
                     
                             {/* === 2. ROLLING TEXT CONTENT === */}
                             <div className="relative z-10 overflow-hidden">
-                            <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier  19,1,0.22,1)] group-hover:-translate-y-full">
+                            <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier  19,1,0.22,1)] group-hover:-translate-y-full">
                               <Link href="/contact"> 
                                 <span className="flex items-center gap-2 text-lg text-white py-1">
                                 Start Your Project
@@ -294,8 +297,8 @@ export default function Home() {
                     </div>
 
                     {/* 4. Stats Box  */}
-                    <div className="w-400px  bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-2 md:p-4 mt-2">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-0 text-center text-white ">
+                    <div className="w-400px  bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-2 md:p-4 mt-2 mb-0 md:mb-2 lg:mb-2">
+                        <div className="grid grid-cols-0 md:grid-cols-4 gap-0 text-center text-white ">
                         
                         {/* Stat 1 */}
                         <div className="flex flex-col items-center">
@@ -325,10 +328,11 @@ export default function Home() {
                     </div>
 
                     {/* 5. Ratings */}
-                    <div className="flex gap-4 mt-2">
+                    <div className="flex grid grid-cols-0 md:grid-cols-2 gap-4 mt-4">
                         <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-left text-black text-xs font-bold font-['Manrope']">
-                            <span className="text-yellow-600">4.8 ⭐⭐⭐⭐⭐</span>
-                            <span className="font-normal text-[10px] text-black font-bold">Google</span>
+                            <span className="text-black font-bold">4.8 Google</span>
+                            <span className="text-yellow-600">⭐⭐⭐⭐⭐</span>
+                            
                             <span className="font-normal text-[8px] text-blue-500">Customer Reviews</span>
                         </div>
                         <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-black text-xs ">
@@ -385,7 +389,7 @@ export default function Home() {
                             </Link>
                         </div>
                     </div>
-                    <div className="flex-1 w-full h-auto md:h-[300px] relative flex flex-col items-center justify-center py-6">
+                    <div className="flex-1 w-full h-[300px] md:h-[300px] relative flex flex-col items-center justify-center py-6">
                         <Image 
                                 src="/assets/about.png" 
                                 alt="ISO 20000" 
@@ -532,7 +536,7 @@ export default function Home() {
             </section>
                 
 
-{/* Process Section */}
+{/* WHY CHOOSE US SECTION */}
     <section className="w-full bg-black py-24 px-6 md:px-16 lg:px-24 overflow-hidden">
       
       {/* Heading */}
@@ -607,8 +611,8 @@ export default function Home() {
     </section>
                 
 
-     {/* TECHNOLOGIES SECTION */}
-     <section className="w-full bg-gray-200 py-16 overflow-hidden">
+    {/* TECHNOLOGIES SECTION */}
+    <section className="w-full bg-gray-200 py-16 overflow-hidden">
       
       {/* Heading */}
       <div className="container mx-auto text-center relative z-20 px-4 mb-16">
@@ -824,7 +828,7 @@ export default function Home() {
     </section>
 
 {/* --- GLOBAL PRESENCE SECTION --- */}
-<section className="w-full bg-[#0a0a0a] py-20 px-4 md:px-8 overflow-hidden min-h-[150vh]">
+<section className="w-full bg-[#0a0a0a] py-16 px-4 md:px-8 overflow-hidden min-h-[80vh] ">
   
       {/* === HEADING SECTION === */}
       <div className="text-center mb-16 max-w-3xl mx-auto">
