@@ -92,7 +92,7 @@ export default function ContactPage() {
           <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto ">
             
             {/* Contact Form */}
-            <motion.div variants={fadeInUp} className="glass-effect p-8 bg-black/40 rounded-2xl border border-white/10 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2">
+            <motion.div variants={fadeInUp} className="glass-effect p-8 bg-black/40 rounded-2xl border border-white/10 hover:border-cyan-200/10 transition-colors shadow-sm hover:shadow-cyan-200/10 transition-all duration-0">
               <h2 className="text-2xl font-bold mb-6 text-white">Send us a Message</h2>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
@@ -173,14 +173,14 @@ export default function ContactPage() {
             <div className="flex flex-col gap-6">
                 
                 {/* Contact Info Block */}
-                <motion.div variants={fadeInUp} className="glass-effect p-8 bg-gradient-to-br from-purple-900/40 to-black/40 rounded-2xl border border-white/10 hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2">
+                <motion.div variants={fadeInUp} className="glass-effect p-8 bg-gradient-to-br from-purple-900/40 to-black/40 rounded-2xl border border-white/10 hover:border-cyan-500/30 transition-colors shadow-sm hover:shadow-cyan-200/10 transition-all duration-0">
                     <h3 className="text-xl font-bold mb-4 text-white">Contact Information</h3>
                     <div className="space-y-4">
                         <div className="flex items-start">
                             <Mail className="w-6 h-6 text-cyan-400 mr-4 mt-1" />
                             <div>
                                 <p className="text-gray-400 text-sm">Email Us</p>
-                                <a href="mailto:biz@matchbest.ai" className="text-lg font-semibold text-white hover:text-cyan-400 transition">biz@matchbest.ai</a>
+                                <a href="mailto:biz@matchbest.ai" className="text-lg font-normal text-white transition">biz@matchbest.ai</a>
                             </div>
                         </div>
                         <div className="flex items-start">
@@ -196,7 +196,7 @@ export default function ContactPage() {
                 {/* Fixed Map Section */}
                 <motion.div variants={fadeInUp} className="glass-effect p-2 bg-black/40 rounded-2xl flex-1 border border-white/10 overflow-hidden min-h-[300px]">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219.32580377827534!2d77.04373125218143!3d28.412833302456853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d229aeba0bcbb%3A0xc7c82ac32b24b289!2sSPAZE%20ITECH%20PARK%2C%20Sector%2049%2C%20Gurugram%2C%20Haryana%20122018!5e0!3m2!1sen!2sin!4v1767088202316!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224569.1177830458!2d76.82492675883871!3d28.42250146256614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1768984917502!5m2!1sen!2sin"
                     width="100%" 
                     height="100%" 
                     style={{border:0, minHeight: '300px'}} 
@@ -221,31 +221,27 @@ export default function ContactPage() {
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
             Global Presence
           </motion.h2>
-          <motion.div variants={container} className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
-            
+          <motion.div variants={container} className="grid gap-6 md:grid-cols-4 max-w-6xl mx-auto">
             {/* Office 1 */}
             <motion.div
               variants={fadeInUp}
-              className="glass-effect p-6 bg-black/40 rounded-2xl hover:border-cyan-500/30 border border-white/10 transition group hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
+              className="glass-effect p-6 bg-black/40 rounded-2xl hover:border-cyan-500/30 border border-white/10 transition group hover:border-cyan-200/10 transition-colors shadow-sm hover:shadow-cyan-200/10 transition-all duration-0"
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-cyan-500/10 flex items-center justify-center mr-4 group-hover:bg-cyan-500/20 transition">
                     <MapPin className="w-6 h-6 text-cyan-400" />
                 </div>
                 <div>
-                    <h3 className="text-xl font-bold text-white">India (HQ)</h3>
-                    <p className="text-cyan-400 text-xs uppercase tracking-wider">Research & Development</p>
+                    <h3 className="text-xl font-bold text-white">INDIA</h3>
+                    <p className="text-cyan-400 text-xs uppercase tracking-wider">R & D</p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Gurugram, Haryana 122018
-              </p>
             </motion.div>
 
             {/* Office 2 */}
             <motion.div
               variants={fadeInUp}
-              className="glass-effect p-6 bg-black/40 rounded-2xl hover:border-purple-500/30 border border-white/10 transition group hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
+              className="glass-effect p-6 bg-black/40 rounded-2xl hover:border-purple-500/30 border border-white/10 transition group hover:border-cyan-200/10 transition-colors shadow-sm hover:shadow-cyan-200/10 transition-all duration-0"
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mr-4 group-hover:bg-purple-500/20 transition">
@@ -256,15 +252,12 @@ export default function ContactPage() {
                     <p className="text-purple-400 text-xs uppercase tracking-wider">Sales & Operations</p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Sharjah Media City (Shams),<br/> Al Messaned, Sharjah, UAE
-              </p>
             </motion.div>
 
             {/* Office 3 */}
             <motion.div
               variants={fadeInUp}
-              className="glass-effect p-6 bg-black/40 rounded-2xl hover:border-blue-500/30 border border-white/10 transition group hover:border-cyan-500/30 transition-colors shadow-lg hover:shadow-cyan-500/20 transition-all duration-0 hover:-translate-y-2"
+              className="glass-effect p-6 bg-black/40 rounded-2xl hover:border-blue-500/30 border border-white/10 transition group hover:border-cyan-200/10 transition-colors shadow-sm hover:shadow-cyan-200/10 transition-all duration-0"
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mr-4 group-hover:bg-blue-500/20 transition">
@@ -275,9 +268,22 @@ export default function ContactPage() {
                     <p className="text-blue-400 text-xs uppercase tracking-wider">Client Relations</p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                1200 Smith Street, Suite 1600,<br/> Houston, TX 77002
-              </p>
+            </motion.div>
+
+            {/* Office 4 */}
+            <motion.div
+              variants={fadeInUp}
+              className="glass-effect p-6 bg-black/40 rounded-2xl hover:border-blue-500/30 border border-white/10 transition group hover:border-cyan-200/10 transition-colors shadow-sm hover:shadow-cyan-200/10 transition-all duration-0"
+            >
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mr-4 group-hover:bg-green-500/20 transition">
+                    <MapPin className="w-6 h-6 text-green-400" />
+                </div>
+                <div>
+                    <h3 className="text-xl font-bold text-white">SAUDI ARABIA</h3>
+                    <p className="text-blue-400 text-xs uppercase tracking-wider">Expansion 2025</p>
+                </div>
+              </div>
             </motion.div>
 
           </motion.div>

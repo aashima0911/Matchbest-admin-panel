@@ -44,7 +44,7 @@ const AnimatedCounter = ({ target, suffix = "", decimals = 0 }) => {
           
           let start = 0;
           const end = parseFloat(target);
-          const duration = 2000; 
+          const duration = 1000; 
           const increment = end / (duration / 16); 
 
           const timer = setInterval(() => {
@@ -58,7 +58,7 @@ const AnimatedCounter = ({ target, suffix = "", decimals = 0 }) => {
           }, 16);
         }
       },
-      { threshold: 0.5 } 
+      { threshold: 0.4 } 
     );
 
     if (ref.current) {
@@ -82,7 +82,7 @@ const valuesData = [
   {
     icon: <Rocket className="w-6 h-6" />,
     title: "Innovation & AI-led Design",
-    desc: "Pushing boundaries with cutting-edge AI solutions"
+    desc: "Pushing boundaries with AI solutions"
   },
   {
     icon: <Users className="w-6 h-6" />,
@@ -110,33 +110,38 @@ const valuesData = [
 const domainsData = [
   {
     id: "1",
-    title: "Enterprise AI & Automation",
+    title: "Automation & Development",
     desc: "Intelligent AI systems that optimise operations along with gen AI, LLMs, AI agents & intelligent automation. Also, enterprise-grade AI solutions for automation and insights."
   },
   {
     id: "2",
+    title: "Digital Transformation",
+    desc: "End-to-end digital transformation for scalable growth of businesses. Modernising legacy systems with AI, cloud & automation for future-ready enterprises."
+  },
+  {
+    id: "3",
+    title: "Healthcare & Fintech",
+    desc: "Secure, compliant systems regulated by digital solutions for healthcare and financial services. HIPAA-compliant healthcare apps & secure fintech software development platform."
+  },
+  // {
+  //   id: "3",
+  //   title: "Custom Software Development",
+  //   desc: "Custom platform to deliver end-to-end software development tailored to business needs. Scalable enterprise software with modular, secure design."
+  // },
+  {
+    id: "4",
+    title: "Generative AI",
+    desc: "A content generation platform that provide users to generate contents like video, images. Apart from this, it can also create visuals, draft stories, and produce media-cost effective to nowadays. "
+  },
+  {
+    id: "5",
     title: "Cloud & DevOps",
     desc: "AWS & Azure migration, secure cloud migration, CI/CD pipelines & DevOps engineering. Kubernetes, serverless computing & scalable cloud infrastructure, along with high-availability of DevOps."
   },
   {
-    id: "3",
-    title: "Custom Software Development",
-    desc: "Custom platform to deliver end-to-end software development tailored to business needs. Scalable enterprise software with modular, secure design."
-  },
-  {
-    id: "4",
-    title: "Healthcare & Fintech",
-    desc: "Secure, compliant systems regulated by digital solutions for healthcare and financial services. HIPAA-compliant healthcare apps & secure fintech software development platform."
-  },
-  {
-    id: "5",
+    id: "6",
     title: "OTT & Media Tech",
     desc: "Scalable OTT platforms with high-concurrency streaming, built for better performance. Cloud-powered OTT & media delivery platforms with high-traffic media systems to ensure real-time content delivery."
-  },
-  {
-    id: "6",
-    title: "Digital Transformation",
-    desc: "End-to-end digital transformation for scalable growth of businesses. Modernising legacy systems with AI, cloud & automation for future-ready enterprises."
   }
 ];
 
@@ -218,8 +223,8 @@ export default function AboutPage() {
     setTimeout(animateStats, 1000);
   }, []);
 
-  return (
-  <div className="bg-black text-white min-h-screen flex flex-col py-6 ">
+return (
+<div className="bg-black text-white min-h-screen flex flex-col py-6 ">
 
 {/* Hero Section */}
 <section className="w-full pt-22 py-2 px-4 md:px-8 mb-2 pb-4 flex justify-center">
@@ -237,7 +242,7 @@ export default function AboutPage() {
       // background: 'linear-gradient(60deg, #0b033f 0%, #030315 10%, #29354b 25%, #543e67 30%, #2a282d 50%, #5d4374 70%, #29354b 75%, #030315 90%, #030112 100%)',
       // filter: 'blur(0px)', 
       // transform: 'scale(1.2)'
-    }}>
+    }}> 
 
     </div>
     
@@ -260,7 +265,7 @@ export default function AboutPage() {
 </section>
 
 {/* ABOUT CONTENT SECTION */}
-<section className="w-full bg-black py-15 px-2 md:px-10 lg:px-14 overflow-x-hidden">
+<section className="w-full bg-black py-12 px-2 md:px-10 lg:px-14 overflow-x-hidden">
       <div className="container mx-auto max-w-[1300px]">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -274,7 +279,7 @@ export default function AboutPage() {
             </h2>
 
             {/* Divider Line */}
-            <div className="w-full h-px bg-white/10 my-8"></div>
+            <div className="w-full h-px bg-white/10 my-4"></div>
 
             {/* Paragraph Content */}
             <p className="text-white font-['Space_Grotesk'] text-sm leading-relaxed font-light mb-2">
@@ -290,7 +295,7 @@ export default function AboutPage() {
               {/* Stat 1 */}
               <div>
                 <h3 className="text-white text-3xl md:text-4xl font-['Bebas_Neue'] mb-2 tabular-nums">
-                  <AnimatedCounter target={300} suffix="+" />
+                  <AnimatedCounter target={30} suffix="+" />
                 </h3>
                 <p className="text-gray-400 text-sm font-medium tracking-wide">
                   Active Clients
@@ -414,7 +419,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* === EXPANDING IMAGE SECTION === */}
+            {/* === IMAGE SECTION === */}
             <div className="absolute bottom-0 w-full h-[200px] group-hover:h-[400px] transition-all duration-500 ease-in-out">
               <div className="relative w-full h-full px-4 pb-4">
                  <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
@@ -439,16 +444,14 @@ export default function AboutPage() {
 
 
 {/* Core Values */}
-<section className="w-full relative bg-black py-20 px-4 md:px-8 flex justify-center overflow-hidden">
+<section className="w-full relative bg-black py-12 px-4 md:px-8 flex justify-center overflow-hidden">
 
-  <div 
+      <div 
         className="absolute -top-[100px] -right-[100px] w-[500px] h-[700px] rounded-full opacity-60 pointer-events-none"
         style={{
-          // Wahi same tilted gradient pattern jo Image 2 m tha
           background: 'linear-gradient(120deg, #020010 0%, #0a0a4a 10%, #396acc 25%, #8946c4 40%, #000000 50%, #8946c4 60%, #396acc 75%, #0a0a4a 90%, #020010 100%)',
-          // Heavy Blur to create the aurora look
           filter: 'blur(100px)',
-          zIndex: 0 // Sabse peeche
+          zIndex: 0 
         }}
       ></div>
       
@@ -467,22 +470,21 @@ export default function AboutPage() {
 
         {/* === GRID LAYOUT === */}
         <div className="flex flex-wrap justify-center gap-6 relative z-10">
-          
           {valuesData.map((item, index) => (
             <div 
               key={index}
-              className="group relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] min-h-[250px] bg-black rounded-[2rem] p-8 flex flex-col items-start justify-center transition-all duration-500 hover:bg-white hover:border-transparent"
+              className="group relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] min-h-[250px] bg-black rounded-[2rem] p-0 flex flex-col items-center text-center justify-center transition-all duration-500 hover:bg-white hover:border-transparent"
             >
               
               {/* === ICON CONTAINER === */}
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:mb-12 group-hover:bg-black">
+              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-10 transition-all duration-500 group-hover:bg-black">
                 <div className="text-black transition-colors duration-500 group-hover:text-white">
                   {item.icon}
                 </div>
               </div>
 
               {/* === TEXT CONTENT === */}
-              <h3 className="text-white text-lg md:textxl font-['Manrope'] font-medium mb-3 transition-colors duration-500 group-hover:text-black">
+              <h3 className="text-white text-lg md:textxl font-['Manrope'] font-medium mb-2 transition-colors duration-500 group-hover:text-black">
                 {item.title}
               </h3>
               
@@ -500,23 +502,21 @@ export default function AboutPage() {
       
 
 {/* Domains of Excellence */}
-<section className="w-full bg-black text-white py-20 px-4 md:px-12 lg:px-20 overflow-hidden">
-      
-      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row">
-        
-        {/* === LEFT COLUMN: CONTENT & BUTTON === */}
+<section className="w-full bg-black text-white py-20 px-4 md:px-12 lg:px-20 overflow-hidden">  
+    <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row">
+      {/* === LEFT COLUMN: CONTENT & BUTTON === */}
         <div className="w-full lg:w-[35%] pr-0 lg:pr-16 mb-16 lg:mb-0 relative flex flex-col justify-center">
           
           {/* Background Purple Glow (Left side only) */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[300px] h-[300px] bg-purple-900/40 blur-[100px] rounded-full pointer-events-none -z-10"></div>
 
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-['Manrope'] font-normal leading-tight mb-8">
-            Our Domains of <br /> Excellence
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-['Manrope'] font-normal leading-tight mb-8">
+            Our  Domains<br />of  Excellence
           </h2>
 
           {/* Subtext */}
-          <p className="text-gray-400 text-lg font-light leading-relaxed mb-12 max-w-md">
+          <p className="text-gray-400 text-lg font-light leading-relaxed mb-16 max-w-md">
             These are the areas where our strengths, innovation, and commitment create meaningful results.
           </p>
 
@@ -549,19 +549,15 @@ export default function AboutPage() {
         <div className="w-full lg:w-[65%]">
           
           {/* Grid Container */}
-          {/* Negative margins (-ml, -mt) use kiye hain taaki borders overlap karein aur double lines na dikhein */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            
             {domainsData.map((item, index) => (
               <div 
                 key={index}
-                // Border logic: White/20 border. Negative margin se lines chipak gayi hain.
-                // hover:z-10 zaruri hai taaki white box baaki lines k upar aa jaye.
-                className="group relative border border-white/20 p-8 md:p-10 flex flex-col justify-between min-h-[320px] -ml-[1px] -mt-[1px] transition-colors duration-300 hover:bg-white hover:z-10 hover:border-transparent"
+                className="group relative border border-white/20 p-8 md:p-10 flex flex-col justify-start gap-2 min-h-[320px] -ml-[1px] -mt-[1px] transition-colors duration-300 hover:bg-white hover:z-10 hover:border-transparent"
               >
                 
-                {/* Number (01, 02...) */}
-                <span className="text-4xl md:text-5xl font-['Manrope'] font-light text-white/90 mb-6 transition-colors duration-300 group-hover:text-black">
+                {/* Number */}
+                <span className="text-4xl md:text-5xl font-['Manrope'] font-light text-white/90 transition-colors duration-300 group-hover:text-black">
                   {item.id}
                 </span>
 
@@ -588,10 +584,6 @@ export default function AboutPage() {
       </div>
     </section>
 
-    
-{/* GLOBAL PRESENCE */}
-    
-      
 
 {/* --- CONTACT SECTION --- */}
 {/* <section className="relative z-10 py-20 bg-black text-center px-4">
