@@ -241,8 +241,7 @@ export default function Home() {
             {/* --- HERO SECTION --- */}
             <section className="relative min-h-screen md:min-h-[130vh] flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
             <div 
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-purple-600/10 blur-[120px] rounded-half pointer-events-none"
-            ></div>
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-purple-600/10 blur-[120px] rounded-half pointer-events-none"></div>
                 <div 
                     className="absolute top-0 left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none
                     w-[100vw]       h-[10vh]           /* Mobile */
@@ -857,7 +856,7 @@ export default function Home() {
         {locations.map((loc, index) => (
           <div 
             key={index}
-            className="absolute flex flex-col items-center group cursor-pointer z-50 "
+            className="absolute flex flex-col items-center group cursor-pointer z-10 "
             style={{ top: loc.top, left: loc.left }}
           >
             
@@ -872,7 +871,7 @@ export default function Home() {
             <div 
               className={`
                 absolute bg-white rounded-md min-w-[100px] text-center
-                transition-all duration-300
+                transition-all duration-300 
 
                 ${loc.align.includes('top') ? 'items-end' : ''}
                 ${loc.align.includes('bottom') ? 'items-start' : ''}

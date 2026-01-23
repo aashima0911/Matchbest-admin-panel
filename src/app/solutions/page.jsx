@@ -43,10 +43,13 @@ const solutionsData = [
   }
 ];
 
+
+
 const SolutionsPage = () => {
   return (
   <div className="bg-black text-white min-h-screen flex flex-col py-8 "> 
-  <section className="w-full px-4 md:px-8 mb-2 ">
+  <section className="w-fullpx-4 md:px-8 mb-2 ">
+
     <div className="bg-black text-white min-h-screen flex flex-col ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
