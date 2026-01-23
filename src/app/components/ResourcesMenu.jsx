@@ -8,16 +8,23 @@ const resourcesData = [
   {
     id: 0,
     name: "Blogs",
-    description: "Explore our latest insights, technical deep dives, and industry trends in our dedicated blog section. Stay ahead with expert knowledge.",
+    description: "Explore expert insights, in-depth technical articles, and the latest industry trends. Our blogs share practical knowledge, emerging technologies, and thought leadership to help you stay informed and ahead in a fast-evolving digital world.",
     image: "/assets/blogs.jpg",
     link: "/blogs"
   },
   {
     id: 1,
     name: "Press Releases",
-    description: "Stay updated with our latest company announcements, product launches, and media coverage. See how we are making headlines.",
+    description: "Stay updated with our latest announcements, company milestones, partnerships, and media coverage. Our press releases highlight key achievements, innovations, and news shaping our journey and impact across the technology landscape.",
     image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop",
     link: "/press-releases"
+  },
+  {
+    id: 2,
+    name: "Career",
+    description: "Discover exciting career opportunities and grow with a team driven by innovation and collaboration. We offer a dynamic work environment where your skills, ideas, and ambition help build meaningful technology solutions and shape the future.",
+    image: "/assets/career1.jpg",
+    link: "/Career"
   }
 ];
 
@@ -58,7 +65,8 @@ const ResourcesMenu = () => {
         <div className="max-w-[1400px] mx-auto px-8 py-10 flex items-start gap-12">
           
           {/* LEFT SIDE */}
-          <div className="w-[30%] flex flex-col gap-4 border-r border-gray-100 pr-8">
+          <div className="w-[20%] flex flex-col gap-4 border-r border-gray-100 pr-8">
+            <Link href={resourcesData[activeTab].link}>
             {resourcesData.map((item, index) => (
               <div 
                 key={item.id}
@@ -76,10 +84,11 @@ const ResourcesMenu = () => {
                 {activeTab === index && <span className="text-purple-500">→</span>}
               </div>
             ))}
+            </Link>
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="w-[70%]">
+          <div className="w-[80%]">
             <div className="flex bg-gray-50 rounded-2xl overflow-hidden h-[300px]">
               
               {/* Text */}
@@ -91,12 +100,12 @@ const ResourcesMenu = () => {
                     {resourcesData[activeTab].description}
                   </p>
                   
-                  <Link 
+                  {/* <Link 
                     href={resourcesData[activeTab].link}
                     className="self-start text-sm font-semibold text-purple-600 border-b border-purple-600 pb-0.5 hover:text-purple-800 hover:border-purple-800 transition-colors"
                   >
                       View {resourcesData[activeTab].name} →
-                  </Link>
+                  </Link> */}
               </div>
 
               {/* Image */}

@@ -25,8 +25,8 @@ export default function Navbar() {
     : [
         { href: '/', label: t('navbar.home', 'Home') },
         { href: '/about', label: t('navbar.about', 'About Us') },
-        { href: '/solutions', label: 'Solutions' },
-        // { href: '', label: 'Resources' },
+        { href: '', label: 'Solutions' },
+        { href: '', label: 'Resources' },
         { href: '/contact', label: 'Contact' },
       ], [pathname, t]);
 
@@ -53,44 +53,52 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-6 lg:space-x-10 items-center ml-auto">
           {navLinks.map((link) => {
             // === CASE 1: SOLUTIONS ===
-            if (link.label === 'Solutions' || link.label === 'solutions') {
-              return (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className={`
-                      relative font-['Space_Grotesk'] font-normal text-[16px] leading-[32px] tracking-normal text-white transition-colors duration-300
+            // if (link.label === 'Solutions' || link.label === 'solutions') {
+            //   return (
+            //     <li key={link.label}>
+            //       <Link
+            //         href={link.href}
+            //         className={`
+            //           relative font-['Space_Grotesk'] font-normal text-[16px] leading-[32px] tracking-normal text-white transition-colors duration-300
 
-                      /* Dot Animation Styles (Jo aapka pehle tha) */
-                      after:content-['']
-                      after:absolute
-                      after:left-1/2
-                      after:-translate-x-1/2
-                      after:-bottom-3
-                      after:w-1.5
-                      after:h-1.5
-                      after:bg-purple-500
-                      after:rounded-full
-                      after:opacity-0
-                      hover:after:opacity-100
-                      after:transition-all
-                      after:duration-300
+            //           /* Dot Animation Styles (Jo aapka pehle tha) */
+            //           after:content-['']
+            //           after:absolute
+            //           after:left-1/2
+            //           after:-translate-x-1/2
+            //           after:-bottom-3
+            //           after:w-1.5
+            //           after:h-1.5
+            //           after:bg-purple-500
+            //           after:rounded-full
+            //           after:opacity-0
+            //           hover:after:opacity-100
+            //           after:transition-all
+            //           after:duration-300
 
-                      ${pathname === link.href ? 'text-purple-900 ' : 'hover:text-white'}
-                    `}
-                    aria-current={pathname === link.href ? 'page' : undefined}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            }
+            //           ${pathname === link.href ? 'text-purple-900 ' : 'hover:text-white'}
+            //         `}
+            //         aria-current={pathname === link.href ? 'page' : undefined}
+            //       >
+            //         {link.label}
+            //       </Link>
+            //     </li>
+            //   );
+            // }
             
             // === CASE 2: RESOURCES (NEW) ===
             if (link.label === 'Resources' || link.label === 'resources') {
               return (
                 <li key={link.label} className="h-full flex items-center">
                   <ResourcesMenu />
+                </li>
+              );
+            }
+
+            if (link.label === 'Solutions' || link.label === 'solutions') {
+              return (
+                <li key={link.label} className="h-full flex items-center">
+                  <SolutionsMenu />
                 </li>
               );
             }

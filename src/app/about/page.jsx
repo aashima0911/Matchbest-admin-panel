@@ -271,7 +271,7 @@ return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* === LEFT COLUMN: TEXT CONTENT === */}
-          <div className="flex flex-col">
+          <div className="flex flex-col px-4 md:px-4 lg:px-4">
             
             {/* Heading */}
             <h2 className="text-white text-2xl md:text-3xl font-['Manrope'] font-medium tracking-tight">
@@ -282,7 +282,7 @@ return (
             <div className="w-full h-px bg-white/10 my-4"></div>
 
             {/* Paragraph Content */}
-            <p className="text-white font-['Space_Grotesk'] text-sm leading-relaxed font-light mb-2">
+            <p className="text-white text-justify font-['Space_Grotesk'] text-sm leading-relaxed font-light mb-2">
               At MatchBest Group, we not only adapt changes - we engineer them. 
               MatchBest Group has evolved into a next-gen technology powerhouse. 
               We are an intelligent and scalable consulting partner helping enterprises turn bold ideas into real-world impact.
@@ -327,7 +327,7 @@ return (
           </div>
 
           {/* === RIGHT COLUMN: IMAGE === */}
-          <div className="relative w-full  rounded-2xl overflow-hidden group z-10 lg:-mt-16 lg:-mr-16 lg:-ml-0">
+          <div className="relative w-full rounded-2xl overflow-hidden group z-10 lg:-mt-16 lg:-mr-16 lg:-ml-0">
              <Image 
                src="/assets/about-team.avif" 
                alt="MatchBest Team"
