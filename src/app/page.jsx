@@ -929,7 +929,7 @@ export default function Home() {
 
 
 {/* --- CONTACT SECTION --- */}
-<section className="relative z-10 py-20 bg-black text-center px-4">
+<section className="relative z-10 py-8 bg-black text-center px-4">
     <div className="max-w-3xl mx-auto glass-effect rounded-2xl p-10 relative overflow-hidden">
         
         {/* Background SVG */}

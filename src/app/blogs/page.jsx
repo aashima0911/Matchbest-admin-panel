@@ -105,10 +105,10 @@ import BlogsClient from "../../components/BlogsClient";
 //   }
 // ];
 
-const filters = ["All","Learn", "Tech", "Inspiration", "News"];
+const filters = ["All","Learn", "Tech", "News"];
 
-export default function BlogsPage() {
-    const blogs = getBlogPosts();
+export default async function BlogsPage() {
+    const blogs = await getBlogPosts();
   console.log("BLOGS FROM SERVER", blogs);
 
   return <BlogsClient blogs={blogs} />;

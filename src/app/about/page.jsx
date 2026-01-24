@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { Send, Binoculars } from 'lucide-react';
+import { getBlogPosts } from '../../lib/blogUtils';
 
 
 const TextPressure = dynamic(() => import('../components/layout/text.jsx'), { ssr: false });
@@ -145,53 +146,19 @@ const domainsData = [
   }
 ];
 
-const locations = [
-  {
-    country: "USA",
-    role: "Client Relations",
-    image: "/assets/cloud.png", 
-    addressTitle: "Client Relations",
-    address: "1200 Smith Street, Suite 1600, Houston, TX 77002",
-    top: "35%", 
-    left: "25%", 
-    align: "top" 
-  },
-  {
-    country: "SAUDI ARABIA",
-    role: "Expansion 2025",
-    image: "/assets/cloud.png", 
-    addressTitle: "London Office",
-    address: "Expansion 2025",
-    top: "46%", 
-    left: "58%", 
-    align: "top-left"
-  },
-  {
-    country: "UAE",
-    role: "Sales & Operations",
-    image: "/assets/cloud.png", 
-    addressTitle: "London Office",
-    address: "Lettsom House, 11 Chandos Pl, London W1G 9DP, UK",
-    top: "50%", 
-    left: "62%", 
-    align: "top-right"
-  },
-  {
-    country: "INDIA",
-    role: "Research & Development",
-    // image: "/assets/cloud.png",
-    addressTitle: "R&D Center",
-    address: "Tech Park, Sector 126, Noida, Uttar Pradesh 201304",
-    top: "50%", 
-    left: "67%", 
-    align: "bottom"
-  },
-];
-
-
 export default function AboutPage() {
   const { t } = useTranslation();
   const [stats, setStats] = useState({ projects: 0, clients: 0, countries: 0, years: 0 });
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    // Get all blog posts and show only the first 3
+    const fetchBlogs = async () => {
+      const allBlogs = await getBlogPosts();
+      setBlogs(allBlogs.slice(0, 3));
+    };
+    fetchBlogs();
+  }, []);
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
@@ -231,17 +198,13 @@ return (
       
   {/* === CARD CONTAINER === */}
   <div 
-    className="relative w-full max-w-[1300px] h-[150px] md:h-[200px] rounded-[3rem] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5">
+    className="relative w-full max-w-[1300px] h-[150px] md:h-[200px] rounded-[32px] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5">
 
     <div className="absolute inset-0 z-0" 
       style={{
-      background: 'linear-gradient(60deg, #020010 0%, #0a0a4a 10%, #0055ff 25%, #7e22ce 40%, #000000 50%, #7e22ce 60%, #0055ff 75%, #0a0a4a 90%, #020010 100%)',
-      filter: 'blur(100px)', 
+      background: 'linear-gradient(40deg, #020010 0%, #0a0a4a 10%, #391671 25%, #471671 30%, #000000 45%, #000000 55%, #471671 75%, #391671 80%, #0a0a4a 90%, #020010 100%)',
+      filter: 'blur(80px)', 
       transform: 'scale(1.2)'
-      // style={{
-      // background: 'linear-gradient(60deg, #0b033f 0%, #030315 10%, #29354b 25%, #543e67 30%, #2a282d 50%, #5d4374 70%, #29354b 75%, #030315 90%, #030112 100%)',
-      // filter: 'blur(0px)', 
-      // transform: 'scale(1.2)'
     }}> 
 
     </div>
@@ -473,7 +436,7 @@ return (
           {valuesData.map((item, index) => (
             <div 
               key={index}
-              className="group relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] min-h-[250px] bg-black rounded-[2rem] p-0 flex flex-col items-center text-center justify-center transition-all duration-500 hover:bg-white hover:border-transparent"
+              className="group relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] min-h-[200px] bg-black rounded-[24px] flex flex-col items-center text-center justify-center transition-all duration-500 hover:bg-white hover:border-transparent"
             >
               
               {/* === ICON CONTAINER === */}
@@ -502,7 +465,7 @@ return (
       
 
 {/* Domains of Excellence */}
-<section className="w-full bg-black text-white py-20 px-4 md:px-12 lg:px-20 overflow-hidden">  
+<section className="w-full bg-black text-white py-16 px-4 md:px-12 lg:px-20 overflow-hidden">  
     <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row">
       {/* === LEFT COLUMN: CONTENT & BUTTON === */}
         <div className="w-full lg:w-[35%] pr-0 lg:pr-16 mb-16 lg:mb-0 relative flex flex-col justify-center">
@@ -579,6 +542,75 @@ return (
 
           </div>
 
+        </div>
+
+      </div>
+    </section>
+
+
+{/* --- BLOGS SECTION --- */}
+<section className="bg-black py-2 px-6 md:px-12">
+  <div className="text-center mb-16 max-w-3xl mx-auto">
+        <h2 className="text-white text-4xl md:text-5xl font-['Manrope'] font-normal mb-6">
+          Our Blogs
+        </h2>
+        <p className="text-gray-400 text-lg font-light leading-relaxed">
+          Explore our blogs share practical knowledge, emerging technologies in a fast-evolving digital world.</p>
+      </div>
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Row of 3 Blogs */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {blogs.map((blog) => (
+            <Link key={blog.slug} href={`/blogs/${blog.slug}`} className="group cursor-pointer">
+              {/* Image Container with Expand/Zoom effect on hover */}
+              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6">
+                <img 
+                  src={blog.image} 
+                  alt={blog.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                />
+                {/* Category Badge */}
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-black text-[10px] uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-2">
+                  {blog.categories && blog.categories.length > 0 ? blog.categories[0] : 'Article'} <span className="w-1.5 h-1.5 bg-black rounded-full"></span>
+                </div>
+              </div>
+
+              {/* Blog Title */}
+              <h3 className="text-white text-md md:text-xl font-medium leading-tight mb-4 group-hover:text-purple-400 transition-colors">
+                {blog.title}
+              </h3>
+              <div className="flex items-center gap-3 mt-2">
+              <div className="relative w-6 h-6 rounded-full overflow-hidden">
+                      <Image src={blog.image} alt={blog.author} fill className="object-cover" />
+                    </div>
+              <div className="text-xs text-gray-400 font-medium flex items-center gap-2">
+                      <span className="text-gray-200">{blog.author}</span>
+                      <span className="w-1 h-1 bg-gray-600 rounded-full"></span>
+                      <span>{blog.date}</span>
+                    </div>    
+                    </div>  
+
+              {/* Link with Arrow */}
+              {/* <div className="flex items-center gap-2 text-white/70 group-hover:text-white transition-all">
+                <span className="text-sm font-medium border-b border-transparent group-hover:border-white transition-all">
+                  Read article
+                </span>
+                <span className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+              </div> */}
+            </Link>
+          ))}
+        </div>
+
+        {/* More Blogs Button */}
+        <div className="mt-16 flex justify-center">
+          <Link 
+            href="/blogs" 
+            className="group relative inline-flex items-center gap-3 px-6 py-2 bg-white text-black rounded-full font-bold text-xs tracking-widest hover:bg-black hover:text-white hover:border border-white"
+          >
+            More Blogs
+            <span className="text-lg ">→</span>
+          </Link>
         </div>
 
       </div>
