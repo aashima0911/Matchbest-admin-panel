@@ -164,7 +164,7 @@ const steps = [
 
 const faqData = [
   { id: 1, question: "How can we help your business?", answer: "We provide end-to-end technology solutions including AI automation, cloud infrastructure, and custom software development tailored to your specific business goals." },
-  { id: 2, question: "Where is MatchBest Group located?", answer: "We operate globally with our headquarters based in [Your City], delivering remote and on-site solutions worldwide." },
+  { id: 2, question: "Where is MatchBest Group located?", answer: "We operate globally with our headquarters, delivering remote and on-site solutions worldwide." },
   { id: 3, question: "How do I start a project with MatchBest?", answer: "Simply click the 'Contact Us' button or reach out via email. We'll schedule a consultation to discuss your needs." },
   { id: 4, question: "Does MatchBest Group work with startups?", answer: "Yes, we specialize in helping startups scale by providing cost-effective and robust technology foundations." },
   { id: 5, question: "What technologies do you use for development?", answer: "We use modern stacks including React, Next.js, Node.js, Python, AWS, and Docker, ensuring your tech is future-proof." },

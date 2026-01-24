@@ -16,7 +16,7 @@ const resourcesData = [
     id: 1,
     name: "Press Releases",
     description: "Stay updated with our latest announcements, company milestones, partnerships, and media coverage. Our press releases highlight key achievements, innovations, and news shaping our journey and impact across the technology landscape.",
-    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop",
+    image: "/assets/press.jpg",
     link: "/press-releases"
   },
   {
