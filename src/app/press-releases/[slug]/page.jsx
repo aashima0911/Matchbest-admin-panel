@@ -65,7 +65,7 @@ const markdownComponents = {
 export default async function PressReleaseDetailPage({ params }) {
   const { slug } = await params;
   
-  const release = getPressReleaseBySlug(slug); 
+  const release = await getPressReleaseBySlug(slug); 
 
   if (!release) {
     return <div className="text-white text-center pt-40">Press Release not found</div>;
