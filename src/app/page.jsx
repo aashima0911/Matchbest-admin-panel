@@ -353,7 +353,7 @@ export default function Home() {
             <section className="container mx-auto py-16 px-4 md:px-6 mb-8" data-aos="fade-up">
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1">
-                        <h2 className="font-[''Manrope] text-3xl md:text-4xl font-normal text-white mb-6 tracking-wide">
+                        <h2 className="font-['Manrope'] text-3xl md:text-4xl font-normal text-white mb-6 tracking-wide">
                             Where Vision Meets Reality <br/>
                             
                         </h2>
