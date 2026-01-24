@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import {
   Mail,
   Phone,
+  MapPin,
   ArrowUpRight
 } from 'lucide-react';
 
@@ -63,17 +64,13 @@ export default function ContactPage() {
         <section className="w-[90%] md:w-full pt-16 py-2 px-4 md:px-12 lg:px-18 mb-2 pb-4 flex justify-center">
         {/* === CARD CONTAINER === */}
         <div 
-          className="relative w-full max-w-[1300px] h-[150px] md:h-[200px] rounded-[3rem] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5">
+          className="relative w-full max-w-[1300px] h-[150px] md:h-[200px] rounded-[32px] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5">
 
           <div className="absolute inset-0 z-0" 
             style={{
-            background: 'linear-gradient(60deg, #020010 0%, #0a0a4a 10%, #0055ff 25%, #7e22ce 40%, #000000 50%, #7e22ce 60%, #0055ff 75%, #0a0a4a 90%, #020010 100%)',
-            filter: 'blur(100px)', 
+            background: 'linear-gradient(40deg, #020010 0%, #0a0a4a 10%, #391671 25%, #471671 30%, #000000 45%, #000000 55%, #471671 75%, #391671 80%, #0a0a4a 90%, #020010 100%)',
+            filter: 'blur(80px)', 
             transform: 'scale(1.2)'
-            // style={{
-            // background: 'linear-gradient(60deg, #0b033f 0%, #030315 10%, #29354b 25%, #543e67 30%, #2a282d 50%, #5d4374 70%, #29354b 75%, #030315 90%, #030112 100%)',
-            // filter: 'blur(0px)', 
-            // transform: 'scale(1.2)'
           }}> 
 
           </div>
@@ -113,24 +110,59 @@ export default function ContactPage() {
             </p>
           </div>
 
+          {/* === MAP === */}
           <motion.div variants={fadeInUp} className="glass-effect p-2 bg-black/40 rounded-2xl flex-1 border border-white/10 overflow-hidden min-h-[250px] md:min-h-[300px]">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224569.1177830458!2d76.82492675883871!3d28.42250146256614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1768984917502!5m2!1sen!2sin"
-                    width="100%" 
-                    height="100%" 
-                    style={{border:0, minHeight: '300px'}} 
-                    allowFullScreen="" 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500"
-                ></iframe>
-                </motion.div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224569.1177830458!2d76.82492675883871!3d28.42250146256614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1768984917502!5m2!1sen!2sin"
+              width="100%" 
+              height="100%" 
+              style={{border:0, minHeight: '300px'}} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500"
+          ></iframe>
+        </motion.div>
+
+        {/* === GLOBAL PRESENCE SECTION === */}
+        <div className="pt-2">
+        <div className="flex items-center gap-3 mb-6">
+          <MapPin className="w-6 h-6 text-purple-500" />
+          <h3 className="text-2xl md:text-3xl font-normal tracking-tight">Global Presence</h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { country: "India", role: "R&D" },
+            { country: "USA", role: "Client Relationship" },
+            { country: "UAE", role: "Sales & Operation" },
+            { country: "Saudi Arabia", role: "Operation" }
+          ].map((item) => (
+            <div key={item.country} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 h-38 flex flex-col justify-between group">
+              {/* Top Content: Heading */}
+              <div className="flex items-center gap-3">
+                <h4 className="text-lg font-medium text-white transition-colors">
+                  {item.country}
+                </h4>
+              </div>
+
+              {/* Bottom Content: Aligned to Baseline */}
+              <div className="items-baseline">
+                <p className="inline-block py-1 text-purple-300 text-[10px] uppercase tracking-wider font-bold">
+                  {item.role}
+                </p>
+              </div>
+
+            </div>
+          ))}
 
         </div>
+      </div>
+      </div>
 
 
         {/* === RIGHT SIDE: FORM CARD === */}
-        <div className="bg-white text-black rounded-[40px] p-8 md:p-12 shadow-2xl w-full">
+        <div className="bg-white text-black rounded-[32px] p-8 md:p-12 shadow-2xl w-full">
           
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-3xl font-medium mb-3">Have something in mind?</h3>

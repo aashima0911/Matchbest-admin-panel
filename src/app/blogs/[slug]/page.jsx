@@ -66,7 +66,7 @@ const markdownComponents = {
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
   
-  const post = getPostBySlug(slug); 
+  const post = await getPostBySlug(slug); 
 
   if (!post) {
     return <div className="text-white text-center pt-40">Post not found</div>;

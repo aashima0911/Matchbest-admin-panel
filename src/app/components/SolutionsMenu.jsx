@@ -35,30 +35,32 @@ const solutionsData = [
   },
   {
     id: 3,
-    name: "Vitaay",
-    description: "Sustainable energy software helping companies track carbon footprints and optimize resource usage.",
-    image: "/assets/vitaay.avif",
-    link: "https://www.vitaay.ai/",
-    extraLink: "", 
-    extraLinkText: "View Live Demo ↗",
-  },
-  {
-    id: 4,
-    name: "Elite Maverick",
-    description: "Premium financial technology solutions offering secure trading platforms.",
-    image: "/assets/elite.png",
-    link: "https://www.elitemaverick.com/",
-    extraLink: "", 
-    extraLinkText: "View Live Demo ↗",
-  },
-  {
-    id: 5,
     name: "Streamplay",
     description: "Leader in OTT and media streaming technology providing high-concurrency content delivery.",
     image: "/assets/stream_play.png",
     link: "https://streamplay.ai/",
     extraLink: "https://youtu.be/uXL5Oie00pE", 
     extraLinkText: "View Live Demo ↗",
+    
+  },
+  {
+    id: 4,
+    name: "Vitaay",
+    description: "Sustainable energy software helping companies track carbon footprints and optimize resource usage.",
+    image: "/assets/vitaay.avif",
+    link: "https://www.vitaay.ai/",
+    extraLink: "", 
+    // extraLinkText: "View Live Demo ↗",
+    
+  },
+  {
+    id: 5,
+    name: "Elite Maverick",
+    description: "Premium financial technology solutions offering secure trading platforms.",
+    image: "/assets/elite.png",
+    link: "https://www.elitemaverick.com/",
+    extraLink: "", 
+    // extraLinkText: "View Live Demo ↗",
   }
 ];
 
@@ -91,6 +93,11 @@ const SolutionsMenu = () => {
           {/* LEFT SIDE: LIST */}
           <div className="w-[30%] flex flex-col gap-4 border-r border-gray-200 pr-8">
             {solutionsData.map((item, index) => (
+            <Link 
+              href={solutionsData[activeTab].link || "#"}
+              target="_blank"
+              className=""
+                  > 
               <div 
                 key={item.id}
                 onMouseEnter={() => setActiveTab(index)}
@@ -104,8 +111,10 @@ const SolutionsMenu = () => {
               >
                 {item.name}
               </div>
+              </Link>
             ))}
           </div>
+           
 
           {/* RIGHT SIDE: CARD PREVIEW */}
           <div className="w-[70%]">
@@ -120,20 +129,16 @@ const SolutionsMenu = () => {
                     {solutionsData[activeTab].description}
                   </p>
 
-                  <Link 
-                    href={solutionsData[activeTab].link || "#"}
-                    target="_blank"
-                    className="self-start text-sm font-bold text-purple-600 border-b border-purple-500 pb-0.5 hover:text-purple-800 hover:border-purple-900 transition-colors mb-4"
-                  >
-                      Learn More →
-                  </Link>
+                  
+                      {/* Learn More →
+                  </Link> */}
 
                   <Link 
                       href={solutionsData[activeTab].extraLink}
                       target="_blank" 
                       className="self-start text-sm font-semibold text-gray-600 hover:text-purple-600 mb-3 border-b border-gray-500 hover:border-purple-600 transition-colors flex items-center gap-1"
                   >
-                      {solutionsData[activeTab].extraLinkText || "View Details"}
+                      {solutionsData[activeTab].extraLinkText }
                   </Link>
 
               </div>

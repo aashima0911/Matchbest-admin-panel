@@ -1,3 +1,5 @@
+'use server';
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -6,7 +8,7 @@ import matter from 'gray-matter';
 const blogsDirectory = path.join(process.cwd(), 'src/content/blogs');
 
 // 1. SAARI POSTS LAANE KE LIYE (List Page ke liye)
-export function getBlogPosts() {
+export async function getBlogPosts() {
   if (!fs.existsSync(blogsDirectory)) {
     return [];
   }
@@ -29,7 +31,7 @@ export function getBlogPosts() {
 }
 
 // 2. EK SINGLE POST LAANE KE LIYE (Detail Page ke liye)
-export function getPostBySlug(slug) {
+export async function getPostBySlug(slug) {
   // File ka naam slug se match karo
   const fullPath = path.join(blogsDirectory, `${slug}.mdx`);
   
@@ -51,7 +53,7 @@ export function getPostBySlug(slug) {
 
 const pressDirectory = path.join(process.cwd(), 'src/content/press-releases');
 
-export function getPressReleases() {
+export async function getPressReleases() {
   if (!fs.existsSync(pressDirectory)) return [];
   const fileNames = fs.readdirSync(pressDirectory);
   return fileNames.map((fileName) => {
@@ -64,7 +66,7 @@ export function getPressReleases() {
 }
 
 // 3. EK SINGLE PRESS RELEASE LAANE KE LIYE (Detail Page ke liye)
-export function getPressReleaseBySlug(slug) {
+export async function getPressReleaseBySlug(slug) {
   // File ka naam slug se match karo
   const fullPath = path.join(pressDirectory, `${slug}.mdx`);
   

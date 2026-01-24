@@ -95,17 +95,13 @@ const internships = jobsData.filter(job => job.category === 'Internships');
       ></div>
 
         <div 
-            className="relative w-full max-w-[1300px] h-[150px] md:h-[200px] rounded-[3rem] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5 mb-8">
+            className="relative w-full max-w-[1300px] h-[150px] md:h-[200px] rounded-[32px] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5 mb-8">
 
             <div className="absolute inset-0 z-0" 
             style={{
-            background: 'linear-gradient(60deg, #020010 0%, #0a0a4a 10%, #0055ff 25%, #7e22ce 40%, #000000 50%, #7e22ce 60%, #0055ff 75%, #0a0a4a 90%, #020010 100%)',
-            filter: 'blur(100px)', 
-            transform: 'scale(1.2)'
-            // style={{
-            // background: 'linear-gradient(60deg, #0b033f 0%, #030315 10%, #29354b 25%, #543e67 30%, #2a282d 50%, #5d4374 70%, #29354b 75%, #030315 90%, #030112 100%)',
-            // filter: 'blur(0px)', 
-            // transform: 'scale(1.2)'
+            background: 'linear-gradient(40deg, #020010 0%, #0a0a4a 10%, #391671 25%, #471671 30%, #000000 45%, #000000 55%, #471671 75%, #391671 80%, #0a0a4a 90%, #020010 100%)',
+      filter: 'blur(80px)', 
+      transform: 'scale(1.2)'
             }}> 
             </div>
             
@@ -172,7 +168,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
 
 
     {/* === 3. CURRENT OPENINGS SECTION === */}
-      <section id="open-roles" className="container mx-auto px-8 md:px-12 mb-32">
+      <section id="open-roles" className="container mx-auto px-8 md:px-12 ">
 
         <div className="border-t border-white/20 mb-10"></div>
         
@@ -196,7 +192,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
             {/* Grid for Technical Jobs */}
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-x divide-white/20 border border-white/20">
                 {techJobs.map((job) => (
-                    <div key={job.id} className="p-6 flex flex-col h-full transition-colors duration-300">
+                    <div key={job.id} className="p-6 flex flex-col h-full transition-colors">
                         <h4 className="text-xl font-medium mb-4 text-white font-['Space_Grotesk']">
                             {job.title}
                         </h4>
@@ -205,7 +201,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
                         </p>
                         <Link 
                             href={`/Career/${job.id}`}
-                            className="w-full py-2 bg-[#1A1A1A] hover:bg-[#252525] text-white text-sm font-medium rounded-lg transition-all text-center mt-auto"
+                            className="w-full py-2 bg-[#1A1A1A] text-white text-sm font-medium rounded-lg hover:text-black hover:bg-white/60 text-center mt-auto"
                         >
                             Apply Now
                         </Link>
@@ -231,7 +227,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
                         </p>
                         <Link 
                             href={`/Career/${job.id}`}
-                            className="w-full py-2 bg-[#1A1A1A] hover:bg-[#252525] text-white text-sm font-medium rounded-lg transition-all text-center mt-auto"
+                            className="w-full py-2 bg-[#1A1A1A] hover:bg-[#252525] text-white text-sm font-medium rounded-lg hover:text-black hover:bg-white/60 transition-all text-center mt-auto"
                         >
                             Apply Now
                         </Link>
@@ -239,8 +235,8 @@ const internships = jobsData.filter(job => job.category === 'Internships');
                 ))}
             </div>
 
-            {/* === CATEGORY 3: SALES === */}
-            <div className="py-8 border border-white/20 mt-12">
+            {/* === CATEGORY 3: Internships === */}
+            <div className="py-3 border border-white/20 mt-12">
                 <h3 className="px-4 text-2xl text-gray-400 font-['Manrope']">Internships Openings</h3>
             </div>
 
@@ -256,7 +252,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
                         </p>
                         <Link 
                             href={`/Career/${job.id}`}
-                            className="w-full py-2 bg-[#1A1A1A] hover:bg-[#252525] text-white text-sm font-medium rounded-lg transition-all text-center mt-auto"
+                            className="w-full py-2 bg-[#1A1A1A] hover:bg-[#252525] text-white text-sm font-medium rounded-lg hover:text-black hover:bg-white/60 transition-all text-center mt-auto"
                         >
                             Apply Now
                         </Link>

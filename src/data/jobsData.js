@@ -209,7 +209,7 @@ export const jobsData = [
   {
     id: 11, 
     category: "Internships",
-    title: "Business Development Executive Intern",
+    title: "Business Dev Executive Intern",
     postedDate: "23 Dec, 2025",
     expiryDate: "",
     type: "Full-Time",
