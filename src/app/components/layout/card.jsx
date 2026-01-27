@@ -226,9 +226,9 @@ export default function VerticalsCarousel() {
                   <div className="relative h-full p-8 flex flex-col">
                     {/* Content */}
                     <div className="flex flex-col h-full">
-                      <div key={vertical.id} className="relative group mb-12"> 
+                      <div key={vertical.id} className="relative group mb-14"> 
                         <div 
-                          className="absolute -top-24 -left-6 z-20 mt-12  font-['Manrope'] font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
+                          className="absolute -top-24 -left-6 z-20 mt-12 font-['Manrope'] font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
                           style={{ 
                             WebkitTextStroke: '2px white',
                             paintOrder: 'stroke fill'
@@ -237,7 +237,7 @@ export default function VerticalsCarousel() {
                           {index + 4}
                         </div>
                     {/* Logo/Title Section */}
-                      <div className="h-8 mb-0 flex items-center justify-center">
+                      <div className="h-12 mb-0 flex items-center justify-center">
                         {vertical.logo ? (
                           <Image
                             src={vertical.logo || "/placeholder.svg"}
