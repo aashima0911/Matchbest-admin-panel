@@ -10,7 +10,7 @@ export default function VerticalsCarousel() {
     {
       id: 1,
       name: "MatchBest",
-      logo: "/assets/mat.png",
+      logo: "/assets/matchbest-removebg-preview.png",
       link: "https://matchbestsoftware.com/",
       items: [
         <span>{t('verticals.matchbest.item1')} <a href="https://avasuite.ai/" target="_blank" className="text-blue-400 hover:underline">{t('verticals.matchbest.viewMore')}</a></span>,
@@ -27,7 +27,7 @@ export default function VerticalsCarousel() {
     {
       id: 2,
       name: "Xelta",
-      logo: "/xelta-logo1.png",
+      logo: "/assets/xelta-logo-removebg-preview.png",
       link: "https://xelta.ai/",
       items: [
         t('verticals.xelta.item1'),
@@ -42,7 +42,7 @@ export default function VerticalsCarousel() {
     {
       id: 3,
       name: "HealNova",
-      logo: "/heal-nova-logo.png",
+      logo: "/assets/healnova-removebg-preview.png",
       link: "https://healnova.ai/",
       items: [
         t('verticals.healNova.item1'),
@@ -59,7 +59,7 @@ export default function VerticalsCarousel() {
     {
       id: 4,
       name: "Elite Maverick",
-      logo: null,
+      logo: "/assets/maverick-removebg-preview.png",
       link: "https://www.elitemaverick.com/",
       items: [
         t('verticals.eliteMaverick.item1'),
@@ -74,7 +74,7 @@ export default function VerticalsCarousel() {
     {
       id: 5,
       name: "Vitaay",
-      logo: "/vitaay-logo.png",
+      logo: "/assets/vitaay-removebg-preview.png",
       link: "https://www.vitaay.ai/",
       items: [
         t('verticals.vitaay.item1'),
@@ -89,7 +89,7 @@ export default function VerticalsCarousel() {
     {
       id: 6,
       name: "StreamPlay",
-      logo: "/assets/streamplay.png",
+      logo: "/assets/str.png",
       link: "https://streamplay.ai/",
       items: [
         "All-in-One OTT Streaming Platform",
@@ -135,15 +135,14 @@ export default function VerticalsCarousel() {
               
               <div
                 key={vertical.id}
-                className="w-full max-w-md glass-effect bg-[#0a0a0a] transition-all duration-500 overflow-hidden group border border-purple-500/20"
+                className="w-full max-w-md rounded-[64PX] glass-effect bg-[#0a0a0a] transition-all duration-500 overflow-hidden group border border-purple-500/20"
               >
-                {/* Card Background with gradient on hover */}
                 <div className="relative h-full p-8 flex flex-col">
                   {/* Content */}
                   <div className="flex flex-col h-full">
-                    <div key={vertical.id} className="relative group mt-12 mb-8"> 
+                    <div key={vertical.id} className="relative group mb-12"> 
                       <div 
-                        className="absolute -top-16 -left-6 z-20 font-['Manrope'] font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
+                        className="absolute -top-24 -left-6 z-20 font-['Manrope'] mt-12 font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
                         style={{ 
                           WebkitTextStroke: '2px white',
                           paintOrder: 'stroke fill'
@@ -152,13 +151,13 @@ export default function VerticalsCarousel() {
                         {index + 1}
                       </div>
                     {/* Logo/Title Section */}
-                    <div className="h-12 mb-5 flex items-center justify-center">
+                    <div className="h-12 mb-0 flex items-center justify-center">
                       {vertical.logo ? (
                         <Image
                           src={vertical.logo || "/placeholder.svg"}
                           alt={`${vertical.name} Logo`}
-                          className="h-10 w-auto object-contain"
-                          width={140}
+                          className="h-20 w-auto object-contain"
+                          width={120}
                           height={40}
                         />
                       ) : (
@@ -172,13 +171,13 @@ export default function VerticalsCarousel() {
                   </div>
 
                     {/* Features List */}
-                    <div className="mb-10 flex-grow">
+                    <div className="mb-4 flex-grow">
                       <ul className="space-y-3">
                         {vertical.items.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-3">
                             <span className="mt-1.5 flex-shrink-0">
                               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5L7 0Z" fill="#8B5CF6"/>
+                                <path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5L7 0Z" fill="#b5a530"/>
                               </svg>
                             </span>
                             {/* Text */}
@@ -221,30 +220,30 @@ export default function VerticalsCarousel() {
               {verticals.slice(3, 6).map((vertical,index) => (
                 <div
                   key={vertical.id}
-                  className="w-full max-w-md glass-effect bg-[#0a0a0a] transition-all duration-500 overflow-hidden group border border-purple-500/20"
+                  className="w-full max-w-md rounded-[64px] glass-effect bg-[#0a0a0a] transition-all duration-500 overflow-hidden group border border-purple-500/20"
                 >
                   {/* Card Background with gradient on hover */}
                   <div className="relative h-full p-8 flex flex-col">
                     {/* Content */}
                     <div className="flex flex-col h-full">
-                      <div key={vertical.id} className="relative group mt-12 mb-8"> 
+                      <div key={vertical.id} className="relative group mb-12"> 
                         <div 
-                          className="absolute -top-16 -left-6 z-20 font-['Manrope'] font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
+                          className="absolute -top-24 -left-6 z-20 mt-12  font-['Manrope'] font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
                           style={{ 
-                            WebkitTextStroke: '3.21px white',
+                            WebkitTextStroke: '2px white',
                             paintOrder: 'stroke fill'
                           }}
                         >
                           {index + 4}
                         </div>
                     {/* Logo/Title Section */}
-                      <div className="h-12 mb-5 flex items-center justify-center">
+                      <div className="h-8 mb-0 flex items-center justify-center">
                         {vertical.logo ? (
                           <Image
                             src={vertical.logo || "/placeholder.svg"}
                             alt={`${vertical.name} Logo`}
-                            className="h-10 w-auto object-contain"
-                            width={140}
+                            className="h-20 w-auto object-contain"
+                            width={120}
                             height={40}
                           />
                         ) : (
@@ -258,13 +257,13 @@ export default function VerticalsCarousel() {
                       </div>
 
                       {/* Features List */}
-                      <div className="mb-10 flex-grow">
+                      <div className="mb-4 flex-grow">
                         <ul className="space-y-3">
                           {vertical.items.map((item, idx) => (
                             <li key={idx} className="flex items-start gap-3">
                               <span className="mt-1.5 flex-shrink-0">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5L7 0Z" fill="#8B5CF6"/>
+                                  <path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5L7 0Z" fill="#b5a530"/>
                                 </svg>
                               </span>
                               {/* Text */}

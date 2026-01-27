@@ -226,10 +226,15 @@ export default function Home() {
     const { t } = useTranslation();
     
     const { scrollY } = useScroll();
+    const circleX = useTransform(scrollY, [0, 300], ["-50%", "-80%"]);
+    const circleY = useTransform(scrollY, [0, 150], [0, -500]); 
+    const circleScale = useTransform(scrollY, [0, 120], [1, 0.2]); 
+    const circleOpacity = useTransform(scrollY, [100, 150], [1, 0]);
+
+    const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 2));
+    const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2));
+
     
-    const circleY = useTransform(scrollY, [0, 600], [0, -500]); 
-    const circleScale = useTransform(scrollY, [0, 600], [1, 0.4]); 
-    const circleOpacity = useTransform(scrollY, [400, 600], [1, 0]);
 
     useEffect(() => {
         AOS.init({ once: true, duration: 800 }); 
@@ -238,19 +243,62 @@ export default function Home() {
     return (
         <div className="bg-[#050505] min-h-screen flex flex-col overflow-x-hidden relative">
             
-            {/* --- HERO SECTION --- */}
-            <section className="relative min-h-screen md:min-h-[130vh] flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
-            <div 
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-purple-600/10 blur-[120px] rounded-half pointer-events-none"></div>
-                <div 
-                    className="absolute top-0 left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none
-                    w-[100vw]       h-[10vh]           /* Mobile */
-                    sm:w-[100vw]    sm:h-[20vh]        /* Tab */
-                    md:w-[100vw]    md:h-[20vh]        /* Desktop */">
-                        
-                    <img src="/assets/hero.png" alt="Hero circle" className="w-full h-[100vh] md:h-[115vh] opacity-100 "/>
-                    
-                </div>
+          {/* --- HERO SECTION --- */}
+          <section className="relative min-h-screen md:min-h-[90vh] flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-purple-600/10 blur-[120px] rounded-half pointer-events-none"></div>
+          <div className="absolute top-[200px] left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none w-[150vw] sm:w-[130vw] md:w-[120vw] h-[300px]">
+            <motion.svg 
+                width="100%" 
+                height="auto" 
+                viewBox="0 0 2534 2534" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMin slice" 
+                style={{
+                  y: circleY,
+                  scale: circleScale,
+                  opacity: circleOpacity,
+                  originY: 0,
+                  originX: 0, 
+                }}
+                className="overflow-visible"
+              >
+                <g clipPath="url(#clip0_332_3081)">
+                  <rect width="2533.07" height="2533.07" rx="1266.54" fill="white" fillOpacity="0.05" />
+                  
+                  {/* Glow layers */}
+                  <g filter="url(#filter0_f_332_3081)">
+                    <path d="M2533.07 1266.07C2533.07 1965.3 1967.45 2532.14 1267.46 2532.14C567.46 2532.14 0 1965.3 0 1266.07C0 566.839 567.46 0 1267.46 0C1967.45 0 2533.07 566.839 2533.07 1266.07Z" fill="#950DF6" />
+                  </g>
+                </g>
+
+                <defs>
+                  <filter id="filter0_f_332_3081" x="-100" y="-100" width="2733.07" height="2732.14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                  <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_332_3081"/>
+                  </filter>
+                  <filter id="filter1_f_332_3081" x="-134" y="-133" width="2801" height="2800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                  <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_332_3081"/>
+                  </filter>
+                  <filter id="filter2_f_332_3081" x="-34" y="-33" width="2601" height="2600" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                  <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_332_3081"/>
+                  </filter>
+                  <linearGradient id="paint0_linear_332_3081" x1="4243.74" y1="-1709" x2="-172.24" y2="2756.84" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#121212"/>
+                  <stop offset="1" stop-color="#8300DD"/>
+                  </linearGradient>
+                  <clipPath id="clip0_332_3081">
+                  <rect width="2533.07" height="2533.07" rx="1266.54" fill="white"/>
+                  </clipPath>
+
+                </defs>
+              </motion.svg>
+            </div>
 
                 {/* 2. HERO CONTENT*/}
                 <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center pt-0 pb-20 mt-0 mb-2 md:md-4 mb:lg-8">
@@ -306,19 +354,19 @@ export default function Home() {
                         </div>
                         
                         {/* Stat 2 */}
-                        <div className="flex flex-col items-center border-l border-white/10 md:border-none">
+                        <div className="flex flex-col items-center">
                             <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">100%</span>
                             <span className="text-sm text font-['Space_Grotesk']">Secure Delivery</span>
                         </div>
                         
                         {/* Stat 3 */}
-                        <div className="flex flex-col items-center border-t border-white/10 pt-4 md:border-none md:pt-0">
+                        <div className="flex flex-col items-center pt-4">
                             <span className="text-1xl md:text-2xl mb-1 uppercase tracking-tighter font-bold font-['Bebas_Neue']">Global Reach</span>
                             <span className="text-sm text font-['Space_Grotesk']">Across Key Markets</span>
                         </div>
                         
                         {/* Stat 4 */}
-                        <div className="flex flex-col items-center border-t border-l border-white/10 pt-4 md:border-t-0 md:pt-0">
+                        <div className="flex flex-col items-center pt-4">
                             <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">4.5 / 5</span>
                             <span className="text-sm text font-['Space_Grotesk']">(CSAT)</span>
                         </div>
@@ -471,9 +519,9 @@ export default function Home() {
         </section>
 
 {/* --- WORDS FROM OUR CLIENTS --- */}
-                <section className="w-full py-10 bg-black px-6 md:px-16 lg:px-20">
+                <section className="w-full py-0 bg-black ">
                     <div className="container mx-auto">
-                        <div className="container mx-auto text-center relative z-20 px-4 mb-16">
+                        <div className="container mx-auto text-center relative px-6 md:px-16 lg:px-20 z-20 px-4 mb-16">
                             <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
                             Words From Our Clients
                             </h2>
@@ -482,11 +530,15 @@ export default function Home() {
                             </p>
                         </div>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-fr">
-                        {testimonials.map((item) => (
-                            <div 
-                            key={item.id}
-                            className={`relative p-2 rounded-2xl bg-[#171717] flex flex-col justify-between group ${item.className}`}>
+                        <div className="relative w-full overflow-hidden">
+                            <div className="flex w-max animate-scroll hover:[animation-play-state:paused]"
+                            style={{ animationDuration: '30s' }}>
+                                {/* First set */}
+                                <div className="flex gap-4">
+                                    {testimonials.map((item) => (
+                                        <div
+                                        key={`${item.id}`}
+                                        className="relative p-2 rounded-2xl bg-[#171717] flex flex-col justify-between group min-w-[300px] flex-shrink-0">
                             
                             {/* QUOTE ICON */}
                             <div className="absolute bottom-4 right-6 z-0 pointer-events-none">
@@ -527,8 +579,13 @@ export default function Home() {
                                 </div>
 
                             </div>
+                          </div>
+                      ))}
+                  </div>
+
+                  {/* Second set for seamless loop */}
+                  
                             </div>
-                        ))}
                         </div>
 
                     </div>
@@ -598,8 +655,6 @@ export default function Home() {
                   fill
                   className={`h-[170px] rounded-2xl overflow-hidden relative group transition-all duration-300 ${index === 1 ? 'lg:-translate-x-16' : ''}`}
                 />
-                
-                {/* Optional Overlay for better text contrast if needed later */}
                 <div className="absolute inset-0 bg-black/20 transition-colors"></div>
               </div>
             ))}

@@ -492,7 +492,7 @@ return (
               <div className="relative z-10 overflow-hidden">
                 <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
                   
-                  {/* ORIGINAL TEXT (White) - Jo abhi dikh rha h */}
+                  {/* ORIGINAL TEXT */}
                   <span className="flex items-center gap-2 text-lg text-white py-1">
                     Start Your Project
                     <ArrowUpRight className="w-5 h-5" />
@@ -568,7 +568,7 @@ return (
                 <img 
                   src={blog.image} 
                   alt={blog.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
                 {/* Category Badge */}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-black text-[10px] uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-2">
