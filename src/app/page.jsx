@@ -22,6 +22,16 @@ const CertifiedSection = dynamic(
 
 const VerticalsCarousel = dynamic(() => import('./components/layout/card.jsx'), { ssr: false });
 
+const certificates = [
+  { src: "/assets/c1-removebg-preview.png", alt: "ISO 20000-1:2018" },
+  { src: "/assets/c2-removebg-preview.png", alt: "ISO 42001" },
+  { src: "/assets/c3-removebg-preview.png", alt: "ISO 27001" },
+  { src: "/assets/c4-removebg-preview.png", alt: "CMMI" },
+  { src: "/assets/c5-removebg-preview.png", alt: "SOC 2 Type 2" },
+  { src: "/assets/hippa_1-removebg-preview.png", alt: "SOC 2 Type 2" },
+];
+
+
 const cardsData = [
   {
     id: 1,
@@ -49,13 +59,6 @@ const cardsData = [
   },
 ];
 
-const technologies = [
-    "React", "Node.js", "Python", "AWS", "Azure", "Docker", "Kubernetes",
-    "TensorFlow", "MongoDB", "TypeScript", "JavaScript", "Express.js",
-    "HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "GraphQL", "MySQL",
-    "PostgreSQL", "Redux", "Jest", "Git", "GitHub", "Figma", "Next.js",
-    "AI", "ML", "Android"
-];
 
 const testimonials = [
   {
@@ -119,7 +122,7 @@ const features = [
     id: 2,
     title: "Built Around You",
     desc: "A client-centric delivery model focused on transparency, measurable outcomes, and long-term business value.",
-    img: "/assets/img2.png",
+    img: "/assets/download.webp",
   },
   {
     id: 3,
@@ -130,18 +133,18 @@ const features = [
 ];
 
 const techStack = [
-  { name: "HTML5", icon: "/assets/html.png" },
-  { name: "CSS3", icon: "/assets/css.png" },
-  { name: "JavaScript", icon: "/assets/javascript.png" },
-  { name: "Python", icon: "/assets/python.png" },
-  { name: "MongoDB", icon: "/assets/mongodb.png" },
-  { name: "TypeScript", icon: "/assets/typescript.png" },
-  { name: "Express", icon: "/assets/express.png" }, 
-  { name: "AWS", icon: "/assets/aws.png" },
-  { name: "Docker", icon: "/assets/docker.png" },
-  { name: "Azure", icon: "/assets/azure.png" },
-  { name: "Tailwind", icon: "/assets/tailwind.png" },
-  { name: "Bootstrap", icon: "/assets/bootstrap.png" },
+  { name: "HTML5", icon: "/assets/css.png", width: 35, height: 35 },
+  { name: "CSS3", icon: "/assets/css.png", width: 35, height: 35 },
+  { name: "JavaScript", icon: "/assets/javascript.png", width: 35, height: 35 },
+  { name: "Python", icon: "/assets/python.png", width: 35, height: 35 },
+  { name: "MongoDB", icon: "/assets/mongodb.png", width: 35, height: 35 },
+  { name: "TypeScript", icon: "/assets/typescript.png", width: 35, height: 35 },
+  { name: "Express", icon: "/assets/express.png", width: 35, height: 35 }, 
+  { name: "AWS", icon: "/assets/aws.png", width: 25, height: 30 },
+  { name: "Docker", icon: "/assets/docker.png", width: 35, height: 35 },
+  { name: "Azure", icon: "/assets/azure.png", width: 35, height: 35 },
+  { name: "Tailwind", icon: "/assets/tailwind.png", width: 35, height: 35 },
+  { name: "Bootstrap", icon: "/assets/bootstrap.png", width: 35, height: 35 },
 ];
 
 const steps = [
@@ -191,7 +194,7 @@ const locations = [
     address: "Expansion 2025",
     top: "46%", 
     left: "58%", 
-    align: "top-left"
+    align: "top-left" , md:"top"
   },
   {
     country: "UAE",
@@ -226,10 +229,10 @@ export default function Home() {
     const { t } = useTranslation();
     
     const { scrollY } = useScroll();
-    const circleX = useTransform(scrollY, [0, 300], ["-50%", "-80%"]);
-    const circleY = useTransform(scrollY, [0, 150], [0, -500]); 
-    const circleScale = useTransform(scrollY, [0, 120], [1, 0.2]); 
-    const circleOpacity = useTransform(scrollY, [100, 150], [1, 0]);
+    const circleX = useTransform(scrollY, [0, 600], ["-50%", "-80%"]);
+    const circleY = useTransform(scrollY, [0, 360], [0, -500]);
+    const circleScale = useTransform(scrollY, [0, 400], [1, 0.5]);
+    const circleOpacity = useTransform(scrollY, [400, 500], [1, 0]);
 
     const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 2));
     const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2));
@@ -360,13 +363,13 @@ export default function Home() {
                         </div>
                         
                         {/* Stat 3 */}
-                        <div className="flex flex-col items-center pt-4">
+                        <div className="flex flex-col items-center">
                             <span className="text-1xl md:text-2xl mb-1 uppercase tracking-tighter font-bold font-['Bebas_Neue']">Global Reach</span>
                             <span className="text-sm text font-['Space_Grotesk']">Across Key Markets</span>
                         </div>
                         
                         {/* Stat 4 */}
-                        <div className="flex flex-col items-center pt-4">
+                        <div className="flex flex-col items-center">
                             <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">4.5 / 5</span>
                             <span className="text-sm text font-['Space_Grotesk']">(CSAT)</span>
                         </div>
@@ -377,15 +380,45 @@ export default function Home() {
                     {/* 5. Ratings */}
                     <div className="flex grid grid-cols-0 md:grid-cols-2 gap-4 mt-4">
                         <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-left text-black text-xs font-bold font-['Manrope']">
-                            <span className="text-black font-bold">4.8 Google</span>
-                            <span className="text-yellow-600">⭐⭐⭐⭐⭐</span>
-                            
-                            <span className="font-normal text-[8px] text-blue-500">Customer Reviews</span>
+                          <span className="text-black font-bold">4.8 Google</span>
+                          <span className="flex flex-cols-1">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.0444 1.51909C11.3543 0.895377 12.244 0.895376 12.5539 1.51909L15.0848 6.61295C15.2075 6.85994 15.4433 7.03127 15.7161 7.07165L21.3428 7.9046C22.0317 8.00659 22.3067 8.85278 21.8093 9.34025L17.7468 13.3214C17.5498 13.5144 17.4597 13.7916 17.5056 14.0636L18.4522 19.6722C18.5681 20.359 17.8483 20.8819 17.231 20.5595L12.1893 17.9261C11.9449 17.7984 11.6534 17.7984 11.4089 17.9261L6.36729 20.5595C5.74997 20.8819 5.03015 20.359 5.14605 19.6722L6.09261 14.0636C6.1385 13.7916 6.04844 13.5144 5.85145 13.3214L1.789 9.34025C1.29157 8.85278 1.56652 8.00659 2.25547 7.9046L7.88211 7.07165C8.15493 7.03127 8.39074 6.85994 8.51346 6.61295L11.0444 1.51909Z" fill="#FEA500"/>
+                            </svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.0444 1.51909C11.3543 0.895377 12.244 0.895376 12.5539 1.51909L15.0848 6.61295C15.2075 6.85994 15.4433 7.03127 15.7161 7.07165L21.3428 7.9046C22.0317 8.00659 22.3067 8.85278 21.8093 9.34025L17.7468 13.3214C17.5498 13.5144 17.4597 13.7916 17.5056 14.0636L18.4522 19.6722C18.5681 20.359 17.8483 20.8819 17.231 20.5595L12.1893 17.9261C11.9449 17.7984 11.6534 17.7984 11.4089 17.9261L6.36729 20.5595C5.74997 20.8819 5.03015 20.359 5.14605 19.6722L6.09261 14.0636C6.1385 13.7916 6.04844 13.5144 5.85145 13.3214L1.789 9.34025C1.29157 8.85278 1.56652 8.00659 2.25547 7.9046L7.88211 7.07165C8.15493 7.03127 8.39074 6.85994 8.51346 6.61295L11.0444 1.51909Z" fill="#FEA500"/>
+                            </svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.0444 1.51909C11.3543 0.895377 12.244 0.895376 12.5539 1.51909L15.0848 6.61295C15.2075 6.85994 15.4433 7.03127 15.7161 7.07165L21.3428 7.9046C22.0317 8.00659 22.3067 8.85278 21.8093 9.34025L17.7468 13.3214C17.5498 13.5144 17.4597 13.7916 17.5056 14.0636L18.4522 19.6722C18.5681 20.359 17.8483 20.8819 17.231 20.5595L12.1893 17.9261C11.9449 17.7984 11.6534 17.7984 11.4089 17.9261L6.36729 20.5595C5.74997 20.8819 5.03015 20.359 5.14605 19.6722L6.09261 14.0636C6.1385 13.7916 6.04844 13.5144 5.85145 13.3214L1.789 9.34025C1.29157 8.85278 1.56652 8.00659 2.25547 7.9046L7.88211 7.07165C8.15493 7.03127 8.39074 6.85994 8.51346 6.61295L11.0444 1.51909Z" fill="#FEA500"/>
+                            </svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.0444 1.51909C11.3543 0.895377 12.244 0.895376 12.5539 1.51909L15.0848 6.61295C15.2075 6.85994 15.4433 7.03127 15.7161 7.07165L21.3428 7.9046C22.0317 8.00659 22.3067 8.85278 21.8093 9.34025L17.7468 13.3214C17.5498 13.5144 17.4597 13.7916 17.5056 14.0636L18.4522 19.6722C18.5681 20.359 17.8483 20.8819 17.231 20.5595L12.1893 17.9261C11.9449 17.7984 11.6534 17.7984 11.4089 17.9261L6.36729 20.5595C5.74997 20.8819 5.03015 20.359 5.14605 19.6722L6.09261 14.0636C6.1385 13.7916 6.04844 13.5144 5.85145 13.3214L1.789 9.34025C1.29157 8.85278 1.56652 8.00659 2.25547 7.9046L7.88211 7.07165C8.15493 7.03127 8.39074 6.85994 8.51346 6.61295L11.0444 1.51909Z" fill="#FEA500"/>
+                            </svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.0444 1.51909C11.3543 0.895377 12.244 0.895376 12.5539 1.51909L15.0848 6.61295C15.2075 6.85994 15.4433 7.03127 15.7161 7.07165L21.3428 7.9046C22.0317 8.00659 22.3067 8.85278 21.8093 9.34025L17.7468 13.3214C17.5498 13.5144 17.4597 13.7916 17.5056 14.0636L18.4522 19.6722C18.5681 20.359 17.8483 20.8819 17.231 20.5595L12.1893 17.9261C11.9449 17.7984 11.6534 17.7984 11.4089 17.9261L6.36729 20.5595C5.74997 20.8819 5.03015 20.359 5.14605 19.6722L6.09261 14.0636C6.1385 13.7916 6.04844 13.5144 5.85145 13.3214L1.789 9.34025C1.29157 8.85278 1.56652 8.00659 2.25547 7.9046L7.88211 7.07165C8.15493 7.03127 8.39074 6.85994 8.51346 6.61295L11.0444 1.51909Z" fill="#FEA500"/>
+                            </svg>
+                          </span>  
+
+                        <span className="font-normal text-[8px] text-blue-500">Customer Reviews</span>
                         </div>
                         <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-black text-xs ">
                             <span className="text-black font-bold">Trustpilot</span>
-                            <span className="whitespace-nowrap"><span className="text-white bg-green-500 px-1 text-[10px] mt-1">★★★★</span><span className="text-white bg-gray-500 px-1 text-[10px] mt-1">★</span> </span>
-                            <span className="font-normal text-[8px] text-gray-500 ">Rated 4/5</span>
+                            <span className="flex flex-cols-1">
+                            <svg width="117" height="14" viewBox="0 0 127 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="23.4651" height="23.4651" fill="#00B57A"/>
+                            <path d="M13.833 9.73451H20.6309L15.1309 13.7306V13.7316L12.2178 15.8165L15.4199 14.6203L17.2314 20.1954L11.7324 16.1994L6.23242 20.1954L8.33398 13.7306L2.83398 9.73451H9.63184L11.7324 3.26967L13.833 9.73451Z" fill="white"/>
+                            <rect width="23.4651" height="23.4651" transform="translate(25.8413)" fill="#00B57A"/>
+                            <path d="M39.6743 9.73451H46.4722L40.9722 13.7306V13.7316L38.0591 15.8165L41.2612 14.6203L43.0728 20.1954L37.5737 16.1994L32.0737 20.1954L34.1753 13.7306L28.6753 9.73451H35.4731L37.5737 3.26967L39.6743 9.73451Z" fill="white"/>
+                            <rect width="23.4651" height="23.4651" transform="translate(51.6826)" fill="#00B57A"/>
+                            <path d="M65.5156 9.73451H72.3135L66.8135 13.7306V13.7316L63.9004 15.8165L67.1025 14.6203L68.9141 20.1954L63.415 16.1994L57.915 20.1954L60.0166 13.7306L54.5166 9.73451H61.3145L63.415 3.26967L65.5156 9.73451Z" fill="white"/>
+                            <rect width="23.4651" height="23.4651" transform="translate(77.5239)" fill="#00B57A"/>
+                            <path d="M91.3569 9.73451H98.1548L92.6548 13.7306V13.7316L89.7417 15.8165L92.9438 14.6203L94.7554 20.1954L89.2563 16.1994L83.7563 20.1954L85.8579 13.7306L80.3579 9.73451H87.1558L89.2563 3.26967L91.3569 9.73451Z" fill="white"/>
+                            <rect width="23.4651" height="23.4651" transform="translate(103.365)" fill="#00B57A"/>
+                            <rect x="114.603" width="11.7326" height="23.4651" fill="#D9D9D9"/>
+                            <path d="M117.198 9.73451H123.996L118.496 13.7306V13.7316L115.583 15.8165L118.785 14.6203L120.597 20.1954L115.098 16.1994L109.598 20.1954L111.699 13.7306L106.199 9.73451H112.997L115.098 3.26967L117.198 9.73451Z" fill="white"/>
+                            </svg>
+                          </span>  
+                          <span className="font-normal text-[8px] text-gray-500 ">Rated 4.5/5</span>
                         </div>
                     </div>
 
@@ -398,7 +431,7 @@ export default function Home() {
             </div>
 
             {/* --- ABOUT US --- */}
-            <section className="container mx-auto py-16 px-4 md:px-6 mb-8" data-aos="fade-up">
+            <section className="container mx-auto py-10 px-8 md:px-12" data-aos="fade-up">
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1">
                         <h2 className="font-[''Manrope] text-3xl md:text-4xl font-normal text-white mb-6 tracking-wide">
@@ -414,11 +447,11 @@ export default function Home() {
                         <p className="text-white mb-8 leading-relaxed">
                             Whether you’re migrating mission-critical workloads to the cloud, deploying AI chatbots and CX automation or an e-commerce platform, our engineering-first approach ensures performance, compliance, and long-term growth at every stage of your digital journey.
                         </p>
-                        <div className="flex gap-4">
+                        <div className="flex gap-2">
                             <Link href="/about" className="relative group inline-flex items-center py-3 px-2">
                                 <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-12 w-12 bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] rounded-full opacity-80 transition-all duration-500 ease-out group-hover:w-full group-hover:opacity-100"></div>
 
-                                <div className="relative z-10 flex items-center gap-4 pl-3">
+                                <div className="relative z-10 flex items-center gap-4 pl-3 pr-4">
                                     <span className="text-white font-['Space_Grotesk'] text-lg">
                                     More About Us
                                     </span>
@@ -436,24 +469,30 @@ export default function Home() {
                             </Link>
                         </div>
                     </div>
-                    <div className="flex-1 w-full h-[300px] md:h-[300px] relative flex flex-col items-center justify-center py-6">
-                        <Image 
-                                src="/assets/about.png" 
-                                alt="ISO 20000" 
-                                fill 
-                                className="object-contain"
-                                />
+                    <div className="flex-1 w-full h-auto relative flex flex-col items-center justify-center py-10 bg-[#050505]">
+                      <div className="grid grid-cols-3 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center max-w-5xl px-4">
+                      {certificates.map((cert, index) => (
+                        <div key={index} className="relative w-22 h-22 md:w-30 md:h-30 flex items-center justify-center">
+                          <Image
+                            src={cert.src}
+                            alt={cert.alt}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      ))}
+                    </div>
 
                         {/* Bottom Text */}
-                        {/* <p className="font-['Manrope'] text-gray-400 text-center text-sm md:text-base mt-8 max-w-2xl px-4 leading-relaxed font-light">
+                        <p className="font-['Manrope'] text-gray-400 text-center text-sm md:text-base mt-8 max-w-2xl px-4 leading-relaxed font-light">
                             We maintain strict quality and security standards to ensure the highest level of trust and performance.
-                        </p> */}
+                        </p>
                     </div>
                 </div>
             </section>
 
             {/* --- FUTURE-READY SOLUTIONS SECTION --- */}
-            <section className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col items-center justify-start pt-20 pb-20">
+            <section className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col items-center justify-start pt-5 pb-20">
                 {/* --- HEADING --- */}
                 <div className="container mx-auto text-center relative z-20 px-4 mb-16">
                     <h2 className="font-['Manrope'] text-5xl md:text-6xl text-white mb-6">
@@ -465,32 +504,30 @@ export default function Home() {
                 </div>
 
                 {/* --- LAYER 2: CARDS GRID  --- */}
-                <div className="container mx-auto relative z-20 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="w-full max-w-4xl mx-auto relative z-20 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-4">
                     {cardsData.map((card) => (
-                    <div 
+                    <div
                         key={card.id}
-                        className="group relative p-8 rounded-[32px] border border-white/10 bg-[#0f0f0f] overflow-hidden transition-all duration-500 hover:-translate-y-1"
-                    >
+                        className="group relative px-4 py-4 rounded-[24px] glass-effect border border-white/10 bg-[#0f0f0f] overflow-hidden transition-all duration-500 hover:-translate-y-1">
                         <div className="absolute inset-0 bg-gradient-to-br from-[#6d28d9] via-[#4c1d95] to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
 
                         {/* 2. CARD CONTENT */}
                         <div className="relative z-10 flex flex-col h-full">
                         
                         {/* Icon Box */}
-                        <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-3 shadow-lg">
                             <Image src={card.icon} alt="icon" width={28} height={28} className="object-contain"/>
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-['Manrope'] font-semibold text-white mb-3">
+                        <h3 className="text-2xl font-['Manrope'] font-semibold text-white mb-2">
                             {card.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-gray-400 text-sm leading-relaxed mb-6 font-['Manrope'] font-light group-hover:text-gray-200 transition-colors">
+                        <p className="text-gray-400 text-sm leading-relaxed mb-2 font-['Manrope'] font-light group-hover:text-gray-200 transition-colors">
                             {card.desc}
                         </p>
-
                         {/* 3. EXPLORE BUTTON (Reveal Animation) */}
                         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div className="overflow-hidden">
@@ -519,7 +556,7 @@ export default function Home() {
         </section>
 
 {/* --- WORDS FROM OUR CLIENTS --- */}
-                <section className="w-full py-0 bg-black ">
+          <section className="w-full py-0 bg-black pt-10 mb-10">
                     <div className="container mx-auto">
                         <div className="container mx-auto text-center relative px-6 md:px-16 lg:px-20 z-20 px-4 mb-16">
                             <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
@@ -530,15 +567,16 @@ export default function Home() {
                             </p>
                         </div>
                         
-                        <div className="relative w-full overflow-hidden">
-                            <div className="flex w-max animate-scroll hover:[animation-play-state:paused]"
-                            style={{ animationDuration: '30s' }}>
-                                {/* First set */}
-                                <div className="flex gap-4">
-                                    {testimonials.map((item) => (
-                                        <div
-                                        key={`${item.id}`}
-                                        className="relative p-2 rounded-2xl bg-[#171717] flex flex-col justify-between group min-w-[300px] flex-shrink-0">
+            <div className="relative w-full overflow-hidden">
+              <div className="flex w-max animate-scroll hover:[animation-play-state:paused]"
+                style={{ animationDuration: '20s' }}>
+                  
+                  {/* First set */}
+                  <div className="flex gap-4">
+                      {testimonials.map((item) => (
+                          <div
+                            key={`${item.id}`}
+                            className="relative p-2 rounded-2xl bg-[#171717] flex justify-between group max-w-[400px] ">
                             
                             {/* QUOTE ICON */}
                             <div className="absolute bottom-4 right-6 z-0 pointer-events-none">
@@ -582,18 +620,14 @@ export default function Home() {
                           </div>
                       ))}
                   </div>
-
-                  {/* Second set for seamless loop */}
-                  
-                            </div>
-                        </div>
-
-                    </div>
-            </section>
+                </div>
+              </div>
+            </div>
+          </section>
                 
 
 {/* WHY CHOOSE US SECTION */}
-    <section className="w-full bg-black py-24 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section className="w-full bg-black py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
       
       {/* Heading */}
       <div className="container mx-auto mb-16 text-center">
@@ -611,13 +645,12 @@ export default function Home() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative">
           
-          {/* --- COLUMN 1: LEFT CARDS (Text) --- */}
+          {/* --- COLUMN 1: LEFT CARDS --- */}
           <div className="lg:col-span-4 flex flex-col justify-between h-[600px] relative z-10">
             {features.map((item, index) => (
               <div 
                 key={item.id}
-                className={`bg-[#171717] p-8 rounded-2xl border border-white/5 h-[150px] flex flex-col justify-center relative group transition-all duration-300 ${index === 1 ? 'lg:translate-x-26' : ''}`}
-    >
+                className={`bg-[#171717] p-4 rounded-md border border-white/5 h-[150px] w-[340px] flex flex-col justify-center relative group transition-all duration-300 ${index === 1 ? 'lg:translate-x-26' : ''}`}>
                 <h3 className="text-white text-2xl font-['Manrope'] font-medium mb-4">
                   {item.title}
                 </h3>
@@ -628,18 +661,35 @@ export default function Home() {
             ))}
           </div>
 
-          {/* --- COLUMN 2: CENTER LINES (SVG Animation) --- */}
+          {/* --- COLUMN 2: CENTER LINES --- */}
           <div className="hidden lg:col-span-4 lg:flex items-center justify-center relative pointer-events-none">
-            <svg width="858" height="479" viewBox="0 0 858 479" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <motion.svg
+              width="858"
+              height="479"
+              viewBox="0 0 858 479"
+              fill="none"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
             <path d="M1 1H263C276.255 1 287 11.7452 287 25V215C287 228.255 297.745 239 311 239M311 239H423M311 239H435.688M311 239C297.745 239 287 249.745 287 263V454C287 467.255 276.255 478 263 478H1M857 1H595C581.745 1 571 11.7452 571 25V215C571 228.255 560.255 239 547 239M547 239H435M547 239C560.255 239 571 249.745 571 263V454C571 467.255 581.745 478 595 478H857M189 240L376 239M669 240L482 239" stroke="url(#paint0_linear_79_936)" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
             <defs>
-            <linearGradient id="paint0_linear_79_936" x1="-81.1548" y1="430.3" x2="938.757" y2="373.038" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#333333" stop-opacity="0.1"/>
-            <stop offset="0.5" stop-color="#9F14FF"/>
-            <stop offset="1" stop-color="#333333" stop-opacity="0.1"/>
-            </linearGradient>
+            <motion.linearGradient
+              id="paint0_linear_79_936"
+              x1="-200"
+              y1="430.3"
+              x2="0"
+              y2="373.038"
+              gradientUnits="userSpaceOnUse"
+              animate={{ x1: 858, x2: 1058 }}
+              initial={{ x1: 200, x2: 0 }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+            <stop offset="0" stop-color="#262626" stop-opacity="1"/>
+            <stop offset="0.5" stop-color="#9F14FF" stop-opacity="1"/>
+            <stop offset="1" stop-color="#2a292b" stop-opacity="1"/>
+            </motion.linearGradient>
             </defs>
-            </svg>
+            </motion.svg>
           </div>
 
           {/* --- COLUMN 3: RIGHT IMAGES --- */}
@@ -647,13 +697,13 @@ export default function Home() {
             {features.map((item, index) => (
               <div 
                 key={item.id}
-                className="h-[170px] rounded-2xl overflow-hidden relative group mb-4"
+                className="h-[160px] w-[300px] rounded-md relative group mb-4"
               >
                 <Image 
                   src={item.img}
                   alt={item.title}
                   fill
-                  className={`h-[170px] rounded-2xl overflow-hidden relative group transition-all duration-300 ${index === 1 ? 'lg:-translate-x-16' : ''}`}
+                  className={`object-cover h-[160px] rounded-md overflow-hidden relative group transition-all duration-300 ${index === 1 ? 'lg:-translate-x-25' : ''}`}
                 />
                 <div className="absolute inset-0 bg-black/20 transition-colors"></div>
               </div>
@@ -882,7 +932,7 @@ export default function Home() {
     </section>
 
 {/* --- GLOBAL PRESENCE SECTION --- */}
-<section className="w-full bg-[#0a0a0a] py-16 px-4 md:px-8 overflow-hidden min-h-[80vh] ">
+<section className="w-full bg-[#0a0a0a] py-6 px-4 md:px-8 overflow-hidden min-h-[50vh] ">
   
       {/* === HEADING SECTION === */}
       <div className="text-center mb-16 max-w-3xl mx-auto">

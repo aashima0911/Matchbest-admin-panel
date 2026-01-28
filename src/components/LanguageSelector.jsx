@@ -42,7 +42,7 @@ export default function LanguageSelector() {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center space-x-10 p-2 bg-black text-white rounded-md"
+          className="flex items-center space-x-30 p-2 bg-black text-white rounded-md"
         >
           {/* <FaGlobe className="h-4 w-4" /> */}
           {/* <span className="text-sm">{currentLang?.flag}</span> */}
