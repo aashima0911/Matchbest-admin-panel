@@ -115,7 +115,6 @@ export default function VerticalsCarousel() {
         </div>
         
         {/* Grid Container */}
-        
           <div className="hidden lg:grid grid-cols-3 gap-8 mb-8 text-left max-w-none mx-auto w-full">
               {/* Column 1: Services */}
               <div className="col-span-1 border-r border-white/20 h-full flex items-center">
@@ -135,14 +134,14 @@ export default function VerticalsCarousel() {
               
               <div
                 key={vertical.id}
-                className="w-full max-w-md rounded-[64px] glass-effect bg-[#0a0a0a] transition-all duration-500 overflow-hidden group border border-purple-500/20"
+                className="w-full max-w-md rounded-md glass-effect bg-[#0a0a0a] transition-all duration-500 overflow-hidden group border border-purple-500/20"
               >
                 <div className="relative h-full p-8 flex flex-col">
                   {/* Content */}
                   <div className="flex flex-col h-full">
                     <div key={vertical.id} className="relative group mb-12"> 
                       <div 
-                        className="absolute -top-24 -left-0 z-20 font-['Manrope'] mt-12 font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
+                        className="absolute -top-24 -left-4 z-20 font-['Manrope'] mt-12 font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
                         style={{ 
                           WebkitTextStroke: '2px white',
                           paintOrder: 'stroke fill'
@@ -156,7 +155,7 @@ export default function VerticalsCarousel() {
                         <Image
                           src={vertical.logo || "/placeholder.svg"}
                           alt={`${vertical.name} Logo`}
-                          className="h-20 w-auto object-contain"
+                          className="h-24 w-auto object-contain"
                           width={120}
                           height={40}
                         />
@@ -220,7 +219,7 @@ export default function VerticalsCarousel() {
               {verticals.slice(3, 6).map((vertical,index) => (
                 <div
                   key={vertical.id}
-                  className="w-full max-w-md rounded-[64px] glass-effect bg-[#0a0a0a] transition-all duration-500 overflow-hidden group border border-purple-500/20"
+                  className="w-full max-w-md rounded-md glass-effect bg-[#0a0a0a] transition-all duration-500 overflow-hidden group border border-purple-500/20"
                 >
                   {/* Card Background with gradient on hover */}
                   <div className="relative h-full p-8 flex flex-col">
@@ -228,7 +227,7 @@ export default function VerticalsCarousel() {
                     <div className="flex flex-col h-full">
                       <div key={vertical.id} className="relative group mb-14"> 
                         <div 
-                          className="absolute -top-24 -left-0 z-20 mt-12 font-['Manrope'] font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
+                          className="absolute -top-24 -left-4 z-20 mt-12 font-['Manrope'] font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
                           style={{ 
                             WebkitTextStroke: '2px white',
                             paintOrder: 'stroke fill'
@@ -242,7 +241,7 @@ export default function VerticalsCarousel() {
                           <Image
                             src={vertical.logo || "/placeholder.svg"}
                             alt={`${vertical.name} Logo`}
-                            className="h-20 w-auto object-contain"
+                            className="h-24 w-auto object-contain"
                             width={120}
                             height={40}
                           />

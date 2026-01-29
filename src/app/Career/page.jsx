@@ -95,13 +95,13 @@ const internships = jobsData.filter(job => job.category === 'Internships');
       ></div>
 
         <div 
-            className="relative w-full max-w-[1300px] h-[150px] md:h-[200px] rounded-[32px] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5 mb-8">
+            className="relative w-full h-[150px] md:h-[200px] rounded-[32px] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5 mb-8">
 
-            <div className="absolute inset-0 z-0" 
+          <div className="absolute w-full inset-0 z-0" 
             style={{
             background: 'linear-gradient(40deg, #020010 0%, #0a0a4a 10%, #391671 25%, #471671 30%, #000000 45%, #000000 55%, #471671 75%, #391671 80%, #0a0a4a 90%, #020010 100%)',
-      filter: 'blur(80px)', 
-      transform: 'scale(1.2)'
+            filter: 'blur(80px)', 
+            transform: 'scale(1.2)'
             }}> 
             </div>
             
@@ -197,7 +197,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
                             {job.title}
                         </h4>
                         <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light flex-grow">
-                            {job.desc}
+                            {job.Info}
                         </p>
                         <Link 
                             href={`/Career/${job.id}`}
@@ -223,7 +223,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
                             {job.title}
                         </h4>
                         <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light flex-grow">
-                            {job.desc}
+                            {job.Info}
                         </p>
                         <Link 
                             href={`/Career/${job.id}`}
@@ -248,7 +248,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
                             {job.title}
                         </h4>
                         <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light flex-grow">
-                            {job.desc}
+                            {job.Info}
                         </p>
                         <Link 
                             href={`/Career/${job.id}`}

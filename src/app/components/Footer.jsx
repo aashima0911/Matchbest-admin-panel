@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="w-full bg-[#090909] pt-3 pb-2 border-t border-white/20">
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto ">
         
         {/* LOGO SECTION */}
         <div className="flex justify-center py-0">   
@@ -25,14 +25,14 @@ const Footer = () => {
         <div className="w-full h-px bg-white/20 mb-8"></div>
 
         {/* MIDDLE CONTENT */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-0">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
           
           {/* Contact Info */}
-          <div className="flex flex-col md:flex-row gap-4 md:gap-12 text-sm text-gray-400 w-full lg:w-auto">
+          <div className="flex flex-col-2 md:flex-row gap-10 md:gap-12 text-sm text-gray-400 w-full lg:w-auto px-10 md:px-20"> {/*   */}
             
             {/* Contact Us Link */}
             <Link href="/contact">
-              <div className="flex items-center gap-3 hover:text-white transition-colors cursor-pointer pb-1 border-b border-white/10 min-w-[150px]">
+              <div className="flex items-center gap-3 hover:text-white transition-colors cursor-pointer pb-1">{/* border-b border-white/10 min-w-[150px] */}
                 <Phone className="w-5 h-5 text-[rgba(80, 107, 232, 1), rgba(97, 104, 222, 1), rgba(126, 97, 200, 1), rgba(182, 111, 234, 1)]"
                       fill="currentColor"  
                       stroke="black"
@@ -42,7 +42,7 @@ const Footer = () => {
             </Link>
             
             {/* Email */}
-            <div className="flex items-center gap-3 hover:text-white transition-colors cursor-pointer pb-1 border-b border-white/20 min-w-[150px]">
+            <div className="flex items-center gap-3 hover:text-white transition-colors cursor-pointer pb-1">
               <Mail className="w-5 h-5 text-[rgba(80, 107, 232, 1), rgba(97, 104, 222, 1), rgba(126, 97, 200, 1), rgba(182, 111, 234, 1)]"
                     fill="currentColor"  
                     stroke="black"
@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
 
         {/* Social Links */}
-        <div className="flex items-center gap-6 mt-4 lg:mt-0">
+        <div className="flex items-center mr-20 gap-6 mt-4 lg:mt-0">
         {/* <span className="text-white text-sm font-medium">Stay Connected</span> */}
 
         <div className="flex gap-3">

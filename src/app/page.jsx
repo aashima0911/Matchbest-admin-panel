@@ -116,19 +116,19 @@ const features = [
     id: 1,
     title: "Elite Professionals",
     desc: "Certified AI, cloud, and software engineers delivering secure, scalable, and high-impact digital solutions.",
-    img: "/assets/img1.avif",
+    img: "/assets/meeting.jpg",
   },
   {
     id: 2,
     title: "Built Around You",
     desc: "A client-centric delivery model focused on transparency, measurable outcomes, and long-term business value.",
-    img: "/assets/download.webp",
+    img: "/assets/img2.png",
   },
   {
     id: 3,
     title: "Future-Ready Tech",
     desc: "Leveraging AI, cloud platforms, automation, and modern frameworks to future-proof growth and maximise ROI.",
-    img: "/assets/img3.avif",
+    img: "/assets/future.webp",
   },
 ];
 
@@ -166,13 +166,12 @@ const steps = [
 ];
 
 const faqData = [
-  { id: 1, question: "How can we help your business?", answer: "We provide end-to-end technology solutions including AI automation, cloud infrastructure, and custom software development tailored to your specific business goals." },
-  { id: 2, question: "Where is MatchBest Group located?", answer: "We operate globally with our headquarters, delivering remote and on-site solutions worldwide." },
-  { id: 3, question: "How do I start a project with MatchBest?", answer: "Simply click the 'Contact Us' button or reach out via email. We'll schedule a consultation to discuss your needs." },
-  { id: 4, question: "Does MatchBest Group work with startups?", answer: "Yes, we specialize in helping startups scale by providing cost-effective and robust technology foundations." },
-  { id: 5, question: "What technologies do you use for development?", answer: "We use modern stacks including React, Next.js, Node.js, Python, AWS, and Docker, ensuring your tech is future-proof." },
-  { id: 6, question: "Do you offer post-development support?", answer: "Absolutely. We offer various maintenance packages to ensure your software remains secure and up-to-date." },
-  { id: 7, question: "How do you ensure data security?", answer: "Security is our priority. We follow industry best practices, including encryption, regular audits, and secure cloud architectures." },
+  { id: 1, question: "How can we help your business?", answer: "We help businesses scale and innovate with AI automation, secure cloud solutions, and custom software development. From legacy modernisation and cloud migration to Generative AI and enterprise platforms, we deliver technology that solves real business problems. Our client-first approach ensures security, scalability, and measurable ROI." },
+  { id: 2, question: "Why should I choose you over other companies?", answer: "We combine deep technical expertise with a client-first mindset to deliver secure, scalable, and high-impact solutions. Our team focuses on quality, transparency, and long-term value, not shortcuts. When you work with us, you gain a trusted partner committed to real results and sustainable growth." },
+  { id: 3, question: "How long does a project usually take?", answer: "Project timeline depends on scope, complexity and requirements. It can be defined after an initial consultation." },
+  { id: 4, question: "Does MatchBest Group work with startups?", answer: "Yes, surely we love to work with startups by offering them scalable MVP development and flexible engagement models, specifically for early-stage growing businesses." },
+  { id: 5, question: "Do you provide ongoing support after delivery?", answer: "Absolutely, we offer end-to-end managed services, cloud monitoring and AI optimisation services, even after delivering the project to client." },
+  { id: 6, question: "How do you ensure data security?", answer: "Security is our priority. We follow industry best practices, including encryption, regular audits, and secure cloud architectures." },
 ];
 
 const locations = [
@@ -247,7 +246,7 @@ export default function Home() {
         <div className="bg-[#050505] min-h-screen flex flex-col overflow-x-hidden relative">
             
           {/* --- HERO SECTION --- */}
-          <section className="relative min-h-screen md:min-h-[90vh] flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
+          <section className="relative min-h-screen md:min-h-[80vh] flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-purple-600/10 blur-[120px] rounded-half pointer-events-none"></div>
           <div className="absolute top-[200px] left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none w-[150vw] sm:w-[130vw] md:w-[120vw] h-[300px]">
             <motion.svg 
@@ -274,7 +273,6 @@ export default function Home() {
                     <path d="M2533.07 1266.07C2533.07 1965.3 1967.45 2532.14 1267.46 2532.14C567.46 2532.14 0 1965.3 0 1266.07C0 566.839 567.46 0 1267.46 0C1967.45 0 2533.07 566.839 2533.07 1266.07Z" fill="#950DF6" />
                   </g>
                 </g>
-
                 <defs>
                   <filter id="filter0_f_332_3081" x="-100" y="-100" width="2733.07" height="2732.14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                   <feFlood flood-opacity="0" result="BackgroundImageFix"/>
@@ -298,7 +296,6 @@ export default function Home() {
                   <clipPath id="clip0_332_3081">
                   <rect width="2533.07" height="2533.07" rx="1266.54" fill="white"/>
                   </clipPath>
-
                 </defs>
               </motion.svg>
             </div>
@@ -485,20 +482,20 @@ export default function Home() {
 
                         {/* Bottom Text */}
                         <p className="font-['Manrope'] text-gray-400 text-center text-sm md:text-base mt-8 max-w-2xl px-4 leading-relaxed font-light">
-                            We maintain strict quality and security standards to ensure the highest level of trust and performance.
+                            We maintain strict quality and security standards to ensure the highest <br /> level of trust and performance.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* --- FUTURE-READY SOLUTIONS SECTION --- */}
-            <section className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col items-center justify-start pt-5 pb-20">
+{/* --- FUTURE-READY SOLUTIONS SECTION --- */}
+            <section className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col items-center justify-start pt-5 pb-18">
                 {/* --- HEADING --- */}
                 <div className="container mx-auto text-center relative z-20 px-4 mb-16">
                     <h2 className="font-['Manrope'] text-5xl md:text-6xl text-white mb-6">
                     Future-Ready Solutions
                     </h2>
-                    <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-lg font-light">
+                    <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-md font-light">
                     We deliver end-to-end technology solutions that help businesses build faster, scale smarter, and stay secure.
                     </p>
                 </div>
@@ -513,16 +510,17 @@ export default function Home() {
 
                         {/* 2. CARD CONTENT */}
                         <div className="relative z-10 flex flex-col h-full">
-                        
+                        <div className="flex flex-grid">
                         {/* Icon Box */}
-                        <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-3 shadow-lg">
+                        <div className="flex flex-col w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-3 shadow-lg">
                             <Image src={card.icon} alt="icon" width={28} height={28} className="object-contain"/>
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-['Manrope'] font-semibold text-white mb-2">
+                        <h3 className="text-lg pt-3 items-center justify-center font-['Manrope'] px-4 text-white mb-2">
                             {card.title}
                         </h3>
+                        </div>
 
                         {/* Description */}
                         <p className="text-gray-400 text-sm leading-relaxed mb-2 font-['Manrope'] font-light group-hover:text-gray-200 transition-colors">
@@ -556,17 +554,17 @@ export default function Home() {
         </section>
 
 {/* --- WORDS FROM OUR CLIENTS --- */}
-          <section className="w-full py-0 bg-black pt-10 mb-10">
-                    <div className="container mx-auto">
-                        <div className="container mx-auto text-center relative px-6 md:px-16 lg:px-20 z-20 px-4 mb-16">
-                            <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
-                            Words From Our Clients
-                            </h2>
-                            <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-lg font-light">
-                            Hear directly from our clients about their experience working with us.
-                            </p>
-                        </div>
-                        
+      <section className="w-full py-0 bg-black pt-10 mb-10">
+        <div className="container mx-auto">
+            <div className="container mx-auto text-center relative px-6 md:px-16 lg:px-20 z-20 px-4 mb-16">
+                <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
+                Words From Our Clients
+                </h2>
+                <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-lg font-light">
+                Hear directly from our clients about their experience working with us.
+                </p>
+            </div>
+
             <div className="relative w-full overflow-hidden">
               <div className="flex w-max animate-scroll hover:[animation-play-state:paused]"
                 style={{ animationDuration: '20s' }}>
@@ -779,7 +777,7 @@ export default function Home() {
     </section>
 
 {/* OUR APPROACH */}
-<section className="w-full bg-black py-24 px-6 md:px-16 lg:px-24 flex items-center justify-center min-h-[800px] overflow-hidden relative">
+<section className="w-full bg-black py-14 px-6 md:px-16 lg:px-24 flex items-center justify-center min-h-[400px] overflow-hidden relative">
       
       {/* 1. Purple Background Glow (Behind Cards) */}
       <div 
@@ -807,7 +805,7 @@ export default function Home() {
           {steps.map((step) => (
             <div 
               key={step.id}
-              className="group/card relative p-8 rounded-3xl bg-[#0f0f0f] border border-white/5 
+              className="group/card relative p-6 rounded-3xl bg-[#0f0f0f] border border-white/5 
                 transition-all duration-500 ease-in-out cursor-pointer
                 
                 /* --- HOVER LOGIC --- */
@@ -822,17 +820,20 @@ export default function Home() {
                 hover:!scale-105 hover:!opacity-100 hover:bg-[#151515] 
               "
             >
+              <div className="flex flex-grid">
               {/* Number Circle */}
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mb-3 group-hover/card:bg-purple-500 transition-colors duration-500">
+              
                 <span className="text-black font-bold text-lg group-hover/card:text-white">
                     {step.id}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-white text-2xl font-['Manrope'] font-semibold mb-3">
+              <h3 className="text-white text-2xl px-4 font-['Manrope'] font-semibold mb-3">
                 {step.title}
               </h3>
+            </div>  
 
               {/* Description */}
               <p className="text-gray-400 text-sm leading-relaxed font-light group-hover/card:text-gray-200">
@@ -849,13 +850,13 @@ export default function Home() {
 
 
 {/* FAQ Section */}
-<section className="relative w-full bg-black py-24 px-6 md:px-16 lg:px-24 overflow-hidden">
+<section className="relative w-full bg-black py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
     {/* Background Glow */}
-      <div className="absolute top-1/2 left-[-10%] -translate-y-1/2 w-[500px] h-[500px] bg-blue-900/30 blur-[120px] rounded-full pointer-events-none z-0"></div>
-      <div className="absolute top-1/2 left-[10%] -translate-y-1/2 w-[400px] h-[400px] bg-purple-900/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
+      <div className="absolute top-1/2 left-[-10%] -translate-y-1/2 w-[600px] h-[500px] bg-blue-900/30 blur-[100px] rounded-sm pointer-events-none z-0"></div>
+      {/* <div className="absolute top-1/2 left-[10%] -translate-y-1/2 w-[400px] h-[400px] bg-purple-900/20 blur-[100px] rounded-full pointer-events-none z-0"></div> */}
 
       <div className="container mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-24 items-start">
           
           {/* LEFT COLUMN */}
           <div className="lg:col-span-7 flex flex-col gap-4 order-2 lg:order-1">
@@ -875,7 +876,7 @@ export default function Home() {
                 >
                   
                   {/* Question Header */}
-                  <div className="flex items-center justify-between p-3 md:p-4">
+                  <div className="flex items-center justify-between p-2 md:p-3">
                     <h3 className="text-black font-['Manrope'] font-medium text-lg md:text-xl pr-4">
                       {item.question}
                     </h3>
@@ -883,7 +884,7 @@ export default function Home() {
                     {/* Icon */}
                     <Plus 
                       size={24} 
-                      className={`text-black-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                      className={`text-black-400 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}
                     />
                   </div>
 
@@ -911,7 +912,7 @@ export default function Home() {
               <span className="font-medium block">Asked Questions</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12 font-light max-w-md">
-              Got a question? Find fast answers here! If you still can't locate what you need, dive into our complete documentation.
+              Got a question? Find fast answers here! If you still can't locate what you need, connect with us.
             </p>
             
             {/* "Still need help?" Button */}
@@ -924,9 +925,8 @@ export default function Home() {
                 <span>need help?</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </div> */}
-            </div>
           </div>
-
+          </div>
         </div>
       </div>
     </section>
@@ -935,8 +935,8 @@ export default function Home() {
 <section className="w-full bg-[#0a0a0a] py-6 px-4 md:px-8 overflow-hidden min-h-[50vh] ">
   
       {/* === HEADING SECTION === */}
-      <div className="text-center mb-16 max-w-3xl mx-auto">
-        <h2 className="text-white text-4xl md:text-5xl font-['Manrope'] font-normal mb-6">
+      <div className="text-center mb-3 max-w-3xl mx-auto">
+        <h2 className="text-white text-4xl md:text-5xl font-['Manrope'] font-normal mb-3">
           Our Global Presence
         </h2>
         <p className="text-gray-400 text-lg font-light leading-relaxed">
@@ -1052,7 +1052,7 @@ export default function Home() {
             <h2 className="font-[Manrope] text-3xl md:text-4xl text-white mb-6">
                 Want to build the future today?
             </h2>
-            <p className="font-[Manrope] text-gray-200 mb-8 text-lg">
+            <p className="text-sm md:text-md font-[Manrope] text-gray-200 mb-8 text-lg">
                 Build Smarter. Scale Faster with expert-led AI, cloud and enterprise software development
             </p>
             <Link href="/contact" className="inline-block text-white border border-white bg-none text-[#6823f0] px-8 py-2 rounded-2xl text-lg shadow-xl hover:bg-white hover:text-black transition-all transform">
@@ -1062,6 +1062,6 @@ export default function Home() {
     </div>
 </section>
 
-        </div>
-    );
+    </div>
+  );
 }

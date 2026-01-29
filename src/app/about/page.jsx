@@ -137,7 +137,7 @@ const domainsData = [
   {
     id: "5",
     title: "Cloud & DevOps",
-    desc: "AWS & Azure migration, secure cloud migration, CI/CD pipelines & DevOps engineering. Kubernetes, serverless computing & scalable cloud infrastructure, along with high-availability of DevOps."
+    desc: "AWS & Azure migration, secure cloud migration, CI/CD pipelines & DevOps engineering. Serverless computing & scalable cloud infrastructure, along with high-availability of DevOps."
   },
   {
     id: "6",
@@ -516,30 +516,26 @@ return (
             {domainsData.map((item, index) => (
               <div 
                 key={index}
-                className="group relative border border-white/20 p-8 md:p-10 flex flex-col justify-start gap-2 min-h-[320px] -ml-[1px] -mt-[1px] transition-colors duration-300 hover:bg-white hover:z-10 hover:border-transparent"
-              >
-                
+                className="group relative border border-white/20 p-4 md:p-6 flex flex-col justify-start min-h-[220px] -ml-[1px]  transition-colors duration-300 hover:bg-white hover:z-10 hover:border-transparent">
+              <div className="flex flex-grid">
+
                 {/* Number */}
                 <span className="text-4xl md:text-5xl font-['Manrope'] font-light text-white/90 transition-colors duration-300 group-hover:text-black">
                   {item.id}
                 </span>
-
-                {/* Content Wrapper */}
-                <div>
+                
                   {/* Title */}
-                  <h3 className="text-xl font-['Manrope'] font-medium mb-4 text-white transition-colors duration-300 group-hover:text-black">
+                  <h3 className="text-lg font-['Manrope'] font-medium mb-2 text-white transition-colors duration-300 group-hover:text-black px-3 pt-1">
                     {item.title}
                   </h3>
-                  
+                </div>
+
                   {/* Description */}
                   <p className="text-sm text-gray-400 leading-relaxed font-light transition-colors duration-300 group-hover:text-gray-600">
                     {item.desc}
                   </p>
-                </div>
-
               </div>
             ))}
-
           </div>
 
         </div>
@@ -549,7 +545,7 @@ return (
 
 
 {/* --- BLOGS SECTION --- */}
-<section className="bg-black py-2 px-6 md:px-12">
+<section className="bg-black py-2 px-6 md:px-16">
   <div className="text-center mb-16 max-w-3xl mx-auto">
         <h2 className="text-white text-4xl md:text-5xl font-['Manrope'] font-normal mb-6">
           Our Blogs
@@ -560,11 +556,11 @@ return (
       <div className="max-w-7xl mx-auto">
         
         {/* Row of 3 Blogs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {blogs.map((blog) => (
             <Link key={blog.slug} href={`/blogs/${blog.slug}`} className="group cursor-pointer">
               {/* Image Container with Expand/Zoom effect on hover */}
-              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6">
+              <div className="relative overflow-hidden rounded-md aspect-[4/3] mb-6">
                 <img 
                   src={blog.image} 
                   alt={blog.title} 
@@ -577,7 +573,7 @@ return (
               </div>
 
               {/* Blog Title */}
-              <h3 className="text-white text-md md:text-xl font-medium leading-tight mb-4 group-hover:text-purple-400 transition-colors">
+              <h3 className="text-gray-300 text-sm md:text-md font-medium leading-tight mb-4 group-hover:text-white transition-colors">
                 {blog.title}
               </h3>
               <div className="flex items-center gap-3 mt-2">
@@ -603,7 +599,7 @@ return (
         </div>
 
         {/* More Blogs Button */}
-        <div className="mt-16 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <Link 
             href="/blogs" 
             className="group relative inline-flex items-center gap-3 px-6 py-2 bg-white text-black rounded-full font-bold text-xs tracking-widest hover:bg-black hover:text-white hover:border border-white"
