@@ -10,7 +10,7 @@ const solutionsData = [
     logo: "/assets/match-best-logo.png",
     name: "MatchBest Software",
     description: "Matchbest Software is an IT services and system integration firm that helps businesses bridge the gap between technology and business needs.",
-    image: "/assets/matchbest-software.jpg",
+    image: "/assets/matchbest.jpeg",
     link: "https://www.matchbestsoftware.com/",
     extraLink: "https://youtube.com/shorts/fFjtSVe72SQ", 
     extraLinkText: "View Live Demo ↗",
@@ -20,7 +20,7 @@ const solutionsData = [
     logo: "/assets/xelta-dark.png",
     name: "Xelta",
     description: "Xelta is a best generation platform that suits taste of all age groups. It provides user to generate contents like videos, images. Apart from this, it can also create visuals and draft stories.",
-    image: "/assets/Xelta.jpg",
+    image: "/assets/xelta-pg.png",
     link: "https://xelta.ai/",
     extraLink: "https://youtu.be/sH1A-2dyc4o", 
     extraLinkText: "View Live Demo ↗",
@@ -30,7 +30,7 @@ const solutionsData = [
     logo: "/assets/healnova.png",
     name: "Healnova",
     description: "Healnova presents itself as an AI-powered wellness platform and health-screening app that delivers fast, personalized health insights and wellness checks using users’ mobile devices.",
-    image: "/assets/h.jpg",
+    image: "/assets/healnova-page.jpg",
     link: "https://healnova.ai/",
     extraLink: "https://youtube.com/shorts/uyjBw0iPbfI", 
     extraLinkText: "View Live Demo ↗",
@@ -40,7 +40,7 @@ const solutionsData = [
     logo: "/assets/stream.png",
     name: "Streamplay",
     description: "Leader in OTT and media streaming technology providing high-concurrency content delivery. Works as a central hub that brings together content from various major streaming services into a single, seamless interface.",
-    image: "/assets/stream_play.png",
+    image: "/assets/xyz.png",
     link: "https://streamplay.ai/",
     extraLink: "https://youtu.be/uXL5Oie00pE", 
     extraLinkText: "View Live Demo ↗",
@@ -51,7 +51,7 @@ const solutionsData = [
     logo: "/assets/vitaay-dark.png",
     name: "Vitaay",
     description: "Vitaay is an AI-powered influencer marketing platform designed to bridge the gap between companies and content creators. It's core mission is to help visionary brands meet influential voices to facilitate authentic marketing partnerships.",
-    image: "/assets/vitaay-page.jpg",
+    image: "/assets/abc.jpg",
     link: "https://www.vitaay.ai/",
     extraLink: "", 
     // extraLinkText: "View Live Demo ↗",
@@ -62,7 +62,7 @@ const solutionsData = [
     logo: "/assets/elite-dark.png",
     name: "Elite Maverick",
     description: "EliteMaverick is a premier manpower and staffing solutions partner based in the United States. It specialize in precision hiring for industries where specific talent and timing are critical.",
-    image: "/assets/elite-page.png",
+    image: "/assets/elite-maverick.jpeg",
     link: "https://www.elitemaverick.com/",
     extraLink: "", 
     // extraLinkText: "View Live Demo ↗",
@@ -82,11 +82,9 @@ const SolutionsMenu = () => {
       {/* 1. THE TRIGGER BUTTON */}
       <button className="relative font-['Space_Grotesk'] font-normal text-[16px] leading-[32px] tracking-normal text-white transition-colors duration-300
         flex items-center gap-1 cursor-default outline-none
-        
         after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-3
         after:w-1.5 after:h-1.5 after:bg-purple-500 after:rounded-full 
-        after:opacity-0 group-hover:after:opacity-100 after:transition-all after:duration-300
-      ">
+        after:opacity-0 group-hover:after:opacity-100 after:transition-all after:duration-300">
         Solutions
       </button>
 
@@ -126,9 +124,8 @@ const SolutionsMenu = () => {
             </Link>
             ))}
           </div>
-           
-
-          {/* RIGHT SIDE: CARD PREVIEW */}
+         
+        {/* RIGHT SIDE: CARD PREVIEW */}
           <div className="w-[80%]">
             <div className="flex bg-gray-50 rounded-sm border border-black/20 overflow-hidden h-[315px]">
               

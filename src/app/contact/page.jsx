@@ -104,7 +104,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className='bg-black text-white min-h-screen flex flex-col overflow-hidden'>
+    <div className='w-full bg-black text-white min-h-screen flex flex-col overflow-x-hidden relative'>
       
       {/* Hero Section */}  
         <section className="w-full pt-24 px-4 md:px-12 lg:px-18 flex justify-center">

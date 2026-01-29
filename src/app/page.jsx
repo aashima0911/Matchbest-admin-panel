@@ -274,13 +274,13 @@ export default function Home() {
                   </g>
                 </g>
                 <defs>
-                  <filter id="filter0_f_332_3081" x="-100" y="-100" width="2733.07" height="2732.14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <filter id="filter0_f_332_3081" x="-100" y="-100" width="2733.07" height="2732.14" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                  <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                   <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                   <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_332_3081"/>
                   </filter>
                   <filter id="filter1_f_332_3081" x="-134" y="-133" width="2801" height="2800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                   <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                   <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_332_3081"/>
                   </filter>

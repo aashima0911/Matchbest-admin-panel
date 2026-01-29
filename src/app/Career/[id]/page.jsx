@@ -7,10 +7,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export default function JobDetailsPage({ params }) {
-  // 1. URL se ID nikali (params.id string hoti h, use Number m badla)
+  // ID by URL
   const job = jobsData.find((j) => j.id === Number(params.id));
 
-  // Agar job nahi mili (galat ID), to 404 page dikhao
+  // Job not found
   if (!job) {
     return <div className="text-white text-center pt-40">Job not found!</div>;
   }
@@ -110,7 +110,7 @@ export default function JobDetailsPage({ params }) {
           </div>
 
           {/* Contact Card */}
-          <div className="bg-white rounded-3xl p-6 text-center sticky top-28">
+          <div className="bg-white rounded-xl p-6 text-center sticky top-28">
             <h4 className="text-black text-lg font-bold mb-2">Have any questions?</h4>
             <p className="text-gray-600 text-xs mb-4">Contact us and we'll get back to you soon.</p>
             
@@ -120,7 +120,7 @@ export default function JobDetailsPage({ params }) {
             </a>
 
             {/* Illustration Placeholder */}
-            <div className="w-full h-48 rounded-2xl flex items-center justify-center mt-6" style={{backgroundImage: 'url(/assets/illustration.png)'}}></div>
+            <div className="w-full max-w-[250px] h-48 px-20 flex items-center justify-center mt-6" style={{backgroundImage: 'url(/assets/illustration.png)'}}></div>
           </div>
         </div>
 

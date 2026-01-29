@@ -42,16 +42,16 @@ export default function LanguageSelector() {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center space-x-30 p-2 bg-black text-white rounded-md"
+          className="flex items-center space-x-1 bg-black text-white rounded-md"
         >
-          {/* <FaGlobe className="h-4 w-4" /> */}
+          <FaGlobe className="h-4 w-4" />
           {/* <span className="text-sm">{currentLang?.flag}</span> */}
           <span className="text-sm hidden sm:inline">{currentLang?.code?.toUpperCase()}</span>
         </button>
 
         {/* Desktop Dropdown */}
         {!isMobile && isOpen && (
-          <div className="absolute  mt-2 w-64 bg-black rounded-md shadow-lg border z-50">
+          <div className="absolute right-0 mt-2 w-64 bg-black rounded-md shadow-lg border z-50 overflow-x-hidden">
             {/* <div className="p-3 border-b border-gray-700">
               <div className="relative">
                 <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
@@ -65,7 +65,7 @@ export default function LanguageSelector() {
                 />
               </div>
             </div> */}
-            <div className="max-h-64 overflow-y-auto scrollbar-hide">
+            <div className="max-h-64 overflow-x-hidden scrollbar-hide">
               {filteredLanguages.length > 0 ? (
                 filteredLanguages.map((lang, index) => (
                   <button

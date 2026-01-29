@@ -5,7 +5,7 @@ import NextImage from 'next/image';
 
 export default function PressReleaseClient({ releases }) {
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-purple-500 selection:text-white pt-20">
+    <div className="w-full min-h-screen bg-[#050505] text-white selection:bg-purple-500 selection:text-white pt-20 overflow-x-hidden relative">
         <div 
         className="absolute -top-[100px] -right-[100px] w-[1000px] h-[500px] rounded-full opacity-60 pointer-events-none"
         style={{
@@ -19,7 +19,7 @@ export default function PressReleaseClient({ releases }) {
       <div className="fixed top-0 left-0 w-full h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/40 via-[#050505] to-[#050505] pointer-events-none" />
 
       <div className="relative max-w-[1400px] mx-auto px-16 py-6">
-        <div className="flex flex-col md:flex-row justify-between items-end px-2 gap-4 mb-4">
+        <div className="flex flex-col md:flex-row justify-between items-start px-2 gap-4 mb-4">
           <h1 className="text-3xl md:text-4xl tracking-tight">
             Our Press Releases
           </h1>
