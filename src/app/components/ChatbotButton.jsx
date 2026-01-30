@@ -7,12 +7,17 @@ import { Maximize2, Minimize2, X } from "lucide-react";
 export default function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // ===== Prevent background scroll =====
   useEffect(() => {
     const html = document.documentElement;
     const body = document.body;
     const prevent = (e) => e.preventDefault();
+
+  // useEffect(() => {
+  //   if (isOpen) setIsLoading(true);
+  // }, [isOpen]);  
 
     if (isOpen) {
       html.classList.add("overflow-hidden");
@@ -68,51 +73,45 @@ export default function ChatbotWidget() {
           >
             <div
               className={[
-                "flex flex-col overflow-hidden rounded-2xl shadow-2xl border border-black/10 bg-white",
+                "flex flex-col overflow-hidden rounded-2xl shadow-2xl border border-black/10 bg-white relative", 
                 isExpanded
-                  ? "w-[min(420px,96vw)] h-[min(80vh,92vh)]"
-                  : "w-[min(320px,85vw)] h-[min(480px,75vh)] sm:w-[min(380px,92vw)] sm:h-[min(560px,85vh)]",
+                  ? "w-[min(320px)] h-[min(400px)]"
+                  : "w-[min(300px,85vw)] h-[min(500px,60vh)] sm:w-[min(310px,75vw)] sm:h-[min(600px,70vh)]",
               ].join(" ")}
             >
-              {/* Header */}
-              <div className="flex items-center justify-between px-4 py-2 bg-[#663c9a] text-white">
-                <div className="flex items-center gap-2">
-                  <span className="inline-block h-2 w-2 rounded-full bg-white/70" />
-                  <h2 className="text-sm font-semibold tracking-wide"></h2>
-                </div>
-                <div className="flex items-center gap-1">
-                  {/* Expand / Shrink */}
-                  <button
-                    aria-label={isExpanded ? "Shrink chat" : "Expand chat"}
-                    onClick={() => setIsExpanded((v) => !v)}
-                    className="p-1 rounded-md hover:bg-white/10 transition"
-                  >
-                    {isExpanded ? (
-                      <Minimize2 className="h-5 w-5" />
-                    ) : (
-                      <Maximize2 className="h-5 w-5" />
-                    )}
-                  </button>
-                  {/* Close */}
-                  <button
-                    aria-label="Close chat"
-                    onClick={closeChat}
-                    className="p-1 rounded-md hover:bg-white/10 transition"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
+              {/* Close Overlay Button */}
+              <button
+                aria-label="Close chat"
+                onClick={closeChat}
+                className="absolute top-2 right-2 z-10 bg-white rounded-full p-0 shadow-md hover:bg-gray-100 transition"
+              >
+                <X className="h-3 w-3 text-gray-700" />
+              </button>
 
               {/* Iframe */}
-              <div className="flex-grow">
-                <iframe
-                  src="https://chat-bot-match-best.vercel.app/?websiteId=matchbestgroup"
-                  title="Helpdesk Chatbot"
-                  className="w-full h-full border-none"
-                  allow="microphone; camera"
-                />
-              </div>
+              <div className="flex-grow relative overflow-hidden bg-white rounded-b-2xl">
+                {isLoading && (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-50 z-20">
+                    {/* Spinner Icon */}
+                    <div className="animate-spin rounded-full h-10 w-10 border-4 border-purple-200 border-t-purple-600"></div>
+                    <p className="mt-2 text-xs text-gray-400 font-medium">Initializing AI...</p>
+                  </div>
+                )}
+              <iframe
+                src="https://bot.avasuite.ai/?websiteId=matchbestgroup"
+                title="Helpdesk Chatbot"
+                onLoad={() => setIsLoading(false)}
+                style={{
+                    width: "168.37%",   
+                    height: "168.37%",  
+                    transform: "scale(0.6)", 
+                    transformOrigin: "top left", 
+                    border: "none"
+                }}
+                className={`w-full h-full transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`} 
+                allow="microphone; camera"
+              />
+            </div>
             </div>
           </motion.div>
         )}
@@ -126,10 +125,10 @@ export default function ChatbotWidget() {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="fixed bottom-5 right-5 z-[75] w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-xl flex items-center justify-center"
+          className="fixed bottom-5 right-5 z-[75] w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-xl flex items-center justify-center"
         >
           {/* Use your uploaded icon */}
-          <img src="/chatbot-icon.webp" alt="Chatbot" className="w-15 h-13 cursor-pointer" />
+          <img src="/chatbot-icon.webp" alt="Chatbot" className="w-full h-full object-contain cursor-pointer" />
         </motion.button>
       )}
     </>
