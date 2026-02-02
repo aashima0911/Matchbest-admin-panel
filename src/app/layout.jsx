@@ -28,7 +28,7 @@ const geistMono = Geist_Mono({
 
 // ✅ Proper metadata export for App Router
 export const metadata = {
-  title: "MatchBest Group | Digital Innovation, AI Solutions & Cloud Platforms",
+  title: "MatchBest Group | AI Solutions & Cloud Platforms",
   description:
     "Transform your business with Matchbest Software. We deliver custom app development, AI automation, secure cloud infrastructure, and managed IT services globally.",
   keywords:

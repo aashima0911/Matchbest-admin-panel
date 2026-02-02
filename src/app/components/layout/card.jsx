@@ -195,13 +195,13 @@ export default function VerticalsCarousel() {
                       rel="noopener noreferrer"
                       className="mt-auto flex bg-white text-black font-semibold px-6 py-2 gap-3 rounded-full transition-all duration-300 transform hover:bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-center justify-center shadow-lg hover:shadow-xl"
                     >
-                      <span>{t('verticals.learnMore')} </span>
+                      <span>Learn More</span>
                       <div className="relative w-8 h-8 items-center justify-center">
                         <Image
                           src="/assets/arrow.svg" 
                           alt="Arrow"
-                          width={32}
-                          height={32}
+                          width={25}
+                          height={25}
                           className="object-contain transition-transform duration-300 group-hover:-rotate-45"
                         />
                       </div>
@@ -281,13 +281,13 @@ export default function VerticalsCarousel() {
                       rel="noopener noreferrer"
                       className="mt-auto flex bg-white text-black font-semibold px-6 py-2 gap-3 rounded-full transition-all duration-300 transform  hover:bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-center justify-center shadow-lg hover:shadow-xl"
                     >
-                      <span>{t('verticals.learnMore')} </span>
+                      <span>Learn More </span>
                       <div className="relative w-8 h-8 items-center justify-center">
                         <Image
                           src="/assets/arrow.svg" 
                           alt="Arrow"
-                          width={32}
-                          height={32}
+                          width={25}
+                          height={25}
                           className="object-contain transition-transform duration-300 group-hover:-rotate-45"
                         />
                       </div>

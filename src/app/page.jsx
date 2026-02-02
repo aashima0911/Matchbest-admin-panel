@@ -228,10 +228,10 @@ export default function Home() {
     const { t } = useTranslation();
     
     const { scrollY } = useScroll();
-    const circleX = useTransform(scrollY, [0, 600], ["-50%", "-80%"]);
+    const circleX = useTransform(scrollY, [0, 600], ["-50%", "-50%"]);
     const circleY = useTransform(scrollY, [0, 360], [0, -500]);
-    const circleScale = useTransform(scrollY, [0, 400], [1, 0.5]);
-    const circleOpacity = useTransform(scrollY, [400, 500], [1, 0]);
+    const circleScale = useTransform(scrollY, [0, 500], [1, 0.5]);
+    const circleOpacity = useTransform(scrollY, [400, 500], [1, 2]);
 
     const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 2));
     const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2));
@@ -245,10 +245,10 @@ export default function Home() {
     return (
         <div className="bg-[#050505] min-h-screen flex flex-col overflow-x-hidden relative">
             
-          {/* --- HERO SECTION --- */}
-          <section className="relative min-h-screen md:min-h-[80vh] flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
+        {/* --- HERO SECTION --- */}
+        <section className="relative flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-purple-600/10 blur-[120px] rounded-half pointer-events-none"></div>
-          <div className="absolute top-[200px] left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none w-[150vw] sm:w-[130vw] md:w-[120vw] h-[300px]">
+          <div className="absolute top-[200px] left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none w-[150vw] sm:w-[100vw] md:w-[120vw] h-[300px]">
             <motion.svg 
                 width="100%" 
                 height="auto" 
@@ -303,13 +303,13 @@ export default function Home() {
                 {/* 2. HERO CONTENT*/}
                 <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center pt-0 pb-20 mt-0 mb-2 md:md-4 mb:lg-8">
                     {/* 1. Main Heading */}
-                    <h1 className="font-['Manrope'] font-medium text-[26px] md:text-[40px] lg:text-[60px] leading-[1.1] lg:leading-[80px] tracking-tight text-white mb-0 max-w-6xl">
+                    <h1 className="font-['Manrope'] font-medium text-[26px] md:text-[40px] lg:text-[60px] leading-[1.1] lg:leading-[80px] tracking-tight text-white sm:mb-4 md:mb-0 max-w-6xl">
                     AI-Driven Digital Transformation for Secure, <br />
                     Scalable Business Growth
                     </h1>
 
                     {/* 2. Subheading */}
-                    <h2 className="text-white text-sm  max-w-3xl mb-6 leading-relaxed mt-2 pt-0 md:pt-4">
+                    <h2 className="text-white text-sm  max-w-3xl mb-6 leading-relaxed sm:mt-4 md:mt-2 pt-0 md:pt-4">
                         Delivering AI-Powered Automation, Secure Cloud Infrastructure & Enterprise-Grade <br />
                         Software - Scalable Solutions for Digital Transformation
                     </h2>
@@ -322,7 +322,7 @@ export default function Home() {
                     </div> */}
 
                     <div className="pt-0 md:pt-4">
-                        <button className="group relative px-8 rounded-full border border-white bg-transpare overflow-hidden transition-colors duration-300 hover:border-white mb-2 md:mb-4 lg:mb-4">
+                        <button className="group relative px-8 rounded-full border border-white bg-transpare overflow-hidden transition-colors duration-300 hover:border-white mb-4 md:mb-4 lg:mb-4">
                             <div className="absolute inset-0 bg-white translate-y-full transition-transfo duration-100 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0"></div>
                     
                             {/* === 2. ROLLING TEXT CONTENT === */}
@@ -343,9 +343,9 @@ export default function Home() {
                         </button>
                     </div>
 
-                    {/* 4. Stats Box  */}
-                    <div className="w-400px  bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-2 md:p-4 mt-2 mb-0 md:mb-2 lg:mb-2">
-                        <div className="grid grid-cols-0 md:grid-cols-4 gap-0 text-center text-white ">
+                  {/* 4. Stats Box  */}
+                    <div className="w-400px  bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-2 md:p-4 mt-2 mb-4 md:mb-4 lg:mb-4">
+                        <div className="grid grid-cols-0 md:grid-cols-4 gap-4 md:gap-4 lg:gap-4 text-center text-white ">
                         
                         {/* Stat 1 */}
                         <div className="flex flex-col items-center">
@@ -428,7 +428,7 @@ export default function Home() {
             </div>
 
             {/* --- ABOUT US --- */}
-            <section className="container mx-auto py-10 px-8 md:px-12" data-aos="fade-up">
+            <section className="container mx-auto py-10 px-8 md:px-20" data-aos="fade-up">
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1">
                         <h2 className="font-[''Manrope] text-3xl md:text-4xl font-normal text-white mb-6 tracking-wide">
@@ -489,7 +489,7 @@ export default function Home() {
             </section>
 
 {/* --- FUTURE-READY SOLUTIONS SECTION --- */}
-            <section className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col items-center justify-start pt-5 pb-18">
+            <section className="relative w-full bg-black overflow-hidden flex flex-col items-center justify-start pt-5 pb-10">
                 {/* --- HEADING --- */}
                 <div className="container mx-auto text-center relative z-20 px-4 mb-16">
                     <h2 className="font-['Manrope'] text-5xl md:text-6xl text-white mb-6">
@@ -501,7 +501,7 @@ export default function Home() {
                 </div>
 
                 {/* --- LAYER 2: CARDS GRID  --- */}
-                <div className="w-full max-w-4xl mx-auto relative z-20 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="w-full max-w-4xl mx-auto relative z-20 px-4 md:px-12 grid grid-cols-2 md:grid-cols-2 gap-4">
                     {cardsData.map((card) => (
                     <div
                         key={card.id}
@@ -544,17 +544,63 @@ export default function Home() {
                 </div>
 
                 {/* --- LAYER 3: BACKGROUND SVG --- */}
-                <div className="absolute bottom-0 left-0 w-full z-0 pointer-events-none">
-                    <img 
-                    src="/assets/bg.svg" 
-                    alt="Purple Background Curve"
-                    className="w-full h-auto object-cover opacity-100"
-                    />
+                <div className="absolute bottom-20 left-200 w-full z-0 pointer-events-none">
+                    <div className="absolute top-[80px] left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none w-[400vw] sm:w-[350vw] md:w-[400vw] ">
+                    <motion.svg 
+                        width="100%" 
+                        height="auto" 
+                        viewBox="0 0 2534 2534" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMin slice" 
+                        style={{
+                          y: circleY,
+                          scale: circleScale,
+                          opacity: circleOpacity,
+                          originY: 0,
+                          originX: 0, 
+                        }}
+                        className="overflow-visible"
+                      >
+                        <g clipPath="url(#clip0_332_3081)">
+                          <rect width="2533.07" height="2533.07" rx="1266.54" fill="white" fillOpacity="0.05" />
+                          
+                          {/* Glow layers */}
+                          <g filter="url(#filter0_f_332_3081)">
+                            <path d="M2533.07 1266.07C2533.07 1965.3 1967.45 2532.14 1267.46 2532.14C567.46 2532.14 0 1965.3 0 1266.07C0 566.839 567.46 0 1267.46 0C1967.45 0 2533.07 566.839 2533.07 1266.07Z" fill="#950DF6" />
+                          </g>
+                        </g>
+                        <defs>
+                          <filter id="filter0_f_332_3081" x="-100" y="-100" width="2733.07" height="2732.14" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                          <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_332_3081"/>
+                          </filter>
+                          <filter id="filter1_f_332_3081" x="-134" y="-133" width="2801" height="2800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                          <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_332_3081"/>
+                          </filter>
+                          <filter id="filter2_f_332_3081" x="-34" y="-33" width="2601" height="2600" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                          <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_332_3081"/>
+                          </filter>
+                          <linearGradient id="paint0_linear_332_3081" x1="4243.74" y1="-1709" x2="-172.24" y2="2756.84" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#121212"/>
+                          <stop offset="1" stop-color="#8300DD"/>
+                          </linearGradient>
+                          <clipPath id="clip0_332_3081">
+                          <rect width="2533.07" height="2533.07" rx="1266.54" fill="white"/>
+                          </clipPath>
+                        </defs>
+                      </motion.svg>
+                    </div>
                 </div>
         </section>
 
 {/* --- WORDS FROM OUR CLIENTS --- */}
-      <section className="w-full py-0 bg-black pt-10 mb-10">
+      <section className="w-full py-0 bg-black pt-16 mb-10">
         <div className="container mx-auto">
             <div className="container mx-auto text-center relative px-6 md:px-16 lg:px-20 z-20 px-4 mb-16">
                 <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
@@ -625,7 +671,7 @@ export default function Home() {
                 
 
 {/* WHY CHOOSE US SECTION */}
-    <section className="w-full bg-black py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section className="bg-black py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
       
       {/* Heading */}
       <div className="container mx-auto mb-16 text-center">
@@ -641,18 +687,41 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 relative">
           
           {/* --- COLUMN 1: LEFT CARDS --- */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-[600px] relative z-10">
+          <div className="
+            lg:col-span-4 
+            
+            /* MOBILE STYLE */
+            grid grid-cols-2 gap-4 place-items-center w-full
+
+            /* DESKTOP STYLE */
+            lg:flex lg:flex-col lg:justify-between lg:h-[600px] lg:gap-0 lg:items-end lg:w-fit lg:ml-auto
+            relative z-10 
+          ">
             {features.map((item, index) => (
               <div 
                 key={item.id}
-                className={`bg-[#171717] p-4 rounded-md border border-white/5 h-[150px] w-[340px] flex flex-col justify-center relative group transition-all duration-300 ${index === 1 ? 'lg:translate-x-26' : ''}`}>
-                <h3 className="text-white text-2xl font-['Manrope'] font-medium mb-4">
+                className={`
+                  bg-[#171717] p-4 rounded-md border border-white/5 
+                  h-[150px] flex flex-col justify-center relative group transition-all duration-300 shrink-0
+                  
+                  /* MOBILE VIEW */
+                  w-full max-w-[340px]
+                  
+                  /* GRID */
+                  last:col-span-2 
+
+                  /* DESKTOP VIEW */
+                  lg:w-[340px]
+                  ${index === 1 ? 'lg:translate-x-[60px]' : ''}
+                `}
+              > 
+                <h3 className="text-white text-md md:text-2xl font-['Manrope'] font-medium mb-4">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-md leading-relaxed font-['Manrope'] font-light">
+                <p className="text-gray-400 text-sm md:text-md leading-relaxed font-['Manrope'] font-light">
                   {item.desc}
                 </p>
               </div>
@@ -691,23 +760,41 @@ export default function Home() {
           </div>
 
           {/* --- COLUMN 3: RIGHT IMAGES --- */}
-          <div className="lg:col-span-4  flex flex-col justify-between h-[600] relative z-10">
+          <div className="
+            lg:col-span-4 
+            
+            /* MOBILE STYLE */
+            grid grid-cols-2 gap-4 place-items-center w-full
+
+            /* DESKTOP STYLE */
+            lg:flex lg:flex-col lg:justify-between lg:h-[600px] lg:items-start lg:w-fit 
+            relative z-10">
             {features.map((item, index) => (
               <div 
                 key={item.id}
-                className="h-[160px] w-[300px] rounded-md relative group mb-4"
+                className={`
+                  h-[160px] rounded-md relative group shrink-0 transition-all duration-300 
+                  
+                  /* MOBILE VIEW */
+                  w-full max-w-[300px]
+                  
+                  /* GRID */
+                  last:col-span-2 
+
+                  /* DESKTOP VIEW */
+                  lg:w-[300px]
+                  ${index === 1 ? 'lg:-translate-x-[60px]' : ''}
+                `}
               >
                 <Image 
                   src={item.img}
                   alt={item.title}
                   fill
-                  className={`object-cover h-[160px] rounded-md overflow-hidden relative group transition-all duration-300 ${index === 1 ? 'lg:-translate-x-25' : ''}`}
-                />
+                  className="object-cover rounded-md"/>
                 <div className="absolute inset-0 bg-black/20 transition-colors"></div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
@@ -718,7 +805,7 @@ export default function Home() {
       
       {/* Heading */}
       <div className="container mx-auto text-center relative z-20 px-4 mb-16">
-        <h2 className="font-['Manrope'] text-5xl md:text-6xl text-black mb-6">
+        <h2 className="font-['Manrope'] text-4xl md:text-6xl text-black mb-6">
             Our Technology Stack
         </h2>
     </div>
@@ -932,7 +1019,7 @@ export default function Home() {
     </section>
 
 {/* --- GLOBAL PRESENCE SECTION --- */}
-<section className="w-full bg-[#0a0a0a] py-6 px-4 md:px-8 overflow-hidden min-h-[50vh] ">
+<section className="w-full bg-[#0a0a0a] py-6 px-4 md:px-8 overflow-hidden">
   
       {/* === HEADING SECTION === */}
       <div className="text-center mb-3 max-w-3xl mx-auto">
@@ -945,7 +1032,7 @@ export default function Home() {
       </div>
 
       {/* === MAP CONTAINER === */}
-      <div className="relative w-1x1 max-w-3xl mx-auto aspect-[16/9] md:aspect-[2/1]">
+      <div className="relative w-1x1 max-w-3xl mx-auto aspect-[16/9] md:aspect-[2/1] mb-2 md: mb-8">
         
         {/* Map  */}
         <div className="absolute inset-0 opacity-100">
@@ -972,16 +1059,10 @@ export default function Home() {
             </div>
 
             {/* --- THE WHITE CARD --- */}
-            
             <div 
               className={`
                 absolute bg-white rounded-md min-w-[100px] text-center
                 transition-all duration-300 
-
-                ${loc.align.includes('top') ? 'items-end' : ''}
-                ${loc.align.includes('bottom') ? 'items-start' : ''}
-                ${loc.align === 'left' || loc.align === 'right' ? 'items-center' : ''}
-                
                 ${loc.align === 'top' ? 'bottom-full mb-6' : ''}
                 ${loc.align === 'bottom' ? 'top-full mt-6' : ''}
                 ${loc.align === 'left' ? 'right-full mr-10 -top-2' : ''}
@@ -1034,7 +1115,7 @@ export default function Home() {
 
 
 {/* --- CONTACT SECTION --- */}
-<section className="relative z-10 py-8 bg-black text-center px-4">
+<section className="relative z-10 py-12 bg-black text-center px-4 pt-10">
     <div className="max-w-3xl mx-auto glass-effect rounded-2xl p-10 relative overflow-hidden">
         
         {/* Background SVG */}
