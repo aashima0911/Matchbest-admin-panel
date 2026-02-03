@@ -136,7 +136,7 @@ export default function RootLayout({ children }) {
         <meta name="google-site-verification" content="WTgd1zeK3woJgGNcOhqzp6zMzX9u3QuXo6Pmnfsvh4g" />
         <meta name="google-site-verification" content="1ffFm0S_nRz_V9GnWBe4czDuwBlzR_pszqxyUGbh-Vo" /> 
 
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FJ28ZXV4K2"
           strategy="afterInteractive"
         />
@@ -147,7 +147,7 @@ export default function RootLayout({ children }) {
             gtag('js', new Date());
             gtag('config', 'G-FJ28ZXV4K2');
           `}
-        </Script>
+        </Script> */}
         {/* Meta Pixel Code */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
@@ -161,6 +161,18 @@ export default function RootLayout({ children }) {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '630747470027499');
             fbq('track', 'PageView');
+          `}
+        </Script>
+        {/*-- Google tag (gtag.js) --*/}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-K5R4JCCMTF"
+          strategy="afterInteractive"/>
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-K5R4JCCMTF');
           `}
         </Script>
         <noscript>
