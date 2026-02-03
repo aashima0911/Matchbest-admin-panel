@@ -150,7 +150,7 @@ export default function VerticalsCarousel() {
                         {index + 1}
                       </div>
                     {/* Logo/Title Section */}
-                    <div className="h-12 mb-0 flex items-center justify-center">
+                    <div className="h-12 mb-0 flex items-center justify-center ">
                       {vertical.logo ? (
                         <Image
                           src={vertical.logo || "/placeholder.svg"}

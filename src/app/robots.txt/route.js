@@ -6,14 +6,11 @@ export async function GET() {
   const robotsTxt = `User-agent: *
 Allow: /
 Allow: /_next/static/
-Allow: /api/
-Allow: /admin/
+Disallow: /api/
+Disallow: /admin/
 
 # Sitemap
-Sitemap: https://matchbest.ai/sitemap.xml
-
-# Disallow admin and private areas
-Disallow: `;
+Sitemap: https://matchbest.ai/sitemap.xml`;
 
   return new NextResponse(robotsTxt, {
     headers: {
