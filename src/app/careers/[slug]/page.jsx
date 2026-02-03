@@ -5,6 +5,14 @@ import DarkMarkdownRenderer from '../../components/DarkMarkdownRenderer';
 import ApplicationForm from './ApplicationForm';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({ params }) {
+  return {
+    alternates: {
+      canonical: `https://matchbest.ai/Career`,
+    },
+  };
+}
+
 // Generate static params for all careers
 export async function generateStaticParams() {
   try {

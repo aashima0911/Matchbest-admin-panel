@@ -6,6 +6,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 
+export async function generateMetadata({ params }) {
+  return {
+    alternates: {
+      canonical: `https://matchbest.ai/blogs`,
+    },
+  };
+}
+
 // Custom markdown components
 const markdownComponents = {
   h1: ({node, ...props}) => <h1 className="text-4xl md:text-5xl font-semibold mt-10 mb-6 text-white border-l-4 border-purple-500 pl-4 py-2" {...props} />,

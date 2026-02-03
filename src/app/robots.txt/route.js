@@ -5,14 +5,15 @@ export async function GET() {
   
   const robotsTxt = `User-agent: *
 Allow: /
+Allow: /_next/static/
+Allow: /api/
+Allow: /admin/
 
 # Sitemap
 Sitemap: https://matchbest.ai/sitemap.xml
 
 # Disallow admin and private areas
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/`;
+Disallow: `;
 
   return new NextResponse(robotsTxt, {
     headers: {
