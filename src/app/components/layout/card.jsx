@@ -109,9 +109,9 @@ export default function VerticalsCarousel() {
       <div className="container mx-auto max-w-7xl">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-normal text-white mb-6 tracking-wide">{t('verticals.title', 'Our Verticals')}</h2>
+          <h1 className="text-5xl md:text-6xl font-normal text-white mb-6 tracking-wide">{t('verticals.title', 'Our Verticals')}</h1>
 
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">{t('verticals.subtitle', 'Purpose-built technology solutions designed to solve real industry challenges.')}</p>
+          <h2 className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">{t('verticals.subtitle', 'Purpose-built technology solutions designed to solve real industry challenges.')}</h2>
         </div>
         
         {/* Grid Container */}

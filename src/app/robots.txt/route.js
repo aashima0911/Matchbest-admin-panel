@@ -6,8 +6,8 @@ export async function GET() {
   const robotsTxt = `User-agent: *
 Allow: /
 Allow: /_next/static/
-Disallow: /api/
-Disallow: /admin/
+Allow: /api/
+Allow: /admin/
 
 # Sitemap
 Sitemap: https://matchbest.ai/sitemap.xml`;

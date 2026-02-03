@@ -124,8 +124,8 @@ export default function ApplicationForm({ jobTitle }) {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5 border border-gray-200 shadow-xl rounded-2xl p-8 max-w-xl mx-auto mt-8">
-      <h2 className="text-2xl font-extrabold mb-1 text-[#5f12c6] text-center">Apply for {jobTitle}</h2>
-      <p className="text-gray-500 text-center mb-4">Fill out the form below and we'll get in touch soon.</p>
+      <h1 className="text-2xl font-extrabold mb-1 text-[#5f12c6] text-center">Apply for {jobTitle}</h1>
+      <h2 className="text-gray-500 text-center mb-4">Fill out the form below and we'll get in touch soon.</h2>
 
       <div className="flex flex-col gap-2">
         <label className="text-sm font-medium text-gray-700 flex items-center gap-2" htmlFor="name">

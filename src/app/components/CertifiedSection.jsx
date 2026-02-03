@@ -22,7 +22,7 @@ export default function CertifiedSection() {
 
   return (
     <section className="w-full bg-[rgba(47, 27, 82, 1)] text-white py-10 px-4 flex flex-col items-center overflow-hidden">
-      <h2 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-4">Certification</h2>
+      <h1 className="text-3xl md:text-4xl font-bold text-gradient text-center mb-4">Certification</h1>
 
       <p className="text-center max-w-xl text-gray-300 mt-3 mb-10 text-sm md:text-base">
         We maintain strict quality and security standards to ensure the highest

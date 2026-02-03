@@ -91,14 +91,15 @@ const SolutionsMenu = () => {
       {/* 2. THE MEGA MENU */}
       <div className="absolute top-full left-0 w-full bg-white text-black shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border-t border-gray-100 z-50">
         
-        <div className="max-w-[1400px] mx-auto px-8 py-10 flex items-start gap-12">
+        <div className="max-w-[1200px] mx-auto px-8 py-10 flex items-start gap-12">
           
           {/* LEFT SIDE: LIST */}
           <div className="w-[20%] flex flex-col gap-4 border-r border-gray-200 pr-8">
             {solutionsData.map((item, index) => (
             <Link 
             key={item.id}
-              href={solutionsData[activeTab].link || "#"}
+              href={solutionsData[activeTab].link}
+              aria-label={`Explore more about ${solutionsData[activeTab].name}`}
               target="_blank"
               className=""> 
               <div 
