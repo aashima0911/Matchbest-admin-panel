@@ -77,8 +77,8 @@ const techJobs = jobsData.filter(job => job.category === 'Technical');
 const non_techJobs = jobsData.filter(job => job.category === 'Non-Technical');
 const internships = jobsData.filter(job => job.category === 'Internships');
 
-  return (
-    <div className="bg-black text-white min-h-screen flex flex-col py-6 ">
+return (
+  <div className="bg-black text-white min-h-screen flex flex-col py-6 ">
 
     <div className="min-h-screen text-white pt-18 md:pt-20 overflow-x-hidden selection:bg-purple-500 selection:text-white">
       
@@ -95,7 +95,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
       ></div>
 
         <div 
-            className="relative w-full h-[150px] md:h-[200px] rounded-[32px] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5 mb-8">
+            className="relative w-full h-[150px] md:h-[200px] rounded-[32px] overflow-hidden flex items-center justify-center shadow-2xl border border-white/5 ">
 
           <div className="absolute w-full inset-0 z-0" 
             style={{
@@ -109,12 +109,12 @@ const internships = jobsData.filter(job => job.category === 'Internships');
             <div className="relative z-10 text-center px-6">
             
             {/* Main Heading */}
-            <h1 className="text-white text-4xl md:text-5xl font-['Inter'] font-normal mb-6 tracking-tight drop-shadow-lg">
+            <h1 className="text-white text-3xl md:text-5xl font-['Inter'] font-normal mb-6 tracking-tight drop-shadow-lg">
                 Careers at MatchBest
             </h1>
             
             {/* Subheading */}
-            <p className="text-gray-200 text-md md:text-md font-['Inter'] font-light tracking-wide max-w-2xl mx-auto opacity-90">
+            <p className="text-gray-200 text-sm md:text-md font-['Inter'] font-light tracking-wide max-w-2xl mx-auto opacity-90">
                 Be part of a team that builds intelligent solutions to solve meaningful, real-world challenges
             </p>
 
@@ -124,13 +124,13 @@ const internships = jobsData.filter(job => job.category === 'Internships');
       </section>
 
       {/* === 2. LIFE AT MATCHBEST === */}
-      <section className="w-full bg-black py-12 px-6 md:px-10 lg:px-12 overflow-x-hidden">
-            <div className="container mx-auto max-w-[1300px] ">
+      <section className="w-full bg-black py-12 px-3 md:px-6 overflow-x-hidden">
+            <div className="container mx-auto w-full max-w-[1400px]">
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 
                 {/* === LEFT COLUMN: TEXT CONTENT === */}
-                <div className="flex flex-col px-4 md:px-4 lg:px-4">
+                <div className="flex flex-col px-2 md:px-2">
                   
                   {/* Heading */}
                   <h2 className="text-white text-3xl md:text-4xl font-medium tracking-tight mb-8">
@@ -138,7 +138,7 @@ const internships = jobsData.filter(job => job.category === 'Internships');
                   </h2>
       
                   {/* Paragraph Content */}
-                  <div className="text-white text-justify text-sm leading-tight font-light mb-2">
+                  <div className="text-white text-md leading-tight font-light mb-2">
                     <p>
                         Behind MatchBest, curiosity, teamwork, and a clear sense of purpose are the main fuels. Our engineers, designers, and problem-solvers create cloud-native, AI-driven platforms for enterprises that actually move the needle globally. Every project is a chance to learn, to tinker, to push technical limits until something finally clicks. Who wouldn’t want that?
                     </p><br />

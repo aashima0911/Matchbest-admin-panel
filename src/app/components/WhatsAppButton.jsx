@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
       rel="noopener noreferrer"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-20 right-5 z-50 w-8 h-8 sm:w-12 sm:h-12 bg-green-500 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-colors"
+      className="fixed bottom-20 right-5 z-50 w-8 h-8 sm:w-14 sm:h-14 bg-green-500 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-colors"
       aria-label="Contact via WhatsApp"
     >
       <svg
