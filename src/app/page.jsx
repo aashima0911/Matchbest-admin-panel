@@ -193,7 +193,7 @@ const locations = [
     address: "Expansion 2025",
     top: "46%", 
     left: "58%", 
-    align: "top-left" , md:"top"
+    align: "top" , md:"top-left"
   },
   {
     country: "UAE",
@@ -243,8 +243,8 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="bg-[#050505] min-h-screen flex flex-col overflow-x-hidden relative">
-            
+      <div className="bg-[#050505] min-h-screen flex flex-col overflow-x-hidden relative">
+ 
         {/* --- HERO SECTION --- */}
         <section className="relative flex flex-col justify-start pt-40 md:pt-40 items-center px-4 overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-purple-600/10 blur-[120px] rounded-half pointer-events-none"></div>
@@ -301,15 +301,15 @@ export default function Home() {
             </div>
 
                 {/* 2. HERO CONTENT*/}
-                <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center pt-0 pb-20 mt-0 mb-2 md:md-4 mb:lg-8">
+                <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center pt-0 pb-16 mt-0 mb-2 md:md-4 mb:lg-8">
                     {/* 1. Main Heading */}
-                    <h1 className="font-['Manrope'] font-medium text-[26px] md:text-[40px] lg:text-[60px] leading-[1.1] lg:leading-[80px] tracking-tight text-white sm:mb-4 md:mb-0 max-w-6xl">
+                    <h1 className="font-['Manrope'] font-medium text-[36px] md:text-[40px] lg:text-[60px] leading-[1.1] lg:leading-[80px] tracking-tight text-white sm:mb-2 max-w-6xl">
                     AI-Driven Digital Transformation for Secure, <br />
                     Scalable Business Growth
                     </h1>
 
                     {/* 2. Subheading */}
-                    <h2 className="text-white text-sm  max-w-3xl mb-6 leading-relaxed sm:mt-4 md:mt-2 pt-0 md:pt-4">
+                    <h2 className="text-white text-md  max-w-3xl mb-6 leading-relaxed sm:mt-4 md:mt-2 pt-0 md:pt-4">
                         Delivering AI-Powered Automation, Secure Cloud Infrastructure & Enterprise-Grade <br />
                         Software - Scalable Solutions for Digital Transformation
                     </h2>
@@ -344,8 +344,8 @@ export default function Home() {
                     </div>
 
                   {/* 4. Stats Box  */}
-                    <div className="w-400px  bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-2 md:p-4 mt-2 mb-4 md:mb-4 lg:mb-4">
-                        <div className="grid grid-cols-0 md:grid-cols-4 gap-4 md:gap-4 lg:gap-4 text-center text-white ">
+                    <div className="w-400px  bg-white/5 backdrop-blur-md border border-white/30 rounded-2xl p-2 md:p-4 mt-2 mb-4 md:mb-4 lg:mb-4">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-4 lg:gap-4 text-center text-white ">
                         
                         {/* Stat 1 */}
                         <div className="flex flex-col items-center">
@@ -375,8 +375,8 @@ export default function Home() {
                     </div>
 
                     {/* 5. Ratings */}
-                    <div className="flex grid grid-cols-0 md:grid-cols-2 gap-4 mt-4">
-                        <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-left text-black text-xs font-bold font-['Manrope']">
+                    <div className="flex grid grid-cols-2 gap-4 mt-4">
+                        <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-left text-black text-lg font-bold font-['Manrope']">
                           <span className="text-black font-bold">4.8 Google</span>
                           <span className="flex flex-cols-1">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -396,9 +396,9 @@ export default function Home() {
                             </svg>
                           </span>  
 
-                        <span className="font-normal text-[8px] text-blue-500">Customer Reviews</span>
+                        <span className="font-normal text-[12px] text-blue-500">Customer Reviews</span>
                         </div>
-                        <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-black text-xs ">
+                        <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-black text-lg ">
                             <span className="text-black font-bold">Trustpilot</span>
                             <span className="flex flex-cols-1">
                             <svg width="117" height="14" viewBox="0 0 127 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -415,7 +415,7 @@ export default function Home() {
                             <path d="M117.198 9.73451H123.996L118.496 13.7306V13.7316L115.583 15.8165L118.785 14.6203L120.597 20.1954L115.098 16.1994L109.598 20.1954L111.699 13.7306L106.199 9.73451H112.997L115.098 3.26967L117.198 9.73451Z" fill="white"/>
                             </svg>
                           </span>  
-                          <span className="font-normal text-[8px] text-gray-500 ">Rated 4.5/5</span>
+                          <span className="font-normal text-[12px] text-gray-500 ">Rated 4.5/5</span>
                         </div>
                     </div>
 
@@ -501,7 +501,7 @@ export default function Home() {
                 </div>
 
                 {/* --- LAYER 2: CARDS GRID  --- */}
-                <div className="w-full max-w-4xl mx-auto relative z-20 px-4 md:px-12 grid grid-cols-2 md:grid-cols-2 gap-4">
+                <div className="w-full max-w-4xl mx-auto relative z-20 px-4 md:px-12 grid grid-cols-0 md:grid-cols-2 gap-4">
                     {cardsData.map((card) => (
                     <div
                         key={card.id}
@@ -512,7 +512,7 @@ export default function Home() {
                         <div className="relative z-10 flex flex-col h-full">
                         <div className="flex flex-grid">
                         {/* Icon Box */}
-                        <div className="flex flex-col w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-3 shadow-lg">
+                        <div className="flex flex-col w-14 h-14 bg-white rounded-sm flex items-center justify-center mb-3 shadow-lg">
                             <Image src={card.icon} alt="icon" width={28} height={28} className="object-contain"/>
                         </div>
 
@@ -545,7 +545,7 @@ export default function Home() {
 
                 {/* --- LAYER 3: BACKGROUND SVG --- */}
                 <div className="absolute bottom-20 left-200 w-full z-0 pointer-events-none">
-                    <div className="absolute top-[80px] left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none w-[400vw] sm:w-[350vw] md:w-[400vw] ">
+                    <div className="absolute top-[80px] left-1/2 -translate-x-1/2 z-0 flex justify-center pointer-events-none w-[400vw] sm:w-[400vw] md:w-[400vw] ">
                     <motion.svg 
                         width="100%" 
                         height="auto" 
@@ -705,10 +705,10 @@ export default function Home() {
                 key={item.id}
                 className={`
                   bg-[#171717] p-4 rounded-md border border-white/5 
-                  h-[150px] flex flex-col justify-center relative group transition-all duration-300 shrink-0
+                  h-[190px] flex flex-col justify-center relative group transition-all duration-300 shrink-0
                   
                   /* MOBILE VIEW */
-                  w-full max-w-[340px]
+                  w-full max-w-[350px]
                   
                   /* GRID */
                   last:col-span-2 
@@ -761,12 +761,7 @@ export default function Home() {
 
           {/* --- COLUMN 3: RIGHT IMAGES --- */}
           <div className="
-            lg:col-span-4 
-            
-            /* MOBILE STYLE */
-            grid grid-cols-2 gap-4 place-items-center w-full
-
-            /* DESKTOP STYLE */
+            lg:col-span-4 hidden
             lg:flex lg:flex-col lg:justify-between lg:h-[600px] lg:items-start lg:w-fit 
             relative z-10">
             {features.map((item, index) => (

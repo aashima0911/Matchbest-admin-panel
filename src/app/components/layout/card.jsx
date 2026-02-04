@@ -141,7 +141,7 @@ export default function VerticalsCarousel() {
                   <div className="flex flex-col h-full">
                     <div key={vertical.id} className="relative group mb-12"> 
                       <div 
-                        className="absolute -top-24 -left-4 z-20 font-['Manrope'] mt-12 font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
+                        className="absolute -top-24 -left-4 z-20 font-['Manrope'] mt-10 font-extrabold text-[120px] leading-[154px] text-[#020202] pointer-events-none select-none"
                         style={{ 
                           WebkitTextStroke: '2px white',
                           paintOrder: 'stroke fill'
@@ -193,7 +193,7 @@ export default function VerticalsCarousel() {
                       href={vertical.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto flex bg-white text-black font-semibold px-6 py-2 gap-3 rounded-full transition-all duration-300 transform hover:bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-center justify-center shadow-lg hover:shadow-xl"
+                      className="mt-auto flex bg-white text-black font-semibold px-6 py-2 gap-1 rounded-full transition-all duration-300 transform hover:bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-center justify-center shadow-lg hover:shadow-xl"
                     >
                       <span>Learn More</span>
                       <div className="relative w-8 h-8 items-center justify-center">
@@ -202,7 +202,7 @@ export default function VerticalsCarousel() {
                           alt="Arrow"
                           width={25}
                           height={25}
-                          className="object-contain transition-transform duration-300 group-hover:-rotate-45"
+                          className="object-contain transition-transform duration-300 group-hover:-rotate-90"
                         />
                       </div>
                     </a>
@@ -227,7 +227,7 @@ export default function VerticalsCarousel() {
                     <div className="flex flex-col h-full">
                       <div key={vertical.id} className="relative group mb-14"> 
                         <div 
-                          className="absolute -top-24 -left-4 z-20 mt-12 font-['Manrope'] font-extrabold text-[154px] leading-[154px] text-[#020202] pointer-events-none select-none"
+                          className="absolute -top-24 -left-4 z-20 mt-10 font-['Manrope'] font-extrabold text-[120px] leading-[154px] text-[#020202] pointer-events-none select-none"
                           style={{ 
                             WebkitTextStroke: '2px white',
                             paintOrder: 'stroke fill'
@@ -279,7 +279,7 @@ export default function VerticalsCarousel() {
                       href={vertical.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto flex bg-white text-black font-semibold px-6 py-2 gap-3 rounded-full transition-all duration-300 transform  hover:bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-center justify-center shadow-lg hover:shadow-xl"
+                      className="mt-auto flex bg-white text-black font-semibold px-6 py-2 gap-1 rounded-full transition-all duration-300 transform  hover:bg-gradient-to-r from-[#4B6CEB] to-[#9159B7] text-center justify-center shadow-lg hover:shadow-xl"
                     >
                       <span>Learn More </span>
                       <div className="relative w-8 h-8 items-center justify-center">
@@ -288,7 +288,7 @@ export default function VerticalsCarousel() {
                           alt="Arrow"
                           width={25}
                           height={25}
-                          className="object-contain transition-transform duration-300 group-hover:-rotate-45"
+                          className="object-contain transition-transform duration-300 group-hover:-rotate-90"
                         />
                       </div>
                     </a>

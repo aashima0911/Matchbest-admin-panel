@@ -44,7 +44,7 @@ const locations = [
     address: "Expansion 2025",
     top: "46%", 
     left: "58%", 
-    align: "top-left" , md:"top"
+    align: "top" , md:"top-left"
   },
   {
     country: "UAE",
@@ -268,7 +268,7 @@ export default function ContactPage() {
     </section>  
 
 
-    <section className="w-full bg-black py-6 px-4 md:px-8 overflow-hidden min-h-[50vh] ">
+    <section className="w-full bg-black py-6 px-4 md:px-8 overflow-hidden">
       
           {/* === HEADING SECTION === */}
           <div className="text-center mb-16 max-w-3xl mx-auto">
