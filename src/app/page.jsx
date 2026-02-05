@@ -279,12 +279,12 @@ export default function Home() {
                   <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                   <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_332_3081"/>
                   </filter>
-                  <filter id="filter1_f_332_3081" x="-134" y="-133" width="2801" height="2800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <filter id="filter1_f_332_3081" x="-134" y="-133" width="2801" height="2800" filterUnits="userSpaceOnUse" colorInterpolation-filters="sRGB">
                   <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                   <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                   <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_332_3081"/>
                   </filter>
-                  <filter id="filter2_f_332_3081" x="-34" y="-33" width="2601" height="2600" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <filter id="filter2_f_332_3081" x="-34" y="-33" width="2601" height="2600" filterUnits="userSpaceOnUse" colorInterpolation-filters="sRGB">
                   <feFlood flood-opacity="0" result="BackgroundImageFix"/>
                   <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                   <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_332_3081"/>
@@ -304,14 +304,12 @@ export default function Home() {
                 <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center pt-0 pb-16 mt-0 mb-2 md:md-4 mb:lg-8">
                     {/* 1. Main Heading */}
                     <h1 className="font-['Manrope'] font-medium text-[36px] md:text-[40px] lg:text-[60px] leading-[1.1] lg:leading-[80px] tracking-tight text-white sm:mb-2 max-w-6xl">
-                    AI-Driven Digital Transformation for Secure, <br />
-                    Scalable Business Growth
+                    {t('hero.title')}
                     </h1>
 
                     {/* 2. Subheading */}
-                    <h2 className="text-white text-md  max-w-3xl mb-6 leading-relaxed sm:mt-4 md:mt-2 pt-0 md:pt-4">
-                        Delivering AI-Powered Automation, Secure Cloud Infrastructure & Enterprise-Grade <br />
-                        Software - Scalable Solutions for Digital Transformation
+                    <h2 className="text-white text-xl  max-w-3xl mb-6 leading-relaxed sm:mt-4 md:mt-2 pt-0 md:pt-4">
+                        {t('hero.subtitle')}
                     </h2>
 
                     {/* 3. Buttons (Side by Side) */}
@@ -330,11 +328,11 @@ export default function Home() {
                             <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier  19,1,0.22,1)] group-hover:-translate-y-full">
                               <Link href="/contact"> 
                                 <span className="flex items-center gap-2 text-lg text-white py-1">
-                                Start Your Project
+                                {t('hero.cta')}
                                 <ArrowUpRight className="w-5 h-5" />
                                 </span>
                                 <span className="flex items-center gap-2 text-lg text-black py-1 absolute top-full left-0 w-full">
-                                Start Your Project
+                                {t('hero.cta')}
                                 <ArrowUpRight className="w-5 h-5" />
                                 </span>
                                </Link>  
@@ -343,32 +341,32 @@ export default function Home() {
                         </button>
                     </div>
 
-                  {/* 4. Stats Box  */}
+                    {/* 4. Stats Box  */}
                     <div className="w-400px  bg-white/5 backdrop-blur-md border border-white/30 rounded-2xl p-2 md:p-4 mt-2 mb-4 md:mb-4 lg:mb-4">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-4 lg:gap-4 text-center text-white ">
                         
                         {/* Stat 1 */}
                         <div className="flex flex-col items-center">
-                            <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">30+</span>
-                            <span className="text-sm text font-['Space_Grotesk']">Active Clients</span>
+                            <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">{t('hero.stats.activeClients')}</span>
+                            <span className="text-sm text font-['Space_Grotesk']">{t('hero.stats.activeClientsLabel')}</span>
                         </div>
                         
                         {/* Stat 2 */}
                         <div className="flex flex-col items-center">
-                            <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">100%</span>
-                            <span className="text-sm text font-['Space_Grotesk']">Secure Delivery</span>
+                            <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">{t('hero.stats.secureDelivery')}</span>
+                            <span className="text-sm text font-['Space_Grotesk']">{t('hero.stats.secureDeliveryLabel')}</span>
                         </div>
                         
                         {/* Stat 3 */}
                         <div className="flex flex-col items-center">
-                            <span className="text-1xl md:text-2xl mb-1 uppercase tracking-tighter font-bold font-['Bebas_Neue']">Global Reach</span>
-                            <span className="text-sm text font-['Space_Grotesk']">Across Key Markets</span>
+                            <span className="text-1xl md:text-2xl mb-1 uppercase tracking-tighter font-bold font-['Bebas_Neue']">{t('hero.stats.globalReach')}</span>
+                            <span className="text-sm text font-['Space_Grotesk']">{t('hero.stats.globalReachLabel')}</span>
                         </div>
                         
                         {/* Stat 4 */}
                         <div className="flex flex-col items-center">
-                            <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">4.5 / 5</span>
-                            <span className="text-sm text font-['Space_Grotesk']">(CSAT)</span>
+                            <span className="text-2xl md:text-3xl mb-1 font-bold font-['Bebas_Neue']">{t('hero.stats.csat')}</span>
+                            <span className="text-sm text font-['Space_Grotesk']">{t('hero.stats.csatLabel')}</span>
                         </div>
 
                         </div>
@@ -377,7 +375,7 @@ export default function Home() {
                     {/* 5. Ratings */}
                     <div className="flex grid grid-cols-2 gap-4 mt-4">
                         <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-left text-black text-lg font-bold font-['Manrope']">
-                          <span className="text-black font-bold">4.8 Google</span>
+                          <span className="text-black font-bold">{t('hero.ratings.google')}</span>
                           <span className="flex flex-cols-1">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.0444 1.51909C11.3543 0.895377 12.244 0.895376 12.5539 1.51909L15.0848 6.61295C15.2075 6.85994 15.4433 7.03127 15.7161 7.07165L21.3428 7.9046C22.0317 8.00659 22.3067 8.85278 21.8093 9.34025L17.7468 13.3214C17.5498 13.5144 17.4597 13.7916 17.5056 14.0636L18.4522 19.6722C18.5681 20.359 17.8483 20.8819 17.231 20.5595L12.1893 17.9261C11.9449 17.7984 11.6534 17.7984 11.4089 17.9261L6.36729 20.5595C5.74997 20.8819 5.03015 20.359 5.14605 19.6722L6.09261 14.0636C6.1385 13.7916 6.04844 13.5144 5.85145 13.3214L1.789 9.34025C1.29157 8.85278 1.56652 8.00659 2.25547 7.9046L7.88211 7.07165C8.15493 7.03127 8.39074 6.85994 8.51346 6.61295L11.0444 1.51909Z" fill="#FEA500"/>
@@ -396,10 +394,10 @@ export default function Home() {
                             </svg>
                           </span>  
 
-                        <span className="font-normal text-[12px] text-blue-500">Customer Reviews</span>
+                        <span className="font-normal text-[12px] text-blue-500">{t('hero.ratings.customerReviews')}</span>
                         </div>
                         <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-black text-lg ">
-                            <span className="text-black font-bold">Trustpilot</span>
+                            <span className="text-black font-bold">{t('hero.ratings.trustpilot')}</span>
                             <span className="flex flex-cols-1">
                             <svg width="117" height="14" viewBox="0 0 127 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="23.4651" height="23.4651" fill="#00B57A"/>
@@ -415,7 +413,7 @@ export default function Home() {
                             <path d="M117.198 9.73451H123.996L118.496 13.7306V13.7316L115.583 15.8165L118.785 14.6203L120.597 20.1954L115.098 16.1994L109.598 20.1954L111.699 13.7306L106.199 9.73451H112.997L115.098 3.26967L117.198 9.73451Z" fill="white"/>
                             </svg>
                           </span>  
-                          <span className="font-normal text-[12px] text-gray-500 ">Rated 4.5/5</span>
+                          <span className="font-normal text-[12px] text-gray-500 ">{t('hero.ratings.rated')}</span>
                         </div>
                     </div>
 
@@ -491,14 +489,15 @@ export default function Home() {
 {/* --- FUTURE-READY SOLUTIONS SECTION --- */}
             <section className="relative w-full bg-black overflow-hidden flex flex-col items-center justify-start pt-5 pb-10">
                 {/* --- HEADING --- */}
-                <div className="container mx-auto text-center relative z-20 px-4 mb-16">
-                    <h2 className="font-['Manrope'] text-5xl md:text-6xl text-white mb-6">
-                    Future-Ready Solutions
-                    </h2>
-                    <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-md font-light">
-                    We deliver end-to-end technology solutions that help businesses build faster, scale smarter, and stay secure.
-                    </p>
-                </div>
+            <div className="container mx-auto text-center relative z-20 px-4 mb-16">
+                <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
+                {t('whyChooseUs.title')}
+                </h2>
+
+                <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-lg font-light">
+                    {t('whyChooseUs.subtitle')}
+                </p>
+            </div>
 
                 {/* --- LAYER 2: CARDS GRID  --- */}
                 <div className="w-full max-w-4xl mx-auto relative z-20 px-4 md:px-12 grid grid-cols-0 md:grid-cols-2 gap-4">
@@ -576,12 +575,12 @@ export default function Home() {
                           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                           <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_332_3081"/>
                           </filter>
-                          <filter id="filter1_f_332_3081" x="-134" y="-133" width="2801" height="2800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <filter id="filter1_f_332_3081" x="-134" y="-133" width="2801" height="2800" filterUnits="userSpaceOnUse" colorInterpolation-filters="sRGB">
                           <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                           <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_332_3081"/>
                           </filter>
-                          <filter id="filter2_f_332_3081" x="-34" y="-33" width="2601" height="2600" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <filter id="filter2_f_332_3081" x="-34" y="-33" width="2601" height="2600" filterUnits="userSpaceOnUse" colorInterpolation-filters="sRGB">
                           <feFlood flood-opacity="0" result="BackgroundImageFix"/>
                           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                           <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_332_3081"/>
@@ -604,10 +603,10 @@ export default function Home() {
         <div className="container mx-auto">
             <div className="container mx-auto text-center relative px-6 md:px-16 lg:px-20 z-20 px-4 mb-16">
                 <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
-                Words From Our Clients
+                {t('testimonials.title')}
                 </h2>
                 <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-lg font-light">
-                Hear directly from our clients about their experience working with us.
+                {t('testimonials.subtitle')}
                 </p>
             </div>
 
@@ -677,13 +676,13 @@ export default function Home() {
       <div className="container mx-auto mb-16 text-center">
             <div className="container mx-auto text-center relative z-20 px-4 mb-16">
                 <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
-                    Why Choose Us?
+                    {t('whyChooseUs.title')}
                 </h2>
 
                 <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-lg font-light">
-                    We deliver reliable, innovative solutions designed to drive results and future-proof your business.
+                    {t('whyChooseUs.subtitle')}
                 </p>
-            </div>    
+            </div>
       </div>
 
       <div className="container mx-auto">
@@ -801,7 +800,7 @@ export default function Home() {
       {/* Heading */}
       <div className="container mx-auto text-center relative z-20 px-4 mb-16">
         <h2 className="font-['Manrope'] text-4xl md:text-6xl text-black mb-6">
-            Our Technology Stack
+            {t('technologies.title')}
         </h2>
     </div>
 
@@ -913,13 +912,13 @@ export default function Home() {
 
               {/* Title */}
               <h3 className="text-white text-2xl px-4 font-['Manrope'] font-semibold mb-3">
-                {step.title}
+                {t(`ourApproach.steps.${step.id}.title`)}
               </h3>
             </div>  
 
               {/* Description */}
               <p className="text-gray-400 text-sm leading-relaxed font-light group-hover/card:text-gray-200">
-                {step.desc}
+                {t(`ourApproach.steps.${step.id}.desc`)}
               </p>
 
             </div>
@@ -960,7 +959,7 @@ export default function Home() {
                   {/* Question Header */}
                   <div className="flex items-center justify-between p-2 md:p-3">
                     <h3 className="text-black font-['Manrope'] font-medium text-lg md:text-xl pr-4">
-                      {item.question}
+                      {t(`faq.questions.${index}.question`)}
                     </h3>
                     
                     {/* Icon */}
@@ -978,7 +977,7 @@ export default function Home() {
                     `}
                   >
                     <p className="text-gray-500 font-['Manrope'] leading-relaxed pl-0">
-                      {item.answer}
+                      {t(`faq.questions.${index}.answer`)}
                     </p>
                   </div>
 
@@ -990,11 +989,11 @@ export default function Home() {
           {/* RIGHT COLUMN */}
           <div className="lg:col-span-5 flex flex-col justify-center h-full order-1 lg:order-2 lg:sticky lg:top-24">
             <h2 className="text-white font-['Manrope'] text-5xl md:text-6xl leading-tight mb-8">
-              <span className="font-light block">Frequently</span>
-              <span className="font-medium block">Asked Questions</span>
+              <span className="font-light block">{t('faq.title')}</span>
+              <span className="font-medium block">{t('faq.subtitle')}</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12 font-light max-w-md">
-              Got a question? Find fast answers here! If you still can't locate what you need, connect with us.
+              {t('faq.subtitle')}
             </p>
             
             {/* "Still need help?" Button */}
@@ -1019,10 +1018,10 @@ export default function Home() {
       {/* === HEADING SECTION === */}
       <div className="text-center mb-3 max-w-3xl mx-auto">
         <h2 className="text-white text-4xl md:text-5xl font-['Manrope'] font-normal mb-3">
-          Our Global Presence
+          {t('globalPresence.title')}
         </h2>
         <p className="text-gray-400 text-lg font-light leading-relaxed">
-          Our reach across key international markets, enabling us to collaborate seamlessly, serve diverse clients, and deliver consistent value worldwide.
+          {t('globalPresence.subtitle')}
         </p>
       </div>
 
@@ -1126,10 +1125,10 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10">
             <h2 className="font-[Manrope] text-3xl md:text-4xl text-white mb-6">
-                Want to build the future today?
+                {t('contact.title')}
             </h2>
             <p className="text-sm md:text-md font-[Manrope] text-gray-200 mb-8 text-lg">
-                Build Smarter. Scale Faster with expert-led AI, cloud and enterprise software development
+                {t('contact.subtitle')}
             </p>
             <Link href="/contact" className="inline-block text-white border border-white bg-none text-[#6823f0] px-8 py-2 rounded-2xl text-lg shadow-xl hover:bg-white hover:text-black transition-all transform">
                 Talk to Our Experts

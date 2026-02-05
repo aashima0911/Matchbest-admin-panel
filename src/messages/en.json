@@ -10,10 +10,25 @@
     "getInTouch": "Get in Touch"
   },
   "hero": {
-    "title": "Build the Future With Us.",
-    "subtitle": "Cutting-edge web and mobile apps built for scale, speed, and security.",
-    "cta": "Get Exclusive Access",
-    "build": "Build"
+    "title": "AI-Driven Digital Transformation for Secure, Scalable Business Growth",
+    "subtitle": "Delivering AI-Powered Automation, Secure Cloud Infrastructure & Enterprise-Grade Software - Scalable Solutions for Digital Transformation",
+    "cta": "Start Your Project",
+    "stats": {
+      "activeClients": "30+",
+      "activeClientsLabel": "Active Clients",
+      "secureDelivery": "100%",
+      "secureDeliveryLabel": "Secure Delivery",
+      "globalReach": "Global Reach",
+      "globalReachLabel": "Across Key Markets",
+      "csat": "4.5 / 5",
+      "csatLabel": "(CSAT)"
+    },
+    "ratings": {
+      "google": "4.8 Google",
+      "googleLabel": "Customer Reviews",
+      "trustpilot": "Trustpilot",
+      "trustpilotRating": "Rated 4.5/5"
+    }
   },
   "verticals": {
     "title": "Our Verticals",
@@ -70,6 +85,36 @@
       "item7": "Emerging Markets Focus"
     }
   },
+  "aboutUs": {
+    "title": "Where Vision Meets Reality",
+    "desc1": "MatchBest Group is a digital innovation and technology consulting company delivering AI-driven solutions, cloud platforms, and custom software development for modern enterprises.",
+    "desc2": "From legacy system modernisation and cloud migration to Generative AI solutions, AI automation, and enterprise application development, we design and build technology that drives measurable business outcomes.",
+    "desc3": "Whether you're migrating mission-critical workloads to the cloud, deploying AI chatbots and CX automation or an e-commerce platform, our engineering-first approach ensures performance, compliance, and long-term growth at every stage of your digital journey.",
+    "certificatesDesc": "We maintain strict quality and security standards to ensure the highest level of trust and performance.",
+    "moreAboutUs": "More About Us"
+  },
+  "futureReadySolutions": {
+    "title": "Future-Ready Solutions",
+    "subtitle": "We deliver end-to-end technology solutions that help businesses build faster, scale smarter, and stay secure.",
+    "cards": [
+      {
+        "title": "Next-Gen Development",
+        "desc": "Scalable web & mobile application development built with modern frameworks for performance, security, and enterprise growth."
+      },
+      {
+        "title": "AI Automation",
+        "desc": "AI automation and Generative AI solutions that streamline workflows, enhance productivity, and power smarter business decisions."
+      },
+      {
+        "title": "Cybersecurity & Risk Management",
+        "desc": "Enterprise-grade cybersecurity, VAPT, and cloud security services to protect data, systems, and digital assets."
+      },
+      {
+        "title": "Cloud and infra services",
+        "desc": "Secure cloud migration, hosting, and infrastructure management for high availability, scalability, and cost efficiency."
+      }
+    ]
+  },
   "expertise": {
     "title": "Our Expertise",
     "nextGen": {
@@ -96,18 +141,21 @@
   },
   "whyChooseUs": {
     "title": "Why Choose Us?",
-    "expertTeam": {
-      "title": "Expert Team",
-      "desc": "Our experienced professionals deliver innovative, reliable solutions tailored to your needs."
-    },
-    "clientCentric": {
-      "title": "Client-Centric",
-      "desc": "We prioritize your goals and satisfaction, ensuring transparent communication and results."
-    },
-    "cuttingEdgeTech": {
-      "title": "Cutting-Edge Tech",
-      "desc": "We use the latest technologies to future-proof your business and maximize ROI."
-    }
+    "subtitle": "We deliver reliable, innovative solutions designed to drive results and future-proof your business.",
+    "features": [
+      {
+        "title": "Elite Professionals",
+        "desc": "Certified AI, cloud, and software engineers delivering secure, scalable, and high-impact digital solutions."
+      },
+      {
+        "title": "Built Around You",
+        "desc": "A client-centric delivery model focused on transparency, measurable outcomes, and long-term business value."
+      },
+      {
+        "title": "Future-Ready Tech",
+        "desc": "Leveraging AI, cloud platforms, automation, and modern frameworks to future-proof growth and maximise ROI."
+      }
+    ]
   },
   "howWeWork": {
     "title": "How We Work",
@@ -125,29 +173,89 @@
     }
   },
   "testimonials": {
-    "title": "What Our Clients Say"
+    "title": "What Our Clients Say",
+    "subtitle": "Real experiences from businesses we've helped transform"
   },
   "technologies": {
-    "title": "Technologies We Use"
+    "title": "Our Technology Stack"
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "q1": "What core services does MatchBest Group provide?",
-    "a1": "We specialize in AI Automation, Custom Software Development, Cloud Solutions, and Digital Transformation for startups and enterprises worldwide.",
-    "q2": "Where is MatchBest Group located?",
-    "a2": "Our headquarters is located in tower-B3, Spaze I-Tech Park, Sohna Road, Sector-49, Gurugram (India), serving clients globally with top-tier tech solutions.",
-    "q3": "How do I start a project with MatchBest?",
-    "a3": "Simply click the 'Contact' button or email us. We start with a free consultation to understand your needs and provide a tailored roadmap.",
-    "q4": "Does MatchBest Group work with startups?",
-    "a4": "Yes! We love startups. We offer scalable MVP development and flexible engagement models specifically designed for early-stage growth.",
-    "q5": "What technologies do you use for development?",
-    "a5": "We use modern tech stacks including React, Next.js, Node.js, Python (AI/ML), Java Spring Boot, and cloud platforms like AWS and Azure.",
-    "q6": "Do you offer post-development support?",
-    "a6": "Absolutely. We provide ongoing maintenance, server monitoring, and updates to ensure your software runs smoothly after launch.",
-    "q7": "How do you ensure data security?",
-    "a7": "We follow strict security protocols including NDA signing, data encryption, and secure cloud compliance to protect your intellectual property.",
-    "q8": "Can I hire developers for a specific duration?",
-    "a8": "Yes, we offer 'Staff Augmentation' services where you can hire our expert developers on a monthly or project basis."
+    "subtitle": "Got a question? Find fast answers here! If you still can't locate what you need, connect with us.",
+    "questions": [
+      {
+        "question": "How can we help your business?",
+        "answer": "We help businesses scale and innovate with AI automation, secure cloud solutions, and custom software development. From legacy modernisation and cloud migration to Generative AI and enterprise platforms, we deliver technology that solves real business problems. Our client-first approach ensures security, scalability, and measurable ROI."
+      },
+      {
+        "question": "Why should I choose you over other companies?",
+        "answer": "We combine deep technical expertise with a client-first mindset to deliver secure, scalable, and high-impact solutions. Our team focuses on quality, transparency, and long-term value, not shortcuts. When you work with us, you gain a trusted partner committed to real results and sustainable growth."
+      },
+      {
+        "question": "How long does a project usually take?",
+        "answer": "Project timeline depends on scope, complexity and requirements. It can be defined after an initial consultation."
+      },
+      {
+        "question": "Does MatchBest Group work with startups?",
+        "answer": "Yes, surely we love to work with startups by offering them scalable MVP development and flexible engagement models, specifically for early-stage growing businesses."
+      },
+      {
+        "question": "Do you provide ongoing support after delivery?",
+        "answer": "Absolutely, we offer end-to-end managed services, cloud monitoring and AI optimisation services, even after delivering the project to client."
+      },
+      {
+        "question": "How do you ensure data security?",
+        "answer": "Security is our priority. We follow industry best practices, including encryption, regular audits, and secure cloud architectures."
+      }
+    ]
+  },
+  "ourApproach": {
+    "title": "Our Approach",
+    "subtitle": "A step-by-step look at how we operate, from strategy to execution, ensuring quality at every stage.",
+    "steps": [
+      {
+        "title": "Consult",
+        "desc": "By aligning on vision, scope, and outcomes, we deep-dive into your business needs and technical requirements before building."
+      },
+      {
+        "title": "Develop",
+        "desc": "Build, validate, and refine development with transparency, speed, and quality."
+      },
+      {
+        "title": "Deliver",
+        "desc": "Beyond deployment, we deliver secure, scalable and optimized solutions for long-term performance."
+      }
+    ]
+  },
+  "globalPresence": {
+    "title": "Our Global Presence",
+    "subtitle": "Our reach across key international markets, enabling us to collaborate seamlessly, serve diverse clients, and deliver consistent value worldwide.",
+    "locations": [
+      {
+        "country": "USA",
+        "role": "Client Relations",
+        "address": "1200 Smith Street, Suite 1600, Houston, TX 77002"
+      },
+      {
+        "country": "SAUDI ARABIA",
+        "role": "Expansion 2025"
+      },
+      {
+        "country": "UAE",
+        "role": "Sales & Operations",
+        "address": "Lettsom House, 11 Chandos Pl, London W1G 9DP, UK"
+      },
+      {
+        "country": "INDIA",
+        "role": "Research & Development",
+        "address": "Tech Park, Sector 126, Noida, Uttar Pradesh 201304"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Want to build the future today?",
+    "subtitle": "Build Smarter. Scale Faster with expert-led AI, cloud and enterprise software development",
+    "cta": "Talk to Our Experts"
   },
   "footer": {
     "home": "Home",

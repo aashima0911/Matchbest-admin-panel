@@ -10,9 +10,25 @@
     "getInTouch": "联系我们"
   },
   "hero": {
-    "title": "与我们共同构建未来。",
-    "subtitle": "为规模、速度和安全性构建的尖端网络和移动应用程序。",
-    "cta": "获得独家访问权限"
+    "title": "AI驱动的数字化转型，实现安全、可扩展的业务增长",
+    "subtitle": "提供AI驱动的自动化、安全的云基础设施和企业级软件 - 数字化转型的可扩展解决方案",
+    "cta": "开始您的项目",
+    "stats": {
+      "activeClients": "30+",
+      "activeClientsLabel": "活跃客户",
+      "secureDelivery": "100%",
+      "secureDeliveryLabel": "安全交付",
+      "globalReach": "全球覆盖",
+      "globalReachLabel": "覆盖主要市场",
+      "csat": "4.5 / 5",
+      "csatLabel": "(客户满意度评分)"
+    },
+    "ratings": {
+      "google": "4.8 谷歌",
+      "googleLabel": "客户评价",
+      "trustpilot": "Trustpilot",
+      "trustpilotRating": "评分 4.5/5"
+    }
   },
   "verticals": {
     "title": "我们的垂直领域",
@@ -69,6 +85,36 @@
       "item7": "专注于新兴市场"
     }
   },
+  "aboutUs": {
+    "title": "愿景与现实的交汇",
+    "desc1": "MatchBest Group是一家数字创新和技术咨询公司，为现代企业提供AI驱动的解决方案、云平台和定制软件开发。",
+    "desc2": "从遗留系统现代化和云迁移到生成AI解决方案、AI自动化和企业应用程序开发，我们设计和构建技术，以实现可衡量的业务成果。",
+    "desc3": "无论您是将关键工作负载迁移到云、部署AI聊天机器人和CX自动化还是电子商务平台，我们以工程为先的方法确保每个数字旅程阶段的性能、合规性和长期增长。",
+    "certificatesDesc": "我们维护严格的质量和安全标准，以确保最高水平的信任和性能。",
+    "moreAboutUs": "更多关于我们"
+  },
+  "futureReadySolutions": {
+    "title": "面向未来的解决方案",
+    "subtitle": "我们提供端到端技术解决方案，帮助企业更快构建、更智能扩展、更安全。",
+    "cards": [
+      {
+        "title": "下一代开发",
+        "desc": "使用现代框架构建的可扩展Web和移动应用程序开发，专注于性能、安全性和企业增长。"
+      },
+      {
+        "title": "AI自动化",
+        "desc": "AI自动化和生成AI解决方案，简化工作流程、增强生产力并为更智能的业务决策提供动力。"
+      },
+      {
+        "title": "网络安全与风险管理",
+        "desc": "企业级网络安全、VAPT和云安全服务，以保护数据、系统和数字资产。"
+      },
+      {
+        "title": "云和基础设施服务",
+        "desc": "安全云迁移、托管和基础设施管理，实现高可用性、可扩展性和成本效率。"
+      }
+    ]
+  },
   "expertise": {
     "title": "我们的专业知识",
     "nextGen": {
@@ -95,18 +141,21 @@
   },
   "whyChooseUs": {
     "title": "为什么选择我们？",
-    "expertTeam": {
-      "title": "专家团队",
-      "desc": "我们的经验丰富的专业人士提供创新、可靠的解决方案，量身定制以满足您的需求。"
-    },
-    "clientCentric": {
-      "title": "以客户为中心",
-      "desc": "我们优先考虑您的目标和满意度，确保透明沟通和结果。"
-    },
-    "cuttingEdgeTech": {
-      "title": "尖端技术",
-      "desc": "我们使用最新技术使您的业务面向未来并最大化投资回报。"
-    }
+    "subtitle": "我们提供可靠、创新的解决方案，旨在实现结果并使您的业务面向未来。",
+    "features": [
+      {
+        "title": "精英专业人士",
+        "desc": "认证的AI、云和软件工程师，提供安全、可扩展和高影响力的数字解决方案。"
+      },
+      {
+        "title": "以您为中心",
+        "desc": "以客户为中心的服务模式，专注于透明度、可衡量的成果和长期业务价值。"
+      },
+      {
+        "title": "面向未来的技术",
+        "desc": "利用AI、云平台、自动化和现代框架来面向未来增长并最大化ROI。"
+      }
+    ]
   },
   "howWeWork": {
     "title": "我们如何工作",
@@ -124,18 +173,118 @@
     }
   },
   "testimonials": {
-    "title": "我们的客户怎么说"
+    "title": "我们的客户怎么说",
+    "subtitle": "来自我们帮助转型的企业的实际经验"
   },
   "technologies": {
-    "title": "我们使用的技术"
+    "title": "我们的技术栈"
   },
   "faq": {
     "title": "常见问题",
-    "q1": "如何开始与 MatchBest Group 的项目？",
-    "a1": "只需使用上面的按钮或通过我们的联系页面联系 MatchBest Group。我们将安排免费咨询以了解您的需求并启动您的项目。",
-    "q2": "MatchBest Group 服务哪些行业？",
-    "a2": "MatchBest Group 与金融科技、医疗保健、电子商务、媒体等行业的初创公司、企业和中小企业合作。",
-    "q3": "MatchBest Group 提供持续支持吗？",
-    "a3": "是的！MatchBest Group 提供持续维护、支持和优化，以确保所有项目的长期成功。"
+    "subtitle": "有问题吗？在这里快速找到答案！如果您仍然找不到所需的内容，请与我们联系。",
+    "questions": [
+      {
+        "question": "我们如何帮助您的业务？",
+        "answer": "我们帮助企业通过AI自动化、安全云解决方案和定制软件开发来扩展和创新。从遗留系统现代化和云迁移到生成AI和企业平台，我们提供解决实际业务问题的技术。我们的以客户为中心的方法确保安全、可扩展性和可衡量的ROI。"
+      },
+      {
+        "question": "为什么选择我们而不是其他公司？",
+        "answer": "我们结合深厚的技术专长和以客户为中心的心态，提供安全、可扩展和高影响力的解决方案。我们的团队专注于质量、透明度和长期价值，而不是捷径。当您与我们合作时，您将获得致力于真正结果和可持续增长的可靠合作伙伴。"
+      },
+      {
+        "question": "项目通常需要多长时间？",
+        "answer": "项目时间表取决于范围、复杂性和要求。可以在初始咨询后定义。"
+      },
+      {
+        "question": "MatchBest Group 是否与初创公司合作？",
+        "answer": "是的，我们非常喜欢与初创公司合作，为他们提供可扩展的MVP开发和灵活的参与模式，专门针对早期增长阶段的业务。"
+      },
+      {
+        "question": "交付后是否提供持续支持？",
+        "answer": "绝对，我们提供端到端的托管服务、云监控和AI优化服务，即使在向客户交付项目后也是如此。"
+      },
+      {
+        "question": "如何确保数据安全？",
+        "answer": "安全是我们的首要任务。我们遵循行业最佳实践，包括加密、定期审计和安全云架构。"
+      }
+    ]
+  },
+  "ourApproach": {
+    "title": "我们的方法",
+    "subtitle": "从战略到执行的分步概述，确保每个阶段的质量。",
+    "steps": [
+      {
+        "title": "咨询",
+        "desc": "在我们构建之前，我们深入了解您的业务需求和技术要求。"
+      },
+      {
+        "title": "开发",
+        "desc": "以透明度、速度和质量构建、验证和完善开发。"
+      },
+      {
+        "title": "交付",
+        "desc": "除了部署之外，我们交付安全、可扩展和优化的解决方案，以实现长期性能。"
+      }
+    ]
+  },
+  "globalPresence": {
+    "title": "我们的全球影响力",
+    "subtitle": "我们的覆盖范围跨越关键国际市场，使我们能够无缝协作、服务多样化客户并交付一致的价值。",
+    "locations": [
+      {
+        "country": "美国",
+        "role": "客户关系",
+        "address": "1200 Smith Street, Suite 1600, Houston, TX 77002"
+      },
+      {
+        "country": "沙特阿拉伯",
+        "role": "2025年扩张"
+      },
+      {
+        "country": "阿联酋",
+        "role": "销售与运营",
+        "address": "Lettsom House, 11 Chandos Pl, London W1G 9DP, UK"
+      },
+      {
+        "country": "印度",
+        "role": "研发",
+        "address": "Tech Park, Sector 126, Noida, Uttar Pradesh 201304"
+      }
+    ]
+  },
+  "contact": {
+    "title": "今天就开始构建未来吧？",
+    "subtitle": "通过专家领导的AI、云和企业软件开发，更智能地构建、更快地扩展。",
+    "cta": "与我们的专家联系"
+  },
+  "footer": {
+    "home": "首页",
+    "about": "关于我们",
+    "blog": "博客",
+    "contact": "联系我们",
+    "careers": "职业",
+    "email": "电子邮件",
+    "copyright": "MatchBest。保留所有权利。"
+  },
+  "byteplusPartnership": {
+    "hero": {
+      "title": "BytePlus & Matchbest 合作伙伴关系",
+      "subtitle": "通过AI释放想象力的力量。通过我们与BytePlus的独家Seedance x Seedream合作伙伴关系，我们为每个人带来世界级的AI创意。",
+      "feature1": "通过与BytePlus的Seedance x Seedream合作伙伴关系获得AI创意工具的独家访问权限",
+      "feature2": "早期访问下一代创意智能和实验性AI功能",
+      "feature3": "合作伙伴福利包括高级支持、资源共享和创新协作",
+      "feature4": "赋权创作者和品牌设计、广告和与无限想象力互动",
+      "cta": "获得独家访问权限",
+      "getStartedFreeDemo": "开始免费演示"
+    },
+    "capabilities": {
+      "title": "BytePlus AI 能力"
+    },
+    "benefits": {
+      "title": "合作伙伴福利"
+    },
+    "useCases": {
+      "title": "使用案例"
+    }
   }
 }

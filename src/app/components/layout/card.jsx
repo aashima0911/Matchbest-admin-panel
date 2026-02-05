@@ -105,7 +105,7 @@ export default function VerticalsCarousel() {
   ]
 
   return (
-    <section className="w-full py-2 px-2 md:px-4 pb-0">
+    <section className="w-full py-2 px-2 md:px-4 pt-10">
       <div className="container mx-auto max-w-7xl">
         {/* Header Section */}
         <div className="text-center mb-12">
