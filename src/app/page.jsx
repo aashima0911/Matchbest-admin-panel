@@ -394,7 +394,7 @@ export default function Home() {
                             </svg>
                           </span>  
 
-                        <span className="font-normal text-[12px] text-blue-500">{t('hero.ratings.customerReviews')}</span>
+                        <span className="font-normal text-[12px] text-blue-500">Customer Reviews</span>
                         </div>
                         <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-black text-lg ">
                             <span className="text-black font-bold">{t('hero.ratings.trustpilot')}</span>
@@ -413,7 +413,7 @@ export default function Home() {
                             <path d="M117.198 9.73451H123.996L118.496 13.7306V13.7316L115.583 15.8165L118.785 14.6203L120.597 20.1954L115.098 16.1994L109.598 20.1954L111.699 13.7306L106.199 9.73451H112.997L115.098 3.26967L117.198 9.73451Z" fill="white"/>
                             </svg>
                           </span>  
-                          <span className="font-normal text-[12px] text-gray-500 ">{t('hero.ratings.rated')}</span>
+                          <span className="font-normal text-[12px] text-gray-500 ">Rating 4.5/5</span>
                         </div>
                     </div>
 
@@ -522,7 +522,7 @@ export default function Home() {
                         </div>
 
                         {/* Description */}
-                        <p className="text-gray-400 text-sm leading-relaxed mb-2 font-['Manrope'] font-light group-hover:text-gray-200 transition-colors">
+                        <p className="text-gray-400 text-md leading-relaxed mb-2 font-['Manrope'] font-light group-hover:text-gray-200 transition-colors">
                             {card.desc}
                         </p>
                         {/* 3. EXPLORE BUTTON (Reveal Animation) */}
@@ -612,14 +612,14 @@ export default function Home() {
 
             <div className="relative w-full overflow-hidden">
               <div className="flex w-max animate-scroll hover:[animation-play-state:paused]"
-                style={{ animationDuration: '20s' }}>
+                style={{ animationDuration: '10s' }}>
                   
                   {/* First set */}
                   <div className="flex gap-4">
                       {testimonials.map((item) => (
                           <div
                             key={`${item.id}`}
-                            className="relative p-2 rounded-2xl bg-[#171717] flex justify-between group max-w-[400px] ">
+                            className="relative p-4 rounded-2xl bg-[#171717] flex justify-between group max-w-[400px] ">
                             
                             {/* QUOTE ICON */}
                             <div className="absolute bottom-4 right-6 z-0 pointer-events-none">
@@ -912,13 +912,13 @@ export default function Home() {
 
               {/* Title */}
               <h3 className="text-white text-2xl px-4 font-['Manrope'] font-semibold mb-3">
-                {t(`ourApproach.steps.${step.id}.title`)}
+                {step.title}
               </h3>
             </div>  
 
               {/* Description */}
               <p className="text-gray-400 text-sm leading-relaxed font-light group-hover/card:text-gray-200">
-                {t(`ourApproach.steps.${step.id}.desc`)}
+                {step.desc}
               </p>
 
             </div>
@@ -934,7 +934,7 @@ export default function Home() {
 <section className="relative w-full bg-black py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
     {/* Background Glow */}
       <div className="absolute top-1/2 left-[-10%] -translate-y-1/2 w-[600px] h-[500px] bg-blue-900/30 blur-[100px] rounded-sm pointer-events-none z-0"></div>
-      {/* <div className="absolute top-1/2 left-[10%] -translate-y-1/2 w-[400px] h-[400px] bg-purple-900/20 blur-[100px] rounded-full pointer-events-none z-0"></div> */}
+      <div className="absolute top-1/2 left-[10%] -translate-y-1/2 w-[400px] h-[400px] bg-purple-900/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
 
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-24 items-start">
@@ -989,8 +989,7 @@ export default function Home() {
           {/* RIGHT COLUMN */}
           <div className="lg:col-span-5 flex flex-col justify-center h-full order-1 lg:order-2 lg:sticky lg:top-24">
             <h2 className="text-white font-['Manrope'] text-5xl md:text-6xl leading-tight mb-8">
-              <span className="font-light block">{t('faq.title')}</span>
-              <span className="font-medium block">{t('faq.subtitle')}</span>
+              Frequently Asked Questions
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12 font-light max-w-md">
               {t('faq.subtitle')}
@@ -1127,7 +1126,7 @@ export default function Home() {
             <h2 className="font-[Manrope] text-3xl md:text-4xl text-white mb-6">
                 {t('contact.title')}
             </h2>
-            <p className="text-sm md:text-md font-[Manrope] text-gray-200 mb-8 text-lg">
+            <p className="text-md md:text-md font-[Manrope] text-gray-200 mb-8 text-lg">
                 {t('contact.subtitle')}
             </p>
             <Link href="/contact" className="inline-block text-white border border-white bg-none text-[#6823f0] px-8 py-2 rounded-2xl text-lg shadow-xl hover:bg-white hover:text-black transition-all transform">
