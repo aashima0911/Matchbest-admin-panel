@@ -1,14 +1,84 @@
 // src/app/careers/[id]/page.jsx
 "use client";
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { jobsData } from '../../../data/jobsData';
+import { db, storage } from '../../../lib/firebase'; 
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, addDoc } from "firebase/firestore";
 import { CheckCircle2, UploadCloud, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export default function JobDetailsPage({ params }) {
   // ID by URL
-  const job = jobsData.find((j) => j.id === Number(params.id));
+  const unwrappedParams = use(params); 
+  const job = jobsData.find((j) => j.id === Number(unwrappedParams.id));
+
+  const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+    
+    await addDoc(collection(db, "applications"), {
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      jobTitle: job.title,
+      appliedAt: new Date().toISOString(),
+      
+    });
+
+    alert("Application submitted successfully!");
+    setFormData({ fullName: '', email: '', phone: '', message: '' });
+  } catch (error) {
+    console.error("Submission error:", error);
+    alert("Submission failed.");
+  } finally {
+    setLoading(false);
+  }
+};
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   // if (!file) return alert("Please upload your resume first!");
+
+  //   setLoading(true);
+  //   try {
+  //     const storageRef = ref(storage, `resumes/${Date.now()}-${file.name}`);
+  //     const snapshot = await uploadBytes(storageRef, file);
+  //     // const resumeUrl = await getDownloadURL(snapshot.ref);
+
+  //     await addDoc(collection(db, "applications"), {
+  //       ...formData,
+  //       jobTitle: job.title,
+  //       // resumeUrl: resumeUrl,
+  //       appliedAt: new Date().toISOString(),
+  //       to: "officesbymaverick@gmail.com"
+  //     });
+
+  //     alert("Application submitted successfully!");
+  //     setFormData({ fullName: '', email: '', phone: '', message: '' });
+  //     setFile(null);
+  //     e.target.reset();
+  //   } catch (error) {
+  //     console.error("Error submitting:", error);
+  //     alert("Submission failed.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   // Job not found
   if (!job) {
@@ -136,7 +206,7 @@ export default function JobDetailsPage({ params }) {
               <h2 className="text-2xl md:text-3xl mb-2">Apply for {job.title}</h2>
               <p className="text-gray-400 text-base mb-8">Fill out the form below and we'll get in touch soon.</p>
 
-              <form className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 
                 {/* Full Name */}
                 <div>
@@ -145,6 +215,8 @@ export default function JobDetailsPage({ params }) {
                     placeholder="Enter Your Full Name" 
                     required
                     className="w-full bg-[#050505] border border-white/10 rounded-lg p-4 text-white placeholder-gray-600 focus:border-white/30 outline-none transition-colors"
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({...formData, fullName: e.target.value})}
                   />
                 </div>
 
@@ -155,6 +227,8 @@ export default function JobDetailsPage({ params }) {
                     placeholder="Enter Your Email" 
                     required
                     className="w-full bg-[#050505] border border-white/10 rounded-lg p-4 text-white placeholder-gray-600 focus:border-white/30 outline-none transition-colors"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
                   />
                 </div>
 
@@ -165,21 +239,31 @@ export default function JobDetailsPage({ params }) {
                     placeholder="Enter Your Phone Number" 
                     required
                     className="w-full bg-[#050505] border border-white/10 rounded-lg p-4 text-white placeholder-gray-600 focus:border-white/30 outline-none transition-colors"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   />
                 </div>
 
                 {/* Resume Upload */}
-                <div>
-                  <label className="text-xs text-gray-500 uppercase font-bold mb-2 block">Resume (PDF, DOC, DOCX - Max 5MB)</label>
-                  <div className="border border-white/10 rounded-lg p-4 flex items-center justify-center cursor-pointer hover:bg-white/2 transition-colors group bg-[#050505]">
+                {/* <div>
+                  <input 
+                    type="file" 
+                    id="resume-upload" 
+                    className="hidden" 
+                    accept=".pdf,.doc,.docx"
+                    onChange={(e) => setFile(e.target.files[0])}
+                  />
+                  <label htmlFor="resume-upload" className="border border-white/10 rounded-lg p-4 flex items-center justify-center cursor-pointer hover:bg-white/2 transition-colors group bg-[#050505]">
                     <div className="text-center flex flex-col items-center">
-                      <div className="w-10 h-10 bg-white rounded-md flex items-center justify-center mb-2 group-hover:bg-white/30 transition-colors">
-                        <UploadCloud className="text-black w-5 h-5 group-hover:text-white" />
+                      <div className="w-10 h-10 bg-white rounded-md flex items-center justify-center mb-2...">
+                        <UploadCloud className="text-black w-5 h-5..." />
                       </div>
-                      <span className="text-white font-semibold text-sm">Upload File</span>
+                      <span className="text-white font-semibold text-sm">
+                        {file ? file.name : "Upload File"}
+                      </span>
                     </div>
-                  </div>
-                </div>
+                  </label>
+                </div> */}
 
                 {/* Message */}
                 <div>
@@ -188,16 +272,18 @@ export default function JobDetailsPage({ params }) {
                     required
                     rows="4"
                     className="w-full bg-[#050505] border border-white/10 rounded-lg p-4 text-white placeholder-gray-600 focus:border-white/30 outline-none transition-colors resize-none"
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
                   />
                 </div>
 
                 {/* Submit Button */}
                 <button 
                   type="submit"
+                  disabled={loading}
                   className="w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white font-bold py-3 rounded-lg hover:from-purple-700 hover:to-purple-600 mt-6 flex items-center justify-center gap-2"
                 >
-                  Submit Application
-                  <span>↗</span>
+                  {loading ? "Submitting..." : "Submit Application"} <span>↗</span>
                 </button>
 
               </form>
