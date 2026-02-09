@@ -1,5 +1,5 @@
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://matchbest.ai';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.matchbest.ai/';
   
   const pages = [
     { url: '/', lastModified: new Date(), changeFrequency: 'always', priority: 1.0 },
