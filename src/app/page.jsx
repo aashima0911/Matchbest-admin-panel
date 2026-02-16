@@ -103,7 +103,7 @@ const testimonials = [
   },
   {
     id: 6,
-    quote: "Their AI solutions didn't just automate tasks—they helped us make smarter business decisions.",
+    quote: "Their AI solutions didn't just automate tasks-they helped us make smarter business decisions.",
     name: "Ananya Verma",
     role: "Data & Analytics Lead, NexaAI",
     stars: 5,

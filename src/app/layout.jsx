@@ -55,13 +55,13 @@ export const metadata = {
     ],
 
   manifest: "/manifest.json",
-  authors: [{ name: "MatchBest Group", url: "https://matchbest.ai" }],
+  authors: [{ name: "MatchBest Group", url: "https://www.matchbest.ai/" }],
   icons: {
     icon: "/assets/favicon.png",
     apple: "/assets/favicon.png",
   },
   alternates: {
-    canonical: "https://matchbest.ai",
+    canonical: "https://www.matchbest.ai/",
   },
   robots: {
     index: true,

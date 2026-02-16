@@ -9,7 +9,7 @@ import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 export async function generateMetadata({ params }) {
   return {
     alternates: {
-      canonical: `https://matchbest.ai/blogs`,
+      canonical: `https://www.matchbest.ai/blogs`,
     },
   };
 }

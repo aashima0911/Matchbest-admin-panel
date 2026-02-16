@@ -146,7 +146,7 @@ return (
                         We’ve built a culture of trust, openness, and ownership where ideas get thrown around freely, people take initiative, and growth happens through hands-on work, mentoring, and steady learning. Yes, we take deadlines seriously, but we also back personal development: flexible schedules, real mentorship, and paths you can grow into.
                     </p>
                     <p>
-                        Success here is collective — we celebrate wins, dig into failures without blame, and help each other when it counts. Whether you’re starting out or taking on more responsibility, MatchBest is a place where your work matters and helps shape tomorrow’s technology.
+                        Success here is collective - we celebrate wins, dig into failures without blame, and help each other when it counts. Whether you’re starting out or taking on more responsibility, MatchBest is a place where your work matters and helps shape tomorrow’s technology.
                     </p>
                     </div>
       

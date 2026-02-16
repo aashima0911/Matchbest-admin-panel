@@ -172,7 +172,7 @@ export const jobsData = [
     type: "Full-Time",
     location: "On-site (Sector 49, Gurugram)",
     Info: "Join as a Full Stack Engineer Intern to build frontend, backend, dashboards, and APIs for AI and digital platforms under mentorship.",
-    desc: "As a Full Stack Engineer Intern, you’ll work on both frontend and backend development for AI-driven, OTT, and digital platforms. Your role includes building responsive web applications, creating dashboards, and developing or integrating APIs. You’ll collaborate with experienced engineers, learn best practices, and gain hands-on exposure to real-world projects—all under structured **mentorship and guidance",
+    desc: "As a Full Stack Engineer Intern, you’ll work on both frontend and backend development for AI-driven, OTT, and digital platforms. Your role includes building responsive web applications, creating dashboards, and developing or integrating APIs. You’ll collaborate with experienced engineers, learn best practices, and gain hands-on exposure to real-world projects-all under structured **mentorship and guidance",
     requirements: [
       "		Pursuing or completed B.Tech / BCA / MCA or equivalent",
       "	Knowledge of JavaScript, HTML, CSS, basic backend concepts",
