@@ -98,11 +98,11 @@ export default async function BlogPostPage({ params }) {
            <h1 className="text-2xl md:text-3xl mb-2 leading-tight text-white">
              {post.meta.title}
            </h1>
-           <div className="text-gray-400 text-sm flex flex-wrap gap-4 items-center">
+           {/* <div className="text-gray-400 text-sm flex flex-wrap gap-4 items-center">
               <span className="text-purple-400 px-3 py-1 bg-purple-500/10 rounded-full">{post.meta.categories}</span> 
               <span>•</span>
               <span>{post.meta.date}</span>
-           </div>
+           </div> */}
         </div>
 
         {/* Hero Image */}

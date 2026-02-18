@@ -47,7 +47,7 @@ export default function BlogsClient({ blogs }) {
           </h1>
           
           {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-3">
+          {/* <div className="flex flex-wrap gap-3">
             {filters.map((filter) => (
               <button 
                 key={filter} 
@@ -62,7 +62,7 @@ export default function BlogsClient({ blogs }) {
                 {filter}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* === BLOG GRID === */}
@@ -108,11 +108,11 @@ export default function BlogsClient({ blogs }) {
                     <div className="relative w-6 h-6 rounded-full overflow-hidden">
                       <Image src={post.image} alt={post.author} fill className="object-cover" />
                     </div>
-                    <div className="text-xs text-gray-400 font-medium flex items-center gap-2">
+                    {/* <div className="text-xs text-gray-400 font-medium flex items-center gap-2">
                       <span className="text-gray-200">{post.author}</span>
                       <span className="w-1 h-1 bg-gray-600 rounded-full"></span>
                       <span>{post.date}</span>
-                    </div>
+                    </div> */}
                   </div>
 
                 </div>
