@@ -397,7 +397,7 @@ export default function Home() {
                         <span className="font-normal text-[12px] text-blue-500">Customer Reviews</span>
                         </div>
                         <div className="bg-white rounded-md px-4 py-1 flex flex-col items-center text-black text-lg ">
-                            <span className="text-black font-bold">{t('hero.ratings.trustpilot')}</span>
+                          <span className="text-black font-bold">{t('hero.ratings.trustpilot')}</span>
                             <span className="flex flex-cols-1">
                             <svg width="117" height="14" viewBox="0 0 127 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="23.4651" height="23.4651" fill="#00B57A"/>
@@ -413,17 +413,16 @@ export default function Home() {
                             <path d="M117.198 9.73451H123.996L118.496 13.7306V13.7316L115.583 15.8165L118.785 14.6203L120.597 20.1954L115.098 16.1994L109.598 20.1954L111.699 13.7306L106.199 9.73451H112.997L115.098 3.26967L117.198 9.73451Z" fill="white"/>
                             </svg>
                           </span>  
-                          <span className="font-normal text-[12px] text-gray-500 ">Rating 4.5/5</span>
-                        </div>
+                        <span className="font-normal text-[12px] text-gray-500 ">Rating 4.5/5</span>
                     </div>
-
-                    </div>
-            </section>
+                </div>
+            </div>
+        </section>
 
             {/* --- VERTICALS SECTION --- */}
-            <div className="container mx-auto px-4">
+            <section className="container mx-auto px-4">
                 <VerticalsCarousel />
-            </div>
+            </section>
 
             {/* --- ABOUT US --- */}
             <section className="container mx-auto py-10 px-8 md:px-20" data-aos="fade-up">

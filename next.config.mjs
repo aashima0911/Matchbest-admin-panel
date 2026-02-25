@@ -59,6 +59,23 @@ const nextConfig = {
     return config;
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'matchbest.ai',
+          },
+        ],
+        destination: 'https://www.matchbest.ai/:path*',
+        permanent: true, 
+      },
+    ];
+  },
+
+
   // Security headers for comprehensive protection
   async headers() {
     return [
@@ -111,10 +128,9 @@ const nextConfig = {
           // Remove server information
           {
             key: 'X-Powered-By',
-            value: 'PHP/7.4.0', // Fake server info for obscurity
+            value: 'PHP/7.4.0', 
           },
 
-          // Prevent caching of sensitive pages
           {
             key: 'Cache-Control',
             value: 'no-cache, no-store, must-revalidate',

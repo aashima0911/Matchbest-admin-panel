@@ -130,4 +130,4 @@ Allow: /sitemap.xml
 Allow: /robots.txt
 
 # Sitemap location
-Sitemap: https://matchbest.ai/sitemap.xml
+Sitemap: https://www.matchbest.ai/sitemap.xml

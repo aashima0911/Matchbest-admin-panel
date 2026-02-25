@@ -36,13 +36,11 @@ export const getBlogPosts = async () => {
             nanoseconds: data.timestamp.nanoseconds
           };
         } else if (typeof data.timestamp === 'object' && data.timestamp.seconds !== undefined) {
-          // It's already a plain object with seconds/nanoseconds
           timestamp = {
             seconds: data.timestamp.seconds,
             nanoseconds: data.timestamp.nanoseconds
           };
         } else {
-          // It's already a plain value (string, number, etc.)
           timestamp = data.timestamp;
         }
       }

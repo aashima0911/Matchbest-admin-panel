@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation';
 // export async function generateMetadata({ params }) {
 //   return {
 //     alternates: {
-//       canonical: `https://matchbest.ai/Career`,
+//       canonical: `https://www.matchbest.ai/Career`,
 //     },
 //   };
 // }

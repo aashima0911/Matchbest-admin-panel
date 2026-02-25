@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://matchbest.ai';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.matchbest.ai';
   
   const robotsTxt = `User-agent: *
 Allow: /
@@ -10,7 +10,7 @@ Allow: /api/
 Allow: /admin/
 
 # Sitemap
-Sitemap: https://matchbest.ai/sitemap.xml`;
+Sitemap: https://www.matchbest.ai/sitemap.xml`;
 
   return new NextResponse(robotsTxt, {
     headers: {

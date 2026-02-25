@@ -78,11 +78,11 @@ export const metadata = {
     title: "MatchBest Group | Digital Innovation & AI Solutions",
     description:
       "Explore our digital services, AI innovations, and secure cloud platforms that empower the future.",
-    url: "https://matchbest.ai",
+    url: "https://www.matchbest.ai/",
     siteName: "MatchBest Group",
     images: [
       {
-        url: "https://matchbest.ai/assets/og-image.jpg",
+        url: "https://www.matchbest.ai/assets/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "MatchBest Group - AI and Cloud",
@@ -101,7 +101,7 @@ export const metadata = {
        "Business solutions: E-commerce, fintech, ERP modernization",
        "Intra & hosting: Cloud security, VAPT, NOC management",
        "Staffing: staff augmentation "],
-    images: ["https://matchbest.ai/assets/og-image.jpg"],
+    images: ["https://www.matchbest.ai/assets/og-image.jpg"],
   },
 };
 
@@ -111,8 +111,8 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MatchBest Group",
-    "url": "https://matchbest.ai",
-    "logo": "https://matchbest.ai/assets/mat.png",
+    "url": "https://www.matchbest.ai",
+    "logo": "https://www.matchbest.ai/assets/mat.png",
     "foundingDate": "2014",
     "sameAs": [
       "https://www.linkedin.com/company/matchbest",

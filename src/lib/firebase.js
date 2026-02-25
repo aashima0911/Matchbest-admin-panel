@@ -6,8 +6,7 @@ import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCnoGAs8XB8gAAS3f2vGr3JFRPHfLY4Un4",
   authDomain: "matchbest-ai.firebaseapp.com",
