@@ -25,7 +25,7 @@ export default function BlogsClient({ blogs }) {
 }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-purple-500 selection:text-white pt-20">
+    <section className="min-h-screen bg-[#050505] text-white selection:bg-purple-500 selection:text-white pt-20 overflow-x-hidden relative">
       <div 
         className="absolute -top-[100px] -right-[100px] w-[1000px] h-[500px] rounded-full opacity-60 pointer-events-none"
         style={{
@@ -129,6 +129,6 @@ export default function BlogsClient({ blogs }) {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }
