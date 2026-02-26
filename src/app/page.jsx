@@ -8,7 +8,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion"; 
 import { MapPin, Plus, ArrowUpRight} from "lucide-react"; 
 import dynamic from 'next/dynamic';
-import { ShieldCheck } from "lucide-react/dist/esm/icons/shield-check"; 
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"></link>
@@ -38,24 +38,28 @@ const cardsData = [
     title: "Next-Gen Development",
     desc: "Scalable web & mobile application development built with modern frameworks for performance, security, and enterprise growth.",
     icon: "/assets/F1.png", 
+    path: "/services/nextGen",
   },
   {
     id: 2,
     title: "AI Automation",
     desc: "AI automation and Generative AI solutions that streamline workflows, enhance productivity, and power smarter business decisions.",
     icon: "/assets/f2.png", 
+    path: "/services/aiAutomation",
   },
   {
     id: 3,
     title: "Cybersecurity & Risk Management",
     desc: "Enterprise-grade cybersecurity, VAPT, and cloud security services to protect data, systems, and digital assets.",
     icon: "/assets/f3.png", 
+    path: "/services/cybersecurity",
   },
   {
     id: 4,
     title: "Cloud and infra services",
     desc: "Secure cloud migration, hosting, and infrastructure management for high availability, scalability, and cost efficiency.",
     icon: "/assets/f4.png", 
+    path: "/services/cloud",
   },
 ];
 
@@ -243,6 +247,8 @@ export default function Home() {
     }, []);
 
     return (
+      <>
+      <h1 className="sr-only">MatchBest Solutions</h1>
       <div className="bg-[#050505] min-h-screen flex flex-col overflow-x-hidden relative">
  
         {/* --- HERO SECTION --- */}
@@ -486,59 +492,60 @@ export default function Home() {
             </section>
 
 {/* --- FUTURE-READY SOLUTIONS SECTION --- */}
-            <section className="relative w-full bg-black overflow-hidden flex flex-col items-center justify-start pt-5 pb-10">
-                {/* --- HEADING --- */}
+<section className="relative w-full bg-black overflow-hidden flex flex-col items-center justify-start pt-5 pb-10">
+      {/* --- HEADING --- */}
             <div className="container mx-auto text-center relative z-20 px-4 mb-16">
-                <h2 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
-                {t('whyChooseUs.title')}
-                </h2>
+                <h1 className="font-['Manrope'] text-4xl md:text-6xl text-white mb-6">
+                FUTURE-READY SOLUTIONS
+                </h1>
 
-                <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-lg font-light">
+                <p className="font-['Manrope'] text-gray-300 max-w-3xl mx-auto text-md font-light">
                     {t('whyChooseUs.subtitle')}
                 </p>
             </div>
-
-                {/* --- LAYER 2: CARDS GRID  --- */}
+              {/* --- LAYER 2: CARDS GRID  --- */}
                 <div className="w-full max-w-4xl mx-auto relative z-20 px-4 md:px-12 grid grid-cols-0 md:grid-cols-2 gap-4">
-                    {cardsData.map((card) => (
-                    <div
-                        key={card.id}
-                        className="group relative px-4 py-4 rounded-[24px] glass-effect border border-white/10 bg-[#0f0f0f] overflow-hidden transition-all duration-500 hover:-translate-y-1">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#6d28d9] via-[#4c1d95] to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                  {cardsData.map((card) => (
+                  <div
+                    key={card.id}
+                    className="group relative px-4 py-4 rounded-[24px] glass-effect border-2 border-black bg-transparent overflow-hidden transition-all duration-500">
+                    {/* <div className="absolute inset-0 bg-gradient-to-br from-[#6d28d9] via-[#4c1d95] to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div> */}
 
-                        {/* 2. CARD CONTENT */}
-                        <div className="relative z-10 flex flex-col h-full">
-                        <div className="flex flex-grid">
+                    {/* CARD CONTENT */}
+                    <div className="relative z-10 flex flex-col h-full transition-transform duration-500 ease-in-out group-hover:-translate-y-4">
+                      <div className="flex items-center gap-2 mb-1 transition-all duration-500 group-hover:gap-0">
                         {/* Icon Box */}
-                        <div className="flex flex-col w-14 h-14 bg-white rounded-sm flex items-center justify-center mb-3 shadow-lg">
-                            <Image src={card.icon} alt="icon" width={28} height={28} className="object-contain"/>
+                        <div className="flex flex-col w-14 h-14 bg-white rounded-sm items-center justify-center mb-3 shadow-lg shrink-0 transition-transform duration-500 group-hover:scale-80 origin-left">
+                          <Image src={card.icon} alt="icon" width={28} height={28} className="object-contain"/>
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-lg pt-3 items-center justify-center font-['Manrope'] px-4 text-white mb-2">
-                            {card.title}
+                        <h3 className="text-lg pt-3 items-center justify-center font-['Manrope'] px-4 text-white mb-2 transition-transform duration-500 group-hover:scale-90 origin-left">
+                          {card.title}
                         </h3>
-                        </div>
+                      </div>
 
-                        {/* Description */}
-                        <p className="text-gray-400 text-md leading-relaxed mb-2 font-['Manrope'] font-light group-hover:text-gray-200 transition-colors">
-                            {card.desc}
-                        </p>
-                        {/* 3. EXPLORE BUTTON (Reveal Animation) */}
-                        <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                            <div className="overflow-hidden">
-                            {/* <button className="w-full py-3 mt-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-xl text-white font-medium flex items-center justify-center gap-2 transition-all">
-                                Explore 
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                            </button> */}
-                            </div>
-                        </div>
+                      {/* Description */}
+                      <p className="text-white text-md leading-relaxed mb-2 font-['Manrope'] font-light group-hover:-mt-2 group-hover:text-gray-200 transition-colors transition-transform duration-500 group-hover:scale-90 origin-left">
+                        {card.desc}
+                      </p>
 
-                        </div>
+                      {/* EXPLORE BUTTON */}
+                      <div className="absolute bottom-[-30px] left-0 w-full px-4 opacity-0 group-hover:opacity-100 transition-all duration-500 mb-2">
+                        {card.path ? (
+                        <Link href={card.path}>
+                          <button className="w-full py-1 bg-purple-900 backdrop-blur-md rounded-md text-white font-medium flex items-center justify-center gap-1">
+                            Explore 
+                            <svg width="12" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-500 ease-in-out rotate-90 group-hover:-rotate-15">
+                              <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </button>
+                        </Link>
+                        ) : (<button> Coming Soon </button>)}
+                      </div>
                     </div>
-                    ))}
+                  </div>
+                  ))}
                 </div>
 
                 {/* --- LAYER 3: BACKGROUND SVG --- */}
@@ -1102,7 +1109,6 @@ export default function Home() {
         ))}
 
       </div>
-
     </section>
 
 
@@ -1136,5 +1142,7 @@ export default function Home() {
 </section>
 
     </div>
+      </>
+  
   );
 }

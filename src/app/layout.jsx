@@ -194,7 +194,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-
+        <h1 className="sr-only">MatchBest Group</h1>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
