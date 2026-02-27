@@ -128,7 +128,7 @@ export default function AIAutomationPage() {
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-4/5 h-12 bg-white/5 blur-2xl rounded-full" />
             
             <Image 
-              src="/assets/8.jpg" 
+              src="/assets/app-development.jpg" 
               alt="App Development Showcase" 
               fill 
               className="object-contain rounded-md"
